@@ -3,81 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImobVerdict | Analiză Independentă Iași</title>
+    <title>ImobVerdict | Audit Imobiliar Iași</title>
     <style>
         body {
-            background-color: #3d2b56; /* Movul tău de bază */
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237ef9d4' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); /* Un model subtil de grilă/plusuri în culoarea verde mentă, dar cu opacitate 3% */
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            text-align: center;
+            background-color: #3d2b56;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237ef9d4' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: white; font-family: 'Segoe UI', sans-serif; margin: 0; text-align: center;
         }
-        /* Păstrează restul stilurilor (.container, .card, etc.) neschimbate */
-        .container { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .eyebrow { color: #7ef9d4; letter-spacing: 3px; font-size: 0.8rem; text-transform: uppercase; }
-        h1 { font-size: 3.5rem; color: #7ef9d4; margin: 10px 0; letter-spacing: -2px; }
-        .hero-p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; }
-        .card { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; margin-bottom: 30px; text-align: left; border: 1px solid rgba(126, 249, 212, 0.2); backdrop-filter: blur(5px); }
-        h2 { color: #7ef9d4; border-bottom: 1px solid #7ef9d4; padding-bottom: 10px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
-        th, td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: left; }
-        th { color: #7ef9d4; }
-        .negativ { color: #ff6b6b; font-weight: bold; }
-        .pozitiv { color: #51cf66; }
-        .footer { margin-top: 50px; font-size: 0.7rem; opacity: 0.5; padding-bottom: 30px; }
+        .container { padding: 40px 20px; max-width: 1000px; margin: auto; }
+        h1 { font-size: 3.5rem; color: #7ef9d4; margin: 0; letter-spacing: -2px; }
+        .intro { font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 20px auto 50px; line-height: 1.6; }
+        
+        /* Grila de proiecte */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 50px; }
+        
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(126, 249, 212, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        .project-card:hover { transform: translateY(-5px); border-color: #7ef9d4; }
+        
+        .status { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+        .status.done { background: #51cf66; color: #1a2a1a; font-weight: bold; }
+        .status.pending { background: rgba(255,255,255,0.1); color: #ccc; }
+        
+        .project-card h3 { margin: 10px 0; color: #7ef9d4; }
+        .btn-small { 
+            display: inline-block; margin-top: 15px; padding: 8px 16px; 
+            background: #7ef9d4; color: #3d2b56; text-decoration: none; 
+            font-weight: bold; border-radius: 4px; font-size: 0.8rem;
+        }
+        .btn-disabled { background: rgba(255,255,255,0.1); color: #888; cursor: not-allowed; }
+
+        .footer { font-size: 0.7rem; opacity: 0.5; margin-top: 100px; padding-bottom: 40px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="eyebrow">Analiză Independentă Iași</div>
         <h1>IMOB VERDICT</h1>
-        <p class="hero-p">Date brute. Riscuri reale. Fără cosmetizări de marketing.</p>
-
-        <div class="card">
-            <h2>Verdict: Silk District</h2>
-            <p>Proiect cu locație premium, dar cu riscuri contractuale majore.</p>
-            <table>
-                <tr><th>Categorie</th><th>Problemă Detectată</th><th>Sentiment</th></tr>
-                <tr><td>Management</td><td>Clauze abuzive / Termene de plată nerezonabile</td><td class="negativ">Negativ</td></tr>
-                <tr><td>Tehnic</td><td>Inundații subsol / Mucegai</td><td class="negativ">Negativ</td></tr>
-                <tr><td>Post-Vânzare</td><td>Comunicare slabă / Întârzieri remedieri</td><td class="negativ">Negativ</td></tr>
-                <tr><td>Concept</td><td>Arhitectură și spații verzi generoase</td><td class="pozitiv">Pozitiv</td></tr>
-            </table>
-            <p style="font-size: 0.85rem; opacity: 0.7; border-left: 2px solid #7ef9d4; padding-left: 15px; margin-top: 20px;">
-    <strong>Observații Audit:</strong> Analiza sugerează o discrepanță între calitatea finisajelor exterioare și rigoarea clauzelor contractuale. Se recomandă asistență juridică specializată înainte de semnarea oricărei promisiuni de vânzare-cumpărare.
-</p>
+        <div class="intro">
+            Auditul independent al pieței rezidențiale din Iași. Analizăm riscurile contractuale, calitatea construcției și infrastructura utilităților pentru cele mai mari complexe din oraș.
         </div>
 
-        <div class="card">
-            <h2>Verdict: Evergreen Towers</h2>
-            <p>Design modern, dar probleme critice la utilitățile de bază.</p>
-            <table>
-                <tr><th>Categorie</th><th>Problemă Detectată</th><th>Sentiment</th></tr>
-                <tr><td>Utilități</td><td>Lipsă apă și gaz (întreruperi repetate)</td><td class="negativ">Negativ</td></tr>
-                <tr><td>Juridic</td><td>Blocuri neintabulate sau intabulate greu / Probleme documentație</td><td class="negativ">Negativ</td></tr>
-                <tr><td>Construcție</td><td>Izolare fonică slabă / Pereți subțiri</td><td class="negativ">Negativ</td></tr>
-                <tr><td>Echipă</td><td>Proces de achiziție simplu (inițial)</td><td class="pozitiv">Pozitiv</td></tr>
-            </table>
-            <p style="font-size: 0.85rem; opacity: 0.7; border-left: 2px solid #7ef9d4; padding-left: 15px; margin-top: 20px;">
-    <strong>Observații Audit:</strong> Analiza sugerează o discrepanță între calitatea finisajelor exterioare și rigoarea clauzelor contractuale. Se recomandă asistență juridică specializată înainte de semnarea oricărei promisiuni de vânzare-cumpărare.
-</p>
+        <div class="grid">
+            <div class="project-card">
+                <span class="status done">Audit Finalizat</span>
+                <h3>Silk District</h3>
+                <p>Zona Primăverii. Analiză pe clauze contractuale și hidroizolație.</p>
+                <a href="#silk" class="btn-small">VEZI VERDICTUL</a>
+            </div>
+
+            <div class="project-card">
+                <span class="status done">Audit Finalizat</span>
+                <h3>Evergreen Towers</h3>
+                <p>Zona Tătărași. Analiză pe utilități, documentație și izolare fonică.</p>
+                <a href="#evergreen" class="btn-small">VEZI VERDICTUL</a>
+            </div>
+
+            <div class="project-card">
+                <span class="status pending">În curs de auditare</span>
+                <h3>Conest Grand Residence</h3>
+                <p>Zona Tudor Vladimirescu. Se colectează date de la locatari.</p>
+                <span class="btn-small btn-disabled">IN CURS</span>
+            </div>
+
+            <div class="project-card">
+                <span class="status pending">În curs de auditare</span>
+                <h3>Newton House</h3>
+                <p>Zona Copou. Analiză pe structură și finisaje în curs.</p>
+                <span class="btn-small btn-disabled">IN CURS</span>
+            </div>
+
+             <div class="project-card">
+                <span class="status pending">În curs de auditare</span>
+                <h3>Greenfield Copou</h3>
+                <p>Zona Copou. Analiză pe impact mediu și accesibilitate.</p>
+                <span class="btn-small btn-disabled">IN CURS</span>
+            </div>
         </div>
+
+        <div id="silk" style="margin-top: 100px;">
+            <h2 style="color: #7ef9d4;">Verdict Detaliat: Silk District</h2>
+            <p>Analiză bazată pe 50+ interviuri și review-uri.</p>
+            </div>
 
         <div class="footer">
-            &copy; 2026 ImobVerdict.com. Analiză bazată pe date publice din Google Reviews și grupuri de locatari.
+            &copy; 2026 ImobVerdict.com - Date agregate din surse publice.
         </div>
     </div>
-
-    <div class="card" id="contact">
-    <h2>Raportează o problemă</h2>
-    <p>Ai observat nereguli la un complex rezidențial din Iași? Trimite-ne un raport anonim.</p>
-    <form action="https://formspree.io/f/mjglvqdz" method="POST">
-        <input type="text" name="complex" placeholder="Nume Complex" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none;">
-        <textarea name="mesaj" placeholder="Descrie problema observată..." style="width: 100%; padding: 10px; height: 100px; border-radius: 5px; border: none;"></textarea>
-        <button type="submit" class="btn" style="width: 100%; cursor: pointer;">TRIMITE RAPORTUL</button>
-    </form>
-</div>
-    
 </body>
 </html>
