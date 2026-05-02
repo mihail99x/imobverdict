@@ -5,43 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audit Detaliat: Evergreen Towers | ImobVerdict Iași</title>
     <style>
-        /* Păstrează același stil CSS de la Silk District pentru consistență */
-        body { background: linear-gradient(rgba(61, 43, 86, 0.92), rgba(30, 20, 45, 0.98)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80'); background-attachment: fixed; background-size: cover; color: white; font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; }
-        .container { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .back-btn { color: #7ef9d4; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 30px; border: 1px solid #7ef9d4; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
-        .back-btn:hover { background: #7ef9d4; color: #3d2b56; }
-        .report-card { background: rgba(255, 255, 255, 0.07); padding: 40px; border-radius: 20px; backdrop-filter: blur(15px); border: 1px solid rgba(126, 249, 212, 0.2); }
-        h1 { color: #7ef9d4; font-size: 2.5rem; margin-top: 0; }
-        h3 { color: #7ef9d4; border-bottom: 1px solid rgba(126, 249, 212, 0.3); padding-bottom: 10px; margin-top: 30px; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(0,0,0,0.3); }
-        th, td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: left; }
-        th { background: rgba(126, 249, 212, 0.1); color: #7ef9d4; }
-        .negativ { color: #ff6b6b; font-weight: bold; }
-        .pozitiv { color: #51cf66; }
-        .verdict-box { border-left: 5px solid #7ef9d4; padding: 20px; background: rgba(126, 249, 212, 0.05); margin-top: 40px; border-radius: 0 10px 10px 0; }
+        body {
+            background: linear-gradient(rgba(30, 45, 65, 0.96), rgba(15, 20, 30, 0.98)), 
+                        url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=2000&q=80');
+            background-attachment: fixed; background-size: cover;
+            color: white; font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; line-height: 1.6;
+        }
+        .container { padding: 40px 20px; max-width: 950px; margin: auto; }
+        .back-btn { color: #7ef9d4; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; margin-bottom: 30px; transition: 0.3s; }
+        .back-btn:hover { transform: translateX(-5px); }
+
+        .main-card { 
+            background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 71, 87, 0.3);
+            border-radius: 24px; padding: 40px; backdrop-filter: blur(20px); box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        .badge { padding: 6px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .badge-critical { background: #ff4757; color: #fff; box-shadow: 0 0 20px rgba(255,71,87,0.4); }
+
+        h1 { font-size: 2.8rem; color: #7ef9d4; margin: 15px 0; letter-spacing: -1px; }
+        
+        .alert-box { background: rgba(255, 71, 87, 0.1); border-left: 4px solid #ff4757; padding: 20px; border-radius: 10px; margin: 25px 0; }
+        .alert-title { color: #ff4757; font-weight: bold; display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.9rem; }
+
+        h3 { color: #7ef9d4; margin-top: 40px; border-bottom: 1px solid rgba(126,249,212,0.2); padding-bottom: 10px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; }
+        th { text-align: left; background: rgba(126,249,212,0.1); color: #7ef9d4; padding: 15px; font-size: 0.8rem; text-transform: uppercase; }
+        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
+
+        .point-box { margin-bottom: 15px; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 10px; }
+        .point-title { font-weight: bold; color: #7ef9d4; display: block; margin-bottom: 5px; }
+
+        .verdict-final { 
+            background: linear-gradient(135deg, rgba(255, 71, 87, 0.2), transparent);
+            padding: 35px; border-radius: 20px; border: 1px solid #ff4757; margin-top: 50px; text-align: center;
+        }
+        
+        .source-tag { font-size: 0.7rem; opacity: 0.4; text-align: center; margin-top: 30px; line-height: 1.4; }
     </style>
 </head>
 <body>
-    <div class="report-card">
-    <h1>Verdict: Evergreen Towers</h1>
-    <p><strong>Rating de Risc:</strong> <span class="negativ">RIDICAT (Infrastructură & Administrativ)</span> | <strong>Sursa datelor:</strong> Feedback locatari & Date publice</p>
-    
-    <h3>1. Analiza Experienței cu Infrastructura de Bază</h3>
-    <ul>
-        <li><strong>Fiabilitatea Utilităților:</strong> Datele colectate de la rezidenți indică un istoric de discontinuități în furnizarea agentului termic și a gazului natural, atribuite în mare parte limitărilor infrastructurii zonale.</li>
-        <li><strong>Parametri Tehnici:</strong> Utilizatorii de la etajele superioare au raportat variații de presiune în rețeaua de apă rece/caldă în intervalele de consum maxim.</li>
-    </ul>
+    <div class="container">
+        <a href="/" class="back-btn">← Înapoi la Centrul de Control</a>
 
-    <h3>2. Observații Administrative și Juridice</h3>
-    <table>
-        <tr><th>Punct de Control</th><th>Situație Raportată</th><th>Nivel Risc</th></tr>
-        <tr><td>Proces Intabulare</td><td>Au fost semnalate cazuri unde eliberarea documentației de proprietate (cadastru) a depășit estimările inițiale cu peste 12 luni.</td><td class="negativ">RIDICAT</td></tr>
-        <tr><td>Garanție și Service</td><td>Procesul de remediere a deficiențelor post-recepție este descris de unii utilizatori ca fiind unul birocratic și lent.</td><td class="negativ">MODERAT</td></tr>
-    </table>
+        <div class="main-card">
+            <span class="badge badge-critical">Rating de Risc: CRITIC</span>
+            <h1>Evergreen Towers / CCI Construct</h1>
+            <p style="font-size: 1.1rem; opacity: 0.8;">Audit bazat pe conflicte nerezolvate privind utilitățile de bază și dispute asupra dreptului de proprietate.</p>
 
-    <div class="verdict-box">
-        <strong>Notă Audit:</strong> Analiza reflectă opiniile și experiențele utilizatorilor platformei. <strong>Recomandare:</strong> Verificați stadiul actual al intabulării pentru unitatea vizată direct la OCPI și consultați asociația de proprietari locală privind stabilitatea utilităților în ultimele 6 luni.
+            <div class="alert-box">
+                <span class="alert-title">⚠️ ALERTĂ UTILITĂȚI</span>
+                Sunt raportate acțiuni de forță privind furnizarea apei potabile, inclusiv demontări de echipamente și presiuni administrative asupra locatarilor prin intermediul unor entități terțe (ex. Gezz Residence).
+            </div>
+
+            <h3>📋 Sinteză Riscuri Identificate</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categorie</th>
+                        <th>Probleme Semnalate</th>
+                        <th>Impact Locatar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Proprietate</strong></td>
+                        <td>Dispute privind cotele-părți (scări, holuri, camere tehnice)</td>
+                        <td style="color: #ff4757;">CRITIC</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Utilități</strong></td>
+                        <td>Lipsă transparență facturare, plăți cerute prin canale neoficiale</td>
+                        <td style="color: #ff4757;">MAJORD</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Urbanism</strong></td>
+                        <td>Degradarea spațiului public prin parcări ilegale masive</td>
+                        <td>MEDIU</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>⚖️ Aspecte Juridice și Administrative</h3>
+            <div class="point-box">
+                <span class="point-title">Statusul Spațiilor Comune</span>
+                <span class="point-desc">Există suspiciuni raportate de comunitate privind păstrarea unor elemente structurale esențiale (holuri, terase) în proprietatea dezvoltatorului, afectând dreptul de folosință liberă al coproprietarilor.</span>
+            </div>
+            <div class="point-box">
+                <span class="point-title">Autorizații și Cadastru</span>
+                <span class="point-desc">Utilizatorii menționează întârzieri critice în procesul de intabulare și suspiciuni privind conformitatea autorizațiilor pentru fazele noi (Bloc C9).</span>
+            </div>
+
+            <div class="verdict-final">
+                <h2 style="color: #ff4757; margin-top: 0;">Verdict ImobVerdict</h2>
+                <p>Evergreen Towers prezintă unul dintre cele mai ridicate niveluri de risc administrativ din Iași. <strong>Conflictele directe cu dezvoltatorul privind accesul la utilități și claritatea actelor de proprietate fac din acest complex o investiție extrem de volatilă.</strong></p>
+                <p style="font-weight: bold; border: 1px solid rgba(255,255,255,0.2); display: inline-block; padding: 10px 20px; border-radius: 8px;">AUDIT: NU RECOMANDĂM FĂRĂ ASISTENȚĂ JURIDICĂ DEDICATĂ</p>
+            </div>
+
+            <p class="source-tag">
+                <strong>Disclaimer Legal:</strong> Acest document reprezintă o sinteză a opiniilor și experiențelor raportate de utilizatori pe platformele publice (Reddit, Softpedia, Facebook). <br>
+                Instituții/Entități menționate în raportările colectate: CCI Construct, ApaVital, OCPI, Notar Pătrășcanu, Gezz Residence. <br>
+                Toate datele au caracter informativ și nu constituie o acuzație formală sau un verdict juridic definitiv.
+            </p>
+        </div>
     </div>
-</div>
 </body>
 </html>
