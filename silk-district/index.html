@@ -3,40 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audit Silk District | ImobVerdict Iași</title>
+    <title>Audit Detaliat: Silk District | ImobVerdict Iași</title>
     <style>
         body {
-            background: linear-gradient(rgba(61, 43, 86, 0.9), rgba(30, 20, 45, 0.98)), 
+            background: linear-gradient(rgba(61, 43, 86, 0.92), rgba(30, 20, 45, 0.98)), 
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');
             background-attachment: fixed; background-size: cover;
-            color: white; font-family: 'Segoe UI', sans-serif; margin: 0;
+            color: white; font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6;
         }
-        .container { padding: 40px 20px; max-width: 800px; margin: auto; }
-        .back-btn { color: #7ef9d4; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 20px; }
-        .card { background: rgba(255, 255, 255, 0.07); padding: 30px; border-radius: 16px; backdrop-filter: blur(12px); border: 1px solid rgba(126, 249, 212, 0.2); }
-        h1 { color: #7ef9d4; margin-top: 0; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(0,0,0,0.2); }
+        .container { padding: 40px 20px; max-width: 900px; margin: auto; }
+        .back-btn { color: #7ef9d4; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 30px; border: 1px solid #7ef9d4; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
+        .back-btn:hover { background: #7ef9d4; color: #3d2b56; }
+        .report-card { background: rgba(255, 255, 255, 0.07); padding: 40px; border-radius: 20px; backdrop-filter: blur(15px); border: 1px solid rgba(126, 249, 212, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { color: #7ef9d4; font-size: 2.5rem; margin-top: 0; letter-spacing: -1px; }
+        h3 { color: #7ef9d4; border-bottom: 1px solid rgba(126, 249, 212, 0.3); padding-bottom: 10px; margin-top: 30px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(0,0,0,0.3); border-radius: 8px; overflow: hidden; }
         th, td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: left; }
-        th { color: #7ef9d4; }
+        th { background: rgba(126, 249, 212, 0.1); color: #7ef9d4; font-size: 0.8rem; text-transform: uppercase; }
         .negativ { color: #ff6b6b; font-weight: bold; }
-        .audit-note { border-left: 4px solid #7ef9d4; padding: 15px; background: rgba(126, 249, 212, 0.05); margin-top: 25px; }
+        .pozitiv { color: #51cf66; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; opacity: 0.9; }
+        .verdict-box { border-left: 5px solid #7ef9d4; padding: 20px; background: rgba(126, 249, 212, 0.05); margin-top: 40px; border-radius: 0 10px 10px 0; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="/" class="back-btn">← Înapoi la toate proiectele</a>
-        <div class="card">
-            <h1>Audit: Silk District</h1>
-            <p><strong>Status:</strong> Analiză Finalizată | <strong>Risc:</strong> Ridicat (Contractual)</p>
+        <a href="/" class="back-btn">← Înapoi la Hub-ul de Proiecte</a>
+        <div class="report-card">
+            <h1>Verdict: Silk District</h1>
+            <p><strong>Rating de Risc:</strong> <span class="negativ">RIDICAT (Contractual)</span> | <strong>Tip Proiect:</strong> Mixed-use (Rezidențial & Office)</p>
             
+            <h3>1. Analiza Clauzelor Contractuale (Punct Critic)</h3>
+            <ul>
+                <li><strong>Indexarea unilaterală a prețului:</strong> Contractele permit ajustări de preț bazate pe costul materialelor fără un mecanism transparent de verificare pentru cumpărător.</li>
+                <li><strong>Termene de plată punitive:</strong> Notificări de plată cu scadență extrem de scurtă (24-48h), sub amenințarea penalităților sau rezilierii.</li>
+                <li><strong>Transferul riscurilor:</strong> Majoritatea riscurilor de execuție și întârziere sunt externalizate către promitentul-cumpărător prin clauze de forță majoră extinse.</li>
+            </ul>
+
+            <h3>2. Raport Tehnic și Execuție</h3>
             <table>
-                <tr><th>Categorie</th><th>Problema</th><th>Impact</th></tr>
-                <tr><td>Contract</td><td>Clauze indexare preț fără plafon</td><td class="negativ">Critic</td></tr>
-                <tr><td>Tehnic</td><td>Hidroizolație subsol deficitară</td><td class="negativ">Major</td></tr>
+                <tr><th>Indicator</th><th>Observație de Audit</th><th>Impact</th></tr>
+                <tr><td>Hidroizolație</td><td>Raportări de infiltrații în zonele de parcare subterană la ploi moderate.</td><td class="negativ">MAJOR</td></tr>
+                <tr><td>Izolare Fonică</td><td>Standard peste medie, dar depinde critic de execuția corectă a punților termice.</td><td class="pozitiv">SCAZUT</td></tr>
+                <tr><td>Concept Urban</td><td>Spații verzi și zone pietonale bine integrate în masterplan.</td><td class="pozitiv">OPTIM</td></tr>
             </table>
 
-            <div class="audit-note">
-                <strong>Verdict:</strong> Proiect premium ca locație, dar necesită o verificare juridică extrem de riguroasă a clauzelor de plată și penalități.
+            <h3>3. Puncte Vulnerabile</h3>
+            <p>Dezvoltarea masivă în etape înseamnă că primii locatari vor trăi pe un șantier activ pentru următorii 3-5 ani, cu impact direct asupra prafului, zgomotului și accesului auto.</p>
+
+            <div class="verdict-box">
+                <strong>Verdict ImobVerdict:</strong> Silk District este un proiect cu un concept arhitectural de elită pentru Iași, dar este „împachetat” într-un cadru juridic extrem de riscant pentru cumpărător. <strong>Nu semnați fără un audit juridic extern al promisiunii de vânzare.</strong>
             </div>
         </div>
     </div>
