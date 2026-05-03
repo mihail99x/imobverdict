@@ -7,7 +7,7 @@
     <style>
         body {
             background: linear-gradient(rgba(61, 43, 86, 0.94), rgba(30, 20, 45, 0.98)), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ad?auto=format&fit=crop&w=2000&q=80');
             background-attachment: fixed; background-size: cover;
             color: white; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; line-height: 1.6;
         }
@@ -36,8 +36,19 @@
         .impact-med { color: #ffd93d; font-weight: bold; }
         .impact-low { color: #51cf66; font-weight: bold; }
 
+        .btn-small { 
+            display: inline-block; margin-top: 15px; padding: 10px 20px; 
+            background: #7ef9d4; color: #3d2b56; text-decoration: none; 
+            font-weight: bold; border-radius: 6px; transition: 0.3s;
+        }
+        .btn-small:hover { background: white; transform: scale(1.05); }
+
         .verdict-box { border-left: 5px solid #7ef9d4; padding: 20px; background: rgba(126, 249, 212, 0.05); margin-top: 40px; border-radius: 0 10px 10px 0; }
+        .action-box { background: rgba(126, 249, 212, 0.1); border: 1px dashed #7ef9d4; padding: 25px; border-radius: 12px; margin-top: 30px; text-align: center; }
         .disclaimer-footer { font-size: 0.8rem; opacity: 0.6; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; margin-top: 50px; text-align: justify; }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
     </style>
 </head>
 <body>
@@ -46,45 +57,50 @@
     <a href="/" class="back-btn">← CENTRALIZATOR PROIECTE</a>
 
     <div class="report-header">
-        <h1>Conest Grand Residence <span class="risk-badge">RISC MODERAT/RIDICAT</span></h1>
-        <p style="opacity: 0.8;">Analiză bazată pe sintetizarea percepțiilor publice privind confortul acustic și mediul industrial.</p>
+        <h1>Conest Grand Residence <span class="risk-badge">RISC RIDICAT (Percepții)</span></h1>
+        <p style="opacity: 0.8;">Analiză bazată pe date raportate de locatari privind izolarea fonică și mediul industrial adiacent.</p>
         
         <div class="stats-grid">
             <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Tudor Vladimirescu, Iași</span></div>
-            <div class="stat-item"><span class="stat-label">Puncte Forte</span><span class="stat-value">Locație HUB, Design Modern</span></div>
-            <div class="stat-item"><span class="stat-label">Eșantion Analiză</span><span class="stat-value">50+ Review-uri & Reddit</span></div>
+            <div class="stat-item"><span class="stat-label">Proximitate</span><span class="stat-value">Iulius Mall / CET / Kaufland</span></div>
+            <div class="stat-item"><span class="stat-label">Eșantion Analiză</span><span class="stat-value">50+ Raportări Agregate</span></div>
             <div class="stat-item"><span class="stat-label">Ultima Actualizare</span><span class="stat-value">Mai 2026</span></div>
         </div>
     </div>
 
     <div class="report-body">
-        <h2>1. Matricea de Riscuri Detectate (Percepții)</h2>
+        <h2>1. Matricea de Riscuri Detectate (Sinteză Surse)</h2>
         <table>
-            <tr><th>Punct de Control</th><th>Sinteză Observații (Surse Publice)</th><th>Impact</th></tr>
-            <tr><td><strong>Izolație Fonică</strong></td><td>Raportări frecvente privind "pereți subțiri"; zgomote perceptibile de la vecini și casa scării.</td><td class="impact-high">CRITIC</td></tr>
-            <tr><td><strong>Zgomot Exterior</strong></td><td>Poluare fonică ridicată (CET, Kaufland, trafic greu noaptea) pentru unitățile expuse.</td><td class="impact-high">MAJOR</td></tr>
-            <tr><td><strong>Calitatea Aerului</strong></td><td>Percepții privind praf și mirosuri specifice zonei industriale adiacente.</td><td class="impact-med">MEDIU</td></tr>
-            <tr><td><strong>Administrare</strong></td><td>Costuri de mentenanță peste medie; sesizări privind funcționarea defectuoasă a lifturilor.</td><td class="impact-med">MEDIU</td></tr>
-            <tr><td><strong>Parcare</strong></td><td>Deficit de locuri libere; costuri ridicate pentru achiziția locurilor private.</td><td class="impact-med">MEDIU</td></tr>
-            <tr><td><strong>Estetică / Compartimentare</strong></td><td>Apreciere pozitivă pentru spațiile luminoase și zonele comune întreținute.</td><td class="impact-low">OPTIM</td></tr>
+            <tr><th>Punct de Control</th><th>Observație Audit (Sinteză Percepții)</th><th>Impact</th></tr>
+            <tr><td><strong>Izolație Fonică</strong></td><td>Raportări recurente privind transmisia zgomotului structural și aerian între unități locative ("pereți subțiri").</td><td class="impact-high">CRITIC</td></tr>
+            <tr><td><strong>Zgomot Exterior</strong></td><td>Poluare fonică industrială (CET, ventilatoare comerciale) și trafic greu nocturn.</td><td class="impact-high">MAJOR</td></tr>
+            <tr><td><strong>Administrare</strong></td><td>Costuri ridicate raportate pentru mentenanța complexului și paza privată.</td><td class="impact-med">MEDIU</td></tr>
+            <tr><td><strong>Utilități</strong></td><td>Sesizări privind întreruperi periodice și probleme de mentenanță la sistemul de lifturi.</td><td class="impact-med">MEDIU</td></tr>
+            <tr><td><strong>Parcare</strong></td><td>Dificultăți în găsirea locurilor libere pentru vizitatori; cost ridicat de achiziție.</td><td class="impact-med">MEDIU</td></tr>
+            <tr><td><strong>Aspect Urban</strong></td><td>Complex modern, bine întreținut estetic, cu holuri spațioase.</td><td class="impact-low">OPTIM</td></tr>
         </table>
 
-        <h2>2. Analiza Mediului de Locuire</h2>
-        <p>Conest Grand Residence oferă un avantaj competitiv prin proximitatea față de Iulius Mall și zona universitară Tudor Vladimirescu, însă experiența rezidențială raportată este una mixtă.</p>
+        <h2>2. Observații Specifice Locuitorilor</h2>
         <ul>
-            <li><strong>Confort Acustic:</strong> Cea mai recurentă nemulțumire vizează zgomotele de tip structural și aerian între apartamente.</li>
-            <li><strong>Factori Externi:</strong> Orientarea apartamentului este critică; unitățile spre interior par a fi protejate, în timp ce cele spre arterele comerciale resimt activitatea TIR-urilor și a ventilatoarelor industriale.</li>
-            <li><strong>Costuri Administrative:</strong> Raportările indică sume de tip "taxă complex" care pot influența randamentul unei investiții în scop de închiriere.</li>
+            <li><strong>Factorul Acustic:</strong> Utilizatorii raportează percepția zgomotelor de la vecini (prize, băi, casa scării), sugerând o necesitate de izolare suplimentară post-vânzare.</li>
+            <li><strong>Amplasament Industrial:</strong> Unitățile orientate spre zonele comerciale/industriale resimt activitatea logistică (TIR-uri) și emisiile sonore ale sistemelor de ventilație mari.</li>
+            <li><strong>Costuri Orizontale:</strong> Cheltuielile comune de administrare sunt menționate ca fiind peste media orașului, influențând costul total de locuire.</li>
         </ul>
 
         <div class="verdict-box">
-            <strong>Verdict ImobVerdict:</strong> Recomandat pentru chirie (studenți/tineri profesioniști) datorită locației, dar necesită precauție maximă pentru achiziție pe termen lung. 
+            <strong>Verdict ImobVerdict:</strong> Conest Grand Residence este un hub strategic din punct de vedere al locației (ideal pentru chirie Tudor/Iulius), dar prezintă vulnerabilități de confort pentru locuirea pe termen lung (zgomot, mediu industrial).
             <br><br>
-            <em>Recomandare practică:</em> Vizitați apartamentul după ora 20:00 pentru a evalua zgomotul industrial și cereți un desfășurător al cheltuielilor de întreținere pe ultimele 3 luni.
+            <em>Recomandare:</em> Solicitați un desfășurător de întreținere pentru iarna trecută și programați vizionarea în intervale orare diferite pentru a evalua zgomotul de fond.
+        </div>
+
+        <div class="action-box">
+            <p><strong>Ești reprezentant Conest Grand Residence?</strong></p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Dacă dețineți rapoarte de expertiză acustică, procese verbale de recepție a utilităților sau documente tehnice care rectifică percepțiile sintetizate mai sus, solicită o revizuire a raportului pe baza dovezilor oficiale.</p>
+            <a href="mailto:contact@imobverdict.com" class="btn-small">SOLICITĂ ACTUALIZARE DATE</a>
         </div>
 
         <div class="disclaimer-footer">
-            <strong>DISCLAIMER LEGAL:</strong> Acest raport reprezintă o sinteză automatizată a opiniilor și percepțiilor exprimate în spațiul public (Google Maps, Reddit, Forumuri imobiliare). ImobVerdict nu a realizat măsurători acustice profesionale sau audituri juridice asupra Conest Grand Residence. Informațiile sunt furnizate în scop informativ. Recomandăm verificarea prealabilă a actelor și a istoricului de inundații/defecțiuni tehnice direct cu asociația de proprietari.
+            <strong>DISCLAIMER LEGAL:</strong> Informațiile prezentate sunt sintetizate automat din percepții publice (Google, Reddit, Forumuri) și raportări anonime. ImobVerdict nu a realizat măsurători tehnice independente. Datele reflectă experiența utilizatorilor la data publicării. Recomandăm consultarea unui specialist tehnic înainte de achiziție.
         </div>
     </div>
 </div>
