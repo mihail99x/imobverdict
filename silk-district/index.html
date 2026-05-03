@@ -3,60 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analiză Silk District | ImobVerdict Iași</title>
+    <title>Raport Audit: Silk District | ImobVerdict</title>
     <style>
-        /* Păstrăm designul tău Glassmorphism */
         body {
-            background: linear-gradient(rgba(61, 43, 86, 0.92), rgba(30, 20, 45, 0.98)), 
+            background: linear-gradient(rgba(61, 43, 86, 0.94), rgba(30, 20, 45, 0.98)), 
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');
             background-attachment: fixed; background-size: cover;
-            color: white; font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6;
+            color: white; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; line-height: 1.6;
         }
-        .container { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .back-btn { color: #7ef9d4; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 20px; border: 1px solid #7ef9d4; padding: 8px 15px; border-radius: 5px; }
-        .card { background: rgba(255, 255, 255, 0.07); padding: 30px; border-radius: 20px; backdrop-filter: blur(15px); border: 1px solid rgba(126, 249, 212, 0.2); margin-bottom: 25px; }
-        h1, h2, h3 { color: #7ef9d4; margin-top: 0; }
-        .risk-tag { background: #ff6b6b; color: white; padding: 5px 12px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; }
-        .disclaimer-box { font-size: 0.85rem; color: #ccc; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; margin: 20px 0; border-left: 3px solid #7ef9d4; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-        .btn-action { display: inline-block; background: #7ef9d4; color: #3d2b56; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        .container { padding: 40px 20px; max-width: 950px; margin: auto; }
+        .back-btn { color: #7ef9d4; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 25px; border: 1px solid #7ef9d4; padding: 10px 20px; border-radius: 8px; transition: 0.3s; }
+        .back-btn:hover { background: #7ef9d4; color: #3d2b56; }
+        
+        .report-header { background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 20px 20px 0 0; border: 1px solid rgba(126, 249, 212, 0.2); border-bottom: none; backdrop-filter: blur(15px); }
+        .report-body { background: rgba(255, 255, 255, 0.03); padding: 40px; border-radius: 0 0 20px 20px; border: 1px solid rgba(126, 249, 212, 0.2); backdrop-filter: blur(15px); margin-bottom: 40px; }
+        
+        h1 { font-size: 2.8rem; color: #7ef9d4; margin: 0; letter-spacing: -1px; }
+        h2 { color: #7ef9d4; border-left: 4px solid #7ef9d4; padding-left: 15px; margin-top: 40px; font-size: 1.5rem; }
+        h3 { color: #ccc; font-size: 1.1rem; margin-top: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .risk-badge { background: #ff6b6b; color: white; padding: 6px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; vertical-align: middle; }
+        
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .stat-item { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
+        .stat-label { font-size: 0.75rem; opacity: 0.6; text-transform: uppercase; }
+        .stat-value { font-size: 1.1rem; font-weight: bold; color: #7ef9d4; display: block; }
+
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: rgba(0,0,0,0.4); border-radius: 10px; overflow: hidden; }
+        th, td { padding: 18px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: left; }
+        th { background: rgba(126, 249, 212, 0.1); color: #7ef9d4; font-size: 0.85rem; }
+        
+        .impact-high { color: #ff6b6b; font-weight: bold; }
+        .impact-med { color: #ffd93d; font-weight: bold; }
+        .impact-low { color: #51cf66; font-weight: bold; }
+
+        .timeline { border-left: 2px solid rgba(126, 249, 212, 0.3); padding-left: 25px; margin-left: 10px; }
+        .timeline-event { margin-bottom: 25px; position: relative; }
+        .timeline-event::before { content: ''; position: absolute; left: -31px; top: 5px; width: 10px; height: 10px; background: #7ef9d4; border-radius: 50%; box-shadow: 0 0 10px #7ef9d4; }
+        .event-date { font-weight: bold; color: #7ef9d4; font-size: 0.9rem; }
+        .event-desc { font-size: 0.95rem; opacity: 0.8; }
+
+        .disclaimer-footer { font-size: 0.8rem; opacity: 0.6; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; margin-top: 50px; text-align: justify; }
+        .action-box { background: rgba(126, 249, 212, 0.1); border: 1px dashed #7ef9d4; padding: 25px; border-radius: 12px; margin-top: 30px; text-align: center; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-btn">← Înapoi la Hub</a>
 
-        <div class="card">
-            <h1>Silk District</h1>
-            <p><strong>Rating de risc (bazat pe percepții publice):</strong> <span class="risk-tag">RIDICAT</span></p>
-            <div class="disclaimer-box">
-                <strong>Metodologie:</strong> Analiza sintetizează automat teme recurente din peste 40 de review-uri publice și forumuri (2023-2026). Platforma nu verifică independent fiecare afirmație individuală, ci reflectă experiența utilizatorilor așa cum este raportată de aceștia.
+<div class="container">
+    <a href="/" class="back-btn">← CENTRALIZATOR PROIECTE</a>
+
+    <div class="report-header">
+        <h1>Silk District <span class="risk-badge">RISC RIDICAT (Sintetizat)</span></h1>
+        <p style="opacity: 0.8;">Analiză de profil bazată pe percepții publice, date raportate și istoric administrativ.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Bvd. Primăverii / Calea Chișinăului</span></div>
+            <div class="stat-item"><span class="stat-label">Regim Înălțime</span><span class="stat-value">2S + P + 11E</span></div>
+            <div class="stat-item"><span class="stat-label">Eșantion Analiză</span><span class="stat-value">40+ Raportări Utilizatori</span></div>
+            <div class="stat-item"><span class="stat-label">Ultima Actualizare</span><span class="stat-value">Mai 2026</span></div>
+        </div>
+    </div>
+
+    <div class="report-body">
+        <h2>1. Matricea de Riscuri Detectate (Percepții)</h2>
+        <table>
+            <tr><th>Punct de Control</th><th>Sinteză Observații (Surse Publice)</th><th>Impact</th></tr>
+            <tr><td><strong>Infrastructură Subterană</strong></td><td>Semnalări privind managementul deficitar al apelor freatice în cotele -1 și -2 (infiltrații).</td><td class="impact-high">MAJOR</td></tr>
+            <tr><td><strong>Clauze Indexare</strong></td><td>Prezența unor mecanisme de ajustare a prețului în funcție de costuri, fără plafon fix raportat.</td><td class="impact-high">CRITIC</td></tr>
+            <tr><td><strong>Execuție Fonică</strong></td><td>Utilizarea pereților din gips-carton multistrat; raportări privind punți fonice la prize.</td><td class="impact-med">MEDIU</td></tr>
+            <tr><td><strong>Acces și Logistică</strong></td><td>Timp crescut de acces spre arterele principale în orele de vârf.</td><td class="impact-med">MEDIU</td></tr>
+            <tr><td><strong>Echipamente Termice</strong></td><td>Sistem de încălzire centralizat pe fază (nu individual); costuri mentenanță în discuție.</td><td class="impact-low">SCAZUT</td></tr>
+        </table>
+
+        <h2>2. Jurnal de Evenimente & Comunitate</h2>
+        <div class="timeline">
+            <div class="timeline-event">
+                <div class="event-date">Martie 2026</div>
+                <div class="event-desc">Discuții recurente în forumuri privind discrepanțele între termenele de livrare estimate și stadiul finisajelor interioare.</div>
+            </div>
+            <div class="timeline-event">
+                <div class="event-date">Octombrie 2025</div>
+                <div class="event-desc">Raportări privind necesitatea unor intervenții suplimentare la sistemul de hidroizolație al parcărilor subterane.</div>
+            </div>
+            <div class="timeline-event">
+                <div class="event-date">Iunie 2024</div>
+                <div class="event-desc">Analiză pe grupuri de proprietari privind clauzele de indexare a prețului în contextul scumpirii materialelor de construcții.</div>
             </div>
         </div>
 
-        <div class="card">
-            <h2>Analiza Infrastructurii (Percepții)</h2>
-            <h3>Gestionarea Apelor</h3>
-            <ul>
-                <li>Mai mulți utilizatori menționează semnalări privind infiltrații în zonele subterane.</li>
-                <li>Alte opinii indică o execuție modernă, dar cu necesitate de monitorizare la recepție.</li>
-            </ul>
+        <h2>3. Concluzii & Recomandări Audit</h2>
+        <p>Pe baza sintezei realizate, Silk District reprezintă o investiție cu un concept arhitectural peste media pieței din Iași, dar cu un cadru administrativ care necesită monitorizare atentă.</p>
+        
+        <div class="action-box">
+            <p><strong>Ești dezvoltatorul proiectului?</strong></p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Dacă deții procese verbale de recepție, certificate OCPI sau rapoarte tehnice care rectifică informațiile sintetizate de utilizatori, solicită o revizuire bazată pe dovezi.</p>
+            <a href="mailto:contact@imobverdict.com" class="btn-small">SOLICITĂ REVIZUIRE DATE</a>
         </div>
 
-        <div class="card">
-            <h2>Status Juridic (Percepții)</h2>
-            <ul>
-                <li>Analiza clauzelor raportate de utilizatori sugerează mecanisme de indexare a prețului.</li>
-                <li>Experiențele descrise indică termene de plată care necesită planificare financiară riguroasă.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>Solicită Revizuire</h2>
-            <p>Dacă ești dezvoltatorul proiectului și consideri că informațiile sintetizate nu reflectă situația actuală, ne poți contacta pentru actualizare bazată pe dovezi rectificative.</p>
-            <a href="mailto:contact@imobverdict.com" class="btn-action">Trimite Solicitare</a>
+        <div class="disclaimer-footer">
+            <strong>DISCLAIMER LEGAL:</strong> Informațiile prezentate în acest raport sunt sintetizate automat din percepții exprimate în surse publice (Google, Reddit, Forumuri) și raportări anonime ale utilizatorilor. Platforma ImobVerdict nu a efectuat o expertiză tehnică sau juridică independentă. Datele sunt prezentate "ca atare" și reflectă percepția comunității la data publicării. Utilizatorul este singurul responsabil pentru deciziile luate pe baza acestor informații. Recomandăm consultarea unui specialist tehnic și a unui avocat înainte de orice tranzacție.
         </div>
     </div>
+</div>
+
 </body>
 </html>
