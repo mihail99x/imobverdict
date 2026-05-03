@@ -29,4 +29,81 @@
         .stat-value { font-size: 1.1rem; font-weight: bold; color: #7ef9d4; display: block; }
 
         table { width: 100%; border-collapse: collapse; margin: 25px 0; background: rgba(0,0,0,0.4); border-radius: 10px; overflow: hidden; }
-        th, td { padding: 18px; border-bottom: 1px solid rgba(255,255,255,0.05); text
+        th, td { padding: 18px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: left; }
+        th { background: rgba(126, 249, 212, 0.1); color: #7ef9d4; font-size: 0.85rem; }
+        
+        .impact-high { color: #ff6b6b; font-weight: bold; }
+        .impact-med { color: #ffd93d; font-weight: bold; }
+        .impact-low { color: #51cf66; font-weight: bold; }
+
+        .timeline { border-left: 2px solid rgba(126, 249, 212, 0.3); padding-left: 25px; margin-left: 10px; }
+        .timeline-event { margin-bottom: 25px; position: relative; }
+        .timeline-event::before { content: ''; position: absolute; left: -31px; top: 5px; width: 10px; height: 10px; background: #7ef9d4; border-radius: 50%; box-shadow: 0 0 10px #7ef9d4; }
+        .event-date { font-weight: bold; color: #7ef9d4; font-size: 0.9rem; }
+        .event-desc { font-size: 0.95rem; opacity: 0.8; }
+
+        .disclaimer-footer { font-size: 0.8rem; opacity: 0.6; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; margin-top: 50px; text-align: justify; }
+        .action-box { background: rgba(126, 249, 212, 0.1); border: 1px dashed #7ef9d4; padding: 25px; border-radius: 12px; margin-top: 30px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="/" class="back-btn">← CENTRALIZATOR PROIECTE</a>
+
+    <div class="report-header">
+        <h1>Evergreen Towers <span class="risk-badge">RISC RIDICAT (Sintetizat)</span></h1>
+        <p style="opacity: 0.8;">Analiză de profil axată pe fiabilitatea utilităților și statusul administrativ raportat de utilizatori.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Zona Tătărași Nord, Iași</span></div>
+            <div class="stat-item"><span class="stat-label">Status Proiect</span><span class="stat-value">Finalizat / Locuit</span></div>
+            <div class="stat-item"><span class="stat-label">Eșantion Analiză</span><span class="stat-value">35+ Raportări Utilizatori</span></div>
+            <div class="stat-item"><span class="stat-label">Ultima Actualizare</span><span class="stat-value">Mai 2026</span></div>
+        </div>
+    </div>
+
+    <div class="report-body">
+        <h2>1. Matricea de Riscuri Detectate (Percepții)</h2>
+        <table>
+            <tr><th>Punct de Control</th><th>Sinteză Observații (Surse Publice)</th><th>Impact</th></tr>
+            <tr><td><strong>Sistem Utilități</strong></td><td>Raportări privind discontinuități în furnizarea gazului natural și apei reci în perioadele de vârf.</td><td class="impact-high">MAJOR</td></tr>
+            <tr><td><strong>Status Tabulare</strong></td><td>Cazuri raportate de utilizatori privind întârzieri de peste 12 luni în eliberarea documentației de cadastru.</td><td class="impact-high">CRITIC</td></tr>
+            <tr><td><strong>Infrastructură Termică</strong></td><td>Variații de temperatură semnalate la etajele superioare în sezoanele reci.</td><td class="impact-med">MEDIU</td></tr>
+            <tr><td><strong>Mentenanță/Garanție</strong></td><td>Percepții privind un proces administrativ lent în remedierea viciilor raportate post-recepție.</td><td class="impact-med">MEDIU</td></tr>
+            <tr><td><strong>Design și Estetică</strong></td><td>Apreciere ridicată pentru designul fațadelor și compartimentarea interioară.</td><td class="impact-low">SCAZUT</td></tr>
+        </table>
+
+        <h2>2. Jurnal de Evenimente & Comunitate</h2>
+        <div class="timeline">
+            <div class="timeline-event">
+                <div class="event-date">Februarie 2026</div>
+                <div class="event-desc">Sinteza unor discuții online privind stabilitatea presiunii apei la etajele 8-12 în intervalele orare 07:00 - 09:00.</div>
+            </div>
+            <div class="timeline-event">
+                <div class="event-date">Septembrie 2025</div>
+                <div class="event-desc">Analiză bazată pe review-uri Google indicând nemulțumiri legate de termenele de intabulare pentru noile faze livrate.</div>
+            </div>
+            <div class="timeline-event">
+                <div class="event-date">Ianuarie 2025</div>
+                <div class="event-desc">Raportări colectate privind eficiența sistemului de încălzire în condiții de temperaturi exterioare extreme.</div>
+            </div>
+        </div>
+
+        <h2>3. Concluzii & Recomandări Audit</h2>
+        <p>Proiectul Evergreen Towers prezintă un avantaj vizual și de locație clar, însă experiența utilizatorilor indică o presiune crescută pe infrastructura de bază (gaz, apă, documentație).</p>
+        
+        <div class="action-box">
+            <p><strong>Ești reprezentant Evergreen Towers?</strong></p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Dacă situația utilităților a fost stabilizată prin investiții recente sau dacă statusul intabulării a fost actualizat, trimite-ne dovezile oficiale pentru rectificarea raportului.</p>
+            <a href="mailto:contact@imobverdict.com" class="btn-small">SOLICITĂ ACTUALIZARE DATE</a>
+        </div>
+
+        <div class="disclaimer-footer">
+            <strong>DISCLAIMER LEGAL:</strong> Informațiile prezentate în acest raport sunt sintetizate automat din percepții exprimate în surse publice și raportări anonime. Platforma ImobVerdict nu a efectuat o expertiză tehnică, verificări de presiune sau audituri juridice independente la fața locului. Datele reflectă "percepția de grup" la data publicării. Utilizatorul este sfătuit să verifice informațiile direct la furnizorii de utilități și la asociația de proprietari înainte de semnarea oricărui act de vânzare-cumpărare.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
