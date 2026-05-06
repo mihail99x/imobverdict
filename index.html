@@ -632,172 +632,157 @@
         <span class="footer-disclaimer">Datele prezentate sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică.</span>
     </footer>
 
-    <script>
-        const REFRESH_INTERVAL_MS = 30 * 60 * 1000;
-
-        function formatRoDate(dateLike) {
-            const date = new Date(dateLike);
-            if (Number.isNaN(date.getTime())) return '—';
-            return date.toLocaleDateString('ro-RO', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric'
-            });
+ <script>
+    const REFRESH_INTERVAL_MS = 30 * 60 * 1000;
+    const CACHE_KEY = 'imobverdict_currency_cache_v1';
+    const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 ore
+    function formatRoDate(dateLike) {
+        const date = new Date(dateLike);
+        if (Number.isNaN(date.getTime())) return '—';
+        return date.toLocaleDateString('ro-RO', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+    }
+    async function fetchWithTimeout(url, timeoutMs = 6000) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+        try {
+            return await fetch(url, { signal: controller.signal, cache: 'no-store' });
+        } finally {
+            clearTimeout(timeoutId);
         }
-
-        async function fetchWithTimeout(url, timeoutMs = 8000) {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-            try {
-                const response = await fetch(url, {
-                    signal: controller.signal,
-                    cache: 'no-store'
-                });
-                return response;
-            } finally {
-                clearTimeout(timeoutId);
-            }
-        }
-
-        function parseBnrXml(xmlText) {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-
-            const parserError = xmlDoc.querySelector('parsererror');
-            if (parserError) throw new Error('XML BNR invalid');
-
-            const cubeDateNode = xmlDoc.querySelector('Cube[date]');
-            const dateAttr = cubeDateNode?.getAttribute('date');
-
-            const rates = {};
-            xmlDoc.querySelectorAll('Rate').forEach(rateNode => {
-                const code = rateNode.getAttribute('currency');
-                const multiplier = Number(rateNode.getAttribute('multiplier') || '1');
-                const value = Number((rateNode.textContent || '').replace(',', '.'));
-
-                if (!code || !value || Number.isNaN(value) || !multiplier || Number.isNaN(multiplier)) return;
-                rates[code] = value / multiplier;
-            });
-
-            // BNR nu include EUR în XML; îl setăm explicit la 1 (bază EUR)
-            rates.EUR = 1;
-
-            if (!rates.RON || !rates.USD || !rates.GBP || !rates.CHF) {
-                throw new Error('Rate lipsă în feed BNR');
-            }
-
-            return {
-                source: 'BNR (xml)',
-                updatedAt: dateAttr ? new Date(dateAttr + 'T00:00:00') : Date.now(),
-                rates
-            };
-        }
-
-        async function getRatesFromBnr() {
-            // BNR XML nu are CORS permis direct; folosim proxy read-only
-            const bnrXmlUrl = 'https://www.bnr.ro/nbrfxrates.xml';
-            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(bnrXmlUrl)}`;
-
-            const res = await fetchWithTimeout(proxyUrl, 9000);
-            if (!res.ok) throw new Error(`BNR fetch failed (${res.status})`);
-            const xmlText = await res.text();
-            return parseBnrXml(xmlText);
-        }
-
-        async function getRatesFromErApi() {
-            const res = await fetchWithTimeout('https://open.er-api.com/v6/latest/EUR', 8000);
-            if (!res.ok) throw new Error(`ER API network error (${res.status})`);
-
-            const data = await res.json();
-            const rates = data?.rates || {};
-
-            if (!rates.RON || !rates.USD || !rates.GBP || !rates.CHF) {
-                throw new Error('ER API missing rates');
-            }
-
-            const updatedAt = data?.time_last_update_utc
+    }
+    function parseBnrXml(xmlText) {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+        if (xmlDoc.querySelector('parsererror')) throw new Error('XML BNR invalid');
+        const cubeDateNode = xmlDoc.querySelector('Cube[date]');
+        const dateAttr = cubeDateNode?.getAttribute('date');
+        const rates = {};
+        xmlDoc.querySelectorAll('Rate').forEach(node => {
+            const code = node.getAttribute('currency');
+            const multiplier = Number(node.getAttribute('multiplier') || '1');
+            const value = Number((node.textContent || '').replace(',', '.'));
+            if (!code || !value || Number.isNaN(value) || !multiplier || Number.isNaN(multiplier)) return;
+            rates[code] = value / multiplier;
+        });
+        rates.EUR = 1;
+        if (!rates.RON || !rates.USD || !rates.GBP || !rates.CHF) throw new Error('Rate BNR lipsă');
+        return {
+            source: 'BNR (xml)',
+            updatedAt: dateAttr ? new Date(dateAttr + 'T00:00:00') : Date.now(),
+            rates
+        };
+    }
+    async function getRatesFromBnr() {
+        const bnrXmlUrl = 'https://www.bnr.ro/nbrfxrates.xml';
+        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(bnrXmlUrl)}`;
+        const res = await fetchWithTimeout(proxyUrl, 7000);
+        if (!res.ok) throw new Error(`BNR ${res.status}`);
+        return parseBnrXml(await res.text());
+    }
+    async function getRatesFromErApi() {
+        const res = await fetchWithTimeout('https://open.er-api.com/v6/latest/EUR', 5000);
+        if (!res.ok) throw new Error(`ER API ${res.status}`);
+        const data = await res.json();
+        const rates = data?.rates || {};
+        if (!rates.RON || !rates.USD || !rates.GBP || !rates.CHF) throw new Error('ER API missing rates');
+        return {
+            source: 'open.er-api.com',
+            updatedAt: data?.time_last_update_utc
                 ? new Date(data.time_last_update_utc)
-                : (data?.time_last_update_unix ? new Date(data.time_last_update_unix * 1000) : Date.now());
-
-            return {
-                source: 'open.er-api.com',
-                updatedAt,
-                rates
-            };
+                : (data?.time_last_update_unix ? new Date(data.time_last_update_unix * 1000) : Date.now()),
+            rates
+        };
+    }
+    function renderCurrency(payload) {
+        const row = document.getElementById('valute-row');
+        const dateEl = document.getElementById('curs-data');
+        const navEl = document.getElementById('euro-nav');
+        const sourceEl = document.getElementById('currency-source');
+        const { rates, updatedAt, source } = payload;
+        const ron = rates.RON;
+        dateEl.textContent = formatRoDate(updatedAt);
+        navEl.textContent = ron.toFixed(4);
+        sourceEl.textContent = `Sursă: ${source}`;
+        const currencies = [
+            { code: 'EUR', ronValue: rates.EUR * ron },
+            { code: 'USD', ronValue: (1 / rates.USD) * ron },
+            { code: 'GBP', ronValue: (1 / rates.GBP) * ron },
+            { code: 'CHF', ronValue: (1 / rates.CHF) * ron }
+        ];
+        row.innerHTML = currencies.map(c => `
+            <div class="currency-item">
+                <span class="c-code">${c.code}</span>
+                <span class="c-val">${c.ronValue.toFixed(4)}<span class="c-unit">RON</span></span>
+            </div>
+        `).join('');
+    }
+    function renderLoading() {
+        const row = document.getElementById('valute-row');
+        row.innerHTML = '<span style="font-size:0.82rem; color:var(--text-muted); font-style:italic;">Se actualizează...</span>';
+    }
+    function renderError() {
+        const row = document.getElementById('valute-row');
+        const dateEl = document.getElementById('curs-data');
+        const navEl = document.getElementById('euro-nav');
+        const sourceEl = document.getElementById('currency-source');
+        row.innerHTML = '<span class="currency-error">Date indisponibile momentan</span>';
+        navEl.textContent = 'N/A';
+        dateEl.textContent = '—';
+        sourceEl.textContent = 'Sursă: indisponibil';
+    }
+    function saveCache(payload) {
+        try {
+            localStorage.setItem(CACHE_KEY, JSON.stringify({
+                savedAt: Date.now(),
+                payload
+            }));
+        } catch (_) {}
+    }
+    function loadCache() {
+        try {
+            const raw = localStorage.getItem(CACHE_KEY);
+            if (!raw) return null;
+            const parsed = JSON.parse(raw);
+            if (!parsed?.payload || !parsed?.savedAt) return null;
+            if (Date.now() - parsed.savedAt > CACHE_TTL_MS) return null;
+            return parsed.payload;
+        } catch (_) {
+            return null;
         }
-
-        function renderCurrency(payload) {
-            const row = document.getElementById('valute-row');
-            const dateEl = document.getElementById('curs-data');
-            const navEl = document.getElementById('euro-nav');
-            const sourceEl = document.getElementById('currency-source');
-
-            const { rates, updatedAt, source } = payload;
-            const ron = rates.RON;
-
-            dateEl.textContent = formatRoDate(updatedAt);
-            navEl.textContent = ron.toFixed(4);
-            sourceEl.textContent = `Sursă: ${source}`;
-
-            const currencies = [
-                { code: 'EUR', ronValue: rates.EUR * ron },
-                { code: 'USD', ronValue: (1 / rates.USD) * ron },
-                { code: 'GBP', ronValue: (1 / rates.GBP) * ron },
-                { code: 'CHF', ronValue: (1 / rates.CHF) * ron }
-            ];
-
-            row.innerHTML = currencies.map(c => `
-                <div class="currency-item">
-                    <span class="c-code">${c.code}</span>
-                    <span class="c-val">${c.ronValue.toFixed(4)}<span class="c-unit">RON</span></span>
-                </div>
-            `).join('');
-        }
-
-        function renderLoading() {
-            const row = document.getElementById('valute-row');
-            row.innerHTML = '<span style="font-size:0.82rem; color:var(--text-muted); font-style:italic;">Se actualizează...</span>';
-        }
-
-        function renderError(message = 'Date indisponibile momentan') {
-            const row = document.getElementById('valute-row');
-            const dateEl = document.getElementById('curs-data');
-            const navEl = document.getElementById('euro-nav');
-            const sourceEl = document.getElementById('currency-source');
-
-            row.innerHTML = `<span class="currency-error">${message}</span>`;
-            navEl.textContent = 'N/A';
-            dateEl.textContent = '—';
-            sourceEl.textContent = 'Sursă: indisponibil';
-        }
-
-        async function fetchCurrency() {
-            renderLoading();
-
-            const providers = [
-                getRatesFromBnr,
-                getRatesFromErApi
-            ];
-
-            let lastError = null;
-
-            for (const provider of providers) {
-                try {
-                    const payload = await provider();
-                    renderCurrency(payload);
-                    return;
-                } catch (error) {
-                    lastError = error;
-                }
+    }
+    async function fetchFreshRates() {
+        const providers = [getRatesFromErApi, getRatesFromBnr]; // ER API mai rapid de obicei
+        let lastError = null;
+        for (const provider of providers) {
+            try {
+                const payload = await provider();
+                renderCurrency(payload);
+                saveCache(payload);
+                return;
+            } catch (err) {
+                lastError = err;
             }
-
-            console.warn('Currency fetch failed:', lastError?.message || lastError);
-            renderError('Date indisponibile momentan');
         }
-
-        fetchCurrency();
-        setInterval(fetchCurrency, REFRESH_INTERVAL_MS);
-    </script>
+        console.warn('Currency fetch failed:', lastError?.message || lastError);
+        // dacă aveam deja cache randat, nu suprascriem cu eroare
+        if (!loadCache()) renderError();
+    }
+    // 1) randare instant din cache
+    const cached = loadCache();
+    if (cached) {
+        renderCurrency(cached);
+    } else {
+        renderLoading();
+    }
+    // 2) revalidare în background
+    fetchFreshRates();
+    // 3) refresh periodic
+    setInterval(fetchFreshRates, REFRESH_INTERVAL_MS);
+</script>
 
 </body>
 </html>
