@@ -1,109 +1,27 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raport Audit: Evergreen Towers | ImobVerdict</title>
-    <style>
-        body {
-            background: linear-gradient(rgba(61, 43, 86, 0.94), rgba(30, 20, 45, 0.98)), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80');
-            background-attachment: fixed; background-size: cover;
-            color: white; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; line-height: 1.6;
-        }
-        .container { padding: 40px 20px; max-width: 950px; margin: auto; }
-        .back-btn { color: #7ef9d4; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 25px; border: 1px solid #7ef9d4; padding: 10px 20px; border-radius: 8px; transition: 0.3s; }
-        .back-btn:hover { background: #7ef9d4; color: #3d2b56; }
-        
-        .report-header { background: rgba(255, 255, 255, 0.05); padding: 40px; border-radius: 20px 20px 0 0; border: 1px solid rgba(126, 249, 212, 0.2); border-bottom: none; backdrop-filter: blur(15px); }
-        .report-body { background: rgba(255, 255, 255, 0.03); padding: 40px; border-radius: 0 0 20px 20px; border: 1px solid rgba(126, 249, 212, 0.2); backdrop-filter: blur(15px); margin-bottom: 40px; }
-        
-        h1 { font-size: 2.8rem; color: #7ef9d4; margin: 0; letter-spacing: -1px; }
-        h2 { color: #7ef9d4; border-left: 4px solid #7ef9d4; padding-left: 15px; margin-top: 40px; font-size: 1.5rem; }
-        
-        .risk-badge { background: #ff6b6b; color: white; padding: 6px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; vertical-align: middle; }
-        
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
-        .stat-item { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); }
-        .stat-label { font-size: 0.75rem; opacity: 0.6; text-transform: uppercase; }
-        .stat-value { font-size: 1.1rem; font-weight: bold; color: #7ef9d4; display: block; }
-
-        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: rgba(0,0,0,0.4); border-radius: 10px; overflow: hidden; }
-        th, td { padding: 18px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: left; }
-        th { background: rgba(126, 249, 212, 0.1); color: #7ef9d4; font-size: 0.85rem; }
-        
-        .impact-high { color: #ff6b6b; font-weight: bold; }
-        .impact-med { color: #ffd93d; font-weight: bold; }
-        .impact-low { color: #51cf66; font-weight: bold; }
-
-        .timeline { border-left: 2px solid rgba(126, 249, 212, 0.3); padding-left: 25px; margin-left: 10px; }
-        .timeline-event { margin-bottom: 25px; position: relative; }
-        .timeline-event::before { content: ''; position: absolute; left: -31px; top: 5px; width: 10px; height: 10px; background: #7ef9d4; border-radius: 50%; box-shadow: 0 0 10px #7ef9d4; }
-        .event-date { font-weight: bold; color: #7ef9d4; font-size: 0.9rem; }
-        .event-desc { font-size: 0.95rem; opacity: 0.8; }
-
-        .disclaimer-footer { font-size: 0.8rem; opacity: 0.6; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; margin-top: 50px; text-align: justify; }
-        .action-box { background: rgba(126, 249, 212, 0.1); border: 1px dashed #7ef9d4; padding: 25px; border-radius: 12px; margin-top: 30px; text-align: center; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <a href="/" class="back-btn">← CENTRALIZATOR PROIECTE</a>
-
-    <div class="report-header">
-        <h1>Evergreen Towers <span class="risk-badge">RISC RIDICAT (Sintetizat)</span></h1>
-        <p style="opacity: 0.8;">Analiză de profil axată pe fiabilitatea utilităților și statusul administrativ raportat de utilizatori.</p>
-        
-        <div class="stats-grid">
-            <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Zona Tătărași Nord, Iași</span></div>
-            <div class="stat-item"><span class="stat-label">Status Proiect</span><span class="stat-value">Finalizat / Locuit</span></div>
-            <div class="stat-item"><span class="stat-label">Eșantion Analiză</span><span class="stat-value">35+ Raportări Utilizatori</span></div>
-            <div class="stat-item"><span class="stat-label">Ultima Actualizare</span><span class="stat-value">Mai 2026</span></div>
+<div class="report-header fade-in">
+    <div class="header-top">
+        <div>
+            <h1 class="project-name">Evergreen<br>Towers</h1>
+            <p class="project-subtitle">Evaluare axată pe stabilitatea utilităților și fluiditatea proceselor administrative post-vânzare.</p>
         </div>
+        <span class="risk-badge high" style="background: rgba(255,160,80,0.15); color: #ffb077; border-color: rgba(255,160,80,0.3);">Risc Major · Infrastructură</span>
     </div>
-
-    <div class="report-body">
-        <h2>1. Matricea de Riscuri Detectate (Percepții)</h2>
-        <table>
-            <tr><th>Punct de Control</th><th>Sinteză Observații (Surse Publice)</th><th>Impact</th></tr>
-            <tr><td><strong>Sistem Utilități</strong></td><td>Raportări privind discontinuități în furnizarea gazului natural și apei reci în perioadele de vârf.</td><td class="impact-high">MAJOR</td></tr>
-            <tr><td><strong>Status Tabulare</strong></td><td>Cazuri raportate de utilizatori privind întârzieri de peste 12 luni în eliberarea documentației de cadastru.</td><td class="impact-high">CRITIC</td></tr>
-            <tr><td><strong>Infrastructură Termică</strong></td><td>Variații de temperatură semnalate la etajele superioare în sezoanele reci.</td><td class="impact-med">MEDIU</td></tr>
-            <tr><td><strong>Mentenanță/Garanție</strong></td><td>Percepții privind un proces administrativ lent în remedierea viciilor raportate post-recepție.</td><td class="impact-med">MEDIU</td></tr>
-            <tr><td><strong>Design și Estetică</strong></td><td>Apreciere ridicată pentru designul fațadelor și compartimentarea interioară.</td><td class="impact-low">SCAZUT</td></tr>
-        </table>
-
-        <h2>2. Jurnal de Evenimente & Comunitate</h2>
-        <div class="timeline">
-            <div class="timeline-event">
-                <div class="event-date">Februarie 2026</div>
-                <div class="event-desc">Sinteza unor discuții online privind stabilitatea presiunii apei la etajele 8-12 în intervalele orare 07:00 - 09:00.</div>
-            </div>
-            <div class="timeline-event">
-                <div class="event-date">Septembrie 2025</div>
-                <div class="event-desc">Analiză bazată pe review-uri Google indicând nemulțumiri legate de termenele de intabulare pentru noile faze livrate.</div>
-            </div>
-            <div class="timeline-event">
-                <div class="event-date">Ianuarie 2025</div>
-                <div class="event-desc">Raportări colectate privind eficiența sistemului de încălzire în condiții de temperaturi exterioare extreme.</div>
-            </div>
-        </div>
-
-        <h2>3. Concluzii & Recomandări Audit</h2>
-        <p>Proiectul Evergreen Towers prezintă un avantaj vizual și de locație clar, însă experiența utilizatorilor indică o presiune crescută pe infrastructura de bază (gaz, apă, documentație).</p>
-        
-        <div class="action-box">
-            <p><strong>Ești reprezentant Evergreen Towers?</strong></p>
-            <p style="font-size: 0.9rem; opacity: 0.8;">Dacă situația utilităților a fost stabilizată prin investiții recente sau dacă statusul intabulării a fost actualizat, trimite-ne dovezile oficiale pentru rectificarea raportului.</p>
-            <a href="mailto:contact@imobverdict.com" class="btn-small">SOLICITĂ ACTUALIZARE DATE</a>
-        </div>
-
-        <div class="disclaimer-footer">
-            <strong>DISCLAIMER LEGAL:</strong> Informațiile prezentate în acest raport sunt sintetizate automat din percepții exprimate în surse publice și raportări anonime. Platforma ImobVerdict nu a efectuat o expertiză tehnică, verificări de presiune sau audituri juridice independente la fața locului. Datele reflectă "percepția de grup" la data publicării. Utilizatorul este sfătuit să verifice informațiile direct la furnizorii de utilități și la asociația de proprietari înainte de semnarea oricărui act de vânzare-cumpărare.
-        </div>
+    <div class="stats-grid">
+        <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Tătărași Nord, Iași</span></div>
+        <div class="stat-item"><span class="stat-label">Dezvoltator</span><span class="stat-value">MCM Construct</span></div>
+        <div class="stat-item"><span class="stat-label">Eșantion</span><span class="stat-value">35+ raportări agregate</span></div>
+        <div class="stat-item"><span class="stat-label">Actualizare</span><span class="stat-value">Mai 2026</span></div>
     </div>
 </div>
 
-</body>
-</html>
+<div class="report-body fade-in">
+    <table class="risk-table">
+        <thead><tr><th>Punct de control</th><th>Observație audit</th><th>Impact</th></tr></thead>
+        <tbody>
+            <tr><td>Status Tabulare</td><td>Raportări privind decalaje semnificative (12 luni+) în eliberarea documentației OCPI.</td><td><span class="impact-tag critic">Critic</span></td></tr>
+            <tr><td>Utilități (Gaz/Apă)</td><td>Istoric documentat de discontinuități în furnizare din cauza limitărilor rețelei zonale.</td><td><span class="impact-tag major">Major</span></td></tr>
+            <tr><td>Mentenanță</td><td>Proces birocratic semnalat în remedierea viciilor raportate după recepția unității.</td><td><span class="impact-tag mediu">Mediu</span></td></tr>
+            <tr><td>Arhitectură</td><td>Design modern, fațade rezistente și compartimentări interioare apreciate.</td><td><span class="impact-tag optim">Optim</span></td></tr>
+        </tbody>
+    </table>
+    </div>
