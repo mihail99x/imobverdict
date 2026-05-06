@@ -12,20 +12,22 @@
 
         :root {
             --mint: #7ef9d4;
-            --mint-dim: rgba(126,249,212,0.1);
+            --mint-dim: rgba(126,249,212,0.12);
             --mint-border: rgba(126,249,212,0.2);
+
             --purple-deep: #1a0f2e;
             --text-primary: #f0eef8;
-            --text-secondary: rgba(240,238,248,0.65);
-            --text-muted: rgba(240,238,248,0.38);
+            --text-secondary: rgba(240,238,248,0.75);
+            --text-muted: rgba(240,238,248,0.52);
+
             --card-bg: rgba(255,255,255,0.04);
             --card-border: rgba(126,249,212,0.12);
+            --card-hover-bg: rgba(255,255,255,0.07);
+            --card-hover-border: rgba(126,249,212,0.3);
+
             --radius-sm: 8px;
             --radius-md: 14px;
             --radius-lg: 20px;
-            --red: #ff6b6b;
-            --yellow: #ffd93d;
-            --green: #6ee7b7;
         }
 
         html { scroll-behavior: smooth; }
@@ -33,8 +35,8 @@
         body {
             background-color: var(--purple-deep);
             background-image:
-                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(90,50,150,0.4) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(30,80,100,0.28) 0%, transparent 55%),
+                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(90,50,150,0.42) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(30,80,100,0.3) 0%, transparent 55%),
                 url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=60');
             background-size: cover;
             background-position: center;
@@ -48,7 +50,8 @@
 
         body::before {
             content: '';
-            position: fixed; inset: 0;
+            position: fixed;
+            inset: 0;
             background: linear-gradient(160deg, rgba(18,8,35,0.93) 0%, rgba(22,12,40,0.9) 50%, rgba(14,30,42,0.93) 100%);
             z-index: 0;
             pointer-events: none;
@@ -56,14 +59,24 @@
 
         /* ── NAVBAR ── */
         .navbar {
-            position: sticky; top: 0; z-index: 100;
+            position: sticky;
+            top: 0;
+            z-index: 100;
             background: rgba(18,8,35,0.75);
             backdrop-filter: blur(18px) saturate(1.4);
             -webkit-backdrop-filter: blur(18px) saturate(1.4);
             border-bottom: 1px solid var(--mint-border);
             padding: 0 24px;
             height: 52px;
-            display: flex; align-items: center; justify-content: space-between;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
 
         .logo {
@@ -71,11 +84,29 @@
             font-size: 1.15rem;
             color: var(--text-primary);
             text-decoration: none;
+            letter-spacing: 0.02em;
         }
+
         .logo span { color: var(--mint); }
 
+        .nav-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--mint-border);
+        }
+
+        .nav-label {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
         .back-link {
-            display: inline-flex; align-items: center; gap: 7px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
             font-size: 0.78rem;
             font-weight: 500;
             letter-spacing: 0.04em;
@@ -83,27 +114,47 @@
             text-decoration: none;
             transition: color 0.2s;
         }
+
         .back-link:hover { color: var(--mint); }
-        .back-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        .back-link svg {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
 
         /* ── WRAPPER ── */
         .wrapper {
-            position: relative; z-index: 1;
-            max-width: 920px;
+            position: relative;
+            z-index: 1;
+            max-width: 960px;
             margin: 0 auto;
             padding: 40px 24px 80px;
         }
 
         /* ── BREADCRUMB ── */
         .breadcrumb {
-            display: flex; align-items: center; gap: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-size: 0.75rem;
             color: var(--text-muted);
             margin-bottom: 36px;
         }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+
+        .breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
         .breadcrumb a:hover { color: var(--mint); }
-        .breadcrumb .sep { opacity: 0.4; }
+
+        .breadcrumb .sep { opacity: 0.45; }
         .breadcrumb .current { color: var(--text-secondary); }
 
         /* ── REPORT HEADER ── */
@@ -118,14 +169,18 @@
 
         .report-header::before {
             content: '';
-            position: absolute; top: 0; left: 0; right: 0;
+            position: absolute;
+            top: 0; left: 0; right: 0;
             height: 2px;
-            background: linear-gradient(90deg, transparent 0%, var(--mint) 40%, rgba(126,249,212,0.3) 100%);
+            background: linear-gradient(90deg, transparent 0%, var(--mint) 40%, rgba(126,249,212,0.28) 100%);
         }
 
         .header-top {
-            display: flex; align-items: flex-start; justify-content: space-between;
-            gap: 20px; flex-wrap: wrap;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
             margin-bottom: 28px;
         }
 
@@ -138,15 +193,17 @@
         }
 
         .project-subtitle {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: var(--text-secondary);
-            margin-top: 8px;
-            max-width: 520px;
-            line-height: 1.6;
+            margin-top: 10px;
+            max-width: 560px;
+            line-height: 1.65;
         }
 
         .risk-badge {
-            display: inline-flex; align-items: center; gap: 7px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
             padding: 7px 16px;
             border-radius: 100px;
             font-size: 0.72rem;
@@ -159,18 +216,19 @@
 
         .risk-badge.high {
             background: rgba(255,107,107,0.15);
-            color: #ff8f8f;
-            border: 1px solid rgba(255,107,107,0.3);
+            color: #ff9a9a;
+            border: 1px solid rgba(255,107,107,0.32);
         }
+
         .risk-badge.high::before {
             content: '';
-            width: 7px; height: 7px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: #ff6b6b;
             box-shadow: 0 0 6px rgba(255,107,107,0.6);
         }
 
-        /* stats */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -179,7 +237,7 @@
 
         .stat-item {
             background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.07);
             border-radius: var(--radius-sm);
             padding: 14px 16px;
         }
@@ -199,7 +257,7 @@
             font-weight: 500;
             color: var(--mint);
             display: block;
-            line-height: 1.3;
+            line-height: 1.35;
         }
 
         /* ── REPORT BODY ── */
@@ -211,9 +269,10 @@
             padding: 40px;
         }
 
-        /* section headings */
         .section-title {
-            display: flex; align-items: center; gap: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-family: 'DM Serif Display', serif;
             font-size: 1.25rem;
             color: var(--text-primary);
@@ -225,7 +284,8 @@
 
         .section-title::before {
             content: '';
-            width: 3px; height: 20px;
+            width: 3px;
+            height: 20px;
             background: var(--mint);
             border-radius: 2px;
             flex-shrink: 0;
@@ -238,7 +298,6 @@
             font-style: normal;
         }
 
-        /* ── RISK TABLE ── */
         .risk-table {
             width: 100%;
             border-collapse: collapse;
@@ -247,7 +306,7 @@
         }
 
         .risk-table thead tr {
-            border-bottom: 1px solid rgba(126,249,212,0.15);
+            border-bottom: 1px solid rgba(126,249,212,0.16);
         }
 
         .risk-table th {
@@ -261,7 +320,7 @@
         }
 
         .risk-table tbody tr {
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
             transition: background 0.15s;
         }
 
@@ -271,7 +330,7 @@
         .risk-table td {
             padding: 14px 16px;
             vertical-align: top;
-            line-height: 1.5;
+            line-height: 1.55;
             color: var(--text-secondary);
         }
 
@@ -282,7 +341,9 @@
         }
 
         .impact-tag {
-            display: inline-flex; align-items: center; gap: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
             font-size: 0.67rem;
             font-weight: 600;
             letter-spacing: 0.07em;
@@ -294,26 +355,28 @@
 
         .impact-tag.critic {
             background: rgba(255,107,107,0.14);
-            color: #ff8f8f;
+            color: #ff9a9a;
             border: 1px solid rgba(255,107,107,0.25);
         }
+
         .impact-tag.major {
-            background: rgba(255,160,80,0.13);
-            color: #ffb077;
-            border: 1px solid rgba(255,160,80,0.25);
-        }
-        .impact-tag.mediu {
-            background: rgba(255,217,61,0.12);
-            color: #ffd93d;
-            border: 1px solid rgba(255,217,61,0.22);
-        }
-        .impact-tag.optim {
-            background: rgba(110,231,183,0.12);
-            color: #6ee7b7;
-            border: 1px solid rgba(110,231,183,0.22);
+            background: rgba(255,160,80,0.14);
+            color: #ffba84;
+            border: 1px solid rgba(255,160,80,0.26);
         }
 
-        /* ── OBSERVATII LIST ── */
+        .impact-tag.mediu {
+            background: rgba(255,217,61,0.13);
+            color: #ffe06b;
+            border: 1px solid rgba(255,217,61,0.24);
+        }
+
+        .impact-tag.optim {
+            background: rgba(110,231,183,0.13);
+            color: #87f0c8;
+            border: 1px solid rgba(110,231,183,0.24);
+        }
+
         .obs-list {
             list-style: none;
             display: flex;
@@ -322,14 +385,15 @@
         }
 
         .obs-list li {
-            display: flex; gap: 14px;
+            display: flex;
+            gap: 14px;
             padding: 16px 18px;
             background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.06);
             border-radius: var(--radius-sm);
             font-size: 0.875rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
         .obs-list li::before {
@@ -340,13 +404,12 @@
             flex-shrink: 0;
         }
 
-        .obs-list li:nth-child(1)::before { background: rgba(255,107,107,0.5); }
-        .obs-list li:nth-child(2)::before { background: rgba(255,160,80,0.5); }
-        .obs-list li:nth-child(3)::before { background: rgba(255,217,61,0.4); }
+        .obs-list li:nth-child(1)::before { background: rgba(255,107,107,0.55); }
+        .obs-list li:nth-child(2)::before { background: rgba(255,160,80,0.55); }
+        .obs-list li:nth-child(3)::before { background: rgba(255,217,61,0.45); }
 
         .obs-list strong { color: var(--text-primary); font-weight: 500; }
 
-        /* ── VERDICT BOX ── */
         .verdict-box {
             background: rgba(126,249,212,0.05);
             border: 1px solid rgba(126,249,212,0.2);
@@ -369,29 +432,31 @@
         .verdict-text {
             font-size: 0.92rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.72;
         }
 
         .verdict-rec {
             margin-top: 14px;
             padding-top: 14px;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid rgba(255,255,255,0.07);
             font-size: 0.875rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.72;
         }
 
         .verdict-rec strong { color: var(--text-primary); }
 
-        /* ── ACTION BOX ── */
         .action-box {
             background: rgba(126,249,212,0.06);
             border: 1px dashed rgba(126,249,212,0.3);
             border-radius: var(--radius-md);
             padding: 28px 32px;
             margin-top: 28px;
-            display: flex; align-items: center; justify-content: space-between;
-            gap: 24px; flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
         }
 
         .action-box-text p:first-child {
@@ -402,14 +467,16 @@
         }
 
         .action-box-text p:last-child {
-            font-size: 0.83rem;
+            font-size: 0.84rem;
             color: var(--text-secondary);
-            max-width: 460px;
-            line-height: 1.6;
+            max-width: 500px;
+            line-height: 1.65;
         }
 
         .btn {
-            display: inline-flex; align-items: center; gap: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             padding: 11px 20px;
             background: var(--mint);
             color: var(--purple-deep);
@@ -422,186 +489,25 @@
             transition: background 0.2s, transform 0.15s;
             white-space: nowrap;
             flex-shrink: 0;
+            border: none;
+            cursor: pointer;
         }
+
         .btn:hover { background: #a8fce2; transform: translateY(-1px); }
         .btn:active { transform: scale(0.97); }
 
-        /* ── DISCLAIMER ── */
         .disclaimer {
             margin-top: 44px;
             padding: 20px 24px;
             background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.07);
             border-radius: var(--radius-sm);
             font-size: 0.75rem;
             color: var(--text-muted);
-            line-height: 1.7;
+            line-height: 1.72;
             text-align: justify;
         }
 
-        .disclaimer strong { color: rgba(240,238,248,0.5); }
+        .disclaimer strong { color: rgba(240,238,248,0.62); }
 
-        /* ── FADE IN ── */
         .fade-in {
-            opacity: 0;
-            transform: translateY(14px);
-            animation: fadeUp 0.5s ease forwards;
-        }
-        .fade-in:nth-child(1) { animation-delay: 0.05s; }
-        .fade-in:nth-child(2) { animation-delay: 0.15s; }
-        .fade-in:nth-child(3) { animation-delay: 0.25s; }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 640px) {
-            .report-header, .report-body { padding: 24px 20px; }
-            .header-top { flex-direction: column; }
-            .risk-badge { align-self: flex-start; }
-            .action-box { flex-direction: column; }
-            .risk-table td:first-child { white-space: normal; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar">
-        <a href="/" class="logo">IMOB<span>VERDICT</span></a>
-        <a href="/" class="back-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-            Toate proiectele
-        </a>
-    </nav>
-
-    <div class="wrapper">
-
-        <!-- Breadcrumb -->
-        <nav class="breadcrumb fade-in" aria-label="Breadcrumb">
-            <a href="/">Acasă</a>
-            <span class="sep">/</span>
-            <a href="/">Proiecte</a>
-            <span class="sep">/</span>
-            <span class="current">Conest Grand Residence</span>
-        </nav>
-
-        <!-- Report Header -->
-        <div class="report-header fade-in">
-            <div class="header-top">
-                <div>
-                    <h1 class="project-name">Conest Grand<br>Residence</h1>
-                    <p class="project-subtitle">Analiză bazată pe date raportate de locatari privind izolarea fonică și mediul industrial adiacent.</p>
-                </div>
-                <span class="risk-badge high">Risc ridicat · Percepții</span>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-label">Locație</span>
-                    <span class="stat-value">Tudor Vladimirescu, Iași</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Proximitate</span>
-                    <span class="stat-value">Iulius Mall · CET · Kaufland</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Eșantion analiză</span>
-                    <span class="stat-value">50+ raportări agregate</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Ultima actualizare</span>
-                    <span class="stat-value">Mai 2026</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Report Body -->
-        <div class="report-body fade-in">
-
-            <h2 class="section-title"><span class="section-num">01</span> Matricea de riscuri detectate</h2>
-
-            <table class="risk-table">
-                <thead>
-                    <tr>
-                        <th>Punct de control</th>
-                        <th>Observație audit</th>
-                        <th>Impact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Izolație fonică</td>
-                        <td>Raportări recurente privind transmisia zgomotului structural și aerian între unități locative.</td>
-                        <td><span class="impact-tag critic">Critic</span></td>
-                    </tr>
-                    <tr>
-                        <td>Zgomot exterior</td>
-                        <td>Poluare fonică industrială (CET, ventilatoare comerciale) și trafic greu nocturn.</td>
-                        <td><span class="impact-tag major">Major</span></td>
-                    </tr>
-                    <tr>
-                        <td>Administrare</td>
-                        <td>Costuri ridicate raportate pentru mentenanța complexului și paza privată.</td>
-                        <td><span class="impact-tag mediu">Mediu</span></td>
-                    </tr>
-                    <tr>
-                        <td>Utilități</td>
-                        <td>Sesizări privind întreruperi periodice și probleme la sistemul de lifturi.</td>
-                        <td><span class="impact-tag mediu">Mediu</span></td>
-                    </tr>
-                    <tr>
-                        <td>Parcare</td>
-                        <td>Dificultăți în găsirea locurilor libere pentru vizitatori; cost ridicat de achiziție.</td>
-                        <td><span class="impact-tag mediu">Mediu</span></td>
-                    </tr>
-                    <tr>
-                        <td>Aspect urban</td>
-                        <td>Complex modern, bine întreținut estetic, cu holuri spațioase.</td>
-                        <td><span class="impact-tag optim">Optim</span></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2 class="section-title"><span class="section-num">02</span> Observații specifice locuitorilor</h2>
-
-            <ul class="obs-list">
-                <li>
-                    <div><strong>Factorul acustic —</strong> Utilizatorii raportează percepția zgomotelor de la vecini (prize, băi, casa scării), sugerând o necesitate de izolare suplimentară post-vânzare.</div>
-                </li>
-                <li>
-                    <div><strong>Amplasament industrial —</strong> Unitățile orientate spre zonele comerciale/industriale resimt activitatea logistică (TIR-uri) și emisiile sonore ale sistemelor de ventilație mari.</div>
-                </li>
-                <li>
-                    <div><strong>Costuri orizontale —</strong> Cheltuielile comune de administrare sunt menționate ca fiind peste media orașului, influențând costul total de locuire.</div>
-                </li>
-            </ul>
-
-            <!-- Verdict -->
-            <div class="verdict-box">
-                <span class="verdict-label">Verdict ImobVerdict</span>
-                <p class="verdict-text">Conest Grand Residence este un hub strategic din punct de vedere al locației — ideal pentru chirie Tudor/Iulius — dar prezintă vulnerabilități de confort pentru locuirea pe termen lung, generate de zgomot și mediul industrial adiacent.</p>
-                <div class="verdict-rec">
-                    <strong>Recomandare:</strong> Solicitați un desfășurător de întreținere pentru iarna trecută și programați vizionarea în intervale orare diferite (inclusiv nocturn) pentru a evalua zgomotul de fond în condiții reale.
-                </div>
-            </div>
-
-            <!-- Action box -->
-            <div class="action-box">
-                <div class="action-box-text">
-                    <p>Ești reprezentant Conest Grand Residence?</p>
-                    <p>Dacă dețineți rapoarte de expertiză acustică, procese verbale sau documente tehnice care rectifică percepțiile sintetizate mai sus, solicitați o revizuire a raportului pe baza dovezilor oficiale.</p>
-                </div>
-                <a href="mailto:contact@imobverdict.com" class="btn">Solicită actualizare</a>
-            </div>
-
-            <!-- Disclaimer -->
-            <div class="disclaimer">
-                <strong>Disclaimer legal:</strong> Informațiile prezentate sunt sintetizate din percepții publice (Google, Reddit, forumuri) și raportări anonime. ImobVerdict nu a realizat măsurători tehnice independente. Datele reflectă experiența utilizatorilor la data publicării. Recomandăm consultarea unui specialist tehnic înainte de achiziție.
-            </div>
-
-        </div>
-    </div>
-
-</body>
-</html>
