@@ -8,64 +8,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* [PASTREAZA TOATE STILURILE CSS DIN FORMATUL TAU DE LUX] */
-        /* ... se inserează aici blocul de stiluri din exemplul tău anterior ... */
-    </style>
-</head>
-<body>
-    <nav class="navbar">
-        <a href="/" class="logo">IMOB<span>VERDICT</span></a>
-        <a href="/" class="back-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-            Toate proiectele
-        </a>
-    </nav>
-
-    <div class="wrapper">
-        <nav class="breadcrumb fade-in">
-            <a href="/">Acasă</a> <span class="sep">/</span> <span class="current">Silk District</span>
-        </nav>
-
-        <div class="report-header fade-in">
-            <div class="header-top">
-                <div>
-                    <h1 class="project-name">Silk<br>District</h1>
-                    <p class="project-subtitle">Analiză privind riscurile contractuale și managementul șantierului în curs pentru faza de rezidențial.</p>
-                </div>
-                <span class="risk-badge high">Risc Ridicat · Contractual</span>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Bvd. Primăverii, Iași</span></div>
-                <div class="stat-item"><span class="stat-label">Concept</span><span class="stat-value">Mixed-use (Office & Residential)</span></div>
-                <div class="stat-item"><span class="stat-label">Eșantion</span><span class="stat-value">40+ raportări agregate</span></div>
-                <div class="stat-item"><span class="stat-label">Actualizare</span><span class="stat-value">Mai 2026</span></div>
-            </div>
-        </div>
-
-        <div class="report-body fade-in">
-            <h2 class="section-title"><span class="section-num">01</span> Matricea de riscuri detectate</h2>
-            <table class="risk-table">
-                <thead><tr><th>Punct de control</th><th>Observație audit</th><th>Impact</th></tr></thead>
-                <tbody>
-                    <tr><td>Clauze indexare</td><td>Prezența mecanismelor de ajustare a prețului fără plafon superior raportat în promisiuni.</td><td><span class="impact-tag critic">Critic</span></td></tr>
-                    <tr><td>Hidroizolație</td><td>Semnalări privind managementul apelor freatice la nivelul parcărilor subterane.</td><td><span class="impact-tag major">Major</span></td></tr>
-                    <tr><td>Zgomot șantier</td><td>Disconfort fonic și praf generat de fazele de construcție adiacente pe termen lung.</td><td><span class="impact-tag mediu">Mediu</span></td></tr>
-                    <tr><td>Izolare fonică</td><td>Utilizarea pereților de compartimentare din gips-carton; necesită atenție la punțile fonice.</td><td><span class="impact-tag mediu">Mediu</span></td></tr>
-                    <tr><td>Concept Urban</td><td>Masterplan modern, spații pietonale și integrare office peste media orașului.</td><td><span class="impact-tag optim">Optim</span></td></tr>
-                </tbody>
-            </table>
-
-            <h2 class="section-title"><span class="section-num">02</span> Observații specifice</h2>
-            <ul class="obs-list">
-                <li><div><strong>Riscul de preț —</strong> Promisiunile de vânzare pot conține clauze ce transferă riscul inflației materialelor direct către cumpărător.</div></li>
-                <li><div><strong>Viața pe șantier —</strong> Primii locatari vor coabita cu fazele următoare de construcție pentru cel puțin 3-5 ani.</div></li>
-            </ul>
-
-            <div class="verdict-box">
-                <span class="verdict-label">Verdict ImobVerdict</span>
-                <p class="verdict-text">Silk District este un proiect vizionar pentru Iași, dar „împachetat” într-un cadru juridic solicitant. Recomandat pentru profiluri de investitori cu asistență legală riguroasă.</p>
-            </div>
-            </div>
-    </div>
-</body>
-</html>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.1); --mint-border: rgba(126,249,212,0.2);
+            --purple-deep: #1a0f2e; --text-primary: #f0eef8; --text-secondary: rgba(240,238,248,0.65);
+            --text-muted: rgba(240,238,248,0.38); --card-bg: rgba(255,255,255,0.04);
+            --card-border: rgba(126,249,212,0.12); --radius-sm: 8px; --radius-md: 14px; --radius-lg: 20px;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--purple-deep);
+            background-image: radial-gradient(ellipse 80% 60% at 20% 10%, rgba(90,50,150,0.4) 0%, transparent 60%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=60');
+            background-size: cover; background-position: center; background-attachment: scroll;
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh;
+        }
+        body::before { content: ''; position: fixed; inset: 0; background: linear-gradient(160deg, rgba(18,8,35,0.93) 0%, rgba(22,12,40,0.9) 50%, rgba(14,30,42,0.93) 100%); z-index: 0; pointer-events: none; }
+        .navbar { position: sticky; top: 0; z-index: 100; background: rgba(18,8,35,0.75); backdrop-filter: blur(18px); border-bottom: 1px solid var(--mint-border); padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--text-primary); text-decoration: none; }
+        .logo span { color: var(--mint); }
+        .back-link { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; color: var(--text-secondary); text-decoration: none; }
+        .wrapper { position: relative; z-index: 1; max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 36px; }
+        .report-header { background: var(--card-bg); border: 1px solid var(--mint-border); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 40px; position: relative; overflow: hidden; }
+        .project-name { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; color: var(--text-primary); }
+        .risk-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 16px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; border: 1px solid rgba(255,107,107,0.3); background: rgba(255,107,107,0.15); color: #ff8f8f; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 28px; }
+        .stat-item { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06); padding: 14px; border-radius: var(--radius-sm); }
+        .stat-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; }
+        .stat-value { font-size: 0.92rem; color: var(--mint); font-weight: 500; }
+        .report-body { background: rgba(255,255,255,0.03); border: 1px solid rgba(126,249,212,0.1); border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 40px; }
+        .section-title { display: flex; align-items: center; gap: 12px; font-family: 'DM Serif Display', serif; font-size: 1.25rem; margin: 44px 0 20px; }
+        .section-title::before { content: ''; width: 3px; height: 20px; background: var(--mint); border-radius: 2px; }
+        .risk-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+        .risk-table th { padding: 10px 16px; text-align: left; font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; border-bottom: 1px solid var(--mint-border); }
+        .risk-table td { padding: 14px 16px; color: var(--text-secondary); border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .impact-tag { font-size: 0.67rem; font-weight: 600; padding: 3px 9px; border-radius: 4px; text-transform: uppercase; }
+        .impact-tag.critic { background: rgba(255,107,107,0.14); color: #ff8f8f; border: 1px solid rgba(255,107,107,0.25); }
+        .impact-tag.major { background: rgba(255,160,80,0.13); color: #ffb077; border: 1px solid rgba(255,160,80,0.25); }
+        .impact-tag.mediu { background: rgba(255,217,61,0.12); color: #ffd93d; border: 1px solid rgba(255,
