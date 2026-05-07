@@ -6,27 +6,23 @@
     <title>ImobVerdict | Audit Independent Iași</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
             --mint: #7ef9d4;
-            --mint-dim: rgba(126,249,212,0.12);
-            --mint-border: rgba(126,249,212,0.2);
-            --purple-deep: #1a0f2e;
-            --purple-mid: #2d1a4a;
-            --purple-light: #3d2b60;
-            --text-primary: #f0eef8;
-            --text-secondary: rgba(240,238,248,0.75);
-            --text-muted: rgba(240,238,248,0.5);
-            --card-bg: rgba(255,255,255,0.04);
-            --card-border: rgba(126,249,212,0.12);
-            --card-hover-bg: rgba(255,255,255,0.08);
-            --card-hover-border: rgba(126,249,212,0.35);
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 20px;
+            --mint-dim: rgba(126,249,212,0.10);
+            --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #130c22;
+            --text-primary: #eeeaf8;
+            --text-secondary: rgba(238,234,248,0.62);
+            --text-muted: rgba(238,234,248,0.35);
+            --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11);
+            --card-hover-bg: rgba(255,255,255,0.07);
+            --card-hover-border: rgba(126,249,212,0.32);
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
         }
 
         html { scroll-behavior: smooth; }
@@ -34,12 +30,11 @@
         body {
             background-color: var(--purple-deep);
             background-image:
-                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(90,50,150,0.45) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(30,80,100,0.3) 0%, transparent 55%),
-                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=60');
+                radial-gradient(ellipse 80% 55% at 15% 5%,  rgba(100,55,170,0.38) 0%, transparent 60%),
+                radial-gradient(ellipse 55% 45% at 85% 85%, rgba(20,75,110,0.28) 0%, transparent 55%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll;
             color: var(--text-primary);
             font-family: 'DM Sans', sans-serif;
             font-size: 16px;
@@ -50,738 +45,573 @@
         body::before {
             content: '';
             position: fixed; inset: 0;
-            background: linear-gradient(160deg, rgba(18,8,35,0.92) 0%, rgba(22,12,40,0.88) 50%, rgba(14,30,42,0.92) 100%);
-            z-index: 0;
-            pointer-events: none;
+            background: linear-gradient(155deg, rgba(14,7,28,0.93) 0%, rgba(18,10,32,0.89) 45%, rgba(10,24,36,0.93) 100%);
+            z-index: 0; pointer-events: none;
         }
 
+        /* NAVBAR */
         .navbar {
-            position: sticky; top: 0; z-index: 100;
-            background: rgba(18,8,35,0.75);
-            backdrop-filter: blur(18px) saturate(1.4);
-            -webkit-backdrop-filter: blur(18px) saturate(1.4);
-            border-bottom: 1px solid var(--mint-border);
-            padding: 0 24px;
+            position: sticky; top: 0; z-index: 200;
             height: 52px;
             display: flex; align-items: center; justify-content: space-between;
-        }
-
-        .navbar-left {
-            display: flex; align-items: center; gap: 24px;
+            padding: 0 28px;
+            background: rgba(14,7,28,0.72);
+            backdrop-filter: blur(20px) saturate(1.5);
+            -webkit-backdrop-filter: blur(20px) saturate(1.5);
+            border-bottom: 1px solid var(--mint-border);
         }
 
         .logo {
             font-family: 'DM Serif Display', serif;
-            font-size: 1.15rem;
-            letter-spacing: 0.02em;
+            font-size: 1.12rem;
+            letter-spacing: 0.01em;
             color: var(--text-primary);
             text-decoration: none;
         }
-        .logo span { color: var(--mint); }
+        .logo em { font-style: normal; color: var(--mint); }
 
-        .nav-divider {
-            width: 1px; height: 18px;
-            background: var(--mint-border);
-        }
-
-        .nav-label {
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .navbar-right {
-            display: flex; align-items: center; gap: 20px;
-        }
-
-        .currency-pill {
-            display: flex; align-items: center; gap: 10px;
+        .pill {
+            display: inline-flex; align-items: center; gap: 7px;
             background: var(--mint-dim);
             border: 1px solid var(--mint-border);
             border-radius: 100px;
-            padding: 4px 14px 4px 10px;
+            padding: 4px 13px;
             font-family: 'DM Mono', monospace;
-            font-size: 0.75rem;
-            gap: 8px;
+            font-size: 0.73rem;
+            color: var(--text-secondary);
         }
-
-        .currency-pill .dot {
-            width: 7px; height: 7px;
-            border-radius: 50%;
+        .pill .dot {
+            width: 6px; height: 6px; border-radius: 50%;
             background: var(--mint);
-            animation: pulse 2s ease-in-out infinite;
+            animation: blink 2.2s ease-in-out infinite;
         }
+        .pill strong { color: var(--mint); font-weight: 500; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.85); }
-        }
-
-        .currency-pill .label { color: var(--text-muted); }
-        .currency-pill .value { color: var(--mint); font-weight: 500; }
-
-        .wrapper {
+        /* LAYOUT */
+        .wrap {
             position: relative; z-index: 1;
             max-width: 1080px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 24px 100px;
         }
 
+        /* HERO */
         .hero {
-            padding: 80px 0 60px;
+            padding: 72px 0 56px;
             display: grid;
-            grid-template-columns: 1fr auto;
+            grid-template-columns: 1fr 200px;
             align-items: end;
-            gap: 40px;
+            gap: 48px;
         }
 
-        .hero-tag {
+        .hero-eyebrow {
             display: inline-flex; align-items: center; gap: 8px;
-            background: var(--mint-dim);
-            border: 1px solid var(--mint-border);
-            border-radius: 100px;
-            padding: 5px 14px;
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            color: var(--mint);
-            margin-bottom: 20px;
+            background: var(--mint-dim); border: 1px solid var(--mint-border);
+            border-radius: 100px; padding: 4px 14px;
+            font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--mint); margin-bottom: 20px;
         }
-
-        .hero-tag::before {
-            content: '';
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--mint);
-        }
+        .hero-eyebrow::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--mint); }
 
         h1 {
             font-family: 'DM Serif Display', serif;
-            font-size: clamp(2.4rem, 5vw, 3.8rem);
-            line-height: 1.08;
-            letter-spacing: -0.03em;
-            color: var(--text-primary);
-            margin-bottom: 18px;
+            font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+            line-height: 1.07; letter-spacing: -0.03em; margin-bottom: 18px;
         }
+        h1 em { font-style: italic; color: var(--mint); }
 
-        h1 em {
-            font-style: italic;
-            color: var(--mint);
+        .hero-sub { font-size: 0.97rem; color: var(--text-secondary); max-width: 500px; line-height: 1.75; }
+
+        .stats-col { display: flex; flex-direction: column; gap: 10px; }
+        .stat-box {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--r-md); padding: 14px 18px; text-align: center;
         }
+        .stat-n { font-family:'DM Serif Display',serif; font-size:1.9rem; color:var(--mint); display:block; line-height:1; margin-bottom:3px; }
+        .stat-l { font-size:0.67rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.06em; }
 
-        .hero-desc {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            max-width: 520px;
-            line-height: 1.7;
-        }
-
-        .hero-stats {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            min-width: 180px;
-        }
-
-        .stat-item {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-md);
-            padding: 16px 20px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'DM Serif Display', serif;
-            font-size: 2rem;
-            color: var(--mint);
-            display: block;
-            line-height: 1;
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .currency-bar {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-md);
-            padding: 16px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 48px;
-        }
-
-        .currency-bar-label {
-            display: flex; align-items: center; gap: 10px;
-        }
-
-        .currency-bar-label svg {
-            fill: var(--mint);
-            flex-shrink: 0;
-        }
-
-        .currency-bar-title {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--text-muted);
-            display: block;
-        }
-
-        .currency-bar-date {
-            font-size: 0.78rem;
-            color: var(--text-secondary);
-            font-family: 'DM Mono', monospace;
-        }
-
-        .currency-items {
-            display: flex;
-            gap: 28px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .currency-item {
-            text-align: right;
-        }
-
-        .currency-item .c-code {
-            display: block;
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--mint);
-            margin-bottom: 2px;
-        }
-
-        .currency-item .c-val {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.95rem;
-            color: var(--text-primary);
-        }
-
-        .currency-item .c-unit {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            margin-left: 3px;
-        }
-
-        .currency-source {
-            width: 100%;
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            margin-top: -6px;
-        }
-
-        .currency-error {
-            font-size: 0.82rem;
-            color: rgba(255,160,100,0.9);
-            font-style: italic;
-        }
-
-        .section-heading {
+        /* CURRENCY BAR */
+        .cur-bar {
             display: flex; align-items: center; justify-content: space-between;
-            margin-bottom: 24px;
+            gap: 16px; flex-wrap: wrap;
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--r-md); padding: 14px 22px; margin-bottom: 44px;
         }
+        .cur-bar-left { display:flex; align-items:center; gap:10px; }
+        .cur-bar-left svg { fill: var(--mint); flex-shrink:0; }
+        .cur-bar-title { font-size:0.68rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); display:block; margin-bottom:1px; }
+        .cur-bar-date { font-family:'DM Mono',monospace; font-size:0.78rem; color:var(--text-secondary); }
+        .cur-items { display:flex; gap:26px; align-items:center; flex-wrap:wrap; }
+        .cur-item { text-align:right; }
+        .cur-code { display:block; font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--mint); margin-bottom:1px; }
+        .cur-val { font-family:'DM Mono',monospace; font-size:0.9rem; color:var(--text-primary); }
+        .cur-unit { font-size:0.67rem; color:var(--text-muted); margin-left:2px; }
+        .cur-err { font-size:0.8rem; color:rgba(255,150,100,0.75); font-style:italic; }
 
-        .section-heading h2 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.4rem;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
+        /* TABS */
+        .tabs-header {
+            display: flex; align-items: stretch; gap: 4px;
+            background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--r-md); padding: 5px;
+            margin-bottom: 28px; width: fit-content;
         }
-
-        .section-pill {
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 100px;
-            padding: 4px 12px;
+        .tab-btn {
+            display: flex; align-items: center; gap: 9px;
+            padding: 10px 22px; border: 1px solid transparent;
+            background: none; cursor: pointer; border-radius: var(--r-sm);
+            font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
+            color: var(--text-muted); transition: color 0.2s, background 0.2s; white-space: nowrap;
         }
+        .tab-btn:hover { color: var(--text-secondary); }
+        .tab-btn.active { background: var(--mint-dim); color: var(--mint); border-color: var(--mint-border); }
+        .tab-icon { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+        .tab-count { font-size:0.65rem; font-family:'DM Mono',monospace; background:rgba(255,255,255,0.08); border-radius:100px; padding:1px 7px; color:var(--text-muted); }
+        .tab-btn.active .tab-count { background:rgba(126,249,212,0.15); color:var(--mint); }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 18px;
-        }
+        .tab-panel { display:none; }
+        .tab-panel.active { display:block; animation: tabIn 0.3s ease; }
+        @keyframes tabIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
 
+        /* SECTION META */
+        .section-meta { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+        .section-meta h2 { font-family:'DM Serif Display',serif; font-size:1.3rem; letter-spacing:-0.02em; }
+        .section-count { font-size:0.7rem; font-weight:500; letter-spacing:0.07em; text-transform:uppercase; color:var(--text-muted); background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.09); border-radius:100px; padding:4px 12px; }
+
+        /* GRID */
+        .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+
+        /* PROJECT CARD */
         .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-lg);
-            padding: 24px;
-            transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            position: relative;
-            overflow: hidden;
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--r-lg); padding: 22px;
+            display: flex; flex-direction: column; gap: 11px;
+            position: relative; overflow: hidden;
+            transition: transform 0.22s ease, background 0.22s, border-color 0.22s, box-shadow 0.22s;
         }
+        .project-card::after { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(126,249,212,0.28),transparent); opacity:0; transition:opacity 0.22s; }
+        .project-card:hover { transform:translateY(-3px); background:var(--card-hover-bg); border-color:var(--card-hover-border); box-shadow:0 14px 36px rgba(0,0,0,0.3); }
+        .project-card:hover::after { opacity:1; }
+        .project-card.disabled { opacity:0.5; pointer-events:none; }
 
-        .project-card::after {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(126,249,212,0.3), transparent);
-            opacity: 0;
-            transition: opacity 0.25s;
+        .badge { display:inline-flex; align-items:center; gap:5px; font-size:0.65rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:3px 9px; border-radius:4px; width:fit-content; }
+        .badge.pub { background:rgba(81,207,102,0.13); color:#7ed48a; border:1px solid rgba(81,207,102,0.22); }
+        .badge.pub::before { content:''; width:5px; height:5px; border-radius:50%; background:#7ed48a; }
+        .badge.plan { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
+
+        .card-title { font-family:'DM Serif Display',serif; font-size:1.2rem; letter-spacing:-0.02em; line-height:1.2; color:var(--text-primary); }
+        .card-desc { font-size:0.83rem; color:var(--text-secondary); line-height:1.62; flex:1; }
+
+        .btn { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:var(--mint); color:var(--purple-deep); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); transition:background 0.18s,transform 0.14s; border:none; cursor:pointer; width:fit-content; }
+        .btn:hover { background:#a8fce2; transform:translateY(-1px); }
+        .btn svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+        .btn-ghost { display:inline-flex; padding:9px 17px; background:rgba(255,255,255,0.05); color:var(--text-muted); font-size:0.77rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); border:1px solid rgba(255,255,255,0.08); width:fit-content; }
+
+        /* AGENCY CARD */
+        .agency-card {
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            border-radius: var(--r-lg); padding: 22px;
+            display: flex; flex-direction: column; gap: 14px;
+            position: relative; overflow: hidden;
+            transition: transform 0.22s ease, background 0.22s, border-color 0.22s, box-shadow 0.22s;
         }
+        .agency-card::after { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(126,249,212,0.28),transparent); opacity:0; transition:opacity 0.22s; }
+        .agency-card:hover { transform:translateY(-3px); background:var(--card-hover-bg); border-color:var(--card-hover-border); box-shadow:0 14px 36px rgba(0,0,0,0.3); }
+        .agency-card:hover::after { opacity:1; }
 
-        .project-card:hover {
-            transform: translateY(-4px);
-            background: var(--card-hover-bg);
-            border-color: var(--card-hover-border);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(126,249,212,0.08);
-        }
+        .agency-header { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+        .agency-name { font-family:'DM Serif Display',serif; font-size:1.2rem; letter-spacing:-0.02em; line-height:1.2; color:var(--text-primary); }
+        .agency-sub { font-size:0.75rem; color:var(--text-muted); margin-top:3px; }
 
-        .project-card:hover::after { opacity: 1; }
+        .rating-score { font-family:'DM Serif Display',serif; font-size:1.5rem; line-height:1; color:var(--text-primary); }
+        .rating-score.good { color:#6ee7b7; } .rating-score.mid { color:#ffd93d; } .rating-score.bad { color:#ff8f8f; }
+        .stars { display:flex; gap:2px; margin-top:3px; }
+        .star { width:11px; height:11px; }
+        .star.full { fill:#ffd93d; } .star.half { fill:url(#halfGrad); } .star.empty { fill:rgba(255,255,255,0.1); }
+        .rating-meta { font-size:0.65rem; color:var(--text-muted); margin-top:2px; }
 
-        .project-card.disabled {
-            opacity: 0.55;
-            pointer-events: none;
-        }
+        .tags { display:flex; flex-wrap:wrap; gap:6px; }
+        .tag { font-size:0.67rem; font-weight:500; padding:3px 9px; border-radius:4px; letter-spacing:0.05em; }
+        .tag.pos { background:rgba(110,231,183,0.1); color:#6ee7b7; border:1px solid rgba(110,231,183,0.18); }
+        .tag.neg { background:rgba(255,107,107,0.1); color:#ff8f8f; border:1px solid rgba(255,107,107,0.18); }
+        .tag.neu { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
 
-        .badge {
-            display: inline-flex; align-items: center; gap: 5px;
-            font-size: 0.67rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 3px 10px;
-            border-radius: 4px;
-            width: fit-content;
-        }
+        .agency-desc { font-size:0.83rem; color:var(--text-secondary); line-height:1.62; flex:1; }
+        .review-count { font-size:0.72rem; color:var(--text-muted); display:flex; align-items:center; gap:5px; }
+        .review-count svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 
-        .badge.published {
-            background: rgba(81,207,102,0.15);
-            color: #7ed48a;
-            border: 1px solid rgba(81,207,102,0.25);
-        }
+        .coming-strip { background:rgba(255,255,255,0.03); border:1px dashed rgba(255,255,255,0.1); border-radius:var(--r-md); padding:20px; text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:8px; }
 
-        .badge.published::before {
-            content: '';
-            width: 5px; height: 5px;
-            border-radius: 50%;
-            background: #7ed48a;
-        }
+        /* FOOTER */
+        footer { position:relative; z-index:1; margin-top:80px; padding:24px 28px; border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+        .footer-copy { font-size:0.76rem; color:var(--text-muted); }
+        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:400px; text-align:right; line-height:1.5; }
 
-        .badge.planned {
-            background: rgba(255,255,255,0.06);
-            color: var(--text-muted);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
+        /* ANIMATIONS */
+        .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
+        .fade:nth-child(1){animation-delay:.04s} .fade:nth-child(2){animation-delay:.12s}
+        .fade:nth-child(3){animation-delay:.2s}  .fade:nth-child(4){animation-delay:.28s}
+        .fade:nth-child(5){animation-delay:.36s} .fade:nth-child(6){animation-delay:.44s}
+        @keyframes up { to{opacity:1;transform:translateY(0)} }
 
-        .card-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.25rem;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        .card-desc {
-            font-size: 0.84rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            flex: 1;
-        }
-
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 10px 18px;
-            background: var(--mint);
-            color: var(--purple-deep);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            border-radius: var(--radius-sm);
-            transition: background 0.2s, transform 0.15s;
-            border: none;
-            cursor: pointer;
-            width: fit-content;
-        }
-
-        .btn:hover { background: #a8fce2; transform: translateY(-1px); }
-        .btn:active { transform: scale(0.97); }
-
-        .btn svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
-
-        .btn-coming {
-            display: inline-flex;
-            padding: 10px 18px;
-            background: rgba(255,255,255,0.06);
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            border-radius: var(--radius-sm);
-            border: 1px solid rgba(255,255,255,0.1);
-            width: fit-content;
-            cursor: default;
-        }
-
-        .footer {
-            position: relative; z-index: 1;
-            margin-top: 80px;
-            padding: 28px 24px;
-            border-top: 1px solid rgba(255,255,255,0.07);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .footer-copy {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-        }
-
-        .footer-disclaimer {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            max-width: 420px;
-            text-align: right;
-            line-height: 1.5;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(16px);
-            animation: fadeUp 0.55s ease forwards;
-        }
-        .fade-in:nth-child(1) { animation-delay: 0.05s; }
-        .fade-in:nth-child(2) { animation-delay: 0.15s; }
-        .fade-in:nth-child(3) { animation-delay: 0.25s; }
-        .fade-in:nth-child(4) { animation-delay: 0.35s; }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        a:focus-visible,
-        button:focus-visible,
-        .btn:focus-visible {
-            outline: 2px solid var(--mint);
-            outline-offset: 3px;
-            box-shadow: 0 0 0 3px rgba(126,249,212,0.2);
-            border-radius: var(--radius-sm);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-
-        @media (max-width: 680px) {
-            .hero { grid-template-columns: 1fr; }
-            .hero-stats { flex-direction: row; }
-            .stat-item { flex: 1; }
-            .navbar-right { display: none; }
-            .footer-disclaimer { text-align: left; }
-            .currency-bar { flex-direction: column; align-items: flex-start; }
-            .currency-items { justify-content: flex-start; }
+        /* RESPONSIVE */
+        @media (max-width: 640px) {
+            .hero { grid-template-columns:1fr; }
+            .stats-col { flex-direction:row; }
+            .stat-box { flex:1; }
+            .navbar .pill { display:none; }
+            .footer-disc { text-align:left; }
+            .tabs-header { width:100%; }
+            .tab-btn { flex:1; justify-content:center; padding:10px 12px; font-size:0.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-left">
-            <a href="/" class="logo">IMOB<span>VERDICT</span></a>
-            <div class="nav-divider"></div>
-            <span class="nav-label">Audit independent Iași</span>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="halfGrad">
+      <stop offset="50%" stop-color="#ffd93d"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0.1)"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<nav class="navbar">
+    <a href="/" class="logo">IMOB<em>VERDICT</em></a>
+    <div class="pill">
+        <span class="dot"></span>
+        <span>EUR</span>
+        <strong id="euro-nav">—</strong>
+        <span>RON</span>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <!-- HERO -->
+    <header class="hero">
+        <div>
+            <div class="hero-eyebrow fade">Platforma independentă · Iași</div>
+            <h1 class="fade">Adevărul despre<br><em>piața imobiliară</em></h1>
+            <p class="hero-sub fade">Auditam proiectele rezidențiale și agențiile imobiliare din Iași — contracte, utilități și experiența reală a cumpărătorilor.</p>
         </div>
-        <div class="navbar-right">
-            <div class="currency-pill">
-                <span class="dot"></span>
-                <span class="label">EUR/RON</span>
-                <span class="value" id="euro-nav" aria-live="polite">—</span>
+        <div class="stats-col fade">
+            <div class="stat-box">
+                <span class="stat-n">4</span>
+                <span class="stat-l">audituri complexe</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-n">5</span>
+                <span class="stat-l">agenții evaluate</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-n">2</span>
+                <span class="stat-l">în pregătire</span>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main class="wrapper">
-
-        <header class="hero">
+    <!-- CURRENCY BAR -->
+    <div class="cur-bar fade">
+        <div class="cur-bar-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+            </svg>
             <div>
-                <div class="hero-tag fade-in">Platforma independentă · Iași</div>
-                <h1 class="fade-in">Adevărul despre<br><em>proiectele imobiliare</em></h1>
-                <p class="hero-desc fade-in">Analizăm în profunzime contractele, utilitățile și experiența reală a locatarilor — înainte să semnezi.</p>
+                <span class="cur-bar-title">Curs BNR</span>
+                <span class="cur-bar-date" id="curs-data">—</span>
             </div>
-            <div class="hero-stats fade-in">
-                <div class="stat-item">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">audituri publicate</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">2</span>
-                    <span class="stat-label">în pregătire</span>
-                </div>
-            </div>
-        </header>
+        </div>
+        <div class="cur-items" id="cur-items">
+            <span style="font-size:0.8rem;color:var(--text-muted);font-style:italic;">Se încarcă...</span>
+        </div>
+    </div>
 
-        <div class="currency-bar" id="currency-bar">
-            <div class="currency-bar-label">
-                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-                </svg>
-                <div>
-                    <span class="currency-bar-title">Curs valutar orientativ</span>
-                    <span class="currency-bar-date" id="curs-data" aria-live="polite">—</span>
+    <!-- TABS HEADER -->
+    <div class="tabs-header fade" role="tablist" aria-label="Categorii">
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-complexe" id="btn-complexe" onclick="switchTab('complexe')">
+            <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            </svg>
+            Complexe rezidențiale
+            <span class="tab-count">6</span>
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-agentii" id="btn-agentii" onclick="switchTab('agentii')">
+            <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            Agenții imobiliare
+            <span class="tab-count">5</span>
+        </button>
+    </div>
+
+    <!-- TAB: COMPLEXE -->
+    <div class="tab-panel active" id="tab-complexe" role="tabpanel" aria-labelledby="btn-complexe">
+        <div class="section-meta">
+            <h2>Proiecte analizate</h2>
+            <span class="section-count">6 proiecte · Iași</span>
+        </div>
+        <div class="grid">
+            <div class="project-card fade">
+                <span class="badge pub">Audit publicat</span>
+                <h3 class="card-title">Silk District</h3>
+                <p class="card-desc">Analiză privind riscurile contractuale și managementul șantierului în curs.</p>
+                <a href="/silk-district/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi audit</a>
+            </div>
+            <div class="project-card fade">
+                <span class="badge pub">Audit publicat</span>
+                <h3 class="card-title">Evergreen Towers</h3>
+                <p class="card-desc">Evaluare tehnică a infrastructurii de gaz/apă și a procesului de tabulare.</p>
+                <a href="/evergreen/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi audit</a>
+            </div>
+            <div class="project-card fade">
+                <span class="badge pub">Audit publicat</span>
+                <h3 class="card-title">Conest Grand Residence</h3>
+                <p class="card-desc">Costuri de administrare și experiența locatarilor post-recepție.</p>
+                <a href="/conest-grand/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
+            </div>
+            <div class="project-card fade">
+                <span class="badge pub">Audit publicat</span>
+                <h3 class="card-title">Newton Park Copou</h3>
+                <p class="card-desc">Implementarea smart-home și calitatea finisajelor interioare.</p>
+                <a href="/newton-park/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
+            </div>
+            <div class="project-card disabled fade">
+                <span class="badge plan">Planificat</span>
+                <h3 class="card-title">Copou Garden Residence</h3>
+                <p class="card-desc">Densitate locativă, accesibilitate rutieră și plan urbanistic.</p>
+                <span class="btn-ghost">În curând</span>
+            </div>
+            <div class="project-card disabled fade">
+                <span class="badge plan">Planificat</span>
+                <h3 class="card-title">Lazăr Residence</h3>
+                <p class="card-desc">Stadiul lucrărilor și concordanța cu proiectul tehnic aprobat.</p>
+                <span class="btn-ghost">În curând</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB: AGENȚII -->
+    <div class="tab-panel" id="tab-agentii" role="tabpanel" aria-labelledby="btn-agentii">
+        <div class="section-meta">
+            <h2>Agenții evaluate</h2>
+            <span class="section-count">5 agenții · Iași</span>
+        </div>
+        <div class="grid">
+
+            <div class="agency-card fade">
+                <div class="agency-header">
+                    <div>
+                        <h3 class="agency-name">Imobiliare.ro Iași</h3>
+                        <p class="agency-sub">Portal național · Birou local Iași</p>
+                    </div>
+                    <div>
+                        <div class="rating-score good">4.1</div>
+                        <div class="stars">
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star empty" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="rating-meta">127 recenzii</div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag pos">Listing complet</span>
+                    <span class="tag pos">Răspuns rapid</span>
+                    <span class="tag neg">Comision ridicat</span>
+                </div>
+                <p class="agency-desc">Portal cu acoperire națională, prezență solidă în Iași. Recenziile semnalează comisioane de 2–3% cumpărător, cu variații în funcție de agent.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                    <span class="review-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>127 recenzii agregate</span>
+                    <a href="/agentii/imobiliare-ro/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
                 </div>
             </div>
-            <div class="currency-items" id="valute-row" aria-live="polite">
-                <span style="font-size:0.82rem; color:var(--text-muted); font-style:italic;">Se încarcă...</span>
+
+            <div class="agency-card fade">
+                <div class="agency-header">
+                    <div>
+                        <h3 class="agency-name">Blitz Imobiliare</h3>
+                        <p class="agency-sub">Agenție locală · Iași</p>
+                    </div>
+                    <div>
+                        <div class="rating-score good">4.4</div>
+                        <div class="stars">
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star half" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="rating-meta">84 recenzii</div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag pos">Cunoaștere locală</span>
+                    <span class="tag pos">Transparență preț</span>
+                    <span class="tag neu">Portofoliu mediu</span>
+                </div>
+                <p class="agency-desc">Agenție cu reputație solidă în zona Copou și Tătărași. Agenții sunt menționați ca bine informați despre piața locală și onești în evaluări.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                    <span class="review-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>84 recenzii agregate</span>
+                    <a href="/agentii/blitz/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
+                </div>
             </div>
-            <div class="currency-source" id="currency-source">Sursă: —</div>
+
+            <div class="agency-card fade">
+                <div class="agency-header">
+                    <div>
+                        <h3 class="agency-name">Storia / OLX Imobiliare</h3>
+                        <p class="agency-sub">Portal național · Listări directe</p>
+                    </div>
+                    <div>
+                        <div class="rating-score mid">3.6</div>
+                        <div class="stars">
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star half" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star empty" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="rating-meta">203 recenzii</div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag pos">Volum mare listări</span>
+                    <span class="tag neg">Anunțuri expirate</span>
+                    <span class="tag neg">Date incorecte</span>
+                </div>
+                <p class="agency-desc">Volum ridicat de listări, dar recenziile semnalează anunțuri cu prețuri incorecte sau proprietăți deja vândute. Util pentru prospectare, mai puțin pentru tranzacții directe.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                    <span class="review-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>203 recenzii agregate</span>
+                    <a href="/agentii/storia/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
+                </div>
+            </div>
+
+            <div class="agency-card fade">
+                <div class="agency-header">
+                    <div>
+                        <h3 class="agency-name">Re/Max Iași</h3>
+                        <p class="agency-sub">Franciză internațională · Iași</p>
+                    </div>
+                    <div>
+                        <div class="rating-score good">4.2</div>
+                        <div class="stars">
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star empty" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="rating-meta">91 recenzii</div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag pos">Standard internațional</span>
+                    <span class="tag pos">Documentație clară</span>
+                    <span class="tag neg">Comision 3%+</span>
+                </div>
+                <p class="agency-desc">Servicii structurate și transparente contractual. Comisionul este printre cele mai ridicate din piață, justificat parțial de procesul standardizat și suportul post-vânzare.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                    <span class="review-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>91 recenzii agregate</span>
+                    <a href="/agentii/remax/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
+                </div>
+            </div>
+
+            <div class="agency-card fade">
+                <div class="agency-header">
+                    <div>
+                        <h3 class="agency-name">Coldwell Banker Iași</h3>
+                        <p class="agency-sub">Franciză internațională · Iași</p>
+                    </div>
+                    <div>
+                        <div class="rating-score mid">3.8</div>
+                        <div class="stars">
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star half" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <svg class="star empty" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="rating-meta">58 recenzii</div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag pos">Proprietăți premium</span>
+                    <span class="tag neu">Audiență de nișă</span>
+                    <span class="tag neg">Timp răspuns lent</span>
+                </div>
+                <p class="agency-desc">Focus pe segmentul premium și investitori. Recenziile mixte indică variații mari între agenți individuali — experiența depinde mult de cine gestionează tranzacția.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+                    <span class="review-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>58 recenzii agregate</span>
+                    <a href="/agentii/coldwell/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
+                </div>
+            </div>
+
         </div>
 
-        <section>
-            <div class="section-heading">
-                <h2>Proiecte analizate</h2>
-                <span class="section-pill">6 proiecte</span>
-            </div>
+        <div class="coming-strip" style="margin-top:16px;">
+            Cunoști o agenție cu recenzii controversate?
+            <a href="mailto:contact@imobverdict.com" style="color:var(--mint);text-decoration:none;font-weight:500;"> Trimite-ne un raport →</a>
+        </div>
+    </div>
 
-            <div class="grid">
+</div>
 
-                <div class="project-card fade-in">
-                    <span class="badge published">Audit publicat</span>
-                    <h3 class="card-title">Silk District</h3>
-                    <p class="card-desc">Analiză privind riscurile contractuale și managementul șantierului în curs.</p>
-                    <a href="/silk-district/" class="btn">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                        Vezi verdictul
-                    </a>
-                </div>
+<footer>
+    <span class="footer-copy">&copy; 2026 ImobVerdict Iași</span>
+    <span class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</span>
+</footer>
 
-                <div class="project-card fade-in">
-                    <span class="badge published">Audit publicat</span>
-                    <h3 class="card-title">Evergreen Towers</h3>
-                    <p class="card-desc">Evaluare tehnică a infrastructurii de gaz/apă și a procesului de tabulare.</p>
-                    <a href="/evergreen/" class="btn">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                        Vezi verdictul
-                    </a>
-                </div>
-
-                <div class="project-card fade-in">
-                    <span class="badge published">Audit publicat</span>
-                    <h3 class="card-title">Conest Grand Residence</h3>
-                    <p class="card-desc">Costuri de administrare și experiența locatarilor după recepție — colectăm date reale.</p>
-                    <a href="/conest-grand/" class="btn">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                        Vezi verdictul
-                    </a>
-                </div>
-
-                <div class="project-card fade-in">
-                    <span class="badge published">Audit publicat</span>
-                    <h3 class="card-title">Newton Park Copou</h3>
-                    <p class="card-desc">Evaluăm implementarea sistemelor smart-home și calitatea finisajelor interioare.</p>
-                    <a href="/newton-park/" class="btn">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-                        Vezi verdictul
-                    </a>
-                </div>
-
-                <div class="project-card disabled" aria-disabled="true">
-                    <span class="badge planned">Planificat</span>
-                    <h3 class="card-title">Copou Garden Residence</h3>
-                    <p class="card-desc">Investigăm densitatea locativă, accesibilitatea rutieră și respectarea planului urbanistic.</p>
-                    <span class="btn-coming">În curând</span>
-                </div>
-
-                <div class="project-card disabled" aria-disabled="true">
-                    <span class="badge planned">Planificat</span>
-                    <h3 class="card-title">Lazăr Residence</h3>
-                    <p class="card-desc">Monitorizăm stadiul lucrărilor și concordanța cu proiectul tehnic aprobat.</p>
-                    <span class="btn-coming">În curând</span>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <span class="footer-copy">&copy; 2026 ImobVerdict Iași</span>
-        <span class="footer-disclaimer">Datele prezentate sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică.</span>
-    </footer>
-
- <script>
-    const REFRESH_INTERVAL_MS = 30 * 60 * 1000;
-    const CACHE_KEY = 'imobverdict_currency_cache_v1';
-    const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 ore
-    function formatRoDate(dateLike) {
-        const date = new Date(dateLike);
-        if (Number.isNaN(date.getTime())) return '—';
-        return date.toLocaleDateString('ro-RO', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric'
+<script>
+    function switchTab(name) {
+        document.querySelectorAll('.tab-btn').forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
         });
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('btn-' + name).classList.add('active');
+        document.getElementById('btn-' + name).setAttribute('aria-selected', 'true');
+        document.getElementById('tab-' + name).classList.add('active');
     }
-    async function fetchWithTimeout(url, timeoutMs = 6000) {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+    async function fetchCurrency() {
+        const itemsEl = document.getElementById('cur-items');
+        const dateEl  = document.getElementById('curs-data');
+        const navEl   = document.getElementById('euro-nav');
         try {
-            return await fetch(url, { signal: controller.signal, cache: 'no-store' });
-        } finally {
-            clearTimeout(timeoutId);
+            const res = await fetch('https://open.er-api.com/v6/latest/EUR');
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const data = await res.json();
+            const ron = data.rates.RON;
+            if (!ron) throw new Error('No RON');
+            dateEl.textContent = new Date().toLocaleDateString('ro-RO', {day:'2-digit',month:'2-digit',year:'numeric'});
+            navEl.textContent  = ron.toFixed(4);
+            const currencies = [
+                {code:'EUR', rate:1},
+                {code:'USD', rate:1/data.rates.USD},
+                {code:'GBP', rate:1/data.rates.GBP},
+                {code:'CHF', rate:1/data.rates.CHF},
+            ];
+            itemsEl.innerHTML = currencies.map(c =>
+                `<div class="cur-item">
+                    <span class="cur-code">${c.code}</span>
+                    <span class="cur-val">${(c.rate*ron).toFixed(4)}<span class="cur-unit">RON</span></span>
+                </div>`
+            ).join('');
+        } catch(e) {
+            itemsEl.innerHTML = '<span class="cur-err">Date indisponibile momentan</span>';
+            navEl.textContent = 'N/A';
+            console.warn('Currency fetch failed:', e.message);
         }
     }
-    function parseBnrXml(xmlText) {
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-        if (xmlDoc.querySelector('parsererror')) throw new Error('XML BNR invalid');
-        const cubeDateNode = xmlDoc.querySelector('Cube[date]');
-        const dateAttr = cubeDateNode?.getAttribute('date');
-        const rates = {};
-        xmlDoc.querySelectorAll('Rate').forEach(node => {
-            const code = node.getAttribute('currency');
-            const multiplier = Number(node.getAttribute('multiplier') || '1');
-            const value = Number((node.textContent || '').replace(',', '.'));
-            if (!code || !value || Number.isNaN(value) || !multiplier || Number.isNaN(multiplier)) return;
-            rates[code] = value / multiplier;
-        });
-        rates.EUR = 1;
-        if (!rates.RON || !rates.USD || !rates.GBP || !rates.CHF) throw new Error('Rate BNR lipsă');
-        return {
-            source: 'BNR (xml)',
-            updatedAt: dateAttr ? new Date(dateAttr + 'T00:00:00') : Date.now(),
-            rates
-        };
-    }
-    async function getRatesFromBnr() {
-        const bnrXmlUrl = 'https://www.bnr.ro/nbrfxrates.xml';
-        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(bnrXmlUrl)}`;
-        const res = await fetchWithTimeout(proxyUrl, 7000);
-        if (!res.ok) throw new Error(`BNR ${res.status}`);
-        return parseBnrXml(await res.text());
-    }
-    async function getRatesFromErApi() {
-        const res = await fetchWithTimeout('https://open.er-api.com/v6/latest/EUR', 5000);
-        if (!res.ok) throw new Error(`ER API ${res.status}`);
-        const data = await res.json();
-        const rates = data?.rates || {};
-        if (!rates.RON || !rates.USD || !rates.GBP || !rates.CHF) throw new Error('ER API missing rates');
-        return {
-            source: 'open.er-api.com',
-            updatedAt: data?.time_last_update_utc
-                ? new Date(data.time_last_update_utc)
-                : (data?.time_last_update_unix ? new Date(data.time_last_update_unix * 1000) : Date.now()),
-            rates
-        };
-    }
-    function renderCurrency(payload) {
-        const row = document.getElementById('valute-row');
-        const dateEl = document.getElementById('curs-data');
-        const navEl = document.getElementById('euro-nav');
-        const sourceEl = document.getElementById('currency-source');
-        const { rates, updatedAt, source } = payload;
-        const ron = rates.RON;
-        dateEl.textContent = formatRoDate(updatedAt);
-        navEl.textContent = ron.toFixed(4);
-        sourceEl.textContent = `Sursă: ${source}`;
-        const currencies = [
-            { code: 'EUR', ronValue: rates.EUR * ron },
-            { code: 'USD', ronValue: (1 / rates.USD) * ron },
-            { code: 'GBP', ronValue: (1 / rates.GBP) * ron },
-            { code: 'CHF', ronValue: (1 / rates.CHF) * ron }
-        ];
-        row.innerHTML = currencies.map(c => `
-            <div class="currency-item">
-                <span class="c-code">${c.code}</span>
-                <span class="c-val">${c.ronValue.toFixed(4)}<span class="c-unit">RON</span></span>
-            </div>
-        `).join('');
-    }
-    function renderLoading() {
-        const row = document.getElementById('valute-row');
-        row.innerHTML = '<span style="font-size:0.82rem; color:var(--text-muted); font-style:italic;">Se actualizează...</span>';
-    }
-    function renderError() {
-        const row = document.getElementById('valute-row');
-        const dateEl = document.getElementById('curs-data');
-        const navEl = document.getElementById('euro-nav');
-        const sourceEl = document.getElementById('currency-source');
-        row.innerHTML = '<span class="currency-error">Date indisponibile momentan</span>';
-        navEl.textContent = 'N/A';
-        dateEl.textContent = '—';
-        sourceEl.textContent = 'Sursă: indisponibil';
-    }
-    function saveCache(payload) {
-        try {
-            localStorage.setItem(CACHE_KEY, JSON.stringify({
-                savedAt: Date.now(),
-                payload
-            }));
-        } catch (_) {}
-    }
-    function loadCache() {
-        try {
-            const raw = localStorage.getItem(CACHE_KEY);
-            if (!raw) return null;
-            const parsed = JSON.parse(raw);
-            if (!parsed?.payload || !parsed?.savedAt) return null;
-            if (Date.now() - parsed.savedAt > CACHE_TTL_MS) return null;
-            return parsed.payload;
-        } catch (_) {
-            return null;
-        }
-    }
-    async function fetchFreshRates() {
-        const providers = [getRatesFromErApi, getRatesFromBnr]; // ER API mai rapid de obicei
-        let lastError = null;
-        for (const provider of providers) {
-            try {
-                const payload = await provider();
-                renderCurrency(payload);
-                saveCache(payload);
-                return;
-            } catch (err) {
-                lastError = err;
-            }
-        }
-        console.warn('Currency fetch failed:', lastError?.message || lastError);
-        // dacă aveam deja cache randat, nu suprascriem cu eroare
-        if (!loadCache()) renderError();
-    }
-    // 1) randare instant din cache
-    const cached = loadCache();
-    if (cached) {
-        renderCurrency(cached);
-    } else {
-        renderLoading();
-    }
-    // 2) revalidare în background
-    fetchFreshRates();
-    // 3) refresh periodic
-    setInterval(fetchFreshRates, REFRESH_INTERVAL_MS);
+
+    fetchCurrency();
 </script>
 
 </body>
