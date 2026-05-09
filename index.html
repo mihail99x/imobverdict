@@ -243,18 +243,30 @@
         .coming-strip { background:rgba(255,255,255,0.03); border:1px dashed rgba(255,255,255,0.1); border-radius:var(--r-md); padding:20px; text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:8px; }
 
         /* FOOTER */
-        footer { position:relative; z-index:1; margin-top:80px; padding:24px 28px; border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+        footer {
+            position:relative; z-index:1;
+            margin-top:80px; padding:40px 28px;
+            border-top:1px solid var(--mint-border);
+            display:flex; flex-direction: column;
+            align-items:center; justify-content:center;
+            gap:12px;
+        }
         .footer-copy { font-size:0.76rem; color:var(--text-muted); }
-        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:400px; text-align:right; line-height:1.5; }
-        
-<footer style="padding: 40px 28px; border-top: 1px solid var(--mint-border); text-align: center;">
-    <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 10px;">
-        © 2026 ImobVerdict Iași. Toate drepturile rezervate.
-    </p>
-    <a href="/confidentialitate/" style="color: var(--mint); text-decoration: none; font-size: 0.75rem; font-family: 'DM Mono', monospace; opacity: 0.7; transition: 0.3s;">
-        POLITICA DE CONFIDENȚIALITATE
-    </a>
-</footer>
+        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:600px; text-align:center; line-height:1.5; }
+        .footer-link {
+            color: var(--mint);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-family: 'DM Mono', monospace;
+            opacity: 0.7;
+            transition: 0.3s;
+            margin-top: 5px;
+            border: 1px solid var(--mint-border);
+            padding: 5px 18px;
+            border-radius: 100px;
+        }
+        .footer-link:hover { opacity: 1; background: var(--mint-dim); }
+
         /* ANIMATIONS */
         .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
         .fade:nth-child(1){animation-delay:.04s} .fade:nth-child(2){animation-delay:.12s}
@@ -268,7 +280,6 @@
             .stats-col { flex-direction:row; }
             .stat-box { flex:1; }
             .navbar .pill { display:none; }
-            .footer-disc { text-align:left; }
             .tabs-header { width:100%; }
             .tab-btn { flex:1; justify-content:center; padding:10px 12px; font-size:0.8rem; }
         }
@@ -297,7 +308,6 @@
 
 <div class="wrap">
 
-    <!-- HERO -->
     <header class="hero">
         <div>
             <div class="hero-eyebrow fade">Platforma independentă · Iași</div>
@@ -320,7 +330,6 @@
         </div>
     </header>
 
-    <!-- CURRENCY BAR -->
     <div class="cur-bar fade">
         <div class="cur-bar-left">
             <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
@@ -336,7 +345,6 @@
         </div>
     </div>
 
-    <!-- TABS HEADER -->
     <div class="tabs-header fade" role="tablist" aria-label="Categorii">
         <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-complexe" id="btn-complexe" onclick="switchTab('complexe')">
             <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -357,7 +365,6 @@
         </button>
     </div>
 
-    <!-- TAB: COMPLEXE -->
     <div class="tab-panel active" id="tab-complexe" role="tabpanel" aria-labelledby="btn-complexe">
         <div class="section-meta">
             <h2>Proiecte analizate</h2>
@@ -403,14 +410,12 @@
         </div>
     </div>
 
-    <!-- TAB: AGENȚII -->
     <div class="tab-panel" id="tab-agentii" role="tabpanel" aria-labelledby="btn-agentii">
         <div class="section-meta">
             <h2>Agenții evaluate</h2>
             <span class="section-count">5 agenții · Iași</span>
         </div>
         <div class="grid">
-
             <div class="agency-card fade">
                 <div class="agency-header">
                     <div>
@@ -440,140 +445,13 @@
                     <a href="/agentii/imobiliare-ro/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
                 </div>
             </div>
-
-            <div class="agency-card fade">
-                <div class="agency-header">
-                    <div>
-                        <h3 class="agency-name">Blitz Imobiliare</h3>
-                        <p class="agency-sub">Agenție locală · Iași</p>
-                    </div>
-                    <div>
-                        <div class="rating-score good">4.4</div>
-                        <div class="stars">
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star half" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <div class="rating-meta">84 recenzii</div>
-                    </div>
-                </div>
-                <div class="tags">
-                    <span class="tag pos">Cunoaștere locală</span>
-                    <span class="tag pos">Transparență preț</span>
-                    <span class="tag neu">Portofoliu mediu</span>
-                </div>
-                <p class="agency-desc">Agenție cu reputație solidă în zona Copou și Tătărași. Agenții sunt menționați ca bine informați despre piața locală și onești în evaluări.</p>
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
-                    <span class="review-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>84 recenzii agregate</span>
-                    <a href="/agentii/blitz/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
-                </div>
             </div>
-
-            <div class="agency-card fade">
-                <div class="agency-header">
-                    <div>
-                        <h3 class="agency-name">Storia / OLX Imobiliare</h3>
-                        <p class="agency-sub">Portal național · Listări directe</p>
-                    </div>
-                    <div>
-                        <div class="rating-score mid">3.6</div>
-                        <div class="stars">
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star half" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star empty" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <div class="rating-meta">203 recenzii</div>
-                    </div>
-                </div>
-                <div class="tags">
-                    <span class="tag pos">Volum mare listări</span>
-                    <span class="tag neg">Anunțuri expirate</span>
-                    <span class="tag neg">Date incorecte</span>
-                </div>
-                <p class="agency-desc">Volum ridicat de listări, dar recenziile semnalează anunțuri cu prețuri incorecte sau proprietăți deja vândute. Util pentru prospectare, mai puțin pentru tranzacții directe.</p>
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
-                    <span class="review-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>203 recenzii agregate</span>
-                    <a href="/agentii/storia/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
-                </div>
-            </div>
-
-            <div class="agency-card fade">
-                <div class="agency-header">
-                    <div>
-                        <h3 class="agency-name">Re/Max Iași</h3>
-                        <p class="agency-sub">Franciză internațională · Iași</p>
-                    </div>
-                    <div>
-                        <div class="rating-score good">4.2</div>
-                        <div class="stars">
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star empty" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <div class="rating-meta">91 recenzii</div>
-                    </div>
-                </div>
-                <div class="tags">
-                    <span class="tag pos">Standard internațional</span>
-                    <span class="tag pos">Documentație clară</span>
-                    <span class="tag neg">Comision 3%+</span>
-                </div>
-                <p class="agency-desc">Servicii structurate și transparente contractual. Comisionul este printre cele mai ridicate din piață, justificat parțial de procesul standardizat și suportul post-vânzare.</p>
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
-                    <span class="review-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>91 recenzii agregate</span>
-                    <a href="/agentii/remax/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
-                </div>
-            </div>
-
-            <div class="agency-card fade">
-                <div class="agency-header">
-                    <div>
-                        <h3 class="agency-name">Coldwell Banker Iași</h3>
-                        <p class="agency-sub">Franciză internațională · Iași</p>
-                    </div>
-                    <div>
-                        <div class="rating-score mid">3.8</div>
-                        <div class="stars">
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star full" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star half" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <svg class="star empty" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        </div>
-                        <div class="rating-meta">58 recenzii</div>
-                    </div>
-                </div>
-                <div class="tags">
-                    <span class="tag pos">Proprietăți premium</span>
-                    <span class="tag neu">Audiență de nișă</span>
-                    <span class="tag neg">Timp răspuns lent</span>
-                </div>
-                <p class="agency-desc">Focus pe segmentul premium și investitori. Recenziile mixte indică variații mari între agenți individuali — experiența depinde mult de cine gestionează tranzacția.</p>
-                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
-                    <span class="review-count"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>58 recenzii agregate</span>
-                    <a href="/agentii/coldwell/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="coming-strip" style="margin-top:16px;">
-            Cunoști o agenție cu recenzii controversate?
-            <a href="mailto:contact@imobverdict.com" style="color:var(--mint);text-decoration:none;font-weight:500;"> Trimite-ne un raport →</a>
-        </div>
     </div>
 
-</div>
-
-<footer>
-    <span class="footer-copy">&copy; 2026 ImobVerdict Iași</span>
-    <span class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</span>
+</div> <footer>
+    <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
+    <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
+    <a href="/confidentialitate/" class="footer-link">POLITICA DE CONFIDENȚIALITATE</a>
 </footer>
 
 <script>
