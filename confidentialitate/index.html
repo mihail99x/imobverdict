@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politica de Confidențialitate | ImobVerdict</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* [Folosește aceleași variabile și stiluri de bază din formatul tău de lux] */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --mint: #7ef9d4; --purple-deep: #130c22;
+            --text-primary: #eeeaf8; --text-secondary: rgba(238,234,248,0.62);
+            --mint-border: rgba(126,249,212,0.18); --r-lg: 20px;
+        }
+        body {
+            background-color: var(--purple-deep);
+            background-image: radial-gradient(ellipse 80% 55% at 15% 5%, rgba(100,55,170,0.3) 0%, transparent 60%);
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; line-height: 1.6;
+        }
+        .navbar { position: sticky; top: 0; z-index: 100; background: rgba(14,7,28,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--mint-border); padding: 0 28px; height: 55px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #fff; text-decoration: none; }
+        .logo span { color: var(--mint); }
+        .wrapper { max-width: 800px; margin: 60px auto; padding: 0 24px; }
+        h1 { font-family: 'DM Serif Display', serif; font-size: 3rem; margin-bottom: 10px; color: var(--mint); }
+        .last-up { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 50px; display: block; }
+        
+        .policy-section { margin-bottom: 40px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 30px; border-radius: var(--r-lg); }
+        h2 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 12px; }
+        h2 span { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--mint); opacity: 0.6; }
+        p { color: var(--text-secondary); margin-bottom: 15px; font-size: 0.95rem; }
+        ul { list-style: none; color: var(--text-secondary); font-size: 0.95rem; }
+        li { margin-bottom: 8px; display: flex; gap: 10px; }
+        li::before { content: '→'; color: var(--mint); }
+        
+        .contact-box { background: rgba(126,249,212,0.05); border: 1px dashed var(--mint); padding: 20px; border-radius: 10px; margin-top: 30px; }
+        .btn-back { display: inline-block; margin-top: 40px; color: var(--mint); text-decoration: none; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="logo">IMOB<span>VERDICT</span></a>
+    </nav>
+
+    <div class="wrapper">
+        <h1>Confidențialitate</h1>
+        <span class="last-up">Ultima actualizare: 09 Mai, 2026</span>
+
+        <div class="policy-section">
+            <h2><span>01</span> Date colectate</h2>
+            <p>ImobVerdict este conceput să funcționeze cu un minim de date personale. În prezent, colectăm:</p>
+            <ul>
+                <li><strong>Date de trafic:</strong> Adresa IP, tipul browserului și paginile vizitate (prin Google Analytics) pentru a înțelege ce proiecte interesează publicul ieșean.</li>
+                <li><strong>Comunicări directe:</strong> Adresa de email și numele, doar dacă alegi să ne contactezi sau să ne trimiți o raportare despre un complex imobiliar.</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2><span>02</span> Cum folosim informația</h2>
+            <p>Utilizăm datele exclusiv pentru operarea platformei:</p>
+            <ul>
+                <li>Sintetizarea raportărilor primite de la locatari în audite anonimizate.</li>
+                <li>Îmbunătățirea algoritmului de analiză a recenziilor.</li>
+                <li>Răspunsul la solicitările de actualizare din partea dezvoltatorilor sau a utilizatorilor.</li>
+            </ul>
+        </div>
+
+        <div class="policy-section" style="border-color: var(--mint);">
+            <h2><span>03</span> Protecția locatarilor (Anonimat)</h2>
+            <p>Acesta este principiul nostru de bază. Dacă ne trimiți o sesizare despre un defect de construcție sau o problemă contractuală:</p>
+            <ul>
+                <li><strong>NU</strong> vom partaja identitatea ta cu dezvoltatorul sau agenția imobiliară.</li>
+                <li><strong>NU</strong> vindem datele tale către parteneri de marketing.</li>
+                <li><strong>DA</strong>, folosim informația tehnică pentru a avertiza alți potențiali cumpărători, dar eliminăm orice detaliu care te-ar putea identifica.</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2><span>04</span> Servicii terțe</h2>
+            <p>Pentru a menține platforma online, folosim următoarele servicii care pot procesa date conform propriilor politici:</p>
+            <ul>
+                <li><strong>GitHub Pages:</strong> Găzduirea site-ului.</li>
+                <li><strong>Google Analytics:</strong> Analiza traficului (fără date de identificare personală).</li>
+                <li><strong>Revolut/PayPal:</strong> Doar în cazul în care alegi să susții proiectul prin secțiunea „Buy me a coffee”.</li>
+            </ul>
+        </div>
+
+        <div class="contact-box">
+            <p style="margin-bottom: 5px; color: var(--text-primary);">Ai întrebări despre datele tale?</p>
+            <p style="font-size: 0.85rem;">Scrie-ne oricând la: <a href="mailto:privacy@imobverdict.com" style="color: var(--mint);">privacy@imobverdict.com</a></p>
+        </div>
+
+        <a href="/" class="btn-back">← Înapoi la platformă</a>
+    </div>
+
+</body>
+</html>
