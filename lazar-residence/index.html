@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audit: Lazăr Residence | ImobVerdict</title>
-    <meta name="description" content="Audit independent Lazăr Residence Iași: locație premium, provocări cu intabularea, calitatea execuției și randament investițional.">
+    <meta name="description" content="Analiză independentă Lazăr Residence Iași: impactul regimului hotelier, probleme de izolare fonică și managementul viciilor de construcție.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* Folosește același bloc de CSS ca la Evergreen pentru consistență totală */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
             --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.12); --mint-border: rgba(126,249,212,0.2);
@@ -19,111 +18,116 @@
             --card-border: rgba(126,249,212,0.12); --radius-sm: 8px; --radius-md: 14px; --radius-lg: 20px;
         }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--purple-deep); background-image: radial-gradient(ellipse 80% 60% at 20% 10%, rgba(90,50,150,0.42) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(30,80,100,0.3) 0%, transparent 55%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=60'); background-size: cover; background-position: center; background-attachment: scroll; color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; }
-        body::before { content: ''; position: fixed; inset: 0; background: linear-gradient(160deg, rgba(18,8,35,0.93) 0%, rgba(22,12,40,0.9) 50%, rgba(14,30,42,0.93) 100%); z-index: 0; pointer-events: none; }
-        .navbar { position: sticky; top: 0; z-index: 100; background: rgba(18,8,35,0.75); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border-bottom: 1px solid var(--mint-border); padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
-        .navbar-left { display: flex; align-items: center; gap: 18px; }
+        body { 
+            background-color: var(--purple-deep); 
+            background-image: radial-gradient(ellipse 80% 60% at 20% 10%, rgba(90,50,150,0.42) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(30,80,100,0.3) 0%, transparent 55%);
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; 
+        }
+        body::before { content: ''; position: fixed; inset: 0; background: linear-gradient(160deg, rgba(18,8,35,0.93) 0%, rgba(22,12,40,0.9) 50%, rgba(14,30,42,0.93) 100%); z-index: -1; }
+        
+        .navbar { position: sticky; top: 0; z-index: 100; background: rgba(18,8,35,0.75); backdrop-filter: blur(18px); border-bottom: 1px solid var(--mint-border); padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
         .logo { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--text-primary); text-decoration: none; }
         .logo span { color: var(--mint); }
-        .nav-divider { width: 1px; height: 18px; background: var(--mint-border); }
-        .nav-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
         .back-link { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; }
-        .back-link:hover { color: var(--mint); }
+        
         .wrapper { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
-        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 36px; }
-        .breadcrumb a { color: var(--text-muted); text-decoration: none; }
-        .breadcrumb a:hover { color: var(--mint); }
-        .report-header { background: var(--card-bg); border: 1px solid var(--mint-border); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 40px 40px 36px; position: relative; overflow: hidden; }
+        .report-header { background: var(--card-bg); border: 1px solid var(--mint-border); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 40px; position: relative; }
         .report-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent 0%, var(--mint) 40%, rgba(126,249,212,0.28) 100%); }
-        .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
         .project-name { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; color: var(--text-primary); }
-        .project-subtitle { font-size: 0.92rem; color: var(--text-secondary); margin-top: 10px; max-width: 560px; line-height: 1.65; }
         .risk-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 16px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; }
         .risk-badge.high { background: rgba(255,107,107,0.15); color: #ff9a9a; border: 1px solid rgba(255,107,107,0.32); }
-        .risk-badge.high::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #ff6b6b; box-shadow: 0 0 6px rgba(255,107,107,0.6); }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+        
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 25px; }
         .stat-item { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-sm); padding: 14px 16px; }
         .stat-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 5px; }
-        .stat-value { font-size: 0.92rem; font-weight: 500; color: var(--mint); display: block; line-height: 1.35; }
+        .stat-value { font-size: 0.92rem; color: var(--mint); font-weight: 500; }
+
         .report-body { background: rgba(255,255,255,0.03); border: 1px solid rgba(126,249,212,0.1); border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 40px; }
         .section-title { display: flex; align-items: center; gap: 12px; font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--text-primary); margin: 44px 0 20px; }
         .section-title::before { content: ''; width: 3px; height: 20px; background: var(--mint); border-radius: 2px; }
+
         .risk-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-        .risk-table thead tr { border-bottom: 1px solid rgba(126,249,212,0.16); }
-        .risk-table th { padding: 10px 16px; text-align: left; font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; }
-        .risk-table td { padding: 14px 16px; vertical-align: top; color: var(--text-secondary); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .risk-table th { padding: 10px 16px; text-align: left; font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; border-bottom: 1px solid var(--mint-border); }
+        .risk-table td { padding: 14px 16px; color: var(--text-secondary); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        
         .impact-tag { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 4px; font-size: 0.67rem; font-weight: 600; text-transform: uppercase; }
         .impact-tag.critic { background: rgba(255,107,107,0.14); color: #ff9a9a; }
         .impact-tag.major { background: rgba(255,160,80,0.14); color: #ffba84; }
         .impact-tag.optim { background: rgba(110,231,183,0.13); color: #87f0c8; }
+
         .obs-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-        .obs-list li { display: flex; gap: 14px; padding: 16px 18px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-sm); font-size: 0.875rem; color: var(--text-secondary); }
-        .obs-list li::before { content: ''; width: 3px; min-height: 100%; border-radius: 2px; flex-shrink: 0; background: var(--mint); }
-        .verdict-box { background: rgba(126,249,212,0.05); border-left: 3px solid var(--mint); padding: 24px 28px; margin-top: 44px; }
+        .obs-list li { display: flex; gap: 14px; padding: 16px 18px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-sm); font-size: 0.875rem; }
+        .obs-list li.pos::before { content: '🟢'; }
+        .obs-list li.neg::before { content: '🔴'; }
+
+        .verdict-box { background: rgba(126,249,212,0.05); border-left: 3px solid var(--mint); padding: 24px 28px; margin-top: 44px; border-radius: 0 10px 10px 0; }
         .verdict-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; color: var(--mint); display: block; margin-bottom: 10px; }
-        .action-box { background: rgba(126,249,212,0.06); border: 1px dashed rgba(126,249,212,0.3); border-radius: var(--radius-md); padding: 28px 32px; margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; padding: 11px 20px; background: var(--mint); color: var(--purple-deep); text-decoration: none; font-weight: 600; font-size: 0.78rem; text-transform: uppercase; border-radius: var(--radius-sm); }
+        
         .fade-in { opacity: 0; transform: translateY(14px); animation: fadeUp 0.5s ease forwards; }
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 640px) { .report-header, .report-body { padding: 24px 20px; } }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-left">
             <a href="/" class="logo">IMOB<span>VERDICT</span></a>
-            <div class="nav-divider"></div>
-            <span class="nav-label">Raport audit</span>
+            <div style="width: 1px; height: 18px; background: var(--mint-border); margin: 0 18px;"></div>
+            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Raport audit</span>
         </div>
-        <a href="/" class="back-link">Toate proiectele</a>
+        <a href="/" class="back-link">← Proiecte</a>
     </nav>
 
     <main class="wrapper">
-        <nav class="breadcrumb fade-in">
-            <a href="/">Acasă</a> / <a href="/">Proiecte</a> / <span class="current">Lazăr Residence</span>
-        </nav>
-
-        <section class="report-header fade-in">
-            <div class="header-top">
+        <header class="report-header fade-in">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
                 <div>
                     <h1 class="project-name">Lazăr Residence</h1>
-                    <p class="project-subtitle">Analiză privind documentația cadastrală, presiunea locativă ultra-centrală și calitatea vieții în vecinătatea imediată a ansamblului Palas.</p>
+                    <p style="font-size: 0.92rem; color: var(--text-secondary); margin-top: 10px; max-width: 560px;">Analiză privind impactul regimului hotelier asupra comunității, viciile de izolare fonică și problemele de mentenanță raportate post-recepție.</p>
                 </div>
-                <span class="risk-badge high">Risc ridicat · Documentație</span>
+                <span class="risk-badge high">Risc Ridicat · Social</span>
             </div>
             <div class="stats-grid">
-                <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Str. Sf. Lazăr / Palas</span></div>
-                <div class="stat-item"><span class="stat-label">Dezvoltator</span><span class="stat-value">MCM Construct</span></div>
-                <div class="stat-item"><span class="stat-label">Status</span><span class="stat-value">Finalizat (Locuit)</span></div>
-                <div class="stat-item"><span class="stat-label">Actualizare</span><span class="stat-value">Mai 2026</span></div>
+                <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Centru (Palas), Iași</span></div>
+                <div class="stat-item"><span class="stat-label">Profil Locatari</span><span class="stat-value">Predominant Regim Hotelier</span></div>
+                <div class="stat-item"><span class="stat-label">Cost Parcare</span><span class="stat-value">Premium / Peste Medie</span></div>
+                <div class="stat-item"><span class="stat-label">Actualizat</span><span class="stat-value">Mai 2026</span></div>
             </div>
-        </section>
+        </header>
 
         <section class="report-body fade-in">
-            <h2 class="section-title"><span>01</span> Matricea de riscuri</h2>
+            <h2 class="section-title"><span>01</span> Matricea de riscuri detectate</h2>
             <table class="risk-table">
-                <thead><tr><th>Punct control</th><th>Observație</th><th>Impact</th></tr></thead>
+                <thead><tr><th>Punct control</th><th>Observație audit</th><th>Impact</th></tr></thead>
                 <tbody>
-                    <tr><td>Intabulare / CVC</td><td>Raportări privind blocaje în procesul de intabulare din anul 2021; mulți locatari sunt încă în stadiul de promisiune.</td><td><span class="impact-tag critic">Critic</span></td></tr>
-                    <tr><td>Acces Auto / Parcare</td><td>Trafic extrem la orele de vârf; locurile de parcare sunt limitate și extrem de scumpe.</td><td><span class="impact-tag major">Major</span></td></tr>
-                    <tr><td>Zgomot Urban</td><td>Nivel ridicat de decibeli cauzat de proximitatea arterelor principale și a zonei comerciale intense.</td><td><span class="impact-tag major">Major</span></td></tr>
-                    <tr><td>Randament Chirie</td><td>Cel mai mare potențial de închiriere din oraș (Short/Long term) datorită hub-ului de business.</td><td><span class="impact-tag optim">Optim</span></td></tr>
+                    <tr><td>Comunitate & Siguranță</td><td>Proporție masivă de apartamente în regim hotelier. Raportări privind scandaluri, acces neautorizat la uși și profil locativ instabil.</td><td><span class="impact-tag critic">Critic</span></td></tr>
+                    <tr><td>Confort Acustic</td><td>Izolare fonică deficitară între unități. Transmisia zgomotului structural afectează sever intimitatea.</td><td><span class="impact-tag critic">Critic</span></td></tr>
+                    <tr><td>Instalații Tehnice</td><td>Miros de canalizare raportat recurent în băi și probleme cu hidroizolația la ultimele etaje.</td><td><span class="impact-tag major">Major</span></td></tr>
+                    <tr><td>Administrare Scări</td><td>Management defectuos al curățeniei și acces restricționat/limitat la lifturi pentru anumite etaje.</td><td><span class="impact-tag major">Major</span></td></tr>
+                    <tr><td>Acces Urban</td><td>Poziționare de top cu acces facil la Palas Mall, office hubs și shop-uri non-stop.</td><td><span class="impact-tag optim">Optim</span></td></tr>
                 </tbody>
             </table>
 
-            <h2 class="section-title"><span>02</span> Observații cheie</h2>
+            <h2 class="section-title"><span>02</span> Sinteza review-urilor (Vocea Locatarului)</h2>
             <ul class="obs-list">
-                <li><strong>Statut Juridic —</strong> Verificați cu un avocat stadiul exact al intabulării blocului/unității înainte de a semna orice document.</li>
-                <li><strong>Infrastructură —</strong> Deși materialele par premium, s-au raportat crăpături în tencuială în faza de tasare a blocurilor noi.</li>
+                <li class="pos"><strong>Investiție:</strong> Excelent pentru chirie short-term datorită cererii constante în zona centrală.</li>
+                <li class="pos"><strong>Dotări interioare:</strong> Spații bine compartimentate, luminoase și moderne.</li>
+                <li class="neg"><strong>Mediu Social:</strong> "Atmosferă de cămin studențesc de lux" — zgomot, gunoi pe scări și lipsă de respect pentru regulile de conviețuire.</li>
+                <li class="neg"><strong>Infrastructură:</strong> Probleme raportate cu scurgerea la dușuri (înfundări) și calitatea igienei în spațiile comune.</li>
+                <li class="neg"><strong>Parcare:</strong> Investiție semnificativă necesară pentru un loc privat; parcare "la liber" practic inexistentă în zonă.</li>
             </ul>
 
             <div class="verdict-box">
                 <span class="verdict-label">Verdict ImobVerdict</span>
-                <p>Lazăr Residence este "Piața Zero" a Iașului. Excelent pentru investitori, dar extrem de riscant pentru cumpărătorii care depind de credit ipotecar (din cauza problemelor de acte).</p>
+                <p>Lazăr Residence este paradisul investitorilor și coșmarul familiilor. Deși construcția în sine este considerată peste medie ca structură, **regimul hotelier necontrolat (aprox. 80%)** a degradat experiența locuirii permanente. </p>
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--text-secondary);">
+                    <strong>Recomandare:</strong> Ideal pentru expați sau tineri profesioniști care prioritizează locația. Nerecomandat celor sensibili la zgomot sau care caută o comunitate stabilă și liniștită.
+                </div>
             </div>
 
-            <div class="action-box">
-                <div class="action-box-text"><p>Ai informații despre intabulare?</p><p>Ajută comunitatea cu date despre stadiul actelor la Lazăr Residence.</p></div>
-                <a href="mailto:contact@imobverdict.com" class="btn">Trimite Update</a>
+            <div style="margin-top: 40px; padding: 20px; background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--text-muted);">
+                <strong>Notă metodologică:</strong> Acest audit centralizează review-uri agregate de pe Google Maps și Reddit (Mai 2026). Prețurile și disponibilitatea se verifică punctual la data achiziției pentru a evita dezinformarea.
             </div>
         </section>
     </main>
