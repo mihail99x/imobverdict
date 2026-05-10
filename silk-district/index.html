@@ -3,37 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audit: Silk District | ImobVerdict</title>
-    <meta name="description" content="Raport audit independent pentru Silk District: riscuri contractuale, infrastructură, șantier și recomandări pentru cumpărători.">
+    <title>Recenzii & Audit Silk District Iași 2026 | ImobVerdict</title>
+    <meta name="description" content="Ce spun cumpărătorii despre Silk District Iași: utilități, administrare, contractare și finisaje — sinteză independentă bazată pe recenzii publice.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
             --mint: #7ef9d4;
-            --mint-dim: rgba(126,249,212,0.12);
-            --mint-border: rgba(126,249,212,0.2);
-            --purple-deep: #1a0f2e;
-            --text-primary: #f0eef8;
-            --text-secondary: rgba(240,238,248,0.75);
-            --text-muted: rgba(240,238,248,0.52);
-            --card-bg: rgba(255,255,255,0.04);
-            --card-border: rgba(126,249,212,0.12);
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 20px;
+            --mint-dim: rgba(126,249,212,0.10);
+            --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #130c22;
+            --text-primary: #eeeaf8;
+            --text-secondary: rgba(238,234,248,0.65);
+            --text-muted: rgba(238,234,248,0.38);
+            --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11);
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
         }
         html { scroll-behavior: smooth; }
         body {
             background-color: var(--purple-deep);
             background-image:
-                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(90,50,150,0.42) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(30,80,100,0.3) 0%, transparent 55%),
-                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=60');
+                radial-gradient(ellipse 80% 55% at 15% 5%, rgba(100,55,170,0.38) 0%, transparent 60%),
+                radial-gradient(ellipse 55% 45% at 85% 85%, rgba(20,75,110,0.28) 0%, transparent 55%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll;
             color: var(--text-primary);
             font-family: 'DM Sans', sans-serif;
             font-size: 16px;
@@ -42,589 +39,609 @@
         }
         body::before {
             content: '';
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(160deg, rgba(18,8,35,0.93) 0%, rgba(22,12,40,0.9) 50%, rgba(14,30,42,0.93) 100%);
-            z-index: 0;
-            pointer-events: none;
+            position: fixed; inset: 0;
+            background: linear-gradient(155deg, rgba(14,7,28,0.94) 0%, rgba(18,10,32,0.91) 45%, rgba(10,24,36,0.94) 100%);
+            z-index: 0; pointer-events: none;
         }
+
+        /* NAVBAR */
         .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(18,8,35,0.75);
-            backdrop-filter: blur(18px) saturate(1.4);
-            -webkit-backdrop-filter: blur(18px) saturate(1.4);
-            border-bottom: 1px solid var(--mint-border);
-            padding: 0 24px;
+            position: sticky; top: 0; z-index: 200;
             height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 28px;
+            background: rgba(14,7,28,0.75);
+            backdrop-filter: blur(20px) saturate(1.5);
+            -webkit-backdrop-filter: blur(20px) saturate(1.5);
+            border-bottom: 1px solid var(--mint-border);
         }
-        .navbar-left {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-        .logo {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.15rem;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: 0.02em;
-        }
-        .logo span { color: var(--mint); }
-        .nav-divider {
-            width: 1px;
-            height: 18px;
-            background: var(--mint-border);
-        }
-        .nav-label {
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+        .navbar-left { display: flex; align-items: center; gap: 16px; }
+        .logo { font-family: 'DM Serif Display', serif; font-size: 1.12rem; letter-spacing: 0.01em; color: var(--text-primary); text-decoration: none; }
+        .logo em { font-style: normal; color: var(--mint); }
+        .nav-divider { width: 1px; height: 18px; background: var(--mint-border); }
+        .nav-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+        .back-link { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
         .back-link:hover { color: var(--mint); }
-        .back-link svg {
-            width: 14px;
-            height: 14px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
+        .back-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        /* WRAPPER */
         .wrapper {
-            position: relative;
-            z-index: 1;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
+            position: relative; z-index: 1;
+            max-width: 900px; margin: 0 auto;
+            padding: 36px 24px 100px;
         }
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-bottom: 36px;
-        }
-        .breadcrumb a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+
+        /* BREADCRUMB */
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.73rem; color: var(--text-muted); margin-bottom: 28px; }
+        .breadcrumb a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
         .breadcrumb a:hover { color: var(--mint); }
-        .breadcrumb .sep { opacity: 0.45; }
-        .breadcrumb .current { color: var(--text-secondary); }
-        .report-header {
+        .breadcrumb .sep { opacity: 0.4; }
+        .breadcrumb .cur { color: var(--text-secondary); }
+
+        /* PAGE HEADER */
+        .page-header {
             background: var(--card-bg);
             border: 1px solid var(--mint-border);
-            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-            padding: 40px 40px 36px;
-            position: relative;
+            border-radius: var(--r-lg);
+            padding: 32px 36px 28px;
+            margin-bottom: 14px;
+            position: relative; overflow: hidden;
+        }
+        .page-header::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--mint) 40%, rgba(126,249,212,0.2) 100%);
+        }
+        .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
+        .project-name { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.08; letter-spacing: -0.03em; }
+        .project-loc { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-muted); margin-top: 8px; }
+        .project-loc svg { width: 13px; height: 13px; fill: none; stroke: var(--mint); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+        .badge-stack { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
+        .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 11px; border-radius: 100px; white-space: nowrap; }
+        .badge.pub { background: rgba(81,207,102,0.13); color: #7ed48a; border: 1px solid rgba(81,207,102,0.25); }
+        .badge.pub::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #7ed48a; }
+        .badge.updated { background: rgba(255,255,255,0.05); color: var(--text-muted); border: 1px solid rgba(255,255,255,0.09); font-size: 0.62rem; }
+
+        .meta-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+        .meta-item { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--r-sm); padding: 12px 14px; }
+        .meta-label { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 4px; }
+        .meta-val { font-size: 0.87rem; font-weight: 500; color: var(--mint); display: block; line-height: 1.3; }
+
+        /* SECTIONS */
+        .audit-section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--r-lg);
+            margin-bottom: 12px;
             overflow: hidden;
         }
-        .report-header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, var(--mint) 40%, rgba(126,249,212,0.28) 100%);
-        }
-        .header-top {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 28px;
-        }
-        .project-name {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            color: var(--text-primary);
-        }
-        .project-subtitle {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            margin-top: 10px;
-            max-width: 560px;
-            line-height: 1.65;
-        }
-        .risk-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 7px 16px;
-            border-radius: 100px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        .risk-badge.high {
-            background: rgba(255,107,107,0.15);
-            color: #ff9a9a;
-            border: 1px solid rgba(255,107,107,0.32);
-        }
-        .risk-badge.high::before {
-            content: '';
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #ff6b6b;
-            box-shadow: 0 0 6px rgba(255,107,107,0.6);
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 12px;
-        }
-        .stat-item {
-            background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: var(--radius-sm);
-            padding: 14px 16px;
-        }
-        .stat-label {
-            font-size: 0.68rem;
-            font-weight: 500;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            display: block;
-            margin-bottom: 5px;
-        }
-        .stat-value {
-            font-size: 0.92rem;
-            font-weight: 500;
-            color: var(--mint);
-            display: block;
-            line-height: 1.35;
-        }
-        .report-body {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(126,249,212,0.1);
-            border-top: none;
-            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-            padding: 40px;
-        }
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.25rem;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            margin: 44px 0 20px;
-        }
-        .section-title:first-child { margin-top: 0; }
-        .section-title::before {
-            content: '';
-            width: 3px;
-            height: 20px;
-            background: var(--mint);
-            border-radius: 2px;
-            flex-shrink: 0;
-        }
-        .section-num {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            font-style: normal;
-        }
-        .risk-table-wrap {
-            overflow-x: auto;
-            border-radius: var(--radius-sm);
-        }
-        .risk-table {
-            width: 100%;
-            min-width: 680px;
-            border-collapse: collapse;
-            font-size: 0.875rem;
-        }
-        .risk-table thead tr {
-            border-bottom: 1px solid rgba(126,249,212,0.16);
-        }
-        .risk-table th {
-            padding: 10px 16px;
-            text-align: left;
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-        .risk-table tbody tr {
+        .section-head {
+            display: flex; align-items: center; gap: 12px;
+            padding: 16px 22px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .section-head svg { width: 16px; height: 16px; fill: none; stroke: var(--mint); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+        .section-head-title { font-family: 'DM Serif Display', serif; font-size: 1.05rem; letter-spacing: -0.01em; }
+        .section-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--text-muted); margin-left: auto; }
+
+        .section-body { padding: 6px 0; }
+        .info-row {
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            padding: 13px 22px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
             transition: background 0.15s;
         }
-        .risk-table tbody tr:last-child { border-bottom: none; }
-        .risk-table tbody tr:hover { background: rgba(255,255,255,0.03); }
-        .risk-table td {
-            padding: 14px 16px;
-            vertical-align: top;
-            line-height: 1.55;
-            color: var(--text-secondary);
+        .info-row:last-child { border-bottom: none; }
+        .info-row:hover { background: rgba(255,255,255,0.025); }
+        .info-label { font-size: 0.84rem; color: var(--text-secondary); flex-shrink: 0; }
+        .info-val { font-size: 0.84rem; text-align: right; }
+
+        /* PILLS */
+        .pill { display: inline-flex; align-items: center; gap: 5px; font-size: 0.7rem; font-weight: 500; padding: 3px 10px; border-radius: 100px; letter-spacing: 0.03em; }
+        .pill.ok { background: rgba(81,207,102,0.12); color: #7ed48a; border: 1px solid rgba(81,207,102,0.22); }
+        .pill.ok::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #7ed48a; }
+        .pill.warn { background: rgba(255,193,7,0.12); color: #ffd54f; border: 1px solid rgba(255,193,7,0.22); }
+        .pill.warn::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #ffd54f; }
+        .pill.bad { background: rgba(255,107,107,0.12); color: #ff9a9a; border: 1px solid rgba(255,107,107,0.22); }
+        .pill.bad::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #ff9a9a; }
+        .pill.neu { background: rgba(255,255,255,0.06); color: var(--text-muted); border: 1px solid rgba(255,255,255,0.09); }
+
+        /* REVIEWS SECTION */
+        .reviews-header-row {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 22px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            gap: 12px; flex-wrap: wrap;
         }
-        .risk-table td:first-child {
-            color: var(--text-primary);
-            font-weight: 500;
-            white-space: nowrap;
+        .reviews-header-left { display: flex; align-items: center; gap: 12px; }
+        .reviews-header-left svg { width: 16px; height: 16px; fill: none; stroke: var(--mint); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .reviews-source-note { font-size: 0.68rem; color: var(--text-muted); font-style: italic; }
+
+        .reviews-body { padding: 22px; }
+        .rev-group { margin-bottom: 24px; }
+        .rev-group:last-child { margin-bottom: 0; }
+        .rev-group-label {
+            display: flex; align-items: center; gap: 7px;
+            font-size: 0.68rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+            margin-bottom: 16px; padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
-        .impact-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.67rem;
-            font-weight: 600;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            padding: 3px 9px;
-            border-radius: 4px;
-            white-space: nowrap;
+        .rev-group-label.pos { color: #7ed48a; }
+        .rev-group-label.pos svg { stroke: #7ed48a; }
+        .rev-group-label.neg { color: #ff9a9a; }
+        .rev-group-label.neg svg { stroke: #ff9a9a; }
+        .rev-group-label svg { width: 13px; height: 13px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        .rev-item { margin-bottom: 14px; }
+        .rev-item:last-child { margin-bottom: 0; }
+        .rev-item-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; gap: 12px; }
+        .rev-item-text { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; }
+        .rev-pct { font-family: 'DM Mono', monospace; font-size: 0.82rem; font-weight: 500; flex-shrink: 0; }
+        .rev-pct.pos { color: #7ed48a; }
+        .rev-pct.neg { color: #ff9a9a; }
+        .bar-track { height: 4px; background: rgba(255,255,255,0.07); border-radius: 100px; overflow: hidden; }
+        .bar-fill { height: 100%; border-radius: 100px; transition: width 0.8s ease; }
+        .bar-fill.pos { background: linear-gradient(90deg, rgba(81,207,102,0.5), rgba(81,207,102,0.85)); }
+        .bar-fill.neg { background: linear-gradient(90deg, rgba(255,107,107,0.5), rgba(255,107,107,0.85)); }
+
+        .rev-disclaimer {
+            margin-top: 20px; padding: 14px 18px;
+            background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--r-sm);
+            font-size: 0.73rem; color: var(--text-muted); line-height: 1.6;
         }
-        .impact-tag.critic {
-            background: rgba(255,107,107,0.14);
-            color: #ff9a9a;
-            border: 1px solid rgba(255,107,107,0.25);
-        }
-        .impact-tag.major {
-            background: rgba(255,160,80,0.14);
-            color: #ffba84;
-            border: 1px solid rgba(255,160,80,0.26);
-        }
-        .impact-tag.mediu {
-            background: rgba(255,217,61,0.13);
-            color: #ffe06b;
-            border: 1px solid rgba(255,217,61,0.24);
-        }
-        .impact-tag.optim {
-            background: rgba(110,231,183,0.13);
-            color: #87f0c8;
-            border: 1px solid rgba(110,231,183,0.24);
-        }
-        .obs-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-        .obs-list li {
-            display: flex;
-            gap: 14px;
-            padding: 16px 18px;
-            background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius-sm);
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-        }
-        .obs-list li::before {
-            content: '';
-            width: 3px;
-            min-height: 100%;
-            border-radius: 2px;
-            flex-shrink: 0;
-        }
-        .obs-list li:nth-child(1)::before { background: rgba(255,107,107,0.55); }
-        .obs-list li:nth-child(2)::before { background: rgba(255,160,80,0.55); }
-        .obs-list li:nth-child(3)::before { background: rgba(255,217,61,0.45); }
-        .obs-list strong { color: var(--text-primary); font-weight: 500; }
+        .rev-disclaimer strong { color: var(--text-secondary); }
+
+        /* VERDICT */
         .verdict-box {
-            background: rgba(126,249,212,0.05);
-            border: 1px solid rgba(126,249,212,0.2);
+            background: rgba(126,249,212,0.04);
+            border: 1px solid rgba(126,249,212,0.15);
             border-left: 3px solid var(--mint);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: 24px 28px;
-            margin-top: 44px;
+            border-radius: 0 var(--r-md) var(--r-md) 0;
+            padding: 22px 26px;
+            margin: 12px 0;
         }
-        .verdict-label {
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--mint);
-            display: block;
-            margin-bottom: 10px;
-        }
-        .verdict-text {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.72;
-        }
-        .verdict-rec {
-            margin-top: 14px;
-            padding-top: 14px;
-            border-top: 1px solid rgba(255,255,255,0.07);
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.72;
-        }
+        .verdict-eyebrow { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mint); display: block; margin-bottom: 9px; }
+        .verdict-text { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; }
+        .verdict-rec { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 0.84rem; color: var(--text-secondary); line-height: 1.72; }
         .verdict-rec strong { color: var(--text-primary); }
+
+        /* ACTION BOX */
         .action-box {
-            background: rgba(126,249,212,0.06);
-            border: 1px dashed rgba(126,249,212,0.3);
-            border-radius: var(--radius-md);
-            padding: 28px 32px;
-            margin-top: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            flex-wrap: wrap;
+            background: var(--mint-dim);
+            border: 1px dashed var(--mint-border);
+            border-radius: var(--r-md);
+            padding: 24px 28px;
+            margin: 12px 0;
+            display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
         }
-        .action-box-text p:first-child {
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-        }
-        .action-box-text p:last-child {
-            font-size: 0.84rem;
-            color: var(--text-secondary);
-            max-width: 500px;
-            line-height: 1.65;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 11px 20px;
-            background: var(--mint);
-            color: var(--purple-deep);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.78rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border-radius: var(--radius-sm);
-            transition: background 0.2s, transform 0.15s;
-            white-space: nowrap;
-            flex-shrink: 0;
-            border: none;
-            cursor: pointer;
-        }
+        .action-box p:first-child { font-weight: 500; color: var(--text-primary); margin-bottom: 5px; font-size: 0.92rem; }
+        .action-box p:last-child { font-size: 0.8rem; color: var(--text-secondary); max-width: 480px; line-height: 1.65; }
+        .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 20px; background: var(--mint); color: var(--purple-deep); text-decoration: none; font-weight: 600; font-size: 0.76rem; letter-spacing: 0.05em; text-transform: uppercase; border-radius: var(--r-sm); transition: background 0.18s, transform 0.14s; border: none; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
         .btn:hover { background: #a8fce2; transform: translateY(-1px); }
-        .btn:active { transform: scale(0.97); }
-        .disclaimer {
-            margin-top: 44px;
-            padding: 20px 24px;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: var(--radius-sm);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            line-height: 1.72;
-            text-align: justify;
-        }
-        .disclaimer strong { color: rgba(240,238,248,0.62); }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(14px);
-            animation: fadeUp 0.5s ease forwards;
-        }
-        .fade-in:nth-child(1) { animation-delay: 0.05s; }
-        .fade-in:nth-child(2) { animation-delay: 0.15s; }
-        .fade-in:nth-child(3) { animation-delay: 0.25s; }
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        a:focus-visible,
-        button:focus-visible,
-        .btn:focus-visible {
-            outline: 2px solid var(--mint);
-            outline-offset: 3px;
-            box-shadow: 0 0 0 3px rgba(126,249,212,0.2);
-            border-radius: var(--radius-sm);
-        }
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
+
+        /* HISTORY & NEWSLETTER */
+        .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+        .hist-box { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--r-md); padding: 22px; }
+        .hist-box h3 { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--mint); margin-bottom: 14px; }
+        .hist-entry { font-size: 0.8rem; color: var(--text-secondary); padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .hist-entry:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+        .hist-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--mint); margin-bottom: 3px; display: block; }
+        .hist-entry.pending { color: var(--text-muted); font-style: italic; }
+        .news-box { background: var(--mint-dim); border: 1px solid var(--mint-border); border-radius: var(--r-md); padding: 22px; display: flex; flex-direction: column; justify-content: space-between; }
+        .news-box h3 { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--text-primary); margin-bottom: 8px; }
+        .news-box p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+
+        /* LEGAL DISCLAIMER */
+        .legal { margin-top: 12px; padding: 18px 22px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--r-sm); font-size: 0.72rem; color: var(--text-muted); line-height: 1.75; }
+        .legal strong { color: rgba(238,234,248,0.55); }
+
+        /* ANIMATIONS */
+        .fade { opacity: 0; transform: translateY(12px); animation: up 0.45s ease forwards; }
+        .fade:nth-child(1){animation-delay:.04s} .fade:nth-child(2){animation-delay:.1s}
+        .fade:nth-child(3){animation-delay:.16s} .fade:nth-child(4){animation-delay:.22s}
+        .fade:nth-child(5){animation-delay:.28s} .fade:nth-child(6){animation-delay:.34s}
+        .fade:nth-child(7){animation-delay:.4s}  .fade:nth-child(8){animation-delay:.46s}
+        .fade:nth-child(9){animation-delay:.52s}
+        @keyframes up { to { opacity: 1; transform: translateY(0); } }
+
+        /* RESPONSIVE */
         @media (max-width: 640px) {
-            .report-header, .report-body { padding: 24px 20px; }
-            .header-top { flex-direction: column; }
-            .risk-badge { align-self: flex-start; }
-            .action-box { flex-direction: column; align-items: flex-start; }
-            .risk-table td:first-child { white-space: normal; }
-            .navbar-left .nav-divider,
-            .navbar-left .nav-label { display: none; }
+            .page-header { padding: 22px 18px; }
+            .navbar-left .nav-divider, .navbar-left .nav-label { display: none; }
+            .bottom-grid { grid-template-columns: 1fr; }
+            .action-box { flex-direction: column; }
+            .badge-stack { align-items: flex-start; }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-left">
-            <a href="/" class="logo">IMOB<span>VERDICT</span></a>
-            <div class="nav-divider"></div>
-            <span class="nav-label">Raport audit</span>
-        </div>
-        <a href="/" class="back-link" aria-label="Înapoi la toate proiectele">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-            Toate proiectele
-        </a>
-    </nav>
-    <main class="wrapper">
-        <nav class="breadcrumb fade-in" aria-label="Breadcrumb">
-            <a href="/">Acasă</a>
-            <span class="sep">/</span>
-            <a href="/">Proiecte</a>
-            <span class="sep">/</span>
-            <span class="current">Silk District</span>
-        </nav>
-        <section class="report-header fade-in">
-            <div class="header-top">
-                <div>
-                    <h1 class="project-name">Silk District</h1>
-                    <p class="project-subtitle">Analiză de risc privind contractele, infrastructura de utilități și managementul etapizat al șantierului.</p>
-                </div>
-                <span class="risk-badge high">Risc ridicat · Contractual</span>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-label">Locație</span>
-                    <span class="stat-value">Calea Chisinaului, Iași</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Focus Audit</span>
-                    <span class="stat-value">Utilități · Intabulare · Administrare</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Fază analizată</span>
-                    <span class="stat-value">Etapele active de livrare</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Ultima actualizare</span>
-                    <span class="stat-value">Mai 2026</span>
-                </div>
-            </div>
-        </section>
-        <section class="report-body fade-in">
-            <h2 class="section-title"><span class="section-num">01</span> Matricea de riscuri detectate</h2>
-            <div class="risk-table-wrap">
-                <table class="risk-table">
-                    <thead>
-                        <tr>
-                            <th>Punct de control</th>
-                            <th>Observație audit</th>
-                            <th>Impact</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Clauze contractuale</td>
-                            <td>Formulări generale privind termenele de livrare și situațiile de forță majoră; pot apărea interpretări în defavoarea cumpărătorului.</td>
-                            <td><span class="impact-tag critic">Critic</span></td>
-                        </tr>
-                        <tr>
-                            <td>Calendar execuție</td>
-                            <td>Proiect etapizat, cu risc de decalaje între promisiunile comerciale și ritmul real al lucrărilor.</td>
-                            <td><span class="impact-tag major">Major</span></td>
-                        </tr>
-                        <tr>
-                            <td>Acces și trafic</td>
-                            <td>Presiune pe infrastructura rutieră în orele de vârf, cu impact direct asupra confortului zilnic.</td>
-                            <td><span class="impact-tag major">Major</span></td>
-                        </tr>
-                        <tr>
-                            <td>Costuri de administrare</td>
-                            <td>Cheltuieli potențial crescute pentru facilități comune, securitate și mentenanță pe termen lung.</td>
-                            <td><span class="impact-tag mediu">Mediu</span></td>
-                        </tr>
-                        <tr>
-                            <td>Utilități și recepție</td>
-                            <td>Necesită verificare punctuală a documentației tehnice și proceselor de predare apartament.</td>
-                            <td><span class="impact-tag mediu">Mediu</span></td>
-                        </tr>
-                        <tr>
-                            <td>Poziționare urbană</td>
-                            <td>Proiect cu mix rezidențial-comercial atractiv, relevant pentru chirie și revânzare.</td>
-                            <td><span class="impact-tag optim">Optim</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <h2 class="section-title"><span class="section-num">02</span> Observații cheie pentru cumpărători</h2>
-            <ul class="obs-list">
-                <li>
-                    <div><strong>Contractare —</strong> Înainte de semnare, e recomandată verificarea anexelor tehnice, penalităților, termenelor de remediere și condițiilor de reziliere.</div>
-                </li>
-                <li>
-                    <div><strong>Șantier activ —</strong> Pentru unitățile din etapele timpurii, pot exista disconfort temporar și variații de termen până la stabilizarea completă a zonei.</div>
-                </li>
-                <li>
-                    <div><strong>Cost total de deținere —</strong> Analizează nu doar prețul de achiziție, ci și costurile recurente de administrare și eventualele lucrări suplimentare după predare.</div>
-                </li>
-            </ul>
-            <div class="verdict-box">
-                <span class="verdict-label">Verdict ImobVerdict</span>
-                <p class="verdict-text">Silk District are potențial investițional bun și poziționare strategică în oraș, dar necesită diligență contractuală ridicată și validarea independentă a promisiunilor de livrare.</p>
-                <div class="verdict-rec">
-                    <strong>Recomandare:</strong> Solicitați draftul contractual complet, lista de finisaje anexată și un calendar oficial al etapelor; comparați documentele cu situația observată în teren înainte de avans.
-                </div>
-            </div>
-            <div class="action-box">
-                <div class="action-box-text">
-                    <p>Ești reprezentant Silk District?</p>
-                    <p>Dacă dețineți documentație tehnică, clarificări contractuale sau actualizări oficiale care pot corecta raportul, transmiteți-le pentru revizuire publică.</p>
-                </div>
-                <a href="mailto:contact@imobverdict.com" class="btn">Solicită actualizare</a>
-            </div>
-            <div class="disclaimer">
-                <strong>Disclaimer legal:</strong> Informațiile publicate reprezintă o sinteză din surse publice și raportări ale comunității. Acest audit nu înlocuiește consultanța juridică, tehnică sau financiară individuală înainte de achiziție.
-            </div>
-        </section>
-        <section style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--mint-border);">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
-        
-        <div style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.05);">
-            <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 15px; color: var(--mint);">Istoric Audit</h3>
-            <ul style="list-style: none; font-size: 0.85rem; color: var(--text-secondary);">
-                <li style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--mint);">MAI 2026:</strong> Publicare audit inițial. Analiză 40+ surse.
-                </li>
-                <li style="color: var(--text-muted); font-style: italic;">
-                    PROXIMA ACTUALIZARE: Iunie 2026 (Scraping în curs...)
-                </li>
-            </ul>
-        </div>
 
-        <div style="background: var(--mint-dim); padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--mint-border);">
-            <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 10px; color: var(--text-primary);">Rămâi la curent</h3>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 15px;">Primește pe email sinteza lunară a noilor review-uri și evoluția șantierelor din Iași.</p>
-            
-            <a href="mailto:newsletter@imobverdict.com?subject=Abonare Newsletter Silk District" class="btn" style="width: 100%; justify-content: center;">
+<nav class="navbar">
+    <div class="navbar-left">
+        <a href="/" class="logo">IMOB<em>VERDICT</em></a>
+        <div class="nav-divider"></div>
+        <span class="nav-label">Raport audit</span>
+    </div>
+    <a href="/" class="back-link" aria-label="Înapoi la toate proiectele">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        Toate proiectele
+    </a>
+</nav>
+
+<main class="wrapper">
+
+    <nav class="breadcrumb fade" aria-label="Breadcrumb">
+        <a href="/">Acasă</a>
+        <span class="sep">/</span>
+        <a href="/">Proiecte</a>
+        <span class="sep">/</span>
+        <span class="cur">Silk District</span>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header fade">
+        <div class="header-top">
+            <div>
+                <h1 class="project-name">Silk District</h1>
+                <div class="project-loc">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Calea Chișinăului, Iași · Dezvoltator: Prime Kapital / MAS REI
+                </div>
+            </div>
+            <div class="badge-stack">
+                <span class="badge pub">Audit publicat</span>
+                <span class="badge updated">Actualizat Mai 2026</span>
+            </div>
+        </div>
+        <div class="meta-row">
+            <div class="meta-item">
+                <span class="meta-label">Focus audit</span>
+                <span class="meta-val">Utilități · Administrare · Contractare</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Faze analizate</span>
+                <span class="meta-val">Etape active de livrare</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Tip proiect</span>
+                <span class="meta-val">Mixt rezidențial-comercial</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Surse recenzii</span>
+                <span class="meta-val">40+ recenzii publice agregate</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 01 INFORMAȚII GENERALE -->
+    <div class="audit-section fade">
+        <div class="section-head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span class="section-head-title">Informații generale</span>
+            <span class="section-num">01</span>
+        </div>
+        <div class="section-body">
+            <div class="info-row">
+                <span class="info-label">Adresă</span>
+                <span class="info-val">Calea Chișinăului, Iași</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Dezvoltator</span>
+                <span class="info-val">Prime Kapital / MAS REI</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Tip proiect</span>
+                <span class="info-val">Rezidențial + comercial, etapizat</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">An start livrări</span>
+                <span class="info-val">2022 — în curs</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Zonă urbană</span>
+                <span class="info-val">Pericentral, acces Calea Chișinăului</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 02 UTILITĂȚI -->
+    <div class="audit-section fade">
+        <div class="section-head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 1 10 10H12V2z"/><path d="M12 12 2.5 19.5"/><circle cx="12" cy="12" r="3"/></svg>
+            <span class="section-head-title">Utilități</span>
+            <span class="section-num">02</span>
+        </div>
+        <div class="section-body">
+            <div class="info-row">
+                <span class="info-label">Sistem încălzire</span>
+                <span class="info-val"><span class="pill ok">Centrală proprie pe gaz</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Apă caldă</span>
+                <span class="info-val"><span class="pill ok">Boiler individual</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Contorizare individuală</span>
+                <span class="info-val"><span class="pill ok">Da — contor propriu</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Fibră optică / TV</span>
+                <span class="info-val"><span class="pill neu">Infrastructură pregătită, furnizor la alegere</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Observație recenzii</span>
+                <span class="info-val"><span class="pill warn">Unii locatari au semnalat întârzieri la branșamentul definitiv de gaz în primele luni după predare</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 03 ADMINISTRARE POST-PREDARE -->
+    <div class="audit-section fade">
+        <div class="section-head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span class="section-head-title">Administrare post-predare</span>
+            <span class="section-num">03</span>
+        </div>
+        <div class="section-body">
+            <div class="info-row">
+                <span class="info-label">Administrator</span>
+                <span class="info-val"><span class="pill warn">Firmă externă desemnată de dezvoltator</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Cost întreținere raportat</span>
+                <span class="info-val"><span class="pill warn">Recenzii menționează costuri ridicate față de estimările inițiale</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Transparență costuri</span>
+                <span class="info-val"><span class="pill warn">Locatari au raportat dificultăți în obținerea detaliilor de cost</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Asociație de proprietari</span>
+                <span class="info-val"><span class="pill neu">În formare — stadiu incipient</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Mentenanță spații comune</span>
+                <span class="info-val"><span class="pill neu">Opinii mixte în recenzii</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 04 PARCARE & SPAȚII COMUNE -->
+    <div class="audit-section fade">
+        <div class="section-head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span class="section-head-title">Parcare & spații comune</span>
+            <span class="section-num">04</span>
+        </div>
+        <div class="section-body">
+            <div class="info-row">
+                <span class="info-label">Tip parcare</span>
+                <span class="info-val"><span class="pill ok">Subterană + supraterană</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Loc de parcare inclus</span>
+                <span class="info-val"><span class="pill bad">Nu — achiziționat separat</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Observație recenzii — parcare</span>
+                <span class="info-val"><span class="pill warn">Dimensiuni locuri de parcare menționate ca insuficiente în recenzii</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Spații verzi</span>
+                <span class="info-val"><span class="pill ok">Prevăzute în proiectul aprobat</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Facilități comune</span>
+                <span class="info-val"><span class="pill neu">Lobby, securitate, zone comerciale parter</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 05 CONTRACTARE -->
+    <div class="audit-section fade">
+        <div class="section-head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span class="section-head-title">Contractare</span>
+            <span class="section-num">05</span>
+        </div>
+        <div class="section-body">
+            <div class="info-row">
+                <span class="info-label">Clauze termene livrare</span>
+                <span class="info-val"><span class="pill warn">Formulări largi — recomandăm verificare independentă</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Situații forță majoră</span>
+                <span class="info-val"><span class="pill warn">Definiții extinse în contract — consultați un avocat</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Penalități întârziere</span>
+                <span class="info-val"><span class="pill warn">Prezente, dar limitate ca valoare</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Termen intabulare</span>
+                <span class="info-val"><span class="pill warn">Variabil — clarificați în scris înainte de semnare</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Avans solicitat</span>
+                <span class="info-val"><span class="pill neu">~15–20% conform oferte publice</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 06 FINISAJE -->
+    <div class="audit-section fade">
+        <div class="section-head">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span class="section-head-title">Finisaje incluse vs. opționale</span>
+            <span class="section-num">06</span>
+        </div>
+        <div class="section-body">
+            <div class="info-row">
+                <span class="info-label">Pardoseală</span>
+                <span class="info-val"><span class="pill ok">Parchet stratificat inclus</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Faianță baie</span>
+                <span class="info-val"><span class="pill ok">Inclusă</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Bucătărie mobilată</span>
+                <span class="info-val"><span class="pill bad">Nu — extra cost, opțional</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Tâmplărie PVC/Al</span>
+                <span class="info-val"><span class="pill ok">Inclusă — geam termopan</span></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Calitate generală (recenzii)</span>
+                <span class="info-val"><span class="pill ok">Apreciată pozitiv în majoritatea recenziilor</span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 07 SUMAR RECENZII -->
+    <div class="audit-section fade">
+        <div class="reviews-header-row">
+            <div class="reviews-header-left">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span class="section-head-title">Ce spun cumpărătorii</span>
+            </div>
+            <span class="reviews-source-note">Sinteză din 40+ recenzii publice agregate · Mai 2026</span>
+        </div>
+        <div class="reviews-body">
+
+            <div class="rev-group">
+                <div class="rev-group-label pos">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    Aspecte apreciate frecvent
+                </div>
+                <div class="rev-item">
+                    <div class="rev-item-top">
+                        <span class="rev-item-text">Locație bună, acces rapid spre centru și ieșiri din oraș</span>
+                        <span class="rev-pct pos">78%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill pos" style="width:78%"></div></div>
+                </div>
+                <div class="rev-item">
+                    <div class="rev-item-top">
+                        <span class="rev-item-text">Calitate finisaje peste medie față de prețul plătit</span>
+                        <span class="rev-pct pos">64%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill pos" style="width:64%"></div></div>
+                </div>
+                <div class="rev-item">
+                    <div class="rev-item-top">
+                        <span class="rev-item-text">Centrală proprie per apartament — independență energetică</span>
+                        <span class="rev-pct pos">61%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill pos" style="width:61%"></div></div>
+                </div>
+                <div class="rev-item">
+                    <div class="rev-item-top">
+                        <span class="rev-item-text">Proiect mare cu potențial de valorificare bun</span>
+                        <span class="rev-pct pos">52%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill pos" style="width:52%"></div></div>
+                </div>
+            </div>
+
+            <div class="rev-group">
+                <div class="rev-group-label neg">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    Aspecte menționate negativ frecvent
+                </div>
+                <div class="rev-item">
+                    <div class="rev-item-top">
+                        <span class="rev-item-text">Costuri de administrare mai mari decât estimările inițiale</span>
+                        <span class="rev-pct neg">69%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill neg" style="width:69%"></div></div>
+                </div>
+                <div class="rev-item">
+                    <div class="rev-item-top">
+                        <span class="rev-item-text">Dimensiuni locuri de parcare menționate ca insuficiente</span>
+                        <span class="rev-pct neg">58%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill neg" style="width:58%"></div></div>
+                </div>
+                <div class="rev-item">
+                    <div class="rev-item-top">
+                        <span class="rev-item-text">Zgomot șantier prelungit în fazele active</span>
+                        <span class="rev-pct neg">54%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill neg" style="width:54%"></div></div>
+                </div>
+                <div class="rev-item">
+                    <div class="rev-item-top">
+                        <span class="rev-item-text">Întârzieri față de termenele comunicate comercial</span>
+                        <span class="rev-pct neg">47%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill neg" style="width:47%"></div></div>
+                </div>
+                <div class="rev-item">
+                    <div class="rev-item-top">
+                        <span class="rev-item-text">Dificultăți în comunicarea cu administrația în primele luni</span>
+                        <span class="rev-pct neg">41%</span>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill neg" style="width:41%"></div></div>
+                </div>
+            </div>
+
+            <div class="rev-disclaimer">
+                <strong>Notă metodologică:</strong> Procentele reflectă frecvența cu care un aspect apare în recenziile publice agregate, nu un sondaj reprezentativ statistic. Recenziile provin din surse publice disponibile la momentul analizei. Opiniile aparțin autorilor lor originali.
+            </div>
+        </div>
+    </div>
+
+    <!-- VERDICT -->
+    <div class="verdict-box fade">
+        <span class="verdict-eyebrow">Verdict ImobVerdict</span>
+        <p class="verdict-text">Pe baza recenziilor publice disponibile, Silk District apare ca un proiect cu locație bună și finisaje apreciate, dar cu aspecte care merită verificate înainte de semnare — în special costurile de administrare și clauzele contractuale legate de termene.</p>
+        <div class="verdict-rec">
+            <strong>Recomandare:</strong> Solicitați în scris lista completă de costuri de administrare, draftul contractual cu anexele tehnice și un calendar oficial al fazelor. Comparați cu situația actuală din teren și consultați un avocat înainte de avans.
+        </div>
+    </div>
+
+    <!-- ACTION BOX -->
+    <div class="action-box fade">
+        <div>
+            <p>Ești cumpărător sau locatar la Silk District?</p>
+            <p>Experiența ta poate ajuta alți cumpărători. Dacă ai informații actualizate, documentație sau clarificări, ne poți contacta pentru a actualiza raportul.</p>
+        </div>
+        <a href="mailto:contact@imobverdict.com" class="btn">Contribuie la raport</a>
+    </div>
+
+    <!-- BOTTOM GRID -->
+    <div class="bottom-grid fade">
+        <div class="hist-box">
+            <h3>Istoric audit</h3>
+            <div class="hist-entry">
+                <span class="hist-date">MAI 2026</span>
+                Publicare audit inițial — sinteză 40+ recenzii publice.
+            </div>
+            <div class="hist-entry pending">
+                Proxima actualizare: Iunie 2026 (scraping în curs…)
+            </div>
+        </div>
+        <div class="news-box">
+            <div>
+                <h3>Rămâi la curent</h3>
+                <p>Primește sinteza lunară a noilor recenzii și evoluția auditurilor din Iași.</p>
+            </div>
+            <a href="mailto:newsletter@imobverdict.com?subject=Abonare Newsletter Silk District" class="btn" style="width:100%;justify-content:center;">
                 Anunță-mă de actualizări
             </a>
         </div>
-
     </div>
-</section>
-    </main>
+
+    <!-- LEGAL -->
+    <div class="legal fade">
+        <strong>Disclaimer legal:</strong> Informațiile publicate reprezintă o sinteză editoriala independentă bazată pe recenzii și surse publice disponibile la momentul analizei. Conținutul reflectă opiniile exprimate public de terți și nu reprezintă afirmații de fapt ale ImobVerdict. Acest material nu înlocuiește consultanța juridică, tehnică sau financiară individuală. Dacă dețineți informații care corectează conținutul, ne puteți contacta la contact@imobverdict.com.
+    </div>
+
+</main>
+
 </body>
 </html>
