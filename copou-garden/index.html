@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audit: Copou Garden Residence | ImobVerdict</title>
-    <meta name="description" content="Analiză critică Copou Garden Residence: întârzieri majore, riscuri de intabulare, fluctuații de tensiune și managementul șantierului.">
+    <meta name="description" content="Analiză independentă Copou Garden Residence Iași: stadiul intabulării, infrastructura electrică și riscuri juridice la achiziție.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -25,24 +25,43 @@
         }
         body::before { content: ''; position: fixed; inset: 0; background: linear-gradient(160deg, rgba(18,8,35,0.93) 0%, rgba(22,12,40,0.9) 50%, rgba(14,30,42,0.93) 100%); z-index: -1; }
         
-        .navbar { position: sticky; top: 0; z-index: 100; background: rgba(18,8,35,0.75); backdrop-filter: blur(18px); border-bottom: 1px solid var(--mint-border); padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
-        .logo { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--text-primary); text-decoration: none; }
+        .navbar { 
+            position: sticky; 
+            top: 0; 
+            z-index: 200; 
+            background: rgba(18,8,35,0.85); 
+            backdrop-filter: blur(18px); 
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--mint-border); 
+            padding: 0 24px; 
+            height: 52px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+        .navbar-left { 
+            display: flex; 
+            align-items: center; 
+        }
+        .logo { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--text-primary); text-decoration: none; display: inline-block; }
         .logo span { color: var(--mint); }
-        .back-link { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; }
+        .back-link { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .back-link:hover { color: var(--mint); }
         
         .wrapper { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
         .report-header { background: var(--card-bg); border: 1px solid var(--mint-border); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 40px; position: relative; }
         .report-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent 0%, var(--mint) 40%, rgba(126,249,212,0.28) 100%); }
         .project-name { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; color: var(--text-primary); }
-        .risk-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 16px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; }
-        .risk-badge.critic-bg { background: rgba(255,62,62,0.15); color: #ff8f8f; border: 1px solid rgba(255,62,62,0.32); }
+        
+        .risk-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 16px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; white-space: nowrap; }
+        .risk-badge.critic-bg { background: rgba(255,107,107,0.15); color: #ff9a9a; border: 1px solid rgba(255,107,107,0.32); }
         
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 25px; }
         .stat-item { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-sm); padding: 14px 16px; }
         .stat-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 5px; }
         .stat-value { font-size: 0.92rem; color: var(--mint); font-weight: 500; }
 
-        .report-body { background: rgba(255,255,255,0.03); border: 1px solid rgba(126,249,212,0.1); border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 40px; }
+        .report-body { background: var(--card-bg); border: 1px solid rgba(126,249,212,0.1); border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 40px; }
         .section-title { display: flex; align-items: center; gap: 12px; font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--text-primary); margin: 44px 0 20px; }
         .section-title::before { content: ''; width: 3px; height: 20px; background: var(--mint); border-radius: 2px; }
 
@@ -56,122 +75,79 @@
         .impact-tag.optim { background: rgba(110,231,183,0.13); color: #87f0c8; }
 
         .obs-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-        .obs-list li { display: flex; gap: 14px; padding: 16px 18px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-sm); font-size: 0.875rem; }
-        .obs-list li.pos::before { content: '🟢'; }
-        .obs-list li.neg::before { content: '🔴'; }
+        .obs-list li { display: flex; gap: 14px; padding: 16px 18px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-sm); font-size: 0.875rem; line-height: 1.6; }
+        .obs-list li::before { content: '🚨'; }
 
-        .verdict-box { background: rgba(255,107,107,0.05); border-left: 3px solid #ff3e3e; padding: 24px 28px; margin-top: 44px; border-radius: 0 10px 10px 0; }
-        .verdict-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; color: #ff8f8f; display: block; margin-bottom: 10px; }
+        .verdict-box { background: rgba(126,249,212,0.05); border-left: 3px solid var(--mint); padding: 24px 28px; margin-top: 44px; border-radius: 0 10px 10px 0; border-top: 1px solid var(--mint-border); border-right: 1px solid var(--mint-border); border-bottom: 1px solid var(--mint-border); }
+        .verdict-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; color: var(--mint); display: block; margin-bottom: 10px; }
         
         .fade-in { opacity: 0; transform: translateY(14px); animation: fadeUp 0.5s ease forwards; }
         @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
-        @media (max-width: 640px) { .report-header, .report-body { padding: 24px 20px; } }
+        @media (max-width: 640px) { 
+            .report-header, .report-body { padding: 24px 20px; } 
+            .navbar .nav-label, .navbar .nav-divider-line { display: none !important; }
+        }
     </style>
 </head>
 <body>
+
     <nav class="navbar">
         <div class="navbar-left">
             <a href="/" class="logo">IMOB<span>VERDICT</span></a>
-            <div style="width: 1px; height: 18px; background: var(--mint-border); margin: 0 18px;"></div>
-            <span style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Raport audit critic</span>
+            <div class="nav-divider-line" style="width: 1px; height: 18px; background: var(--mint-border); margin: 0 18px;"></div>
+            <span class="nav-label" style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Raport audit</span>
         </div>
-        <a href="/" class="back-link">← Proiecte</a>
+        <a href="/" class="back-link">← Toate proiectele</a>
     </nav>
 
     <div style="background: rgba(14, 7, 28, 0.6); border-bottom: 1px solid var(--mint-border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 14px 24px; position: relative; z-index: 99;">
-    <div style="max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-        <div style="border-left: 2px solid var(--mint); padding-left: 12px;">
-            <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Preț Estimativ</span>
-            <span style="font-size: 0.95rem; color: var(--mint); font-weight: 600; font-family: 'DM Mono', monospace;">1.800€ - 2200€ / mp</span>
-        </div>
-        <div style="border-left: 2px solid rgba(255,255,255,0.08); padding-left: 12px;">
-            <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Chirie Estimativă</span>
-            <span style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; font-family: 'DM Mono', monospace;">350€ - 600€ / lună</span>
-        </div>
-        <div style="border-left: 2px solid rgba(255,255,255,0.08); padding-left: 12px;">
-            <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Întreținere Medie</span>
-            <span style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; font-family: 'DM Mono', monospace;">250 - 450 RON</span>
+        <div style="max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <div style="border-left: 2px solid var(--mint); padding-left: 12px;">
+                <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Preț Estimativ</span>
+                <span style="font-size: 0.95rem; color: var(--mint); font-weight: 600; font-family: 'DM Mono', monospace;">1.450€ - 1.800€ / mp</span>
+            </div>
+            <div style="border-left: 2px solid rgba(255,255,255,0.08); padding-left: 12px;">
+                <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Chirie Estimativă</span>
+                <span style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; font-family: 'DM Mono', monospace;">350€ - 550€ / lună</span>
+            </div>
+            <div style="border-left: 2px solid rgba(255,255,255,0.08); padding-left: 12px;">
+                <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Întreținere Medie</span>
+                <span style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; font-family: 'DM Mono', monospace;">250 - 450 RON</span>
+            </div>
         </div>
     </div>
-</div>
-    
+
     <main class="wrapper">
         <header class="report-header fade-in">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
                 <div>
                     <h1 class="project-name">Copou Garden Residence</h1>
-                    <p style="font-size: 0.92rem; color: var(--text-secondary); margin-top: 10px; max-width: 560px;">Audit tehnic și juridic: Întârzieri sistematice de predare, blocaje în intabulare și instabilitate gravă a rețelei electrice.</p>
+                    <p class="project-subtitle">Analiză privind blocajele sistematice de intabulare, instabilitatea rețelei electrice și riscurile achiziției fără documentație cadastrală.</p>
                 </div>
                 <span class="risk-badge critic-bg">Risc Critic · Juridic</span>
             </div>
             <div class="stats-grid">
-                <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Aleea Sadoveanu (Copou)</span></div>
-                <div class="stat-item"><span class="stat-label">Status Acte</span><span class="stat-value">Neintabulat (Blocat)</span></div>
-                <div class="stat-item"><span class="stat-label">Politica Preț</span><span class="stat-value">Diferență majoră Cash/Credit</span></div>
+                <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Copou, Iași</span></div>
+                <div class="stat-item"><span class="stat-label">Stadiu Acte</span><span class="stat-value">Blocat / Întârzieri Majore</span></div>
+                <div class="stat-item"><span class="stat-label">Rețea Electrică</span><span class="stat-value">Fluctuații de Tensiune</span></div>
                 <div class="stat-item"><span class="stat-label">Actualizat</span><span class="stat-value">Mai 2026</span></div>
             </div>
         </header>
 
         <section class="report-body fade-in">
-            <h2 class="section-title"><span>01</span> Matricea de riscuri detectate</h2>
-            <table class="risk-table">
-                <thead><tr><th>Punct control</th><th>Observație audit</th><th>Impact</th></tr></thead>
-                <tbody>
-                    <tr><td>Intabulare / C.F.</td><td>Blocaj administrativ cronic (raportat de peste 2 ani). Suspiciuni de nerespectare a autorizației de construire.</td><td><span class="impact-tag critic">Critic</span></td></tr>
-                    <tr><td>Rețea Electrică</td><td>Instabilitate severă: tensiuni între 170V și 280V. Pericol major pentru electrocasnice și siguranța locatarilor.</td><td><span class="impact-tag critic">Critic</span></td></tr>
-                    <tr><td>Termen Predare</td><td>Întârzieri de peste 12-18 luni. Comunicare opacă din partea dezvoltatorului și a staff-ului de vânzări.</td><td><span class="impact-tag critic">Critic</span></td></tr>
-                    <tr><td>Execuție / Vicii</td><td>Condens, mucegai raportat în unități noi și finisaje "făcute în batjocură" (pereți strâmbi, infiltrații parcări).</td><td><span class="impact-tag major">Major</span></td></tr>
-                    <tr><td>Trafic / Urbanism</td><td>Densitate locativă extremă; blocajul rutier la orele de vârf (Agronomie) este inevitabil pe termen lung.</td><td><span class="impact-tag major">Major</span></td></tr>
-                </tbody>
-            </table>
-
-            <h2 class="section-title"><span>02</span> Sinteza review-urilor (Vocea Locatarului)</h2>
+            <h2 class="section-title"><span>01</span> Puncte cheie din istoricul complexului</h2>
             <ul class="obs-list">
-                <li class="pos"><strong>Vizual:</strong> Vedere panoramică deosebită de la etajele superioare și proximitate de Mega Image.</li>
-                <li class="neg"><strong>Comportament Dezvoltator:</strong> Raportări despre presiuni exercitate asupra celor care au cumpărat la prețuri mici să renunțe la contract ("forțarea" returnării banilor).</li>
-                <li class="neg"><strong>Mentenanță Șantier:</strong> Mizerie pe casa scării, gunoaie în garaje și lifturi care funcționează intermitent.</li>
-                <li class="neg"><strong>Utilități:</strong> Lipsă branșamente definitive în anumite tronsoane; funcționare pe "organizare de șantier".</li>
-                <li class="neg"><strong>Echipă Vânzări:</strong> "Lipsă totală de profesionalism și respect"; informații contradictorii oferite clienților.</li>
+                <li><div><strong>Lipsă Intabulare:</strong> Blocajele majore în obținerea documentației cadastrale împiedică cumpărarea prin credit bancar, generând riscuri uriașe pentru avansurile cash.</div></li>
+                <li><div><strong>Instabilitate Energetică:</strong> Fluctuații severe de tensiune pe rețeaua internă provizorie, raportate des de primii locatari mutați.</div></li>
+                <li><div><strong>Promisiuni Nerespectate:</strong> Amânări succesive ale termenelor de finalizare și predare a cheilor de la un trimestru la altul.</div></li>
             </ul>
 
             <div class="verdict-box">
-                <span class="verdict-label">Verdict ImobVerdict: RISC MAXIM</span>
-                <p>Copou Garden Residence este în prezent un proiect cu <strong>semnal roșu</strong>. Discrepanța uriașă între prețul Cash și cel Credit indică o nevoie disperată de lichiditate, în timp ce lipsa intabulării face achiziția prin credit imposibilă. <strong>Nu recomandăm semnarea contractelor finale fără expertiză juridică și tehnică independentă.</strong></p>
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--text-secondary);">
-                    <strong>Recomandare:</strong> Dacă ați plătit deja, monitorizați zilnic fluctuațiile de tensiune și solicitați în scris stadiul intabulării. Există riscul ca proiectul să nu fie intabulat niciodată în forma actuală.
-                </div>
-            </div>
-
-            <div style="margin-top: 40px; padding: 20px; background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--text-muted);">
-                <strong>Atenție:</strong> Acest audit a fost generat prin procesarea a peste 100 de recenzii Google Maps, Reddit și Softpedia (Actualizat Mai 2026). Informațiile reflectă experiența directă a utilizatorilor și nu promisiunile comerciale ale dezvoltatorului.
+                <span class="verdict-label">Verdict ImobVerdict</span>
+                <p class="verdict-text">Deși zona Copou este extrem de atractivă, Copou Garden Residence reprezintă în prezent un **Risc Critic**. Achiziția este complet nerecomandată până la clarificarea definitivă a actelor juridice și rezolvarea branșamentelor finale la utilități.</p>
             </div>
         </section>
-        <section style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--mint-border);">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
-        
-        <div style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.05);">
-            <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 15px; color: var(--mint);">Istoric Audit</h3>
-            <ul style="list-style: none; font-size: 0.85rem; color: var(--text-secondary);">
-                <li style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--mint);">MAI 2026:</strong> Audit de risc critic publicat. Analiză detaliată asupra blocajelor de intabulare și a fluctuațiilor de tensiune electrică (170V-280V).
-                </li>
-                <li style="color: var(--text-muted); font-style: italic;">
-                    PROXIMA ACTUALIZARE: Iunie 2026 (Verificarea stadiului branșamentelor definitive la utilități pentru tronsoanele noi).
-                </li>
-            </ul>
-        </div>
-
-        <div style="background: rgba(255,107,107,0.1); padding: 25px; border-radius: var(--radius-md); border: 1px solid rgba(255,107,107,0.3);">
-            <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 10px; color: #ff8f8f;">Monitorizare Alertă</h3>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 15px;">Ești cumpărător sau investitor? Abonează-te pentru a primi imediat alertele noastre privind deblocarea juridică a intabulărilor sau apariția viciilor structurale.</p>
-            
-            <a href="mailto:newsletter@imobverdict.com?subject=Abonare Alerta Copou Garden Residence" class="btn" style="width: 100%; justify-content: center; display: inline-flex; align-items: center; text-decoration: none; background: #ff6b6b; color: white; font-weight: 600; padding: 11px 20px; border-radius: var(--radius-sm); text-transform: uppercase; font-size: 0.78rem;">
-                Vreau alerte de risc
-            </a>
-        </div>
-    </div>
-</section>
     </main>
 </body>
 </html>
