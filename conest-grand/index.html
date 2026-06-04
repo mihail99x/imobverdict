@@ -3,194 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- ============================================================
-         EDITEAZĂ: titlu pagină + meta SEO
-         ============================================================ -->
     <title>ImobVerdict | Conest Grand Residence – Audit Independent Iași</title>
     <meta name="description" content="Audit independent Conest Grand Residence Iași: utilități, costuri lunare, parcare, experiența locatarilor. Toate informațiile înainte să semnezi.">
-    <!-- ============================================================ -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         :root {
-            --mint: #7ef9d4;
-            --mint-dim: rgba(126,249,212,0.10);
-            --mint-border: rgba(126,249,212,0.18);
-            --purple-deep: #130c22;
-            --text-primary: #eeeaf8;
-            --text-secondary: rgba(238,234,248,0.62);
-            --text-muted: rgba(238,234,248,0.35);
-            --card-bg: rgba(255,255,255,0.035);
-            --card-border: rgba(126,249,212,0.11);
-            --card-hover-bg: rgba(255,255,255,0.07);
-            --card-hover-border: rgba(126,249,212,0.32);
+            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.10); --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #130c22; --text-primary: #eeeaf8; --text-secondary: rgba(238,234,248,0.62);
+            --text-muted: rgba(238,234,248,0.35); --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11); --card-hover-bg: rgba(255,255,255,0.07);
             --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
             --green: #6ee7b7; --yellow: #ffd93d; --red: #ff8f8f;
         }
-
         html { scroll-behavior: smooth; }
-
         body {
             background-color: var(--purple-deep);
             background-image:
-                radial-gradient(ellipse 80% 55% at 15% 5%,  rgba(100,55,170,0.38) 0%, transparent 60%),
+                radial-gradient(ellipse 80% 55% at 15% 5%, rgba(100,55,170,0.38) 0%, transparent 60%),
                 radial-gradient(ellipse 55% 45% at 85% 85%, rgba(20,75,110,0.28) 0%, transparent 55%),
                 url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55');
-            background-size: cover;
-            background-position: center;
-            color: var(--text-primary);
-            font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            min-height: 100vh;
+            background-size: cover; background-position: center;
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh;
         }
-
-        body::before {
-            content: '';
-            position: fixed; inset: 0;
-            background: linear-gradient(155deg, rgba(14,7,28,0.93) 0%, rgba(18,10,32,0.89) 45%, rgba(10,24,36,0.93) 100%);
-            z-index: 0; pointer-events: none;
-        }
-
-        /* ── NAVBAR ── */
-        .navbar {
-            position: sticky; top: 0; z-index: 200;
-            height: 52px;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 0 28px;
-            background: rgba(14,7,28,0.72);
-            backdrop-filter: blur(20px) saturate(1.5);
-            border-bottom: 1px solid var(--mint-border);
-        }
+        body::before { content: ''; position: fixed; inset: 0; background: linear-gradient(155deg, rgba(14,7,28,0.93) 0%, rgba(18,10,32,0.89) 45%, rgba(10,24,36,0.93) 100%); z-index: 0; pointer-events: none; }
+        .navbar { position: sticky; top: 0; z-index: 200; height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; background: rgba(14,7,28,0.72); backdrop-filter: blur(20px) saturate(1.5); border-bottom: 1px solid var(--mint-border); }
         .logo { font-family:'DM Serif Display',serif; font-size:1.12rem; color:var(--text-primary); text-decoration:none; }
         .logo em { font-style:normal; color:var(--mint); }
-
         .pill { display:inline-flex; align-items:center; gap:7px; background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:100px; padding:4px 13px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--text-secondary); }
         .pill .dot { width:6px; height:6px; border-radius:50%; background:var(--mint); animation:blink 2.2s ease-in-out infinite; }
         .pill strong { color:var(--mint); font-weight:500; }
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
-
-        /* ── LAYOUT ── */
         .wrap { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:0 24px 100px; }
-
-        /* ── BREADCRUMB ── */
         .breadcrumb { font-size:0.75rem; color:var(--text-muted); margin: 28px 0 32px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
         .breadcrumb a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
         .breadcrumb a:hover { color:var(--mint); }
         .breadcrumb span { color:var(--text-secondary); }
         .breadcrumb-sep { opacity:0.4; }
-
-        /* ── HERO COMPLEX ── */
         .complex-hero { padding: 0 0 40px; border-bottom: 1px solid var(--mint-border); margin-bottom: 40px; }
-
-        .status-badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            font-size: 0.67rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
-            padding: 4px 11px; border-radius: 5px; margin-bottom: 18px;
-            background: rgba(255,217,61,0.12); color: var(--yellow); border: 1px solid rgba(255,217,61,0.22);
-        }
-        .status-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--yellow); }
-
-        .complex-name {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            line-height: 1.08; letter-spacing: -0.03em;
-            margin-bottom: 14px;
-        }
+        .status-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.67rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; padding: 4px 11px; border-radius: 5px; margin-bottom: 18px; background: rgba(81,207,102,0.13); color: #7ed48a; border: 1px solid rgba(81,207,102,0.22); }
+        .status-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:#7ed48a; }
+        .complex-name { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 14px; }
         .complex-name em { font-style: italic; color: var(--mint); }
-
-        .complex-meta {
-            display: flex; flex-wrap: wrap; gap: 18px;
-            font-size: 0.78rem; color: var(--text-muted);
-            margin-bottom: 20px;
-        }
+        .complex-meta { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px; }
         .complex-meta-item { display:flex; align-items:center; gap:5px; }
         .complex-meta-item svg { width:13px; height:13px; fill:none; stroke:var(--mint); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
-
-        .intro-box {
-            background: var(--mint-dim); border: 1px solid var(--mint-border);
-            border-radius: var(--r-md); padding: 18px 20px;
-            font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75;
-        }
+        .intro-box { background: var(--mint-dim); border: 1px solid var(--mint-border); border-radius: var(--r-md); padding: 18px 20px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; }
         .intro-box strong { color: var(--mint); }
-
-        /* ── QUICK NAV ── */
         .quick-nav { display:flex; flex-wrap:wrap; gap:8px; margin: 32px 0; }
-        .qnav-btn {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 7px 14px; border-radius: 100px;
-            background: var(--card-bg); border: 1px solid var(--card-border);
-            font-size: 0.78rem; color: var(--text-secondary); text-decoration: none;
-            transition: background 0.18s, border-color 0.18s, color 0.18s;
-            cursor: pointer;
-        }
+        .qnav-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 100px; background: var(--card-bg); border: 1px solid var(--card-border); font-size: 0.78rem; color: var(--text-secondary); text-decoration: none; transition: background 0.18s, border-color 0.18s, color 0.18s; cursor: pointer; }
         .qnav-btn:hover, .qnav-btn.active { background: var(--mint-dim); border-color: var(--mint-border); color: var(--mint); }
         .qnav-btn svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-
-        /* ── SECTION ── */
         .section { margin-bottom: 48px; scroll-margin-top: 70px; }
-        .section-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.35rem; letter-spacing: -0.02em;
-            display: flex; align-items: center; gap: 10px;
-            margin-bottom: 6px;
-        }
+        .section-title { font-family: 'DM Serif Display', serif; font-size: 1.35rem; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
         .section-title .icon { font-size: 1.1rem; }
         .section-subtitle { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-bottom: 20px; }
         .section-divider { border: none; border-top: 1px solid var(--card-border); margin: 48px 0; }
-
-        /* ── DATA TABLE ── */
         .data-table { display: flex; flex-direction: column; gap: 1px; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--card-border); }
-        .data-row {
-            display: flex; align-items: center; justify-content: space-between; gap: 16px;
-            padding: 13px 18px; background: var(--card-bg);
-            flex-wrap: wrap;
-        }
+        .data-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 13px 18px; background: var(--card-bg); flex-wrap: wrap; }
         .data-row:hover { background: var(--card-hover-bg); }
         .data-row:not(:last-child) { border-bottom: 1px solid rgba(255,255,255,0.04); }
         .data-label { font-size: 0.83rem; color: var(--text-secondary); flex: 1; min-width: 140px; }
-        .data-value {
-            font-size: 0.83rem; font-weight: 500;
-            padding: 3px 10px; border-radius: 5px;
-            background: rgba(126,249,212,0.08); border: 1px solid rgba(126,249,212,0.15);
-            color: var(--mint); white-space: nowrap;
-        }
+        .data-value { font-size: 0.83rem; font-weight: 500; padding: 3px 10px; border-radius: 5px; background: rgba(126,249,212,0.08); border: 1px solid rgba(126,249,212,0.15); color: var(--mint); white-space: nowrap; }
         .data-value.neutral { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.09); color: var(--text-secondary); }
         .data-value.warn { background: rgba(255,217,61,0.08); border-color: rgba(255,217,61,0.18); color: var(--yellow); }
         .data-value.bad { background: rgba(255,143,143,0.08); border-color: rgba(255,143,143,0.18); color: var(--red); }
-
-        /* ── VERDICT CARD ── */
-        .verdict-card {
-            background: var(--card-bg); border: 1px solid var(--card-border);
-            border-radius: var(--r-lg); padding: 24px; margin-bottom: 16px;
-            position: relative; overflow: hidden;
-        }
+        .verdict-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--r-lg); padding: 24px; margin-bottom: 16px; position: relative; overflow: hidden; }
         .verdict-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
         .verdict-card.v-green::before { background: linear-gradient(90deg, transparent, var(--green), transparent); }
         .verdict-card.v-yellow::before { background: linear-gradient(90deg, transparent, var(--yellow), transparent); }
         .verdict-card.v-red::before { background: linear-gradient(90deg, transparent, var(--red), transparent); }
-
         .verdict-label { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
-        .verdict-label.green { color: var(--green); }
-        .verdict-label.yellow { color: var(--yellow); }
-        .verdict-label.red { color: var(--red); }
+        .verdict-label.green { color: var(--green); } .verdict-label.yellow { color: var(--yellow); } .verdict-label.red { color: var(--red); }
         .verdict-title { font-family:'DM Serif Display',serif; font-size:1.1rem; margin-bottom:8px; line-height:1.3; }
         .verdict-body { font-size:0.85rem; color:var(--text-secondary); line-height:1.72; }
-
-        /* ── REVIEW QUOTES ── */
         .review-list { display: flex; flex-direction: column; gap: 12px; }
-        .review-item {
-            background: var(--card-bg); border: 1px solid var(--card-border);
-            border-radius: var(--r-md); padding: 16px 18px;
-            font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7;
-            position: relative;
-        }
+        .review-item { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--r-md); padding: 16px 18px; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; position: relative; }
         .review-item::before { content:'"'; font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mint); opacity:0.25; position:absolute; top:6px; left:14px; line-height:1; }
         .review-item p { padding-left: 8px; }
         .review-meta { display:flex; align-items:center; justify-content:space-between; margin-top:10px; flex-wrap:wrap; gap:6px; }
@@ -199,62 +89,29 @@
         .review-sentiment.pos { background:rgba(110,231,183,0.1); color:var(--green); border:1px solid rgba(110,231,183,0.18); }
         .review-sentiment.neg { background:rgba(255,143,143,0.1); color:var(--red); border:1px solid rgba(255,143,143,0.18); }
         .review-sentiment.neu { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
-
-        /* ── SCORE FINAL ── */
-        .score-box {
-            background: var(--card-bg); border: 1px solid var(--mint-border);
-            border-radius: var(--r-lg); padding: 28px;
-            display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
-            margin-top: 12px;
-        }
-        .score-number { font-family:'DM Serif Display',serif; font-size: 3.5rem; line-height:1; color: var(--yellow); flex-shrink:0; }
+        .score-box { background: var(--card-bg); border: 1px solid var(--mint-border); border-radius: var(--r-lg); padding: 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 12px; }
+        .score-number { font-family:'DM Serif Display',serif; font-size: 3.5rem; line-height:1; color: var(--mint); flex-shrink:0; }
         .score-number span { font-size:1.2rem; color:var(--text-muted); }
         .score-desc { flex:1; min-width:200px; }
         .score-desc strong { display:block; font-size:1rem; margin-bottom:6px; }
         .score-desc p { font-size:0.83rem; color:var(--text-secondary); line-height:1.7; }
-
-        /* ── CTA FOOTER ── */
-        .cta-strip {
-            background: var(--mint-dim); border: 1px solid var(--mint-border);
-            border-radius: var(--r-lg); padding: 24px 28px;
-            display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
-            margin-top: 48px;
-        }
+        .cta-strip { background: var(--mint-dim); border: 1px solid var(--mint-border); border-radius: var(--r-lg); padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 48px; }
         .cta-strip p { font-size:0.9rem; color:var(--text-secondary); }
         .cta-strip strong { display:block; color:var(--text-primary); font-size:1rem; margin-bottom:4px; }
-
         .btn { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:var(--mint); color:var(--purple-deep); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); transition:background 0.18s,transform 0.14s; border:none; cursor:pointer; white-space:nowrap; }
         .btn:hover { background:#a8fce2; transform:translateY(-1px); }
         .btn svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
         .btn-outline { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:transparent; color:var(--mint); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); border:1px solid var(--mint-border); transition:background 0.18s; white-space:nowrap; }
         .btn-outline:hover { background: var(--mint-dim); }
-
-        /* ── FADE ANIMATION ── */
         .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
-        .fade:nth-child(1){animation-delay:.04s} .fade:nth-child(2){animation-delay:.1s}
-        .fade:nth-child(3){animation-delay:.16s} .fade:nth-child(4){animation-delay:.22s}
-        .fade:nth-child(5){animation-delay:.28s} .fade:nth-child(6){animation-delay:.34s}
+        .fade:nth-child(1){animation-delay:.04s} .fade:nth-child(2){animation-delay:.1s} .fade:nth-child(3){animation-delay:.16s} .fade:nth-child(4){animation-delay:.22s} .fade:nth-child(5){animation-delay:.28s} .fade:nth-child(6){animation-delay:.34s}
         @keyframes up { to{opacity:1;transform:translateY(0)} }
-
-        /* ── FOOTER ── */
-        footer {
-            position:relative; z-index:1;
-            margin-top:80px; padding:40px 28px;
-            border-top:1px solid var(--mint-border);
-            display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;
-        }
+        footer { position:relative; z-index:1; margin-top:80px; padding:40px 28px; border-top:1px solid var(--mint-border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
         .footer-copy { font-size:0.76rem; color:var(--text-muted); }
         .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:600px; text-align:center; line-height:1.5; }
         .footer-link { color:var(--mint); text-decoration:none; font-size:0.75rem; font-family:'DM Mono',monospace; opacity:0.7; border:1px solid var(--mint-border); padding:5px 18px; border-radius:100px; transition:0.3s; }
         .footer-link:hover { opacity:1; background:var(--mint-dim); }
-
-        /* ── RESPONSIVE ── */
-        @media(max-width:640px){
-            .navbar .pill { display:none; }
-            .complex-name { font-size: 1.9rem; }
-            .score-box { flex-direction: column; text-align: center; }
-            .cta-strip { flex-direction: column; text-align: center; }
-        }
+        @media(max-width:640px){ .navbar .pill{display:none;} .complex-name{font-size:1.9rem;} .score-box{flex-direction:column;text-align:center;} .cta-strip{flex-direction:column;text-align:center;} }
     </style>
 </head>
 <body>
@@ -271,7 +128,6 @@
 
 <div class="wrap">
 
-    <!-- BREADCRUMB -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Acasă</a>
         <span class="breadcrumb-sep">›</span>
@@ -280,39 +136,32 @@
         <span>Conest Grand Residence</span>
     </nav>
 
-    <!-- HERO COMPLEX -->
     <section class="complex-hero fade">
-
         <div class="status-badge">Audit publicat</div>
-
         <h1 class="complex-name">Conest <em>Grand Residence</em></h1>
-
         <div class="complex-meta">
             <span class="complex-meta-item">
                 <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Tudor Vladimirescu, Iași
+                Tudor Vladimirescu / Bd. Chimiei, Iași
             </span>
             <span class="complex-meta-item">
                 <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                Finalizat 2019 - 2021
+                Finalizat ~2018–2019
             </span>
             <span class="complex-meta-item">
                 <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                156 recenzii analizate
+                ~120+ recenzii analizate
             </span>
             <span class="complex-meta-item">
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                 Audit publicat Iunie 2026
             </span>
         </div>
-
         <div class="intro-box">
-            Acest raport independent analizează turnurile <strong>Conest Grand Residence</strong> din zona Tudor Vladimirescu[cite: 2]. Privit pe piața locală drept o alegere „instituțională” extrem de sigură la nivel de acte, ansamblul vine la pachet cu neajunsurile clasice ale densităților mari: probleme acustice interioare și o administrare conflictuală[cite: 2].
+            Acest raport e pentru tine dacă <strong>vrei să cumperi sau să închiriezi</strong> la Conest Grand Residence și vrei să știi dinainte cum arată viața de zi cu zi acolo — ce plătești lunar, cum funcționează administrarea, unde sunt potențialele bătăi de cap. Complexul e construit de CONEST SA, unul dintre cei mai mari constructori de infrastructură din Moldova — ceea ce înseamnă <strong>zero riscuri juridice</strong>, dar și caracteristicile clasice ale unui bloc-turn dens din oraș.
         </div>
-
     </section>
 
-    <!-- NAVIGARE RAPIDĂ -->
     <nav class="quick-nav fade" aria-label="Navigare rapidă">
         <a class="qnav-btn" href="#utilitati">
             <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
@@ -336,220 +185,307 @@
         </a>
         <a class="qnav-btn" href="#recenzii">
             <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Ce zic cei care locuiesc acolo?
+            Ce zic locatarii?
         </a>
     </nav>
 
-    <!-- SECȚIUNEA 1: UTILITĂȚI -->
+    <!-- UTILITĂȚI -->
     <section class="section fade" id="utilitati">
         <h2 class="section-title"><span class="icon">🔔</span> Utilități</h2>
         <p class="section-subtitle">— Cum mă încălzesc? Cine îmi furnizează apa caldă?</p>
-
         <div class="data-table">
             <div class="data-row">
                 <span class="data-label">Sistem încălzire</span>
-                <span class="data-value">Centrală proprie pe gaz (Ariston)</span>
+                <span class="data-value warn">Centrală proprie pe gaz per apartament</span>
             </div>
             <div class="data-row">
                 <span class="data-label">Apă caldă</span>
-                <span class="data-value">Centrală proprie pe gaz</span>
+                <span class="data-value warn">Boiler individual — întreruperi frecvente raportate</span>
             </div>
             <div class="data-row">
                 <span class="data-label">Contorizare</span>
-                <span class="data-value">Individuală (utilități la ușă)</span>
+                <span class="data-value neutral">Contor individual apă rece + caldă per apartament</span>
             </div>
             <div class="data-row">
                 <span class="data-label">Internet & TV</span>
-                <span class="data-value neutral">Fibră optică (Digi / Vodafone)</span>
+                <span class="data-value neutral">La alegere — fibră optică disponibilă în complex</span>
             </div>
             <div class="data-row">
                 <span class="data-label">Furnizor gaz</span>
-                <span class="data-value neutral">Delgaz Grid</span>
+                <span class="data-value neutral">La alegere (rețea Delgaz Grid)</span>
             </div>
             <div class="data-row">
                 <span class="data-label">Furnizor curent</span>
-                <span class="data-value warn">Deficitar (Raportări de avarii fără preaviz)</span>
+                <span class="data-value neutral">La alegere (rețea E.ON/Delgaz)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Fiabilitate rețele</span>
+                <span class="data-value bad">⚠ Întreruperi apă/curent raportate de până la 5×/zi, câte 4–6 ore</span>
             </div>
         </div>
     </section>
 
     <hr class="section-divider">
 
-    <!-- SECȚIUNEA 2: COSTURI LUNARE -->
+    <!-- COSTURI LUNARE -->
     <section class="section fade" id="costuri">
         <h2 class="section-title"><span class="icon">💰</span> Costuri lunare estimate</h2>
         <p class="section-subtitle">— Cât plătesc total pe lună, în afara ratei/chiriei?</p>
-
         <div class="data-table">
             <div class="data-row">
-                <span class="data-label">Întreținere (administrare)</span>
-                <span class="data-value warn">~200 – 350 RON/lună (Cote mari spații comune)</span>
+                <span class="data-label">Întreținere (taxă de bază asociație)</span>
+                <span class="data-value warn">~33 RON/lună — confirmat de locatari</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Fond de rulment</span>
-                <span class="data-value neutral">Solicitat periodic conform asociației</span>
-            </div>
-            <div class="data-row">
-                <span class="data-label">Parcare (mentenanță subterană)</span>
-                <span class="data-value warn">Facturat suplimentar</span>
+                <span class="data-label">Serviciu lift</span>
+                <span class="data-value warn">Inclus în asociație — costuri ridicate din cauza defecțiunilor frecvente</span>
             </div>
             <div class="data-row">
                 <span class="data-label">Pază / securitate</span>
-                <span class="data-value">Inclusă în cheltuielile de asociație</span>
+                <span class="data-value neutral">Inclusă — complex păzit permanent</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Total estimat (fără utilități)</span>
-                <span class="data-value warn">~350 – 500 RON/lună</span>
+                <span class="data-label">Parcare</span>
+                <span class="data-value bad">Loc parcare NU este inclus în prețul apartamentului</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Total estimat (fără utilități personale)</span>
+                <span class="data-value warn">~200–350 RON/lună</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Notă locatari</span>
+                <span class="data-value bad">Costurile reale depășesc estimările inițiale prezentate la vânzare</span>
             </div>
         </div>
     </section>
 
     <hr class="section-divider">
 
-    <!-- SECȚIUNEA 3: PARCARE -->
+    <!-- PARCARE -->
     <section class="section fade" id="parcare">
         <h2 class="section-title"><span class="icon">🅿️</span> Parcare</h2>
         <p class="section-subtitle">— Există loc de parcare? Cât costă? E suficient?</p>
-
         <div class="data-table">
             <div class="data-row">
                 <span class="data-label">Tip parcare</span>
-                <span class="data-value neutral">Subterană pe 2 niveluri / Supraterană la sol</span>
+                <span class="data-value">Subterană + la sol</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Nr. locuri / apartament</span>
-                <span class="data-value bad">Nu există locuri libere pentru rezidenți / vizitatori</span>
+                <span class="data-label">Inclus în prețul apartamentului</span>
+                <span class="data-value bad">NU — achiziție separată obligatorie</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Cost achiziție loc</span>
-                <span class="data-value warn">~5.000€ (sol) – 12.000€+ (subteran)</span>
+                <span class="data-label">Cost loc parcare subterană</span>
+                <span class="data-value warn">~10.000 EUR</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Disponibilitate</span>
-                <span class="data-value bad">Haos exterior ridicat (Tranzit auto blocat la ore de vârf)</span>
+                <span class="data-label">Cost loc parcare la sol</span>
+                <span class="data-value warn">~5.000 EUR</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Dimensiuni loc</span>
-                <span class="data-value neutral">Standard (Manevre parțial înghesuite)</span>
+                <span class="data-label">Parcare liberă pentru rezidenți</span>
+                <span class="data-value bad">Nu există — tot spațiul e rezervat cumpărătorilor de locuri</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Probleme structurale raportate</span>
+                <span class="data-value bad">Fisuri la unii piloni în parcarea subterană — menționate în recenzii</span>
             </div>
         </div>
     </section>
 
     <hr class="section-divider">
 
-    <!-- SECȚIUNEA 4: CONTRACT / CE VERIFICI -->
+    <!-- CONTRACT -->
     <section class="section fade" id="contract">
         <h2 class="section-title"><span class="icon">📋</span> Ce verifici înainte să semnezi</h2>
-        <p class="section-subtitle">— Riscuri contractuale și administrative sesizate de comunitate</p>
+        <p class="section-subtitle">— Riscuri și avantaje identificate din experiența locatarilor</p>
 
-        <div class="verdict-card v-red fade">
-            <div class="verdict-label red">⚠ Risc acustic interior</div>
-            <h3 class="verdict-title">Izolație fonică mediocră între apartamente</h3>
-            <p class="verdict-body">Sutele de recenzii colectate confirmă prezența unor pereți extrem de subțiri[cite: 2]. Zgomotele structurale, discuțiile vecinilor sau chiar vibrațiile telefoanelor mobile trec cu ușurință dintr-o locuință în alta[cite: 2].</p>
-        </div>
-
-        <div class="verdict-card v-red fade">
-            <div class="verdict-label red">⚠ Viciu de infrastructură turn</div>
-            <h3 class="verdict-title">Defecțiuni recurente ale lifturilor</h3>
-            <p class="verdict-body">Pentru clădiri cu regim de 11 etaje, funcționarea lifturilor este o problemă sistemică[cite: 2]. Locatarii raportează blocaje aproape săptămânale care pun la grea încercare rezidenții de la nivelurile superioare[cite: 2].</p>
-        </div>
-
-        <div class="verdict-card v-yellow fade">
-            <div class="verdict-label yellow">⚡ Presiune administrativă</div>
-            <h3 class="verdict-title">Management opac și controlat de interese externe</h3>
-            <p class="verdict-body">Asociația de proprietari se confruntă cu acuzații severe de lipsă de transparență[cite: 2]. Rapoartele menționează că conducerea asociației a fost direct legată de biroul de vânzări Conest, dezvoltatorul folosind voturile unităților nevândute pentru a-și păstra oamenii în funcție[cite: 2].</p>
-        </div>
-
-        <div class="verdict-card v-yellow fade">
-            <div class="verdict-label yellow">⚡ Poluare exterioară severă</div>
-            <h3 class="verdict-title">Zgomot de tranzit, praf și intruși externi</h3>
-            <p class="verdict-body">Poziționarea la intersecția a două mari bulevarde (Tudor și Chimiei) aduce un zgomot permanent de tramvaie și mașini bară la bară, plus acumulări masive de praf pe balcoane[cite: 2]. De asemenea, complexul este tranzitat de persoane străine, raportându-se degradarea timpurie a parcului de joacă[cite: 2].</p>
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte major</div>
+            <h3 class="verdict-title">Zero riscuri juridice — acte complet curate</h3>
+            <p class="verdict-body">CONEST SA este o companie cu tradiție solidă în infrastructură mare. Intabularea este completă, băncile acordă credite ipotecare instant, nu există risc de faliment al dezvoltatorului sau de branșamente improvizate. Dacă siguranța juridică e prioritatea ta numărul unu, acesta este complexul cel mai sigur din Iași pe acest criteriu.</p>
         </div>
 
         <div class="verdict-card v-green fade">
-            <div class="verdict-label green">✓ Garanție Legală</div>
-            <h3 class="verdict-title">Lichiditate premium și siguranță totală a actelor</h3>
-            <p class="verdict-body">Fiind un proiect executat de un constructor mare (Conest), structura de rezistență din beton este extrem de solidă, intabulările s-au făcut fără nicio întârziere, iar băncile oferă credite ipotecare instant pentru acest complex[cite: 2].</p>
+            <div class="verdict-label green">✓ Punct forte</div>
+            <h3 class="verdict-title">Locație premium — lichiditate mare pe piața chiriilor</h3>
+            <p class="verdict-body">Proximitatea față de Iulius Mall, facultățile tehnice și campusul studențesc înseamnă că apartamentele se închiriază rapid și la prețuri bune. Ideal pentru investiție cu randament stabil prin chirii IT-iști sau studenți avansați.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Izolație fonică slabă — pereți interiori permeabili la zgomot</h3>
+            <p class="verdict-body">Structura din beton-cadre este solidă, dar pereții despărțitori interiori transmit zgomotul cu ușurință. Mai mulți locatari menționează că aud conversații, pașii apăsați, plânsul copiilor sau lătratul câinilor de la vecini. Dacă ai copii mici sau lucrezi de acasă, verifică etajul și orientarea față de vecinii direcți înainte de a semna.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Lifturi cu defecțiuni recurente — cost ridicat de întreținere</h3>
+            <p class="verdict-body">Mai mulți locatari raportează că cel puțin unul dintre lifturile blocului rămâne blocat în fiecare lună sau la două luni. La un bloc de P+11E, aceasta înseamnă inconvenient major pentru persoane în vârstă sau cu mobilitate redusă. Costurile de reparație se reflectă direct în cheltuielile de asociație.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Poluare fonică externă permanentă</h3>
+            <p class="verdict-body">Complexul este amplasat la intersecția Bd. Tudor Vladimirescu cu Bd. Chimiei. Tramvaiele, autobuzele, camioanele și mașinile de intervenție circulă constant. Apartamentele orientate spre bulevard au zgomot de fond permanent care face imposibilă deschiderea geamurilor vara. Solicită vizitarea apartamentului la ore de vârf (7:30–9:00) înainte de a semna.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Parcarea NU este inclusă — cost suplimentar obligatoriu</h3>
+            <p class="verdict-body">Dacă ai mașină, bugetează 5.000–10.000 EUR suplimentar față de prețul apartamentului pentru un loc de parcare. Fără loc cumpărat, nu există alternativă de parcare în complex. Verifică disponibilitatea locurilor înainte de a semna antecontractul.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Întreruperi frecvente apă și curent raportate</h3>
+            <p class="verdict-body">Un locatar raportează întreruperi de până la 5 ori pe zi, uneori cu durată de 4–6 ore. Nu este clar dacă problema vine de la furnizori externi sau de la instalațiile interne ale complexului. Solicită clarificări de la asociația de proprietari și verifică procesele-verbale ale ședințelor asociației înainte de semnare.</p>
         </div>
     </section>
 
     <hr class="section-divider">
 
-    <!-- SECȚIUNEA 5: DOTĂRI APARTAMENT -->
+    <!-- DOTĂRI -->
     <section class="section fade" id="dotari">
         <h2 class="section-title"><span class="icon">🏠</span> Ce primești în apartament</h2>
-        <p class="section-subtitle">— Ce e inclus în preț, ce trebuie achizitionat separat</p>
-
+        <p class="section-subtitle">— Ce e inclus în preț, ce trebuie achiziționat separat</p>
         <div class="data-table">
             <div class="data-row">
                 <span class="data-label">Finisaje incluse</span>
-                <span class="data-value">Predare la cheie (Finisaje standard de serie / medii)</span>
+                <span class="data-value">La cheie — calitate medie-superioară</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Tâmplărie</span>
-                <span class="data-value neutral">PVC REHAU cu geam tripan</span>
+                <span class="data-label">Materiale construcție</span>
+                <span class="data-value neutral">Ușor peste medie — confirmat de locatari și de reputația CONEST</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Pardoseli</span>
-                <span class="data-value neutral">Parchet laminat / Gresie de import standard</span>
-            </div>
-            <div class="data-row">
-                <span class="data-label">Smart Home</span>
-                <span class="data-value bad">Nu (Instalații clasice)</span>
+                <span class="data-label">Holuri și spații comune</span>
+                <span class="data-value neutral">Generoase, spațioase — apreciate constant în recenzii</span>
             </div>
             <div class="data-row">
                 <span class="data-label">Lift</span>
-                <span class="data-value warn">Da (2 lifturi per scară, probleme dese de service)</span>
+                <span class="data-value warn">Da — lifturi rapide, dar dimensionate mic (max 3 persoane) și defectuoase frecvent</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Spații comune</span>
-                <span class="data-value neutral">Holuri largi, placate modern</span>
+                <span class="data-label">Semnalizare intrări blocuri</span>
+                <span class="data-value bad">Insuficientă — mai mulți locatari menționează că intrările nu sunt bine marcate</span>
             </div>
             <div class="data-row">
-                <span class="data-label">Balcon / Terasă</span>
-                <span class="data-value neutral">SemicDeschis (Probleme izolate de condens iarna)</span>
+                <span class="data-label">Spații verzi</span>
+                <span class="data-value bad">Subdimensionate față de numărul de locatari — predomină betonul și aleile</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Loc de joacă copii</span>
+                <span class="data-value warn">Există, dar insuficient pentru densitatea complexului</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Aer condiționat centralizat exterior</span>
+                <span class="data-value bad">Nu există — fiecare locatar montează unitate proprie, afectând estetica fațadelor</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Pază</span>
+                <span class="data-value">Da — complex păzit permanent</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Regim înălțime</span>
+                <span class="data-value neutral">P+11E — mai multe blocuri-turn</span>
             </div>
         </div>
     </section>
 
     <hr class="section-divider">
 
-    <!-- SECȚIUNEA 6: RECENZII LOCATARI -->
+    <!-- RECENZII -->
     <section class="section fade" id="recenzii">
         <h2 class="section-title"><span class="icon">💬</span> Ce zic cei care locuiesc acolo</h2>
-        <p class="section-subtitle">— Recenzii agregate din istoricul celor 156 de mărturii publice</p>
-
+        <p class="section-subtitle">— Recenzii agregate din Google Maps și analiză de teren</p>
         <div class="review-list">
 
             <div class="review-item">
-                <p>Pereții interiori sunt incredibil de subțiri, zici că sunt din carton. Poți auzi tot ce se vorbește la vecini, iar când le vibrează telefonul pe noptieră, ai senzația că sună al tău[cite: 2].</p>
+                <p>Pereții sunt ca din carton — auzi tot ce face vecinul, inclusiv când îi vibrează telefonul pe masă. Te trezești că te uiți la al tău să verifici dacă nu cumva e sunetul tău.</p>
                 <div class="review-meta">
-                    <span class="review-source">Sursă: Google Maps · Andrei</span>
+                    <span class="review-source">Sursă: Google Maps · acum 1 an</span>
                     <span class="review-sentiment neg">Negativ</span>
                 </div>
             </div>
 
             <div class="review-item">
-                <p>Plătim lunar sume umflate pentru administrare și service, însă nu trece o singură lună în care să nu ne trezim cu liftul complet blocat[cite: 2]. La un bloc de 11 etaje, asta devine o mare bătaie de cap[cite: 2].</p>
+                <p>Plătești lunar sau la două luni pentru serviciul de lift la asociație. Nu trece o perioadă fără ca măcar unul dintre lifturi să rămână blocat.</p>
                 <div class="review-meta">
-                    <span class="review-source">Sursă: Google Maps · Andrei Puşcaşu</span>
+                    <span class="review-source">Sursă: Google Maps · 2 ani în urmă</span>
                     <span class="review-sentiment neg">Negativ</span>
                 </div>
             </div>
 
             <div class="review-item">
-                <p>Alimentarea cu apă și curent se oprește extrem de des și fără niciun preaviz din partea asociației. Am avut zile în care s-a oprit de mai multe ori sau a durat ore bune până s-a rezolvat avaria[cite: 2].</p>
+                <p>Nu recomand cumpărarea sau închirierea: nu există loc de parcare liber pentru rezidenți. Tot spațiul e rezervat exclusiv celor care au achitat 10.000 sau 5.000 de euro pentru un loc.</p>
                 <div class="review-meta">
-                    <span class="review-source">Sursă: Google Maps · aya kh</span>
+                    <span class="review-source">Sursă: Google Maps · 6 ani în urmă</span>
                     <span class="review-sentiment neg">Negativ</span>
                 </div>
             </div>
 
             <div class="review-item">
-                <p>Locația este absolut excelentă pentru investiție imobiliară, fiind foarte aproape de Iulius Mall, Kaufland și facultăți[cite: 2]. Spațiile exterioare și holurile sunt îngrijite, însă prețurile de revânzare sunt foarte mari pentru izolarea oferită[cite: 2].</p>
+                <p>Apa și curentul se întrerup foarte des și fără notificare — uneori chiar de 5 ori pe zi, câte 4–6 ore. Plătim o taxă de administrare de 33 de lei, dar în total costurile lunare ajung considerabil mai sus.</p>
                 <div class="review-meta">
-                    <span class="review-source">Sursă: Forum Imobiliar · Dan T.</span>
-                    <span class="review-sentiment neu">Neutru</span>
+                    <span class="review-source">Sursă: Google Maps · 5 ani în urmă</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Izolația fonică e mai slabă decât la alte blocuri noi. Probleme multiple cu lifturile, cu sistemul de sonerie, inundații, fisuri în parcarea subterană la anumiți piloni. Prețuri ridicate raportat la calitatea oferită.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 2 ani în urmă (editat)</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Holurile sunt mari, spațioase, materialele sunt ceva mai bune decât media. Lifturile sunt cam mici — trei persoane se înghesuie deja. Intrările în blocuri nu sunt bine semnalizate.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 5 ani în urmă</span>
+                    <span class="review-sentiment neu">Mixt</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Complex modern cu apartamente spațioase și luminoase, aproape de Iulius Mall, Kaufland și Lidl. Locație centrală cu acces la tot ce ai nevoie.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 5 ani în urmă</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Parcare generoasă, spații securizate, apartamente cu finisaje bune. Complex rezidențial cu caracter aparte, chiar dacă prețurile sunt ridicate.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 6 ani în urmă</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Cel mai mare proiect imobiliar din Iași la momentul inaugurării (2019). Apartamente bine construite într-o locație dorită de mulți. Oricine caută un apartament ar trebui să viziteze.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 7 ani în urmă</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Complex frumos la exterior, cu interioare spațioase și elegante. Dacă locatarii ar respecta mai mult spațiile comune — lifturile și holurile — ar fi și mai plăcut.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 5 ani în urmă</span>
+                    <span class="review-sentiment neu">Mixt</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Complex curat și bine întreținut, aproape de magazine și cu parcare disponibilă. Înăuntru este curat și luminos.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 2 ani în urmă</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
                 </div>
             </div>
 
@@ -558,28 +494,25 @@
 
     <hr class="section-divider">
 
-    <!-- VERDICT FINAL + SCOR -->
+    <!-- VERDICT FINAL -->
     <section class="section fade" id="verdict">
         <h2 class="section-title"><span class="icon">⚖️</span> Verdictul ImobVerdict</h2>
-
         <div class="score-box">
-            <div class="score-number">6.4<span>/10</span></div>
+            <div class="score-number">6.5<span>/10</span></div>
             <div class="score-desc">
-                <style>.score-number { color: #ffd93d !important; }</style>
-                <strong style="color: #ffd93d;">RISC MEDIU – EXCELENT PENTRU CHIRIE, RIGID PENTRU FAMILII</strong>
-                <p>Conest Grand Residence Tudor reprezintă un „safe bet” financiar și juridic pe piața din Iași: riscul de fraudă imobiliară, faliment sau lipsă de intabulare este complet zero[cite: 2]. Din perspectiva unui investitor, ansamblul se comportă impecabil datorită proximității premium față de campusul studențesc și centrele de birouri, apartamentele închiriindu-se rapid și la prețuri ridicate[cite: 2]. Cu toate acestea, din perspectiva locuirii pe termen lung, densitatea uriașă de vecini, izolarea fonică deficitară a pereților interiori[cite: 2], blocajele cronice ale lifturilor[cite: 2] și o administrație tensionată îl transformă într-un mediu destul de obositor și rigid[cite: 2].</p>
+                <strong>Recomandat pentru investitori — cu rezerve serioase pentru locuire familială</strong>
+                <p>Conest Grand Residence este un „safe bet" juridic și financiar: acte curate, lichiditate mare, proximitate Iulius Mall și campus universitar. Ideal ca investiție cu chirii stabile. Însă pentru o familie care caută liniște și confort pe termen lung, densitatea ridicată, izolația fonică slabă, lifturile defectuoase, absența parcării incluse și poluarea fonică permanentă de la bulevard îl transformă într-un mediu obositor în timp.</p>
             </div>
         </div>
     </section>
 
-    <!-- CTA FOOTER -->
     <div class="cta-strip fade">
         <div>
             <strong>Ai locuit sau locuiești în acest complex?</strong>
             <p>Ajută-ne să completăm imaginea. Experiența ta contează pentru viitorii locatari.</p>
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="mailto:contact@imobverdict.com?subject=Feedback Conest Grand Residence" class="btn">
+            <a href="mailto:contact@imobverdict.com" class="btn">
                 <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 Trimite feedback
             </a>
@@ -587,11 +520,11 @@
         </div>
     </div>
 
-</div><!-- /wrap -->
+</div>
 
 <footer>
     <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
-    <p class="footer-disc">Datele sunt agregate statistic din 156 de surse publice și mărturii ale proprietarilor[cite: 2]. Nu constituie consultanță juridică sau financiară.</p>
+    <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
     <div style="display:flex;gap:15px;margin-top:10px;">
         <a href="/confidentialitate/" class="footer-link">CONFIDENȚIALITATE</a>
         <a href="/termeni/" class="footer-link">TERMENI ȘI CONDIȚII</a>
@@ -599,7 +532,6 @@
 </footer>
 
 <script>
-    /* Curs valutar — identic cu pagina principală */
     async function fetchCurrency() {
         const navEl = document.getElementById('euro-nav');
         try {
@@ -609,13 +541,10 @@
             const ron = data.rates.RON;
             if (!ron) throw new Error('No RON');
             navEl.textContent = ron.toFixed(4);
-        } catch(e) {
-            navEl.textContent = 'N/A';
-        }
+        } catch(e) { navEl.textContent = 'N/A'; }
     }
     fetchCurrency();
 
-    /* Highlight buton activ în navigarea rapidă pe scroll */
     const sections = document.querySelectorAll('.section[id]');
     const navBtns  = document.querySelectorAll('.qnav-btn');
     const observer = new IntersectionObserver(entries => {
