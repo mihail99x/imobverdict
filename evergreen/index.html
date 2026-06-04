@@ -3,365 +3,574 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evergreen Towers Iași — Ce să știi înainte să cumperi sau închiriezi | ImobVerdict</title>
-    <meta name="description" content="Ghid independent: utilități, costuri lunare reale, parcare, administrare și experiența locatarilor la Evergreen Towers Iași. Avertisment: litigii apă raportate.">
+    <title>ImobVerdict | Evergreen Towers – Audit Independent Iași</title>
+    <meta name="description" content="Audit independent Evergreen Towers Iași: utilități, costuri lunare, parcare, probleme apă, experiența locatarilor. Toate informațiile înainte să semnezi.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/base.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.10); --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #130c22; --text-primary: #eeeaf8; --text-secondary: rgba(238,234,248,0.62);
+            --text-muted: rgba(238,234,248,0.35); --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11); --card-hover-bg: rgba(255,255,255,0.07);
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
+            --green: #6ee7b7; --yellow: #ffd93d; --red: #ff8f8f;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--purple-deep);
+            background-image:
+                radial-gradient(ellipse 80% 55% at 15% 5%, rgba(30,100,70,0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 55% 45% at 85% 85%, rgba(20,75,50,0.28) 0%, transparent 55%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55');
+            background-size: cover; background-position: center;
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh;
+        }
+        body::before { content: ''; position: fixed; inset: 0; background: linear-gradient(155deg, rgba(7,20,14,0.94) 0%, rgba(12,20,16,0.90) 45%, rgba(10,24,18,0.94) 100%); z-index: 0; pointer-events: none; }
+        .navbar { position: sticky; top: 0; z-index: 200; height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; background: rgba(7,20,14,0.78); backdrop-filter: blur(20px) saturate(1.5); border-bottom: 1px solid var(--mint-border); }
+        .logo { font-family:'DM Serif Display',serif; font-size:1.12rem; color:var(--text-primary); text-decoration:none; }
+        .logo em { font-style:normal; color:var(--mint); }
+        .pill { display:inline-flex; align-items:center; gap:7px; background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:100px; padding:4px 13px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--text-secondary); }
+        .pill .dot { width:6px; height:6px; border-radius:50%; background:var(--mint); animation:blink 2.2s ease-in-out infinite; }
+        .pill strong { color:var(--mint); font-weight:500; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+        .wrap { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:0 24px 100px; }
+        .breadcrumb { font-size:0.75rem; color:var(--text-muted); margin: 28px 0 32px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+        .breadcrumb a:hover { color:var(--mint); }
+        .breadcrumb span { color:var(--text-secondary); }
+        .breadcrumb-sep { opacity:0.4; }
+        .complex-hero { padding: 0 0 40px; border-bottom: 1px solid var(--mint-border); margin-bottom: 40px; }
+        .status-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.67rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; padding: 4px 11px; border-radius: 5px; margin-bottom: 18px; background: rgba(81,207,102,0.13); color: #7ed48a; border: 1px solid rgba(81,207,102,0.22); }
+        .status-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:#7ed48a; }
+        .complex-name { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 14px; }
+        .complex-name em { font-style: italic; color: var(--mint); }
+        .complex-meta { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px; }
+        .complex-meta-item { display:flex; align-items:center; gap:5px; }
+        .complex-meta-item svg { width:13px; height:13px; fill:none; stroke:var(--mint); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+        .intro-box { background: var(--mint-dim); border: 1px solid var(--mint-border); border-radius: var(--r-md); padding: 18px 20px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; }
+        .intro-box strong { color: var(--mint); }
+        .alert-box { background: rgba(255,143,143,0.07); border: 1px solid rgba(255,143,143,0.22); border-radius: var(--r-md); padding: 14px 18px; font-size: 0.85rem; color: var(--red); line-height: 1.7; margin-top: 14px; }
+        .alert-box strong { color: #ffaaaa; }
+        .quick-nav { display:flex; flex-wrap:wrap; gap:8px; margin: 32px 0; }
+        .qnav-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 100px; background: var(--card-bg); border: 1px solid var(--card-border); font-size: 0.78rem; color: var(--text-secondary); text-decoration: none; transition: background 0.18s, border-color 0.18s, color 0.18s; cursor: pointer; }
+        .qnav-btn:hover, .qnav-btn.active { background: var(--mint-dim); border-color: var(--mint-border); color: var(--mint); }
+        .qnav-btn svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .section { margin-bottom: 48px; scroll-margin-top: 70px; }
+        .section-title { font-family: 'DM Serif Display', serif; font-size: 1.35rem; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+        .section-title .icon { font-size: 1.1rem; }
+        .section-subtitle { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-bottom: 20px; }
+        .section-divider { border: none; border-top: 1px solid var(--card-border); margin: 48px 0; }
+        .data-table { display: flex; flex-direction: column; gap: 1px; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--card-border); }
+        .data-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 13px 18px; background: var(--card-bg); flex-wrap: wrap; }
+        .data-row:hover { background: var(--card-hover-bg); }
+        .data-row:not(:last-child) { border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .data-label { font-size: 0.83rem; color: var(--text-secondary); flex: 1; min-width: 140px; }
+        .data-value { font-size: 0.83rem; font-weight: 500; padding: 3px 10px; border-radius: 5px; background: rgba(126,249,212,0.08); border: 1px solid rgba(126,249,212,0.15); color: var(--mint); white-space: nowrap; }
+        .data-value.neutral { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.09); color: var(--text-secondary); }
+        .data-value.warn { background: rgba(255,217,61,0.08); border-color: rgba(255,217,61,0.18); color: var(--yellow); }
+        .data-value.bad { background: rgba(255,143,143,0.08); border-color: rgba(255,143,143,0.18); color: var(--red); }
+        .verdict-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--r-lg); padding: 24px; margin-bottom: 16px; position: relative; overflow: hidden; }
+        .verdict-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+        .verdict-card.v-green::before { background: linear-gradient(90deg, transparent, var(--green), transparent); }
+        .verdict-card.v-yellow::before { background: linear-gradient(90deg, transparent, var(--yellow), transparent); }
+        .verdict-card.v-red::before { background: linear-gradient(90deg, transparent, var(--red), transparent); }
+        .verdict-label { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+        .verdict-label.green { color: var(--green); } .verdict-label.yellow { color: var(--yellow); } .verdict-label.red { color: var(--red); }
+        .verdict-title { font-family:'DM Serif Display',serif; font-size:1.1rem; margin-bottom:8px; line-height:1.3; }
+        .verdict-body { font-size:0.85rem; color:var(--text-secondary); line-height:1.72; }
+        .review-list { display: flex; flex-direction: column; gap: 12px; }
+        .review-item { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--r-md); padding: 16px 18px; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; position: relative; }
+        .review-item::before { content:'"'; font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mint); opacity:0.25; position:absolute; top:6px; left:14px; line-height:1; }
+        .review-item p { padding-left: 8px; }
+        .review-meta { display:flex; align-items:center; justify-content:space-between; margin-top:10px; flex-wrap:wrap; gap:6px; }
+        .review-source { font-size:0.68rem; color:var(--text-muted); font-family:'DM Mono',monospace; }
+        .review-sentiment { font-size:0.65rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:2px 8px; border-radius:4px; }
+        .review-sentiment.pos { background:rgba(110,231,183,0.1); color:var(--green); border:1px solid rgba(110,231,183,0.18); }
+        .review-sentiment.neg { background:rgba(255,143,143,0.1); color:var(--red); border:1px solid rgba(255,143,143,0.18); }
+        .review-sentiment.neu { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
+        .score-box { background: var(--card-bg); border: 1px solid var(--mint-border); border-radius: var(--r-lg); padding: 28px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 12px; }
+        .score-number { font-family:'DM Serif Display',serif; font-size: 3.5rem; line-height:1; color: var(--mint); flex-shrink:0; }
+        .score-number span { font-size:1.2rem; color:var(--text-muted); }
+        .score-desc { flex:1; min-width:200px; }
+        .score-desc strong { display:block; font-size:1rem; margin-bottom:6px; }
+        .score-desc p { font-size:0.83rem; color:var(--text-secondary); line-height:1.7; }
+        .cta-strip { background: var(--mint-dim); border: 1px solid var(--mint-border); border-radius: var(--r-lg); padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 48px; }
+        .cta-strip p { font-size:0.9rem; color:var(--text-secondary); }
+        .cta-strip strong { display:block; color:var(--text-primary); font-size:1rem; margin-bottom:4px; }
+        .btn { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:var(--mint); color:var(--purple-deep); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); transition:background 0.18s,transform 0.14s; border:none; cursor:pointer; white-space:nowrap; }
+        .btn:hover { background:#a8fce2; transform:translateY(-1px); }
+        .btn svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+        .btn-outline { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:transparent; color:var(--mint); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); border:1px solid var(--mint-border); transition:background 0.18s; white-space:nowrap; }
+        .btn-outline:hover { background: var(--mint-dim); }
+        .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
+        .fade:nth-child(1){animation-delay:.04s} .fade:nth-child(2){animation-delay:.1s} .fade:nth-child(3){animation-delay:.16s} .fade:nth-child(4){animation-delay:.22s} .fade:nth-child(5){animation-delay:.28s} .fade:nth-child(6){animation-delay:.34s}
+        @keyframes up { to{opacity:1;transform:translateY(0)} }
+        footer { position:relative; z-index:1; margin-top:80px; padding:40px 28px; border-top:1px solid var(--mint-border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+        .footer-copy { font-size:0.76rem; color:var(--text-muted); }
+        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:600px; text-align:center; line-height:1.5; }
+        .footer-link { color:var(--mint); text-decoration:none; font-size:0.75rem; font-family:'DM Mono',monospace; opacity:0.7; border:1px solid var(--mint-border); padding:5px 18px; border-radius:100px; transition:0.3s; }
+        .footer-link:hover { opacity:1; background:var(--mint-dim); }
+        @media(max-width:640px){ .navbar .pill{display:none;} .complex-name{font-size:1.9rem;} .score-box{flex-direction:column;text-align:center;} .cta-strip{flex-direction:column;text-align:center;} }
+    </style>
 </head>
 <body>
 
 <nav class="navbar">
-    <div class="navbar-left">
-        <a href="/" class="logo">IMOB<em>VERDICT</em></a>
-        <div class="nav-divider"></div>
-        <span class="nav-label">Ghid cumpărător</span>
+    <a href="/" class="logo">IMOB<em>VERDICT</em></a>
+    <div class="pill">
+        <span class="dot"></span>
+        <span>EUR</span>
+        <strong id="euro-nav">—</strong>
+        <span>RON</span>
     </div>
-    <a href="/" class="back-link">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        Toate proiectele
-    </a>
 </nav>
 
-<div class="price-bar">
-    <div class="price-bar-inner">
-        <div class="price-item">
-            <span class="price-label">Preț estimativ</span>
-            <span class="price-value">2.200€ – 2.400€ / mp</span>
-        </div>
-        <div class="price-item">
-            <span class="price-label">Chirie estimativă</span>
-            <span class="price-value price-value--dim">350€ – 550€ / lună</span>
-        </div>
-        <div class="price-item">
-            <span class="price-label">Întreținere medie</span>
-            <span class="price-value price-value--dim">350 – 500 RON</span>
-        </div>
-    </div>
-</div>
+<div class="wrap">
 
-<main class="wrapper">
-
-    <nav class="breadcrumb fade" aria-label="Breadcrumb">
-        <a href="/">Acasă</a><span class="sep">/</span>
-        <a href="/">Proiecte</a><span class="sep">/</span>
-        <span class="cur">Evergreen Towers</span>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Acasă</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/">Proiecte</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Evergreen Towers</span>
     </nav>
 
-    <div class="page-header fade">
-        <div class="header-top">
-            <div>
-                <h1 class="project-name">Evergreen Towers</h1>
-                <div class="project-loc">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    Tătărași, Iași 
-                </div>
-            </div>
-            <div class="badge-stack">
-                <span class="badge pub">Raport publicat</span>
-                <span class="badge mono">Mai 2026</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="alert-box fade">
-        <span class="alert-box-title">⚠ Situație critică documentată — Litigiu furnizare apă</span>
-        <p>Dezvoltatorul CCI Construct a reziliat contractul cu Apavital și a lăsat două blocuri fără apă curentă, inclusiv în preajma sărbătorilor de Paște. Locatari au raportat perioade de până la 3 luni fără apă. Situația a generat multiple articole în presa locală și sute de recenzii negative. Verificați stadiul actual al branșamentului înainte de orice decizie de cumpărare sau închiriere.</p>
-    </div>
-
-    <div class="warning-box fade">
-        <span class="warning-box-title">⚡ De știut — Blocuri neintabulate și construcție activă</span>
-        <p>Nu toate blocurile din complex sunt intabulate. Unii cumpărători au raportat rezilierea unilaterală a antecontractelor de către dezvoltator și solicitări de plăți suplimentare față de prețul convenit inițial. Complexul se află în expansiune continuă — zgomotul de șantier este prezent în zonă.</p>
-    </div>
-
-    <div class="for-whom fade">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <p>Acest raport e pentru tine dacă <strong>vrei să cumperi sau să închiriezi</strong> la Evergreen Towers și vrei să știi dinainte cum arată viața de zi cu zi — ce plătești lunar, care sunt riscurile reale și ce au pățit alți locatari. Informațiile sunt agregate din recenzii publice ale locatarilor actuali și foști.</p>
-    </div>
-
-    <div class="quick-nav fade">
-        <a class="quick-q" href="#utilitati"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10H12V2z"/><circle cx="12" cy="12" r="3"/></svg>Cum mă încălzesc?</a>
-        <a class="quick-q" href="#costuri"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Cât plătesc lunar?</a>
-        <a class="quick-q" href="#parcare"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Găsesc loc de parcare?</a>
-        <a class="quick-q" href="#contractare"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Ce verific înainte să semnez?</a>
-        <a class="quick-q" href="#finisaje"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Ce primesc în apartament?</a>
-        <a class="quick-q" href="#recenzii"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Ce zic cei care locuiesc acolo?</a>
-    </div>
-
-    <!-- 01 UTILITĂȚI -->
-    <div class="audit-section fade" id="utilitati">
-        <div class="section-head">
-            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10H12V2z"/><circle cx="12" cy="12" r="3"/></svg>
-            <span class="section-head-title">Utilități</span>
-            <span class="section-q">— Cum mă încălzesc? Cine îmi furnizează apa?</span>
-        </div>
-        <div class="section-body">
-            <div class="info-row"><span class="info-label">Sistem încălzire</span><span class="info-val"><span class="pill warn">Centrală — probleme cu pornirea raportate iarna</span></span></div>
-            <div class="info-row"><span class="info-label">Apă curentă</span><span class="info-val"><span class="pill bad">Litigiu cu Apavital — întreruperi de luni raportate</span></span></div>
-            <div class="info-row"><span class="info-label">Presiunea apei</span><span class="info-val"><span class="pill bad">Probleme frecvente raportate de chiriași</span></span></div>
-            <div class="info-row"><span class="info-label">Contorizare</span><span class="info-val"><span class="pill warn">Facturi contestate — sume nejustificate pentru irigații raportate</span></span></div>
-            <div class="info-row"><span class="info-label">Internet & TV</span><span class="info-val"><span class="pill neu">Infrastructură disponibilă — furnizor la alegere</span></span></div>
-            <div class="info-row"><span class="info-label">Lift</span><span class="info-val"><span class="pill bad">Lent și defect frecvent — așteptare până la 10 min raportată</span></span></div>
-        </div>
-        <div class="check-list">
-            <div class="check-item alert">
-                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span><strong>Verifică obligatoriu</strong> dacă blocul vizat are contract activ de apă înainte de orice plată. Nu te baza pe promisiuni verbale ale reprezentanților de vânzări.</span>
-            </div>
-            <div class="check-item warn">
-                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span>Unii locatari au rezolvat parțial prin contract direct cu altă firmă — apă 2-3 ore/zi. Verifică ce variantă se aplică blocului specific pe care îl vizezi.</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 02 COSTURI -->
-    <div class="audit-section fade" id="costuri">
-        <div class="section-head">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            <span class="section-head-title">Costuri lunare după mutare</span>
-            <span class="section-q">— Pe lângă rată sau chirie, ce mai plătesc?</span>
-        </div>
-        <div class="section-body">
-            <div class="info-row"><span class="info-label">Întreținere / administrare</span><span class="info-val"><span class="pill bad">Facturi umflate — inclusiv pentru irigat spații verzi</span></span></div>
-            <div class="info-row"><span class="info-label">Transparență costuri</span><span class="info-val"><span class="pill bad">Taxe netransparente și presiuni pentru contracte cu dezvoltatorul</span></span></div>
-            <div class="info-row"><span class="info-label">Loc de parcare</span><span class="info-val"><span class="pill bad">Extra — prețuri descrise ca „la nivelul unui apartament"</span></span></div>
-            <div class="info-row"><span class="info-label">Servicii conexe (interfon etc.)</span><span class="info-val"><span class="pill warn">Taxe extra față de antecontract — raportat la predare</span></span></div>
-            <div class="info-row"><span class="info-label">Gaz + electricitate</span><span class="info-val"><span class="pill warn">Variabil — raportări de presiuni pentru furnizori impuși</span></span></div>
-        </div>
-        <div class="check-list">
-            <div class="check-item alert">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                <span><strong>Atenție la contractele impuse:</strong> dezvoltatorul exercită presiune pentru contracte de utilități cu firme proprii, la prețuri superioare pieței. Citește orice contract înainte să semnezi și cere timp de gândire.</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 03 PARCARE -->
-    <div class="audit-section fade" id="parcare">
-        <div class="section-head">
-            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-            <span class="section-head-title">Parcare & spații comune</span>
-            <span class="section-q">— Găsesc loc de parcare? Pot veni oaspeți?</span>
-        </div>
-        <div class="section-body">
-            <div class="info-row"><span class="info-label">Parcare vizitatori</span><span class="info-val"><span class="pill bad">Inexistentă — intrarea ca oaspete este „o aventură"</span></span></div>
-            <div class="info-row"><span class="info-label">Parcare privată</span><span class="info-val"><span class="pill warn">Disponibilă la achiziție — prețuri ridicate raportate</span></span></div>
-            <div class="info-row"><span class="info-label">Spații verzi</span><span class="info-val"><span class="pill ok">Generoase — punct forte apreciat de locatari</span></span></div>
-            <div class="info-row"><span class="info-label">Loc de joacă copii</span><span class="info-val"><span class="pill ok">Prezent și apreciat de familii</span></span></div>
-            <div class="info-row"><span class="info-label">Acces rutier</span><span class="info-val"><span class="pill bad">Drum fără trotuar, cu gropi — ieșire directă în stradă</span></span></div>
-        </div>
-        <div class="check-list">
-            <div class="check-item warn">
-                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span>Absența parcărilor pentru vizitatori e o problemă reală de zi cu zi. Dacă ai oaspeți frecvenți sau mai multe mașini, verifică situația fizic înainte de decizie.</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 04 ADMINISTRARE -->
-    <div class="audit-section fade">
-        <div class="section-head">
-            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <span class="section-head-title">Administrare post-mutare</span>
-            <span class="section-q">— Cu cine rezolv problemele după ce mă mut?</span>
-        </div>
-        <div class="section-body">
-            <div class="info-row"><span class="info-label">Administrator</span><span class="info-val"><span class="pill bad">Controlat de dezvoltator — fără independență față de CCI</span></span></div>
-            <div class="info-row"><span class="info-label">Asociație proprietari</span><span class="info-val"><span class="pill bad">Absentă sau cu putere redusă față de developer</span></span></div>
-            <div class="info-row"><span class="info-label">Răspuns la sesizări</span><span class="info-val"><span class="pill bad">Probleme grave ignorate — inclusiv lipsa apei luni întregi</span></span></div>
-            <div class="info-row"><span class="info-label">Spații comune</span><span class="info-val"><span class="pill warn">Exterior îngrijit — interior raportat ca neîngrijit de unii locatari</span></span></div>
-        </div>
-        <div class="check-list">
-            <div class="check-item alert">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                <span>Controlul total al dezvoltatorului asupra administrării este principala sursă de conflicte. Locatarii au putere de negociere foarte redusă. Discută cu locatari actuali din blocul specific înainte de orice decizie.</span>
-            </div>
-            <div class="check-item tip">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                <span>Experiențele variază semnificativ între blocuri. Identifică exact blocul și întreabă locatarii din acel bloc specific — nu te baza pe recenzii generale ale complexului.</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 05 CONTRACTARE -->
-    <div class="audit-section fade" id="contractare">
-        <div class="section-head">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            <span class="section-head-title">Ce să verifici înainte să semnezi</span>
-            <span class="section-q">— Unde sunt potențialele capcane?</span>
-        </div>
-        <div class="section-body">
-            <div class="info-row"><span class="info-label">Intabulare (CF)</span><span class="info-val"><span class="pill warn">3 blocuri intabulate — restul în curs sau neintabulate</span></span></div>
-            <div class="info-row"><span class="info-label">Antecontracte</span><span class="info-val"><span class="pill bad">Rezilieri unilaterale raportate cu solicitări de bani extra</span></span></div>
-            <div class="info-row"><span class="info-label">Preț final vs. antecontract</span><span class="info-val"><span class="pill bad">Discrepanțe raportate — prețuri majorate după semnare</span></span></div>
-            <div class="info-row"><span class="info-label">Presiune la semnare</span><span class="info-val"><span class="pill bad">Urgentarea semnării și refuz vizionare apartament fizic — raportat</span></span></div>
-            <div class="info-row"><span class="info-label">Predare utilități</span><span class="info-val"><span class="pill bad">Apartamente predate fără toate utilitățile branșate</span></span></div>
-        </div>
-        <div class="check-list">
-            <div class="check-item alert">
-                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span><strong>Cumpără DOAR din blocuri cu CF finalizat.</strong> Antecontractele la blocuri neintabulate au generat pierderi financiare reale — rezilieri și bani extra solicitați după semnare.</span>
-            </div>
-            <div class="check-item alert">
-                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span>Cere să vizitezi fizic apartamentul real, nu showroom-ul. Dacă dezvoltatorul refuză, acesta e un semnal de alarmă clar — nu avansa cu nicio plată.</span>
-            </div>
-            <div class="check-item tip">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                <span>Câțiva cumpărători au avut experiențe pozitive la blocurile finalizate și intabulate. Diferența o face blocul specific, nu complexul în general.</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 06 FINISAJE -->
-    <div class="audit-section fade" id="finisaje">
-        <div class="section-head">
-            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            <span class="section-head-title">Ce primești în apartament</span>
-            <span class="section-q">— Ce e inclus și ce lipsește față de promisiuni?</span>
-        </div>
-        <div class="section-body">
-            <div class="info-row"><span class="info-label">Finisaje interioare</span><span class="info-val"><span class="pill warn">Opinii împărțite — apreciate de unii, criticate de alții</span></span></div>
-            <div class="info-row"><span class="info-label">Izolație fonică</span><span class="info-val"><span class="pill bad">Pereți subțiri — conversațiile vecinilor se aud clar</span></span></div>
-            <div class="info-row"><span class="info-label">Grinzi / structură</span><span class="info-val"><span class="pill bad">Grinzi de 50cm raportate — spațiu util redus în unele apartamente</span></span></div>
-            <div class="info-row"><span class="info-label">Dotări față de antecontract</span><span class="info-val"><span class="pill bad">Lipsuri la predare față de ce era promis — raportat frecvent</span></span></div>
-            <div class="info-row"><span class="info-label">Spații verzi / balcoane</span><span class="info-val"><span class="pill ok">Plante pe balcoane și terase — punct forte al proiectului</span></span></div>
-            <div class="info-row"><span class="info-label">Compartimentare</span><span class="info-val"><span class="pill ok">Apreciată — spații generoase și luminoase</span></span></div>
-        </div>
-        <div class="check-list">
-            <div class="check-item alert">
-                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span>Verifică la predare dacă toate dotările din antecontract sunt prezente fizic. Fă un proces-verbal detaliat și nu semna recepția dacă ceva lipsește sau nu corespunde.</span>
-            </div>
-            <div class="check-item warn">
-                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span>Dacă ești sensibil la zgomot, izolația fonică deficitară este un factor decisiv — conversațiile vecinilor se aud clar zi și noapte conform mai multor recenzii.</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 07 RECENZII -->
-    <div class="audit-section fade" id="recenzii">
-        <div class="reviews-meta-row">
-            <div class="reviews-meta-left">
+    <section class="complex-hero fade">
+        <div class="status-badge">Audit publicat</div>
+        <h1 class="complex-name"><em>Evergreen</em> Towers</h1>
+        <div class="complex-meta">
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Tătărași Sud / Metalurgie, str. Grădinari, Iași
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Finalizat faze ~2019–2022
+            </span>
+            <span class="complex-meta-item">
                 <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                <span class="section-head-title">Ce spun cei care locuiesc acolo</span>
-            </div>
-            <span class="reviews-note">80+ recenzii publice agregate · Mai 2026</span>
+                ~100+ recenzii analizate
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Audit publicat Iunie 2026
+            </span>
         </div>
-        <div class="reviews-body">
-            <div class="rev-group">
-                <div class="rev-group-label pos">
-                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                    Ce apreciază locatarii
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Spații verzi generoase — plante pe balcoane, alei și terase</span><span class="rev-pct pos">71%</span></div>
-                    <div class="bar-track"><div class="bar-fill pos" style="width:71%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Locație bună — transport public accesibil, aproape de centru</span><span class="rev-pct pos">64%</span></div>
-                    <div class="bar-track"><div class="bar-fill pos" style="width:64%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Apartamente spațioase și bine compartimentate</span><span class="rev-pct pos">58%</span></div>
-                    <div class="bar-track"><div class="bar-fill pos" style="width:58%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Loc de joacă pentru copii și zonă relativ liniștită</span><span class="rev-pct pos">47%</span></div>
-                    <div class="bar-track"><div class="bar-fill pos" style="width:47%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Proces de cumpărare ok la blocurile deja intabulate</span><span class="rev-pct pos">38%</span></div>
-                    <div class="bar-track"><div class="bar-fill pos" style="width:38%"></div></div>
-                </div>
-            </div>
-            <div class="rev-group">
-                <div class="rev-group-label neg">
-                    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                    Ce îi deranjează pe locatari
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Lipsă apă — perioade de până la 3 luni fără apă curentă</span><span class="rev-pct neg">82%</span></div>
-                    <div class="bar-track"><div class="bar-fill neg" style="width:82%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Facturi umflate și taxe netransparente de administrare</span><span class="rev-pct neg">74%</span></div>
-                    <div class="bar-track"><div class="bar-fill neg" style="width:74%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Izolație fonică deficitară — zgomotul vecinilor se aude clar</span><span class="rev-pct neg">67%</span></div>
-                    <div class="bar-track"><div class="bar-fill neg" style="width:67%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Lift lent sau defect frecvent</span><span class="rev-pct neg">61%</span></div>
-                    <div class="bar-track"><div class="bar-fill neg" style="width:61%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Antecontracte reziliate unilateral sau prețuri majorate după semnare</span><span class="rev-pct neg">55%</span></div>
-                    <div class="bar-track"><div class="bar-fill neg" style="width:55%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Finisaje lipsă sau inferioare față de ce era promis la predare</span><span class="rev-pct neg">49%</span></div>
-                    <div class="bar-track"><div class="bar-fill neg" style="width:49%"></div></div>
-                </div>
-                <div class="rev-item">
-                    <div class="rev-item-top"><span class="rev-item-text">Drum fără trotuar și infrastructură stradală deficitară</span><span class="rev-pct neg">43%</span></div>
-                    <div class="bar-track"><div class="bar-fill neg" style="width:43%"></div></div>
-                </div>
-            </div>
-            <div class="rev-method-note">
-                <strong>Notă:</strong> Procentele indică frecvența cu care un aspect apare în recenziile publice agregate, nu un sondaj statistic reprezentativ. Experiențele variază semnificativ în funcție de blocul specific din complex.
-            </div>
+        <div class="intro-box">
+            Acest raport e pentru tine dacă <strong>vrei să cumperi sau să închiriezi</strong> la Evergreen Towers și vrei să știi dinainte cum arată viața de zi cu zi acolo. Denumirea sugerează natură și sustenabilitate — realitatea din teren este mai complexă. Complexul este construit de <strong>CCI Construct</strong>, un dezvoltator cu recenzii puternic polarizate: o parte din locatari sunt mulțumiți, o altă parte semnalează conflicte serioase legate de aprovizionarea cu apă și comportamentul post-vânzare al dezvoltatorului.
         </div>
-    </div>
+        <div class="alert-box">
+            <strong>⚠ Avertisment major:</strong> Recenzii multiple și confirmate din surse independente semnalează că dezvoltatorul CCI Construct a tăiat alimentarea cu apă a locatarilor pentru a-i forța să semneze contracte de servicii cu compania sa proprie. Un locatar raportează 3 luni fără apă în 2024. Verificați cu atenție înainte de a semna antecontractul.
+        </div>
+    </section>
 
-    <div class="verdict-box fade">
-        <span class="verdict-eyebrow">Concluzia ImobVerdict</span>
-        <p class="verdict-text">Evergreen Towers are un concept atractiv — spații verzi generoase, apartamente luminoase și locație bună în Tătărași. Problema fundamentală nu e construcția în sine, ci comportamentul dezvoltatorului CCI Construct: litigii de apă documentate, facturi contestate, antecontracte reziliate unilateral și presiune la semnare. Experiențele variază dramatic între blocuri — cele intabulate funcționează rezonabil, cele neintabulate sunt sursa majorității conflictelor.</p>
-        <div class="verdict-rec">
-            <strong>Dacă totuși vrei să cumperi:</strong> exclusiv dintr-un bloc cu CF finalizat, vizitează fizic apartamentul real, verifică contractul de apă activ și vorbește cu minimum 3 locatari din acel bloc specific înainte să dai un leu avans.
-        </div>
-    </div>
-
-    <div class="contribute-box fade">
-        <div class="contribute-icon">
+    <nav class="quick-nav fade" aria-label="Navigare rapidă">
+        <a class="qnav-btn" href="#utilitati">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            Cum mă încălzesc?
+        </a>
+        <a class="qnav-btn" href="#costuri">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Cât plătesc lunar?
+        </a>
+        <a class="qnav-btn" href="#parcare">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Găsesc loc de parcare?
+        </a>
+        <a class="qnav-btn" href="#contract">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Ce verific înainte să semnez?
+        </a>
+        <a class="qnav-btn" href="#dotari">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Ce primesc în apartament?
+        </a>
+        <a class="qnav-btn" href="#recenzii">
             <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div class="contribute-body">
-            <h3>Locuiești sau ai locuit la Evergreen Towers?</h3>
-            <p>Experiența ta directă ajută alți oameni să ia o decizie mai informată. Dacă ai ceva de adăugat — pozitiv sau negativ — ne poți scrie. Toate contribuțiile sunt anonimizate.</p>
-            <div class="btn-row">
-                <a href="mailto:contact@imobverdict.com?subject=Experienta Evergreen Towers" class="btn">Împărtășește experiența</a>
-                <a href="mailto:contact@imobverdict.com?subject=Corectie raport Evergreen Towers" class="btn-ghost">Semnalează o inexactitate</a>
+            Ce zic locatarii?
+        </a>
+    </nav>
+
+    <!-- UTILITĂȚI -->
+    <section class="section fade" id="utilitati">
+        <h2 class="section-title"><span class="icon">🔔</span> Utilități</h2>
+        <p class="section-subtitle">— Cum mă încălzesc? Cine îmi furnizează apa?</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Sistem încălzire</span>
+                <span class="data-value warn">Centrală proprie pe gaz per apartament — întreruperi gaz iarna raportate</span>
             </div>
+            <div class="data-row">
+                <span class="data-label">Apă caldă</span>
+                <span class="data-value bad">Boiler individual — probleme frecvente de presiune și întreruperi</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Furnizor apă rece</span>
+                <span class="data-value bad">⚠ RISC MAJOR — dezvoltatorul a reziliat contractul cu Apavital și controlează furnizarea apei</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Băi ventilate natural</span>
+                <span class="data-value">Da — confirmat de locatari ca punct pozitiv</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Internet & TV</span>
+                <span class="data-value neutral">La alegere — infrastructură disponibilă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Furnizor curent</span>
+                <span class="data-value bad">⚠ Recenzii semnalează presiuni pentru semnarea contractelor cu firma dezvoltatorului</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Fiabilitate utilități</span>
+                <span class="data-value bad">Critică — locatari raportează luni întregi fără apă (caz confirmat: 3 luni în 2024)</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- COSTURI LUNARE -->
+    <section class="section fade" id="costuri">
+        <h2 class="section-title"><span class="icon">💰</span> Costuri lunare estimate</h2>
+        <p class="section-subtitle">— Cât plătesc total pe lună, în afara ratei/chiriei?</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Întreținere (asociație / administrare)</span>
+                <span class="data-value warn">Ridicată față de alte complexe — sume exacte nemeniționate public</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Apă și canalizare</span>
+                <span class="data-value bad">⚠ Facturi umflate raportate — dezvoltatorul calculează suplimentar irigatii gazon</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Lift</span>
+                <span class="data-value bad">Lifturi lente și defectuoase — timp de așteptare raportat până la 10 minute</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcare</span>
+                <span class="data-value warn">Loc parcare disponibil dar la prețul unui apartament — conform recenzii</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Servicii suplimentare</span>
+                <span class="data-value bad">Interfon și alte servicii facturate separat față de ce era prevăzut în antecontract</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Total estimat (fără utilități personale)</span>
+                <span class="data-value warn">Peste medie — dificil de estimat din cauza opacității dezvoltatorului</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- PARCARE -->
+    <section class="section fade" id="parcare">
+        <h2 class="section-title"><span class="icon">🅿️</span> Parcare</h2>
+        <p class="section-subtitle">— Există loc de parcare? Cât costă? E suficient?</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Tip parcare</span>
+                <span class="data-value neutral">Supraterană — parcare la sol în cadrul complexului</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Inclus în prețul apartamentului</span>
+                <span class="data-value bad">NU — achiziție separată</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Cost loc parcare</span>
+                <span class="data-value bad">Extrem de ridicat — „la prețul unui apartament" (conform recenzie locatar)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcare pentru vizitatori</span>
+                <span class="data-value bad">Nu există — vizitatorii nu au unde parca, intrarea ca oaspete e dificilă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcare neautorizată în zonă</span>
+                <span class="data-value bad">Sancționată agresiv — locatari raportează că sunt sunați imediat să mute mașina</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Spațiu sacrificat pentru parcare</span>
+                <span class="data-value bad">Marea majoritate a terenului exterior dedicată parcărilor în detrimentul spațiului verde</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTRACT / CE VERIFICI -->
+    <section class="section fade" id="contract">
+        <h2 class="section-title"><span class="icon">📋</span> Ce verifici înainte să semnezi</h2>
+        <p class="section-subtitle">— Riscuri contractuale și juridice identificate din experiența locatarilor</p>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc critic</div>
+            <h3 class="verdict-title">Dezvoltatorul controlează furnizarea apei și o folosește ca instrument de presiune</h3>
+            <p class="verdict-body">Cel mai grav risc documentat: CCI Construct a reziliat contractul cu Apavital (furnizorul public de apă) și a preluat controlul distribuției apei în complex. Mai mulți locatari independenți confirmă că dezvoltatorul a tăiat apa pentru a-i forța să semneze contracte de servicii cu compania sa. Un locatar raportează 3 luni consecutive fără apă în 2024. Altul descrie cum dezvoltatorul a montat sticle pe conductă pentru a limita debitul. Verificați înainte de semnare cu cine aveți contractul de apă și ce clauze are.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Antecontracte reziliate și solicitări de bani suplimentari după semnare</h3>
+            <p class="verdict-body">Mai mulți cumpărători raportează că după semnarea antecontractului, dezvoltatorul a invocat diverse motive pentru a cere sume suplimentare față de prețul agreat inițial. Cei care au refuzat au avut antecontractele reziliate unilateral. Un locatar menționează explicit că blocurile nu erau intabulate la momentul semnării. Consultați un avocat înainte de a semna orice document.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Finisaje inferioare față de ce era promis în prospect</h3>
+            <p class="verdict-body">La recepția apartamentului, mai mulți cumpărători au constatat că finisajele nu corespundeau cu cele prezentate în showroom sau în contractul de antecontract. Servicii ca interfonul au fost facturate suplimentar deși erau incluse în antecontract. Documentați în scris și fotografic starea apartamentului la fiecare etapă și comparați cu specificațiile contractuale.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Zona este în tranziție — infrastructura pietonală lipsește</h3>
+            <p class="verdict-body">Strada Grădinari și împrejurimile au un caracter industrial în reconversie. Trotuarele sunt înguste sau absente, există depozite și hale în vecinătate, iar praful specific zonelor industriale afectează balcoanele. Zona se modernizează, dar ritmul este lent. Dacă mergi pe jos frecvent, vizitează zona în mod real înainte de a decide.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Trafic intens la orele de vârf — nodul Metalurgie / Doi Băieți</h3>
+            <p class="verdict-body">Ieșirea cu mașina la orele de vârf (7:45–8:30) înseamnă cozi semnificative la intersecția Metalurgie și zona Doi Băieți. Naveta spre centru cu mașina poate deveni frustrantă zilnic. Pe de altă parte, transportul în comun — tramvaie și autobuze spre Tudor, Podu Roș și Centru — funcționează bine și compensează parțial.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct pozitiv</div>
+            <h3 class="verdict-title">Conectivitate excelentă la transport public + acces rapid la mari magazine</h3>
+            <p class="verdict-body">Nodul Metalurgie/Baza 3 este la câteva minute pe jos. Ai acces rapid la Iulius Mall, Leroy Merlin, Kaufland, Carrefour Felicia și Egros. Pentru locatarii care nu depind de mașină sau care preferă transportul în comun, locația este una dintre cele mai practice din Iași. Priveliștea panoramică de la etajele superioare este un bonus real.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct pozitiv</div>
+            <h3 class="verdict-title">Blocuri parțial intabulate — unele faze sunt în regulă juridic</h3>
+            <p class="verdict-body">O recenzie confirmă că 3 blocuri din complex sunt intabulate, ceea ce înseamnă că băncile pot acorda credite ipotecare pentru ele. Verificați explicit dacă blocul care vă interesează este intabulat înainte de a semna.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- DOTĂRI -->
+    <section class="section fade" id="dotari">
+        <h2 class="section-title"><span class="icon">🏠</span> Ce primești în apartament</h2>
+        <p class="section-subtitle">— Ce e inclus în preț, ce trebuie achiziționat separat</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Finisaje incluse</span>
+                <span class="data-value warn">La cheie — dar calitate raportată ca inferioară față de ce era promis</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Băi ventilate natural</span>
+                <span class="data-value">Da — confirmat, apreciat de locatari</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Compartimentare</span>
+                <span class="data-value neutral">Generoasă și practică — apreciată în recenzii</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Lift</span>
+                <span class="data-value bad">Da — dar lent, cu timp de așteptare de până la 10 minute raportat</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Spații verzi</span>
+                <span class="data-value warn">Există alei verzi și terase plantate — dar densitatea betonului rămâne dominantă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Loc de joacă copii</span>
+                <span class="data-value neutral">Da — menționat pozitiv de locatari cu copii</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Izolație fonică</span>
+                <span class="data-value bad">Slabă — pereți subțiri, conversațiile vecinilor audibile</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Grinzi aparente interior</span>
+                <span class="data-value bad">Grinzi de 50 cm — menționate ca problemă de design interior</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Umiditate subsol / boxe</span>
+                <span class="data-value warn">Probleme de umiditate raportate în perioadele ploioase — zonă joasă lângă Bahlui</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Priveliște etaje superioare</span>
+                <span class="data-value">Panoramică — vedere spectaculoasă spre est și râul Bahlui</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- RECENZII -->
+    <section class="section fade" id="recenzii">
+        <h2 class="section-title"><span class="icon">💬</span> Ce zic cei care locuiesc acolo</h2>
+        <p class="section-subtitle">— Recenzii agregate din Google Maps — polarizare puternică între experiențe pozitive și negative</p>
+        <div class="review-list">
+
+            <div class="review-item">
+                <p>Am locuit un an. Gazul se întrerupea iarna, centrala nici nu mai pornea. Probleme constante cu presiunea apei. Am cerut proprietarului să repare, nu a putut, așa că am plecat.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 10 luni</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Locuiesc în Evergreen de un an și experiența a fost un coșmar. Trei luni la rând nu am avut deloc apă. Am trecut printr-o intervenție chirurgicală și nu aveam apă să mă îngrijesc corespunzător.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 1 an</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Dezvoltatorul a reziliat contractul cu Apavital și a lăsat două blocuri fără apă chiar înainte de Paște — ca să arate că face ce vrea pe „domeniul" lui și să-i forțeze pe oameni să semneze contracte cu el.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 5 luni (editat)</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Nu cumpărați de la CCI. Blocurile nu erau intabulate, iar după ce semnezi antecontractul, invocă tot felul de motive ca să ceară bani în plus. Cine refuză, i se reziliază contractul.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 2 ani în urmă</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Pereții sunt atât de subțiri că auzi cu ușurință orice conversație a vecinilor, zi sau noapte.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 10 luni</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>La recepția apartamentului, finisajele erau inferioare față de ce plătisem. Interfonul era facturat separat deși era prevăzut în antecontract. Servicii pentru clienți proaste. Nu recomand.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 4 ani în urmă</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Am trăit în 5 blocuri noi ca chiriaș, dar acesta a fost cel mai prost. Lifturile sunt foarte lente — uneori aștepți 10 minute. Facturi umflate și dacă parchezi în apropiere ești sunat imediat să muți mașina.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 1 an</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Sunt proprietar și sunt foarte mulțumit. Complexul este curat, apartamentele bine finisate, exteriorul bine întreținut. Față de blocurile din față, diferența este ca de la cer la pământ.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 9 luni</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Locuiesc în Evergreen și pot spune că este cu adevărat un loc special. Proiectul este inspirat din Bosco Verticale din Milano — spațiile verzi sunt integrate pe alei, terase și spații comune. Un oasis urban.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 6 luni</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Am cumpărat prin plan de plată flexibil. Colaborarea a fost relaxată, comunicarea eficientă. Documentele finalizate în 2024, conform promisiunii din 2022. Recomand.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 1 an (editat)</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Locația complexului aproape de transport și băile cu ventilație naturală au fost cele două motive care m-au convins să cumpăr. Colaborarea cu CCI a fost ok. Recomand.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 1 an</span>
+                    <span class="review-sentiment neu">Mixt</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Stradă fără trotuar și cu multe gropi. Ajungi direct în stradă din complex. Ar fi fost util un spațiu tampon cu plantatii care să blocheze zgomotul și poluarea.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 6 ani în urmă</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- VERDICT FINAL -->
+    <section class="section fade" id="verdict">
+        <h2 class="section-title"><span class="icon">⚖️</span> Verdictul ImobVerdict</h2>
+        <div class="score-box">
+            <div class="score-number">4.5<span>/10</span></div>
+            <div class="score-desc">
+                <strong>Nu recomandăm fără verificare juridică prealabilă serioasă</strong>
+                <p>Evergreen Towers are avantaje reale — locație bine conectată la transport, unele apartamente cu compartimentare bună și spații verzi parțial reușite. Însă comportamentul documentat al dezvoltatorului CCI Construct (tăierea apei ca instrument de presiune, antecontracte reziliate, solicitări de bani suplimentari post-semnare) ridică semne de întrebare serioase. Înainte de a semna orice document, consultați un avocat specializat în drept imobiliar și verificați dacă blocul care vă interesează este intabulat și dacă are contract direct cu Apavital.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-strip fade">
+        <div>
+            <strong>Ai locuit sau locuiești în acest complex?</strong>
+            <p>Ajută-ne să completăm imaginea. Experiența ta contează pentru viitorii locatari.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="mailto:contact@imobverdict.com" class="btn">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Trimite feedback
+            </a>
+            <a href="/" class="btn-outline">← Toate proiectele</a>
         </div>
     </div>
 
-    <div class="bottom-grid fade">
-        <div class="hist-box">
-            <h3>Istoric raport</h3>
-            <div class="hist-entry">
-                <span class="hist-date">MAI 2026</span>
-                Publicare raport inițial — sinteză 80+ recenzii publice Google Maps și surse online.
-            </div>
-            <div class="hist-entry pending">Proxima actualizare: Iulie 2026 (monitorizare situație apă în curs…)</div>
-        </div>
-        <div class="news-box">
-            <div>
-                <h3>Rămâi la curent</h3>
-                <p>Primește pe email când apare o actualizare la acest raport sau când publicăm analize noi pentru Iași.</p>
-            </div>
-            <a href="mailto:newsletter@imobverdict.com?subject=Abonare ImobVerdict" class="btn" style="width:100%;justify-content:center;">Anunță-mă de actualizări</a>
-        </div>
-    </div>
+</div>
 
-    <div class="legal fade">
-        <strong>Disclaimer:</strong> Acest raport reprezintă o sinteză editorială independentă bazată pe recenzii și surse publice disponibile la momentul analizei. Conținutul reflectă opiniile exprimate public de terți și nu constituie afirmații de fapt ale ImobVerdict. Materialul nu înlocuiește consultanța juridică, tehnică sau financiară individuală. Pentru corecții sau completări: contact@imobverdict.com.
+<footer>
+    <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
+    <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
+    <div style="display:flex;gap:15px;margin-top:10px;">
+        <a href="/confidentialitate/" class="footer-link">CONFIDENȚIALITATE</a>
+        <a href="/termeni/" class="footer-link">TERMENI ȘI CONDIȚII</a>
     </div>
+</footer>
 
-</main>
+<script>
+    async function fetchCurrency() {
+        const navEl = document.getElementById('euro-nav');
+        try {
+            const res = await fetch('https://open.er-api.com/v6/latest/EUR');
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const data = await res.json();
+            const ron = data.rates.RON;
+            if (!ron) throw new Error('No RON');
+            navEl.textContent = ron.toFixed(4);
+        } catch(e) { navEl.textContent = 'N/A'; }
+    }
+    fetchCurrency();
+
+    const sections = document.querySelectorAll('.section[id]');
+    const navBtns  = document.querySelectorAll('.qnav-btn');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                navBtns.forEach(b => b.classList.remove('active'));
+                const active = document.querySelector(`.qnav-btn[href="#${e.target.id}"]`);
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
+</script>
+
 </body>
 </html>
