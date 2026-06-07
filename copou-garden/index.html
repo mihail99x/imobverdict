@@ -3,151 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audit: Copou Garden Residence | ImobVerdict</title>
-    <meta name="description" content="Analiză independentă Copou Garden Residence Iași: stadiul intabulării, infrastructura electrică și riscuri juridice la achiziție.">
+    <title>ImobVerdict | Copou Garden Residence – Audit Independent Iași</title>
+    <meta name="description" content="Audit independent Copou Garden Residence Iași: întârzieri predare, blocuri neintabulate, presiuni pentru reziliere, ~1000 EUR/mp. Tot ce trebuie să știi înainte să semnezi.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
-            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.12); --mint-border: rgba(126,249,212,0.2);
-            --purple-deep: #1a0f2e; --text-primary: #f0eef8; --text-secondary: rgba(240,238,248,0.75);
-            --text-muted: rgba(240,238,248,0.52); --card-bg: rgba(255,255,255,0.04);
-            --card-border: rgba(126,249,212,0.12); --radius-sm: 8px; --radius-md: 14px; --radius-lg: 20px;
+            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.10); --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #0d0e1a; --text-primary: #eeeaf8; --text-secondary: rgba(238,234,248,0.62);
+            --text-muted: rgba(238,234,248,0.35); --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11); --card-hover-bg: rgba(255,255,255,0.07);
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
+            --green: #6ee7b7; --yellow: #ffd93d; --red: #ff8f8f;
         }
         html { scroll-behavior: smooth; }
-        body { 
-            background-color: var(--purple-deep); 
-            background-image: radial-gradient(ellipse 80% 60% at 20% 10%, rgba(90,50,150,0.42) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(30,80,100,0.3) 0%, transparent 55%);
-            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; 
+        body {
+            background-color: var(--purple-deep);
+            background-image:
+                radial-gradient(ellipse 70% 50% at 20% 8%, rgba(50,80,40,0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 80% 85%, rgba(30,50,20,0.28) 0%, transparent 55%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55');
+            background-size: cover; background-position: center;
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh;
         }
-        body::before { content: ''; position: fixed; inset: 0; background: linear-gradient(160deg, rgba(18,8,35,0.93) 0%, rgba(22,12,40,0.9) 50%, rgba(14,30,42,0.93) 100%); z-index: -1; }
-        
-        .navbar { 
-            position: sticky; 
-            top: 0; 
-            z-index: 200; 
-            background: rgba(18,8,35,0.85); 
-            backdrop-filter: blur(18px); 
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--mint-border); 
-            padding: 0 24px; 
-            height: 52px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-        }
-        .navbar-left { 
-            display: flex; 
-            align-items: center; 
-        }
-        .logo { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--text-primary); text-decoration: none; display: inline-block; }
-        .logo span { color: var(--mint); }
-        .back-link { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
-        .back-link:hover { color: var(--mint); }
-        
-        .wrapper { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
-        .report-header { background: var(--card-bg); border: 1px solid var(--mint-border); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 40px; position: relative; }
-        .report-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent 0%, var(--mint) 40%, rgba(126,249,212,0.28) 100%); }
-        .project-name { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.1; color: var(--text-primary); }
-        
-        .risk-badge { display: inline-flex; align-items: center; gap: 7px; padding: 7px 16px; border-radius: 100px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; white-space: nowrap; }
-        .risk-badge.critic-bg { background: rgba(255,107,107,0.15); color: #ff9a9a; border: 1px solid rgba(255,107,107,0.32); }
-        
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 25px; }
-        .stat-item { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-sm); padding: 14px 16px; }
-        .stat-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 5px; }
-        .stat-value { font-size: 0.92rem; color: var(--mint); font-weight: 500; }
-
-        .report-body { background: var(--card-bg); border: 1px solid rgba(126,249,212,0.1); border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 40px; }
-        .section-title { display: flex; align-items: center; gap: 12px; font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--text-primary); margin: 44px 0 20px; }
-        .section-title::before { content: ''; width: 3px; height: 20px; background: var(--mint); border-radius: 2px; }
-
-        .risk-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-        .risk-table th { padding: 10px 16px; text-align: left; font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; border-bottom: 1px solid var(--mint-border); }
-        .risk-table td { padding: 14px 16px; color: var(--text-secondary); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        
-        .impact-tag { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 4px; font-size: 0.67rem; font-weight: 600; text-transform: uppercase; }
-        .impact-tag.critic { background: rgba(255,107,107,0.14); color: #ff9a9a; }
-        .impact-tag.major { background: rgba(255,160,80,0.14); color: #ffba84; }
-        .impact-tag.optim { background: rgba(110,231,183,0.13); color: #87f0c8; }
-
-        .obs-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-        .obs-list li { display: flex; gap: 14px; padding: 16px 18px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-sm); font-size: 0.875rem; line-height: 1.6; }
-        .obs-list li::before { content: '🚨'; }
-
-        .verdict-box { background: rgba(126,249,212,0.05); border-left: 3px solid var(--mint); padding: 24px 28px; margin-top: 44px; border-radius: 0 10px 10px 0; border-top: 1px solid var(--mint-border); border-right: 1px solid var(--mint-border); border-bottom: 1px solid var(--mint-border); }
-        .verdict-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; color: var(--mint); display: block; margin-bottom: 10px; }
-        
-        .fade-in { opacity: 0; transform: translateY(14px); animation: fadeUp 0.5s ease forwards; }
-        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-
-        @media (max-width: 640px) { 
-            .report-header, .report-body { padding: 24px 20px; } 
-            .navbar .nav-label, .navbar .nav-divider-line { display: none !important; }
-        }
+        body::before { content:''; position:fixed; inset:0; background:linear-gradient(155deg,rgba(8,10,14,0.95) 0%,rgba(12,14,18,0.91) 45%,rgba(8,10,14,0.95) 100%); z-index:0; pointer-events:none; }
+        .navbar { position:sticky; top:0; z-index:200; height:52px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; background:rgba(8,10,14,0.82); backdrop-filter:blur(20px) saturate(1.5); border-bottom:1px solid var(--mint-border); }
+        .logo { font-family:'DM Serif Display',serif; font-size:1.12rem; color:var(--text-primary); text-decoration:none; }
+        .logo em { font-style:normal; color:var(--mint); }
+        .pill { display:inline-flex; align-items:center; gap:7px; background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:100px; padding:4px 13px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--text-secondary); }
+        .pill .dot { width:6px; height:6px; border-radius:50%; background:var(--mint); animation:blink 2.2s ease-in-out infinite; }
+        .pill strong { color:var(--mint); font-weight:500; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+        .wrap { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:0 24px 100px; }
+        .breadcrumb { font-size:0.75rem; color:var(--text-muted); margin:28px 0 32px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+        .breadcrumb a:hover { color:var(--mint); }
+        .breadcrumb span { color:var(--text-secondary); }
+        .breadcrumb-sep { opacity:0.4; }
+        .complex-hero { padding:0 0 40px; border-bottom:1px solid var(--mint-border); margin-bottom:40px; }
+        .status-badge { display:inline-flex; align-items:center; gap:6px; font-size:0.67rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border-radius:5px; margin-bottom:18px; background:rgba(81,207,102,0.13); color:#7ed48a; border:1px solid rgba(81,207,102,0.22); }
+        .status-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:#7ed48a; }
+        .complex-name { font-family:'DM Serif Display',serif; font-size:clamp(2rem,5vw,3rem); line-height:1.08; letter-spacing:-0.03em; margin-bottom:14px; }
+        .complex-name em { font-style:italic; color:var(--mint); }
+        .complex-meta { display:flex; flex-wrap:wrap; gap:18px; font-size:0.78rem; color:var(--text-muted); margin-bottom:20px; }
+        .complex-meta-item { display:flex; align-items:center; gap:5px; }
+        .complex-meta-item svg { width:13px; height:13px; fill:none; stroke:var(--mint); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+        .intro-box { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-md); padding:18px 20px; font-size:0.9rem; color:var(--text-secondary); line-height:1.75; }
+        .intro-box strong { color:var(--mint); }
+        .alert-box { background:rgba(255,143,143,0.07); border:1px solid rgba(255,143,143,0.22); border-radius:var(--r-md); padding:14px 18px; font-size:0.85rem; color:var(--red); line-height:1.7; margin-top:14px; }
+        .alert-box strong { color:#ffaaaa; }
+        .source-tag { display:inline-flex; align-items:center; gap:5px; font-size:0.65rem; font-family:'DM Mono',monospace; padding:2px 8px; border-radius:4px; background:rgba(255,165,0,0.1); border:1px solid rgba(255,165,0,0.2); color:#ffa500; margin-left:6px; vertical-align:middle; }
+        .quick-nav { display:flex; flex-wrap:wrap; gap:8px; margin:32px 0; }
+        .qnav-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:100px; background:var(--card-bg); border:1px solid var(--card-border); font-size:0.78rem; color:var(--text-secondary); text-decoration:none; transition:background 0.18s,border-color 0.18s,color 0.18s; cursor:pointer; }
+        .qnav-btn:hover,.qnav-btn.active { background:var(--mint-dim); border-color:var(--mint-border); color:var(--mint); }
+        .qnav-btn svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .section { margin-bottom:48px; scroll-margin-top:70px; }
+        .section-title { font-family:'DM Serif Display',serif; font-size:1.35rem; letter-spacing:-0.02em; display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+        .section-title .icon { font-size:1.1rem; }
+        .section-subtitle { font-size:0.8rem; color:var(--text-muted); font-style:italic; margin-bottom:20px; }
+        .section-divider { border:none; border-top:1px solid var(--card-border); margin:48px 0; }
+        .data-table { display:flex; flex-direction:column; gap:1px; border-radius:var(--r-md); overflow:hidden; border:1px solid var(--card-border); }
+        .data-row { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px 18px; background:var(--card-bg); flex-wrap:wrap; }
+        .data-row:hover { background:var(--card-hover-bg); }
+        .data-row:not(:last-child) { border-bottom:1px solid rgba(255,255,255,0.04); }
+        .data-label { font-size:0.83rem; color:var(--text-secondary); flex:1; min-width:140px; }
+        .data-value { font-size:0.83rem; font-weight:500; padding:3px 10px; border-radius:5px; background:rgba(126,249,212,0.08); border:1px solid rgba(126,249,212,0.15); color:var(--mint); white-space:nowrap; }
+        .data-value.neutral { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.09); color:var(--text-secondary); }
+        .data-value.warn { background:rgba(255,217,61,0.08); border-color:rgba(255,217,61,0.18); color:var(--yellow); }
+        .data-value.bad { background:rgba(255,143,143,0.08); border-color:rgba(255,143,143,0.18); color:var(--red); }
+        .verdict-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-lg); padding:24px; margin-bottom:16px; position:relative; overflow:hidden; }
+        .verdict-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+        .verdict-card.v-green::before { background:linear-gradient(90deg,transparent,var(--green),transparent); }
+        .verdict-card.v-yellow::before { background:linear-gradient(90deg,transparent,var(--yellow),transparent); }
+        .verdict-card.v-red::before { background:linear-gradient(90deg,transparent,var(--red),transparent); }
+        .verdict-label { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+        .verdict-label.green { color:var(--green); } .verdict-label.yellow { color:var(--yellow); } .verdict-label.red { color:var(--red); }
+        .verdict-title { font-family:'DM Serif Display',serif; font-size:1.1rem; margin-bottom:8px; line-height:1.3; }
+        .verdict-body { font-size:0.85rem; color:var(--text-secondary); line-height:1.72; }
+        .review-list { display:flex; flex-direction:column; gap:12px; }
+        .review-item { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-md); padding:16px 18px; font-size:0.85rem; color:var(--text-secondary); line-height:1.7; position:relative; }
+        .review-item::before { content:'"'; font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mint); opacity:0.25; position:absolute; top:6px; left:14px; line-height:1; }
+        .review-item p { padding-left:8px; }
+        .review-meta { display:flex; align-items:center; justify-content:space-between; margin-top:10px; flex-wrap:wrap; gap:6px; }
+        .review-source { font-size:0.68rem; color:var(--text-muted); font-family:'DM Mono',monospace; }
+        .review-sentiment { font-size:0.65rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:2px 8px; border-radius:4px; }
+        .review-sentiment.pos { background:rgba(110,231,183,0.1); color:var(--green); border:1px solid rgba(110,231,183,0.18); }
+        .review-sentiment.neg { background:rgba(255,143,143,0.1); color:var(--red); border:1px solid rgba(255,143,143,0.18); }
+        .review-sentiment.neu { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
+        .score-box { background:var(--card-bg); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:28px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; margin-top:12px; }
+        .score-number { font-family:'DM Serif Display',serif; font-size:3.5rem; line-height:1; color:var(--mint); flex-shrink:0; }
+        .score-number span { font-size:1.2rem; color:var(--text-muted); }
+        .score-desc { flex:1; min-width:200px; }
+        .score-desc strong { display:block; font-size:1rem; margin-bottom:6px; }
+        .score-desc p { font-size:0.83rem; color:var(--text-secondary); line-height:1.7; }
+        .cta-strip { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:48px; }
+        .cta-strip p { font-size:0.9rem; color:var(--text-secondary); }
+        .cta-strip strong { display:block; color:var(--text-primary); font-size:1rem; margin-bottom:4px; }
+        .btn { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:var(--mint); color:var(--purple-deep); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); transition:background 0.18s,transform 0.14s; border:none; cursor:pointer; white-space:nowrap; }
+        .btn:hover { background:#a8fce2; transform:translateY(-1px); }
+        .btn svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+        .btn-outline { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:transparent; color:var(--mint); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); border:1px solid var(--mint-border); transition:background 0.18s; white-space:nowrap; }
+        .btn-outline:hover { background:var(--mint-dim); }
+        .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
+        .fade:nth-child(1){animation-delay:.04s}.fade:nth-child(2){animation-delay:.1s}.fade:nth-child(3){animation-delay:.16s}.fade:nth-child(4){animation-delay:.22s}.fade:nth-child(5){animation-delay:.28s}.fade:nth-child(6){animation-delay:.34s}
+        @keyframes up { to{opacity:1;transform:translateY(0)} }
+        footer { position:relative; z-index:1; margin-top:80px; padding:40px 28px; border-top:1px solid var(--mint-border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+        .footer-copy { font-size:0.76rem; color:var(--text-muted); }
+        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:600px; text-align:center; line-height:1.5; }
+        .footer-link { color:var(--mint); text-decoration:none; font-size:0.75rem; font-family:'DM Mono',monospace; opacity:0.7; border:1px solid var(--mint-border); padding:5px 18px; border-radius:100px; transition:0.3s; }
+        .footer-link:hover { opacity:1; background:var(--mint-dim); }
+        @media(max-width:640px){ .navbar .pill{display:none;} .complex-name{font-size:1.9rem;} .score-box{flex-direction:column;text-align:center;} .cta-strip{flex-direction:column;text-align:center;} }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-left">
-            <a href="/" class="logo">IMOB<span>VERDICT</span></a>
-            <div class="nav-divider-line" style="width: 1px; height: 18px; background: var(--mint-border); margin: 0 18px;"></div>
-            <span class="nav-label" style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Raport audit</span>
-        </div>
-        <a href="/" class="back-link">← Toate proiectele</a>
+<nav class="navbar">
+    <a href="/" class="logo">IMOB<em>VERDICT</em></a>
+    <div class="pill">
+        <span class="dot"></span>
+        <span>EUR</span>
+        <strong id="euro-nav">—</strong>
+        <span>RON</span>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Acasă</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/">Proiecte</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Copou Garden Residence</span>
     </nav>
 
-    <div style="background: rgba(14, 7, 28, 0.6); border-bottom: 1px solid var(--mint-border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 14px 24px; position: relative; z-index: 99;">
-        <div style="max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-            <div style="border-left: 2px solid var(--mint); padding-left: 12px;">
-                <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Preț Estimativ</span>
-                <span style="font-size: 0.95rem; color: var(--mint); font-weight: 600; font-family: 'DM Mono', monospace;">1.450€ - 1.800€ / mp</span>
+    <section class="complex-hero fade">
+        <div class="status-badge">Audit publicat</div>
+        <h1 class="complex-name">Copou <em>Garden Residence</em></h1>
+        <div class="complex-meta">
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Copou, Iași
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                În construcție — predări amânate repetat
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Reddit r/iasi + Google Maps
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Audit publicat Iunie 2026
+            </span>
+        </div>
+        <div class="intro-box">
+            Copou Garden Residence este un proiect rezidențial amplasat în zona Copou — cartier cu valoare imobiliară ridicată și caracter liniștit. Prețul raportat este de <strong>aproape 1.000 EUR/mp</strong>, unul dintre cele mai ridicate din Iași. Cu toate acestea, proiectul este marcat de <strong>întârzieri repetate la predare</strong>, <strong>blocuri neintabulate</strong> și un comportament al dezvoltatorului față de cumpărătorii cu prețuri vechi care ridică semne de întrebare serioase. Sursele pentru acest audit includ două thread-uri dedicate de pe Reddit r/iași și recenzii Google Maps.
+        </div>
+        <div class="alert-box">
+            <strong>⚠ Avertisment critic:</strong> Blocurile nu sunt intabulate — confirmat de mai mulți utilizatori pe Reddit în 2024–2025. Fără intabulare, banca nu acordă credit ipotecar și cumpărătorul nu poate înscrie legal apartamentul în cartea funciară. Un utilizator Reddit avertizează: „Ei or termina construcția, dar actele — cine știe, peste ani."
+        </div>
+    </section>
+
+    <nav class="quick-nav fade" aria-label="Navigare rapidă">
+        <a class="qnav-btn" href="#utilitati">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            Cum mă încălzesc?
+        </a>
+        <a class="qnav-btn" href="#costuri">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Cât plătesc lunar?
+        </a>
+        <a class="qnav-btn" href="#parcare">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Găsesc loc de parcare?
+        </a>
+        <a class="qnav-btn" href="#contract">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Ce verific înainte să semnez?
+        </a>
+        <a class="qnav-btn" href="#dotari">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Ce primesc în apartament?
+        </a>
+        <a class="qnav-btn" href="#recenzii">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Ce zic cumpărătorii?
+        </a>
+    </nav>
+
+    <!-- UTILITĂȚI -->
+    <section class="section fade" id="utilitati">
+        <h2 class="section-title"><span class="icon">🔔</span> Utilități</h2>
+        <p class="section-subtitle">— Informații limitate — complexul nu este finalizat complet</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Sistem încălzire</span>
+                <span class="data-value neutral">Nespecificat public — nicio mențiune în recenzii disponibile</span>
             </div>
-            <div style="border-left: 2px solid rgba(255,255,255,0.08); padding-left: 12px;">
-                <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Chirie Estimativă</span>
-                <span style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; font-family: 'DM Mono', monospace;">350€ - 550€ / lună</span>
+            <div class="data-row">
+                <span class="data-label">Apă caldă</span>
+                <span class="data-value neutral">Nespecificat — complex parțial finalizat la data auditului</span>
             </div>
-            <div style="border-left: 2px solid rgba(255,255,255,0.08); padding-left: 12px;">
-                <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 2px;">Întreținere Medie</span>
-                <span style="font-size: 0.95rem; color: var(--text-primary); font-weight: 600; font-family: 'DM Mono', monospace;">250 - 450 RON</span>
+            <div class="data-row">
+                <span class="data-label">Furnizori utilități</span>
+                <span class="data-value neutral">Furnizori publici standard — fără probleme raportate pe acest subiect</span>
             </div>
+            <div class="data-row">
+                <span class="data-label">Status construcție</span>
+                <span class="data-value bad">Lucrări avansând extrem de lent — „nu se vede nimic" (Reddit, cumpărător 2024)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Intabulare blocuri</span>
+                <span class="data-value bad">⚠ NEINTABULATE — confirmat pe Reddit, blocuri cu „bube" care blochează intabularea</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- COSTURI -->
+    <section class="section fade" id="costuri">
+        <h2 class="section-title"><span class="icon">💰</span> Costuri lunare estimate</h2>
+        <p class="section-subtitle">— Date limitate — complexul nu este complet locuit</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Preț achiziție</span>
+                <span class="data-value bad">~1.000 EUR/mp — printre cele mai ridicate prețuri din Iași</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Raport calitate/preț</span>
+                <span class="data-value bad">Negativ — „Cu aproape 1.000 EUR/mp nu mai vezi ceva în Iași" (Reddit)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Întreținere lunară</span>
+                <span class="data-value neutral">Nespecificată — complex nefinalizat, asociație neactivată</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Risc financiar suplimentar</span>
+                <span class="data-value bad">Banii plătiți în avans folosiți de developer ca finanțare construcție (RPD)</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- PARCARE -->
+    <section class="section fade" id="parcare">
+        <h2 class="section-title"><span class="icon">🅿️</span> Parcare</h2>
+        <p class="section-subtitle">— Informații limitate din surse publice disponibile</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Tip parcare</span>
+                <span class="data-value neutral">Nespecificat detaliat în sursele disponibile</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Zona Copou — parcare stradală</span>
+                <span class="data-value warn">Zona Copou are în general deficit de parcare stradală — verificați înainte de semnare</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Acces la complex</span>
+                <span class="data-value neutral">Zona Copou — trafic relativ redus, acces rezonabil față de alte zone din Iași</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTRACT -->
+    <section class="section fade" id="contract">
+        <h2 class="section-title"><span class="icon">📋</span> Ce verifici înainte să semnezi</h2>
+        <p class="section-subtitle">— Riscuri critice identificate din discuții Reddit și recenzii Google Maps</p>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc critic — blocat juridic</div>
+            <h3 class="verdict-title">Blocuri neintabulate — credit ipotecar imposibil, proprietate neasigurată legal</h3>
+            <p class="verdict-body">Acesta este cel mai grav risc documentat. Utilizatori multipli pe Reddit r/iași confirmă că blocurile din Copou Garden Residence nu sunt intabulate, din cauza unor „bube" tehnice sau administrative care blochează procedura. Fără intabulare: (1) banca nu acordă credit ipotecar, (2) apartamentul nu poate fi înscris în cartea funciară pe numele tău, (3) în caz de faliment al dezvoltatorului nu ai nicio protecție legală. Un utilizator avertizează: „Ei or termina construcția, dar actele — cine știe, peste ani." Un alt utilizator pe un thread dedicat de intabulări din 2025 notează că „se tot aud promisiuni de 2 ani că se finalizează actele."</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc critic — comportament documentat al dezvoltatorului</div>
+            <h3 class="verdict-title">Presiuni pentru rezilierea contractelor la cumpărătorii cu prețuri vechi</h3>
+            <p class="verdict-body">Două thread-uri separate pe Reddit documentează același pattern: cumpărătorii care au semnat la prețuri mai mici (ex. 66.000 EUR) sunt presați de developer să renunțe la contract, pentru ca acesta să poată revinde la prețul actual de piață (~100.000+ EUR). Tacticile includ întârzieri inexplicabile, comunicare deficitară și lipsa garanțiilor scrise. „Vor să îmbrobodească pe toți care au luat la preț bun ca să renunțe" — utilizator Reddit. Dacă ați semnat antecontract, consultați imediat un avocat și verificați ce protecții aveți contractual.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Întârzieri repetate la predare — termene nerespectate, comunicare nulă</h3>
+            <p class="verdict-body">Cumpărătorii raportează că au așteptat over un an față de termenul de predare contractual, fără nicio explicație pertinentă din partea birourilor dezvoltatorului. „Comunicarea este foarte proastă cu personalul de la birouri — dacă ar veni cu niște explicații credibile și garanții scrise nu ar fi probleme, dar nu se vede nimic." Un utilizator Reddit confirmă că termenul a trecut cu un an fără predare. Conform legislației române, ai 6 luni de la data predării promise să acționezi juridic (cerere de returnare bani + dobândă legală sau hotărâre judecătorească în loc de contract).</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție juridică importantă</div>
+            <h3 class="verdict-title">Termenul de 6 luni pentru acțiune juridică după data promisă de predare</h3>
+            <p class="verdict-body">Un utilizator experimentat de pe Reddit avertizează explicit: după expirarea termenului de predare, ai 6 luni pentru a acționa — fie pentru recuperarea avansului cu dobândă legală, fie pentru a obține o hotărâre judecătorească care să țină loc de contract. Dacă nu acționezi în acest interval, rămâi „la mila" dezvoltatorului. Dacă termenul tău a expirat sau este pe cale să expire, consultați un avocat specializat în drept imobiliar imediat.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct pozitiv</div>
+            <h3 class="verdict-title">Locație Copou — zonă rezidențială cu valoare de piață stabilă</h3>
+            <p class="verdict-body">Copou rămâne unul dintre cele mai căutate cartiere din Iași: aproape de Universitate, Grădina Botanică, spitale de specialitate. Dacă problemele de intabulare și predare se rezolvă, locația în sine justifică parțial prețul premium. Valoarea imobiliară în Copou este mai stabilă pe termen lung față de zone periferice sau industriale.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- DOTĂRI -->
+    <section class="section fade" id="dotari">
+        <h2 class="section-title"><span class="icon">🏠</span> Ce primești în apartament</h2>
+        <p class="section-subtitle">— Informații limitate — complexul nu este complet finalizat și locuit</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Finisaje promise</span>
+                <span class="data-value neutral">Premium — neconfirmate independent (complex nefinalizat la data auditului)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Preț/mp</span>
+                <span class="data-value bad">~1.000 EUR/mp — cel mai ridicat din eșantionul analizat de ImobVerdict Iași</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Zona Copou — calitatea vieții</span>
+                <span class="data-value">Excelentă — liniște, verdeață, trafic redus, caracter rezidențial autentic</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Intabulare</span>
+                <span class="data-value bad">⚠ Neintabulate — nu poți accesa credit ipotecar și nu ești proprietar înregistrat legal</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Ritm de construcție</span>
+                <span class="data-value bad">Extrem de lent — „nu se vede nimic" după luni de așteptare (cumpărători 2024)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Recenzii Google Maps</span>
+                <span class="data-value neutral">Număr redus de recenzii publice — complex puțin locuit la data auditului</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- RECENZII -->
+    <section class="section fade" id="recenzii">
+        <h2 class="section-title"><span class="icon">💬</span> Ce zic cumpărătorii</h2>
+        <p class="section-subtitle">— Surse: Reddit r/iași (thread-uri dedicate) + Google Maps — perspective directe de la cumpărători cu bani investiți</p>
+        <div class="review-list">
+
+            <div class="review-item">
+                <p>Acolo știi că nici nu-s blocuri intabulate, au bube și nu le dă intabularea. Ei or termina construcția, dar actele — cine știe, peste ani.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Reddit r/iași · thread „Copou garden residence" · 2024</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Vor să îmbrobodească pe toți care au luat la preț bun ca să renunțe — probabil acum l-ar da cu 100k minim. Toți șmecherii vor să profite dar fără risc; trebuiau să facă pe banii lor și să le vândă când erau gata la prețul dorit.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Reddit r/iași · thread „Probleme cu Copou Garden Residence" · 2024</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Sunt în aceeași situație, nu locuiesc în Iași dar vin mereu să văd stadiul lucrărilor. Sunt îngrijorat de modul greoi în care avansează și de comunicarea foarte proastă cu personalul de la birouri. Dacă ar veni cu niște explicații pertinente, credibile, cu niște garanții scrise pentru asemenea întârzieri — nu ar fi probleme. Dar nu se vede nimic.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Reddit r/iași · thread „Probleme cu Copou Garden Residence" · 2024</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Toți mint în legătură cu termenul la care va fi gata.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Reddit r/iași · thread „Copou garden residence" · 2024</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Cred că mai bine ai consulta repede un avocat. Din scandalul de la Nordis, la Recorder au zis că era ceva în legătură cu 3 luni întârziere de la data promisă — și dacă trec și nu deschizi proces ești la mila lor.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Reddit r/iași · thread „Copou garden residence" · 2024</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Ai 6 luni după data predării să faci ceva: să ceri banii înapoi + dobândă legală pentru întârziere, sau să obții o hotărâre judecătorească care ține loc de contract. Dacă nu acționezi în acel interval, rămâi la mila lor.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Reddit r/iași · thread „Copou garden residence" · 2024</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Cu aproape 1.000 EUR/mp nu mai vezi altceva în Iași — prețul e printre cele mai mari de pe piață.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Reddit r/iași · thread „Probleme cu Copou Garden Residence" · 2024</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>La Copou Garden se zice că până la 1 august ar trebui să se finalizeze actele — dar rămâne de văzut. Tot aud că „se finalizează actele" de 2 ani.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Reddit r/iași · thread „Intabulări Iași" · 2025</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Dacă iei banii înapoi, nu mai iei la prețul de 66.000 la care ai contractat — e dilema reală. Dar mergi la inginerul/directorul de șantier și vezi ce durează atât. Un an fără predare e prea mult.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Reddit r/iași · thread „Probleme cu Copou Garden Residence" · 2024</span>
+                    <span class="review-sentiment neu">Mixt</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- VERDICT FINAL -->
+    <section class="section fade" id="verdict">
+        <h2 class="section-title"><span class="icon">⚖️</span> Verdictul ImobVerdict</h2>
+        <div class="score-box">
+            <div class="score-number">3.5<span>/10</span></div>
+            <div class="score-desc">
+                <strong>Nu recomandăm — risc juridic și financiar major în starea actuală</strong>
+                <p>Copou Garden Residence are locația potrivită și un preț care reflectă zona Copou. Dar în starea actuală documentată — blocuri neintabulate, întârzieri de peste un an, comunicare inexistentă și presiuni documentate pentru rezilierea contractelor cumpărătorilor cu prețuri vechi — riscul este inacceptabil. Dacă ai deja bani investiți, consultați imediat un avocat și verificați dacă termenul de 6 luni pentru acțiune juridică este pe cale să expire. Dacă ești în faza de decizie, așteptați să se finalizeze intabularea și predările înainte de a semna orice document.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-strip fade">
+        <div>
+            <strong>Ai cumpărat sau ești în proces cu acest complex?</strong>
+            <p>Ajută-ne să completăm imaginea cu informații actualizate. Experiența ta contează.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="mailto:contact@imobverdict.com" class="btn">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Trimite feedback
+            </a>
+            <a href="/" class="btn-outline">← Toate proiectele</a>
         </div>
     </div>
 
-    <main class="wrapper">
-        <header class="report-header fade-in">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
-                <div>
-                    <h1 class="project-name">Copou Garden Residence</h1>
-                    <p class="project-subtitle">Analiză privind blocajele sistematice de intabulare, instabilitatea rețelei electrice și riscurile achiziției fără documentație cadastrală.</p>
-                </div>
-                <span class="risk-badge critic-bg">Risc Critic · Juridic</span>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item"><span class="stat-label">Locație</span><span class="stat-value">Copou, Iași</span></div>
-                <div class="stat-item"><span class="stat-label">Stadiu Acte</span><span class="stat-value">Blocat / Întârzieri Majore</span></div>
-                <div class="stat-item"><span class="stat-label">Rețea Electrică</span><span class="stat-value">Fluctuații de Tensiune</span></div>
-                <div class="stat-item"><span class="stat-label">Actualizat</span><span class="stat-value">Mai 2026</span></div>
-            </div>
-        </header>
+</div>
 
-        <section class="report-body fade-in">
-            <h2 class="section-title"><span>01</span> Puncte cheie din istoricul complexului</h2>
-            <ul class="obs-list">
-                <li><div><strong>Lipsă Intabulare:</strong> Blocajele majore în obținerea documentației cadastrale împiedică cumpărarea prin credit bancar, generând riscuri uriașe pentru avansurile cash.</div></li>
-                <li><div><strong>Instabilitate Energetică:</strong> Fluctuații severe de tensiune pe rețeaua internă provizorie, raportate des de primii locatari mutați.</div></li>
-                <li><div><strong>Promisiuni Nerespectate:</strong> Amânări succesive ale termenelor de finalizare și predare a cheilor de la un trimestru la altul.</div></li>
-            </ul>
+<footer>
+    <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
+    <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
+    <div style="display:flex;gap:15px;margin-top:10px;">
+        <a href="/confidentialitate/" class="footer-link">CONFIDENȚIALITATE</a>
+        <a href="/termeni/" class="footer-link">TERMENI ȘI CONDIȚII</a>
+    </div>
+</footer>
 
-            <div class="verdict-box">
-                <span class="verdict-label">Verdict ImobVerdict</span>
-                <p class="verdict-text">Deși zona Copou este extrem de atractivă, Copou Garden Residence reprezintă în prezent un **Risc Critic**. Achiziția este complet nerecomandată până la clarificarea definitivă a actelor juridice și rezolvarea branșamentelor finale la utilități.</p>
-            </div>
-        </section>
-    </main>
+<script>
+    async function fetchCurrency() {
+        const navEl = document.getElementById('euro-nav');
+        try {
+            const res = await fetch('https://open.er-api.com/v6/latest/EUR');
+            if (!res.ok) throw new Error();
+            const data = await res.json();
+            const ron = data.rates?.RON;
+            if (!ron) throw new Error();
+            navEl.textContent = ron.toFixed(4);
+        } catch { navEl.textContent = 'N/A'; }
+    }
+    fetchCurrency();
+    const sections = document.querySelectorAll('.section[id]');
+    const navBtns = document.querySelectorAll('.qnav-btn');
+    sections.forEach(s => {
+        new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelector(`.qnav-btn[href="#${e.target.id}"]`)?.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' }).observe(s);
+    });
+</script>
+
 </body>
 </html>
