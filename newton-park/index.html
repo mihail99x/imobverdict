@@ -3,716 +3,516 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audit: Newton Park Copou | ImobVerdict</title>
-    <meta name="description" content="Raport audit independent pentru Newton Park Copou: sisteme smart-home, finisaje, administrare și riscuri operaționale pentru cumpărători.">
+    <title>ImobVerdict | Newton Park Copou – Audit Independent Iași</title>
+    <meta name="description" content="Audit independent Newton Park Copou Iași: Smart Home, locație Copou, parcare, acces pietonal, experiența locatarilor. Tot ce trebuie să știi înainte să semnezi.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
         :root {
-            --mint: #7ef9d4;
-            --mint-dim: rgba(126,249,212,0.12);
-            --mint-border: rgba(126,249,212,0.2);
-
-            --purple-deep: #1a0f2e;
-            --text-primary: #f0eef8;
-            --text-secondary: rgba(240,238,248,0.75);
-            --text-muted: rgba(240,238,248,0.52);
-
-            --card-bg: rgba(255,255,255,0.04);
-            --card-border: rgba(126,249,212,0.12);
-
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 20px;
+            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.10); --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #0e0e1c; --text-primary: #eeeaf8; --text-secondary: rgba(238,234,248,0.62);
+            --text-muted: rgba(238,234,248,0.35); --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11); --card-hover-bg: rgba(255,255,255,0.07);
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
+            --green: #6ee7b7; --yellow: #ffd93d; --red: #ff8f8f;
         }
-
         html { scroll-behavior: smooth; }
-
         body {
             background-color: var(--purple-deep);
             background-image:
-                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(90,50,150,0.42) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(30,80,100,0.3) 0%, transparent 55%),
-                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=60');
-            background-size: cover;
-            background-position: center;
-            background-attachment: scroll;
-            color: var(--text-primary);
-            font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            min-height: 100vh;
+                radial-gradient(ellipse 70% 50% at 20% 10%, rgba(40,60,120,0.40) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 80% 80%, rgba(20,40,80,0.30) 0%, transparent 55%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55');
+            background-size: cover; background-position: center;
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh;
         }
-
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(160deg, rgba(18,8,35,0.93) 0%, rgba(22,12,40,0.9) 50%, rgba(14,30,42,0.93) 100%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(18,8,35,0.75);
-            backdrop-filter: blur(18px) saturate(1.4);
-            -webkit-backdrop-filter: blur(18px) saturate(1.4);
-            border-bottom: 1px solid var(--mint-border);
-            padding: 0 24px;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .navbar-left {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .logo {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.15rem;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: 0.02em;
-        }
-
-        .logo span { color: var(--mint); }
-
-        .nav-divider {
-            width: 1px;
-            height: 18px;
-            background: var(--mint-border);
-        }
-
-        .nav-label {
-            font-size: 0.72rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover { color: var(--mint); }
-
-        .back-link svg {
-            width: 14px;
-            height: 14px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .wrapper {
-            position: relative;
-            z-index: 1;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
-
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            margin-bottom: 36px;
-        }
-
-        .breadcrumb a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .breadcrumb a:hover { color: var(--mint); }
-        .breadcrumb .sep { opacity: 0.45; }
-        .breadcrumb .current { color: var(--text-secondary); }
-
-        .report-header {
-            background: var(--card-bg);
-            border: 1px solid var(--mint-border);
-            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-            padding: 40px 40px 36px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .report-header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, var(--mint) 40%, rgba(126,249,212,0.28) 100%);
-        }
-
-        .header-top {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 28px;
-        }
-
-        .project-name {
-            font-family: 'DM Serif Display', serif;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            color: var(--text-primary);
-        }
-
-        .project-subtitle {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            margin-top: 10px;
-            max-width: 560px;
-            line-height: 1.65;
-        }
-
-        .risk-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 7px 16px;
-            border-radius: 100px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-
-        .risk-badge.medium {
-            background: rgba(255,217,61,0.14);
-            color: #ffe06b;
-            border: 1px solid rgba(255,217,61,0.3);
-        }
-
-        .risk-badge.medium::before {
-            content: '';
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #ffd93d;
-            box-shadow: 0 0 6px rgba(255,217,61,0.6);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 12px;
-        }
-
-        .stat-item {
-            background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: var(--radius-sm);
-            padding: 14px 16px;
-        }
-
-        .stat-label {
-            font-size: 0.68rem;
-            font-weight: 500;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .stat-value {
-            font-size: 0.92rem;
-            font-weight: 500;
-            color: var(--mint);
-            display: block;
-            line-height: 1.35;
-        }
-
-        .report-body {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(126,249,212,0.1);
-            border-top: none;
-            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-            padding: 40px;
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.25rem;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-            margin: 44px 0 20px;
-        }
-
-        .section-title:first-child { margin-top: 0; }
-
-        .section-title::before {
-            content: '';
-            width: 3px;
-            height: 20px;
-            background: var(--mint);
-            border-radius: 2px;
-            flex-shrink: 0;
-        }
-
-        .section-num {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            font-style: normal;
-        }
-
-        .risk-table-wrap {
-            overflow-x: auto;
-            border-radius: var(--radius-sm);
-        }
-
-        .risk-table {
-            width: 100%;
-            min-width: 680px;
-            border-collapse: collapse;
-            font-size: 0.875rem;
-        }
-
-        .risk-table thead tr {
-            border-bottom: 1px solid rgba(126,249,212,0.16);
-        }
-
-        .risk-table th {
-            padding: 10px 16px;
-            text-align: left;
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .risk-table tbody tr {
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: background 0.15s;
-        }
-
-        .risk-table tbody tr:last-child { border-bottom: none; }
-        .risk-table tbody tr:hover { background: rgba(255,255,255,0.03); }
-
-        .risk-table td {
-            padding: 14px 16px;
-            vertical-align: top;
-            line-height: 1.55;
-            color: var(--text-secondary);
-        }
-
-        .risk-table td:first-child {
-            color: var(--text-primary);
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        .impact-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.67rem;
-            font-weight: 600;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            padding: 3px 9px;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
-
-        .impact-tag.critic {
-            background: rgba(255,107,107,0.14);
-            color: #ff9a9a;
-            border: 1px solid rgba(255,107,107,0.25);
-        }
-
-        .impact-tag.major {
-            background: rgba(255,160,80,0.14);
-            color: #ffba84;
-            border: 1px solid rgba(255,160,80,0.26);
-        }
-
-        .impact-tag.mediu {
-            background: rgba(255,217,61,0.13);
-            color: #ffe06b;
-            border: 1px solid rgba(255,217,61,0.24);
-        }
-
-        .impact-tag.optim {
-            background: rgba(110,231,183,0.13);
-            color: #87f0c8;
-            border: 1px solid rgba(110,231,183,0.24);
-        }
-
-        .obs-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .obs-list li {
-            display: flex;
-            gap: 14px;
-            padding: 16px 18px;
-            background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: var(--radius-sm);
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-        }
-
-        .obs-list li::before {
-            content: '';
-            width: 3px;
-            min-height: 100%;
-            border-radius: 2px;
-            flex-shrink: 0;
-        }
-
-        .obs-list li:nth-child(1)::before { background: rgba(255,217,61,0.5); }
-        .obs-list li:nth-child(2)::before { background: rgba(255,160,80,0.55); }
-        .obs-list li:nth-child(3)::before { background: rgba(110,231,183,0.45); }
-
-        .obs-list strong { color: var(--text-primary); font-weight: 500; }
-
-        .verdict-box {
-            background: rgba(126,249,212,0.05);
-            border: 1px solid rgba(126,249,212,0.2);
-            border-left: 3px solid var(--mint);
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            padding: 24px 28px;
-            margin-top: 44px;
-        }
-
-        .verdict-label {
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--mint);
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .verdict-text {
-            font-size: 0.92rem;
-            color: var(--text-secondary);
-            line-height: 1.72;
-        }
-
-        .verdict-rec {
-            margin-top: 14px;
-            padding-top: 14px;
-            border-top: 1px solid rgba(255,255,255,0.07);
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.72;
-        }
-
-        .verdict-rec strong { color: var(--text-primary); }
-
-        .action-box {
-            background: rgba(126,249,212,0.06);
-            border: 1px dashed rgba(126,249,212,0.3);
-            border-radius: var(--radius-md);
-            padding: 28px 32px;
-            margin-top: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .action-box-text p:first-child {
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-        }
-
-        .action-box-text p:last-child {
-            font-size: 0.84rem;
-            color: var(--text-secondary);
-            max-width: 500px;
-            line-height: 1.65;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 11px 20px;
-            background: var(--mint);
-            color: var(--purple-deep);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.78rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border-radius: var(--radius-sm);
-            transition: background 0.2s, transform 0.15s;
-            white-space: nowrap;
-            flex-shrink: 0;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover { background: #a8fce2; transform: translateY(-1px); }
-        .btn:active { transform: scale(0.97); }
-
-        .disclaimer {
-            margin-top: 44px;
-            padding: 20px 24px;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: var(--radius-sm);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            line-height: 1.72;
-            text-align: justify;
-        }
-
-        .disclaimer strong { color: rgba(240,238,248,0.62); }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(14px);
-            animation: fadeUp 0.5s ease forwards;
-        }
-
-        .fade-in:nth-child(1) { animation-delay: 0.05s; }
-        .fade-in:nth-child(2) { animation-delay: 0.15s; }
-        .fade-in:nth-child(3) { animation-delay: 0.25s; }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        a:focus-visible,
-        button:focus-visible,
-        .btn:focus-visible {
-            outline: 2px solid var(--mint);
-            outline-offset: 3px;
-            box-shadow: 0 0 0 3px rgba(126,249,212,0.2);
-            border-radius: var(--radius-sm);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .report-header, .report-body { padding: 24px 20px; }
-            .header-top { flex-direction: column; }
-            .risk-badge { align-self: flex-start; }
-            .action-box { flex-direction: column; align-items: flex-start; }
-            .risk-table td:first-child { white-space: normal; }
-            .navbar-left .nav-divider,
-            .navbar-left .nav-label { display: none; }
-        }
+        body::before { content:''; position:fixed; inset:0; background:linear-gradient(155deg,rgba(10,10,22,0.94) 0%,rgba(14,12,26,0.91) 45%,rgba(10,10,22,0.94) 100%); z-index:0; pointer-events:none; }
+        .navbar { position:sticky; top:0; z-index:200; height:52px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; background:rgba(10,10,22,0.80); backdrop-filter:blur(20px) saturate(1.5); border-bottom:1px solid var(--mint-border); }
+        .logo { font-family:'DM Serif Display',serif; font-size:1.12rem; color:var(--text-primary); text-decoration:none; }
+        .logo em { font-style:normal; color:var(--mint); }
+        .pill { display:inline-flex; align-items:center; gap:7px; background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:100px; padding:4px 13px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--text-secondary); }
+        .pill .dot { width:6px; height:6px; border-radius:50%; background:var(--mint); animation:blink 2.2s ease-in-out infinite; }
+        .pill strong { color:var(--mint); font-weight:500; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+        .wrap { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:0 24px 100px; }
+        .breadcrumb { font-size:0.75rem; color:var(--text-muted); margin:28px 0 32px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+        .breadcrumb a:hover { color:var(--mint); }
+        .breadcrumb span { color:var(--text-secondary); }
+        .breadcrumb-sep { opacity:0.4; }
+        .complex-hero { padding:0 0 40px; border-bottom:1px solid var(--mint-border); margin-bottom:40px; }
+        .status-badge { display:inline-flex; align-items:center; gap:6px; font-size:0.67rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border-radius:5px; margin-bottom:18px; background:rgba(81,207,102,0.13); color:#7ed48a; border:1px solid rgba(81,207,102,0.22); }
+        .status-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:#7ed48a; }
+        .complex-name { font-family:'DM Serif Display',serif; font-size:clamp(2rem,5vw,3rem); line-height:1.08; letter-spacing:-0.03em; margin-bottom:14px; }
+        .complex-name em { font-style:italic; color:var(--mint); }
+        .complex-meta { display:flex; flex-wrap:wrap; gap:18px; font-size:0.78rem; color:var(--text-muted); margin-bottom:20px; }
+        .complex-meta-item { display:flex; align-items:center; gap:5px; }
+        .complex-meta-item svg { width:13px; height:13px; fill:none; stroke:var(--mint); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+        .intro-box { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-md); padding:18px 20px; font-size:0.9rem; color:var(--text-secondary); line-height:1.75; }
+        .intro-box strong { color:var(--mint); }
+        .info-box { background:rgba(126,249,212,0.05); border:1px solid rgba(126,249,212,0.15); border-radius:var(--r-md); padding:14px 18px; font-size:0.85rem; color:var(--text-secondary); line-height:1.7; margin-top:14px; }
+        .info-box strong { color:var(--mint); }
+        .quick-nav { display:flex; flex-wrap:wrap; gap:8px; margin:32px 0; }
+        .qnav-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:100px; background:var(--card-bg); border:1px solid var(--card-border); font-size:0.78rem; color:var(--text-secondary); text-decoration:none; transition:background 0.18s,border-color 0.18s,color 0.18s; cursor:pointer; }
+        .qnav-btn:hover,.qnav-btn.active { background:var(--mint-dim); border-color:var(--mint-border); color:var(--mint); }
+        .qnav-btn svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .section { margin-bottom:48px; scroll-margin-top:70px; }
+        .section-title { font-family:'DM Serif Display',serif; font-size:1.35rem; letter-spacing:-0.02em; display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+        .section-title .icon { font-size:1.1rem; }
+        .section-subtitle { font-size:0.8rem; color:var(--text-muted); font-style:italic; margin-bottom:20px; }
+        .section-divider { border:none; border-top:1px solid var(--card-border); margin:48px 0; }
+        .data-table { display:flex; flex-direction:column; gap:1px; border-radius:var(--r-md); overflow:hidden; border:1px solid var(--card-border); }
+        .data-row { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px 18px; background:var(--card-bg); flex-wrap:wrap; }
+        .data-row:hover { background:var(--card-hover-bg); }
+        .data-row:not(:last-child) { border-bottom:1px solid rgba(255,255,255,0.04); }
+        .data-label { font-size:0.83rem; color:var(--text-secondary); flex:1; min-width:140px; }
+        .data-value { font-size:0.83rem; font-weight:500; padding:3px 10px; border-radius:5px; background:rgba(126,249,212,0.08); border:1px solid rgba(126,249,212,0.15); color:var(--mint); white-space:nowrap; }
+        .data-value.neutral { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.09); color:var(--text-secondary); }
+        .data-value.warn { background:rgba(255,217,61,0.08); border-color:rgba(255,217,61,0.18); color:var(--yellow); }
+        .data-value.bad { background:rgba(255,143,143,0.08); border-color:rgba(255,143,143,0.18); color:var(--red); }
+        .verdict-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-lg); padding:24px; margin-bottom:16px; position:relative; overflow:hidden; }
+        .verdict-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+        .verdict-card.v-green::before { background:linear-gradient(90deg,transparent,var(--green),transparent); }
+        .verdict-card.v-yellow::before { background:linear-gradient(90deg,transparent,var(--yellow),transparent); }
+        .verdict-card.v-red::before { background:linear-gradient(90deg,transparent,var(--red),transparent); }
+        .verdict-label { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+        .verdict-label.green { color:var(--green); } .verdict-label.yellow { color:var(--yellow); } .verdict-label.red { color:var(--red); }
+        .verdict-title { font-family:'DM Serif Display',serif; font-size:1.1rem; margin-bottom:8px; line-height:1.3; }
+        .verdict-body { font-size:0.85rem; color:var(--text-secondary); line-height:1.72; }
+        .review-list { display:flex; flex-direction:column; gap:12px; }
+        .review-item { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-md); padding:16px 18px; font-size:0.85rem; color:var(--text-secondary); line-height:1.7; position:relative; }
+        .review-item::before { content:'"'; font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mint); opacity:0.25; position:absolute; top:6px; left:14px; line-height:1; }
+        .review-item p { padding-left:8px; }
+        .review-meta { display:flex; align-items:center; justify-content:space-between; margin-top:10px; flex-wrap:wrap; gap:6px; }
+        .review-source { font-size:0.68rem; color:var(--text-muted); font-family:'DM Mono',monospace; }
+        .review-sentiment { font-size:0.65rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:2px 8px; border-radius:4px; }
+        .review-sentiment.pos { background:rgba(110,231,183,0.1); color:var(--green); border:1px solid rgba(110,231,183,0.18); }
+        .review-sentiment.neg { background:rgba(255,143,143,0.1); color:var(--red); border:1px solid rgba(255,143,143,0.18); }
+        .review-sentiment.neu { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
+        .score-box { background:var(--card-bg); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:28px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; margin-top:12px; }
+        .score-number { font-family:'DM Serif Display',serif; font-size:3.5rem; line-height:1; color:var(--mint); flex-shrink:0; }
+        .score-number span { font-size:1.2rem; color:var(--text-muted); }
+        .score-desc { flex:1; min-width:200px; }
+        .score-desc strong { display:block; font-size:1rem; margin-bottom:6px; }
+        .score-desc p { font-size:0.83rem; color:var(--text-secondary); line-height:1.7; }
+        .cta-strip { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:48px; }
+        .cta-strip p { font-size:0.9rem; color:var(--text-secondary); }
+        .cta-strip strong { display:block; color:var(--text-primary); font-size:1rem; margin-bottom:4px; }
+        .btn { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:var(--mint); color:var(--purple-deep); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); transition:background 0.18s,transform 0.14s; border:none; cursor:pointer; white-space:nowrap; }
+        .btn:hover { background:#a8fce2; transform:translateY(-1px); }
+        .btn-outline { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:transparent; color:var(--mint); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); border:1px solid var(--mint-border); transition:background 0.18s; white-space:nowrap; }
+        .btn-outline:hover { background:var(--mint-dim); }
+        .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
+        .fade:nth-child(1){animation-delay:.04s}.fade:nth-child(2){animation-delay:.1s}.fade:nth-child(3){animation-delay:.16s}.fade:nth-child(4){animation-delay:.22s}.fade:nth-child(5){animation-delay:.28s}.fade:nth-child(6){animation-delay:.34s}
+        @keyframes up { to{opacity:1;transform:translateY(0)} }
+        footer { position:relative; z-index:1; margin-top:80px; padding:40px 28px; border-top:1px solid var(--mint-border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+        .footer-copy { font-size:0.76rem; color:var(--text-muted); }
+        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:600px; text-align:center; line-height:1.5; }
+        .footer-link { color:var(--mint); text-decoration:none; font-size:0.75rem; font-family:'DM Mono',monospace; opacity:0.7; border:1px solid var(--mint-border); padding:5px 18px; border-radius:100px; transition:0.3s; }
+        .footer-link:hover { opacity:1; background:var(--mint-dim); }
+        @media(max-width:640px){ .navbar .pill{display:none;} .complex-name{font-size:1.9rem;} .score-box{flex-direction:column;text-align:center;} .cta-strip{flex-direction:column;text-align:center;} }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-left">
-            <a href="/" class="logo">IMOB<span>VERDICT</span></a>
-            <div class="nav-divider"></div>
-            <span class="nav-label">Raport audit</span>
+<nav class="navbar">
+    <a href="/" class="logo">IMOB<em>VERDICT</em></a>
+    <div class="pill">
+        <span class="dot"></span>
+        <span>EUR</span>
+        <strong id="euro-nav">—</strong>
+        <span>RON</span>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Acasă</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/">Proiecte</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Newton Park Copou</span>
+    </nav>
+
+    <section class="complex-hero fade">
+        <div class="status-badge">Audit publicat</div>
+        <h1 class="complex-name">Newton Park <em>Copou</em></h1>
+        <div class="complex-meta">
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Copou, Iași
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Finalizat ~2019–2020
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                ~25 recenzii cu text analizate
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Audit publicat Iunie 2026
+            </span>
         </div>
-        <a href="/" class="back-link" aria-label="Înapoi la toate proiectele">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-            Toate proiectele
+        <div class="intro-box">
+            Newton Park Copou este un complex rezidențial <strong>boutique</strong> amplasat în cartierul Copou — una dintre cele mai căutate zone rezidențiale din Iași, aproape de Universitate și Grădina Botanică. Complexul se diferențiază prin <strong>tehnologie Smart Home</strong> integrată și finisaje superioare față de media pieței. Numărul de recenzii publice este redus față de complexele mari, ceea ce reflectă dimensiunea mai mică a proiectului. Temele recurente sunt: calitatea construcției și a dotărilor (pozitiv), accesul pietonal și rutier dificil (negativ) și parcarea insuficientă pentru vizitatori.
+        </div>
+        <div class="info-box">
+            <strong>ℹ Notă despre date:</strong> Newton Park Copou are un număr relativ mic de recenzii cu text detaliat — mai puțin de 10 recenzii substanțiale față de 100+ la complexele mari. Auditul reflectă această limită; unele secțiuni sunt bazate pe observații de teren și recenzii parțiale.
+        </div>
+    </section>
+
+    <nav class="quick-nav fade" aria-label="Navigare rapidă">
+        <a class="qnav-btn" href="#utilitati">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            Cum mă încălzesc?
+        </a>
+        <a class="qnav-btn" href="#costuri">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Cât plătesc lunar?
+        </a>
+        <a class="qnav-btn" href="#parcare">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Găsesc loc de parcare?
+        </a>
+        <a class="qnav-btn" href="#contract">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Ce verific înainte să semnez?
+        </a>
+        <a class="qnav-btn" href="#dotari">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Ce primesc în apartament?
+        </a>
+        <a class="qnav-btn" href="#recenzii">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Ce zic locatarii?
         </a>
     </nav>
 
-    <main class="wrapper">
-
-        <nav class="breadcrumb fade-in" aria-label="Breadcrumb">
-            <a href="/">Acasă</a>
-            <span class="sep">/</span>
-            <a href="/">Proiecte</a>
-            <span class="sep">/</span>
-            <span class="current">Newton Park Copou</span>
-        </nav>
-
-        <section class="report-header fade-in">
-            <div class="header-top">
-                <div>
-                    <h1 class="project-name">Newton Park Copou</h1>
-                    <p class="project-subtitle">Audit orientat pe fiabilitatea sistemelor smart-home, calitatea finisajelor și costurile reale de exploatare după mutare.</p>
-                </div>
-                <span class="risk-badge medium">Risc mediu · Tehnic</span>
+    <!-- UTILITĂȚI -->
+    <section class="section fade" id="utilitati">
+        <h2 class="section-title"><span class="icon">🔔</span> Utilități</h2>
+        <p class="section-subtitle">— Cum mă încălzesc? Ce sisteme sunt integrate?</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Sistem încălzire</span>
+                <span class="data-value neutral">Centrală proprie per apartament — nemenționată specific în recenzii</span>
             </div>
-
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-label">Locație</span>
-                    <span class="stat-value">Copou, Iași</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Focus audit</span>
-                    <span class="stat-value">Smart-home · Finisaje · Administrare</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Tip proiect</span>
-                    <span class="stat-value">Rezidențial premium</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Ultima actualizare</span>
-                    <span class="stat-value">Mai 2026</span>
-                </div>
+            <div class="data-row">
+                <span class="data-label">Smart Home</span>
+                <span class="data-value">Da — integrat, confirmat de locatari ca punct forte real</span>
             </div>
-        </section>
-
-        <section class="report-body fade-in">
-
-            <h2 class="section-title"><span class="section-num">01</span> Matricea de riscuri detectate</h2>
-
-            <div class="risk-table-wrap">
-                <table class="risk-table">
-                    <thead>
-                        <tr>
-                            <th>Punct de control</th>
-                            <th>Observație audit</th>
-                            <th>Impact</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sisteme smart-home</td>
-                            <td>Funcționalitățile conectate depind de configurarea corectă inițială; apar diferențe de setup între apartamente.</td>
-                            <td><span class="impact-tag major">Major</span></td>
-                        </tr>
-                        <tr>
-                            <td>Finisaje interioare</td>
-                            <td>Calitatea este bună per ansamblu, dar pot apărea neuniformități punctuale care necesită remedieri post-predare.</td>
-                            <td><span class="impact-tag mediu">Mediu</span></td>
-                        </tr>
-                        <tr>
-                            <td>Service tehnic</td>
-                            <td>Timpul de răspuns pentru ajustări software/hardware poate varia în funcție de disponibilitatea echipelor.</td>
-                            <td><span class="impact-tag mediu">Mediu</span></td>
-                        </tr>
-                        <tr>
-                            <td>Costuri administrare</td>
-                            <td>Nivelul de servicii premium poate împinge costurile lunare peste media locală.</td>
-                            <td><span class="impact-tag mediu">Mediu</span></td>
-                        </tr>
-                        <tr>
-                            <td>Confort rezidențial</td>
-                            <td>Zonă liniștită, cu profil rezidențial stabil și acces bun către facilitățile din Copou.</td>
-                            <td><span class="impact-tag optim">Optim</span></td>
-                        </tr>
-                        <tr>
-                            <td>Valoare de piață</td>
-                            <td>Poziționarea în Copou susține interesul pentru revânzare și închiriere pe segment premium.</td>
-                            <td><span class="impact-tag optim">Optim</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="data-row">
+                <span class="data-label">Dotări tehnologice</span>
+                <span class="data-value">„State-of-the-art" — confirmat de mai mulți locatari independenți</span>
             </div>
-
-            <h2 class="section-title"><span class="section-num">02</span> Observații cheie pentru cumpărători</h2>
-
-            <ul class="obs-list">
-                <li>
-                    <div><strong>Predare tehnică —</strong> Solicită demonstrație completă pentru scenariile smart-home (aplicație, gateway, reset, control local) înainte de semnarea recepției.</div>
-                </li>
-                <li>
-                    <div><strong>Calitate finisaje —</strong> E util un checklist detaliat la predare pentru a nota imediat eventualele defecte și termenele de remediere.</div>
-                </li>
-                <li>
-                    <div><strong>Cost total —</strong> Pe lângă prețul de achiziție, estimează bugetul anual cu mentenanță, service și administrare de complex premium.</div>
-                </li>
-            </ul>
-
-            <div class="verdict-box">
-                <span class="verdict-label">Verdict ImobVerdict</span>
-                <p class="verdict-text">Newton Park Copou oferă un pachet rezidențial atractiv pe segment superior, cu riscuri moderate concentrate în zona de operare tehnologică și consistență la predare.</p>
-                <div class="verdict-rec">
-                    <strong>Recomandare:</strong> Înainte de plata finală, programează o recepție tehnică extinsă (inclusiv testarea integrală a sistemelor smart-home) și cere în scris SLA pentru intervenții post-predare.
-                </div>
+            <div class="data-row">
+                <span class="data-label">Internet & TV</span>
+                <span class="data-value neutral">La alegere — infrastructură disponibilă</span>
             </div>
-
-            <div class="action-box">
-                <div class="action-box-text">
-                    <p>Ești reprezentant Newton Park Copou?</p>
-                    <p>Dacă aveți documente tehnice actualizate, proceduri de service sau clarificări oficiale, le putem integra într-o versiune revizuită a raportului.</p>
-                </div>
-                <a href="mailto:contact@imobverdict.com" class="btn">Solicită actualizare</a>
+            <div class="data-row">
+                <span class="data-label">Furnizori utilități</span>
+                <span class="data-value neutral">Furnizori publici standard — nicio problemă raportată pe acest subiect</span>
             </div>
-
-            <div class="disclaimer">
-                <strong>Disclaimer legal:</strong> Informațiile sunt agregate din surse publice și feedback de comunitate și au caracter informativ. Raportul nu înlocuiește consultanța juridică, tehnică sau financiară înainte de achiziție.
+            <div class="data-row">
+                <span class="data-label">Fiabilitate utilități</span>
+                <span class="data-value neutral">Nicio problemă majoră raportată în recenzii</span>
             </div>
+        </div>
+    </section>
 
-        </section>
-        <section style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--mint-border);">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
-        
-        <div style="background: rgba(255,255,255,0.02); padding: 25px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.05);">
-            <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 15px; color: var(--mint);">Istoric Audit</h3>
-            <ul style="list-style: none; font-size: 0.85rem; color: var(--text-secondary);">
-                <li style="margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                    <strong style="color: var(--mint);">MAI 2026:</strong> Audit de conformitate premium. Verificarea sistemelor Smart Home și a calității antifonării între apartamente.
-                </li>
-                <li style="color: var(--text-muted); font-style: italic;">
-                    PROXIMA ACTUALIZARE: August 2026 (Analiză asupra costurilor de administrare privată a complexului).
-                </li>
-            </ul>
+    <hr class="section-divider">
+
+    <!-- COSTURI LUNARE -->
+    <section class="section fade" id="costuri">
+        <h2 class="section-title"><span class="icon">💰</span> Costuri lunare estimate</h2>
+        <p class="section-subtitle">— Cât plătesc total pe lună, în afara ratei/chiriei?</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Întreținere / administrare</span>
+                <span class="data-value neutral">Nespecificată în recenzii — complex mic, costuri probabil mai reduse</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcare</span>
+                <span class="data-value warn">Exclusiv pentru proprietari — nicio opțiune pentru vizitatori sau chiriași fără loc</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Preț apartamente</span>
+                <span class="data-value warn">Segment premium — prețuri ridicate față de media Iași, justificate de zonă și finisaje</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Dimensiune apartamente</span>
+                <span class="data-value warn">Mici față de preț — „frumoase dar mici" (raportat de vizitatori)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Total estimat (fără utilități)</span>
+                <span class="data-value neutral">Date insuficiente din recenzii pentru estimare precisă</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- PARCARE -->
+    <section class="section fade" id="parcare">
+        <h2 class="section-title"><span class="icon">🅿️</span> Parcare</h2>
+        <p class="section-subtitle">— Există loc de parcare? Ce probleme are zona?</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Parcare în complex</span>
+                <span class="data-value neutral">Da — exclusiv pentru proprietarii de apartamente</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcare vizitatori</span>
+                <span class="data-value bad">Inexistentă — vizitatorii nu au unde parca în complex</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcare pe stradă</span>
+                <span class="data-value bad">Dificilă pentru mașini joase — drum de acces vechi și accidentat (raportat)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Noroi în zona de acces</span>
+                <span class="data-value bad">Da — prezent în perioadele umede; recomandat vizitat doar vara</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Drum de acces</span>
+                <span class="data-value bad">Vechi și deteriorat — suprafață necorespunzătoare, problematică pentru mașini low-profile</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTRACT -->
+    <section class="section fade" id="contract">
+        <h2 class="section-title"><span class="icon">📋</span> Ce verifici înainte să semnezi</h2>
+        <p class="section-subtitle">— Avantaje reale și puncte de atenție identificate din recenzii</p>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte major</div>
+            <h3 class="verdict-title">Locație Copou — una dintre cele mai valoroase zone din Iași</h3>
+            <p class="verdict-body">Copou este cartierul cu cea mai stabilă valoare imobiliară din Iași: aproape de Universitate, Grădina Botanică, spitale de specialitate și zona liniștită rezidențială tradițională. Spre deosebire de complexele din Tătărași sau zona industrială, Copou oferă un mediu urban de calitate superioară, cu trafic redus și caracter rezidențial. Pentru investiție pe termen lung sau locuire proprie, zona în sine este un avantaj solid.</p>
         </div>
 
-        <div style="background: var(--mint-dim); padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--mint-border);">
-            <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; margin-bottom: 10px; color: var(--text-primary);">Rămâi la curent</h3>
-            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 15px;">Primește rapoarte exclusive despre disponibilitatea locurilor de parcare și update-uri privind facilitățile de tip concierge.</p>
-            
-            <a href="mailto:newsletter@imobverdict.com?subject=Abonare Update Newton Park Copou" class="btn" style="width: 100%; justify-content: center; display: inline-flex; align-items: center; text-decoration: none; background: var(--mint); color: var(--purple-deep); font-weight: 600; padding: 11px 20px; border-radius: var(--radius-sm); text-transform: uppercase; font-size: 0.78rem;">
-                Anunță-mă de actualizări
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte</div>
+            <h3 class="verdict-title">Smart Home integrat și finisaje superioare — confirmate independent</h3>
+            <p class="verdict-body">Spre deosebire de alte complexe unde „premium" este mai mult marketing, la Newton Park Copou tehnologia Smart Home și calitatea finisajelor sunt confirmate în mod consistent de recenziile existente. Un Local Guide cu 309 recenzii și 1851 fotografii (profil credibil) laudă explicit finisajele speciale și dotările. Este unul din puținele complexe din Iași unde această promisiune pare livrată.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte</div>
+            <h3 class="verdict-title">Complex mic și liniștit — fără aglomerația marilor ansambluri</h3>
+            <p class="verdict-body">Dimensiunea redusă a complexului înseamnă mai puțini vecini, spații comune mai ușor de întreținut și o comunitate mai coezivă. Nicio recenzie nu menționează probleme de zgomot interior sau aglomerație — un contrast net față de Conest (mii de locatari) sau Silk District.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Spital în expansiune în vecinătate — impact pe termen lung</h3>
+            <p class="verdict-body">O recenzie recentă (un an) de la un Local Guide cu 63 recenzii menționează explicit că un spital din vecinătate se extinde, cu impact asupra zonei — zgomot de șantier, trafic de ambulanțe și personal medical, potențiale modificări ale peisajului urban din jurul complexului. Verificați planurile de urbanism pentru zona imediată înainte de a semna.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">„Newton Park fără parc" — deficit real de spații verzi și trotuar</h3>
+            <p class="verdict-body">Două recenzii independente ironizează direct numele: „Newton Park? No park here" și „Newton Park without a park" — un semnal că spațiile verzi promise nu se ridică la nivelul așteptărilor. Același recenzent menționează absența unui trotuar utilizabil spre bloc: zona din fața complexului este dominată de o parcare privată mare, fără infrastructură pietonală adecvată.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Drum de acces deteriorat și noroi în anotimpurile umede</h3>
+            <p class="verdict-body">Un Local Guide cu 124 recenzii și 177 fotografii (profil activ, credibil) avertizează că drumul de acces este „vechi și accidentat", că parcarea pe stradă este dificilă pentru mașini joase și că există noroi în zonă în perioadele umede — recomandând vizitarea complexului exclusiv în zilele calde de vară. Dacă ai o mașină sport sau joasă, verificați accesul.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Apartamente mici față de prețul premium</h3>
+            <p class="verdict-body">Un vizitator descrie apartamentele ca „frumoase dar mici". Pentru un complex din segmentul premium al pieței Copou, raportul suprafață/preț merită verificat cu atenție față de alternativele din zonă. Solicitați planurile tehnice complete cu suprafețele utile reale (nu suprafețe construite) înainte de a semna.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- DOTĂRI -->
+    <section class="section fade" id="dotari">
+        <h2 class="section-title"><span class="icon">🏠</span> Ce primești în apartament</h2>
+        <p class="section-subtitle">— Ce e inclus, ce diferențiază față de media pieței</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Finisaje incluse</span>
+                <span class="data-value">La cheie — calitate superioară, confirmat de locatari</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Smart Home</span>
+                <span class="data-value">Da — sistem integrat, unul din rarele complexe din Iași cu această dotare reală</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Dotări tehnologice</span>
+                <span class="data-value">„State-of-the-art" — confirmat de recenzii credibile</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Dimensiune apartamente</span>
+                <span class="data-value warn">Mici față de prețul solicitat — verificați suprafețele utile reale</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Spații verzi</span>
+                <span class="data-value bad">Sub așteptări față de denumire — „no park here" (recenzii independente)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Acces pietonal</span>
+                <span class="data-value bad">Deficitar — trotuare lipsă, zona dominată de parcare privată</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Vecini spital</span>
+                <span class="data-value warn">Spital în expansiune în proximitate — zgomot și trafic medical</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Liniște și intimitate</span>
+                <span class="data-value">Complex mic — liniștit, fără aglomerația marilor ansambluri</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Gunoi și curățenie zonă</span>
+                <span class="data-value bad">Prezență de gunoi și resturi în zona imediat exterioară complexului (raportat)</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- RECENZII -->
+    <section class="section fade" id="recenzii">
+        <h2 class="section-title"><span class="icon">💬</span> Ce zic cei care locuiesc acolo</h2>
+        <p class="section-subtitle">— Recenzii agregate Google Maps — număr redus de recenzii cu text, dar consistente tematic</p>
+        <div class="review-list">
+
+            <div class="review-item">
+                <p>Newton Park without a park. With a hospital that is expanding, surrounded by garbage and rubbish. By the way, if you don't have a car, there is little chance of finding a sidewalk to the block — it is a huge parking lot for the private cars.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · acum 1 an · Local Guide 63 recenzii</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Drumul de acces este un pic vechi și accidentat. Parcarea este exclusiv pentru proprietarii de apartamente și a găsi loc pe stradă poate fi o provocare pentru mașini joase. Există și noroi — vizitați doar în zilele călduroase de vară.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 3 ani în urmă · Local Guide 124 recenzii</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Newton Park? No park here.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 4 ani în urmă · Local Guide 145 recenzii</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Apartamentele sunt bine construite cu finisaje speciale și dotările sunt de ultimă generație — Smart Home! Felicitări constructorului.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 5 ani în urmă · Local Guide 309 recenzii</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Un complex rezidențial Smart cu dotări de ultimă generație într-o zonă liniștită!</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 5 ani în urmă · Local Guide 47 recenzii</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Un loc cu adevărat excelent pentru un apartament.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 5 ani în urmă · Local Guide 21 recenzii</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Frumoase dar mici — apartamentele arată bine din exterior și la interior, dar dimensiunile sunt reduse față de ce te-ai aștepta la prețul cerut.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · 8 luni în urmă · Local Guide 141 recenzii</span>
+                    <span class="review-sentiment neu">Mixt</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- VERDICT FINAL -->
+    <section class="section fade" id="verdict">
+        <h2 class="section-title"><span class="icon">⚖️</span> Verdictul ImobVerdict</h2>
+        <div class="score-box">
+            <div class="score-number">6.8<span>/10</span></div>
+            <div class="score-desc">
+                <strong>Recomandat pentru locuire liniștită — verificați accesul și spitalul vecin</strong>
+                <p>Newton Park Copou este unul dintre puținele complexe din Iași unde promisiunea „Smart Home" și finisaje superioare pare livrată efectiv. Zona Copou rămâne printre cele mai valoroase din oraș. Minusurile principale sunt infrastructura exterioară deficitară (drum accidentat, noroi, lipsa trotuarelor), absența spațiilor verzi reale în ciuda numelui și expansiunea unui spital vecin. Ideal pentru cumpărători care prioritizează calitatea locuinței în detrimentul accesibilității pietonale. Date limitate — auditul va fi completat pe măsură ce apar mai multe recenzii.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-strip fade">
+        <div>
+            <strong>Ai locuit sau locuiești în acest complex?</strong>
+            <p>Ajută-ne să completăm imaginea. Experiența ta contează pentru viitorii locatari.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="mailto:contact@imobverdict.com" class="btn">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Trimite feedback
             </a>
+            <a href="/" class="btn-outline">← Toate proiectele</a>
         </div>
     </div>
-</section>
-    </main>
+
+</div>
+
+<footer>
+    <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
+    <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
+    <div style="display:flex;gap:15px;margin-top:10px;">
+        <a href="/confidentialitate/" class="footer-link">CONFIDENȚIALITATE</a>
+        <a href="/termeni/" class="footer-link">TERMENI ȘI CONDIȚII</a>
+    </div>
+</footer>
+
+<script>
+    async function fetchCurrency() {
+        const navEl = document.getElementById('euro-nav');
+        try {
+            const res = await fetch('https://open.er-api.com/v6/latest/EUR');
+            if (!res.ok) throw new Error();
+            const data = await res.json();
+            const ron = data.rates?.RON;
+            if (!ron) throw new Error();
+            navEl.textContent = ron.toFixed(4);
+        } catch { navEl.textContent = 'N/A'; }
+    }
+    fetchCurrency();
+    const sections = document.querySelectorAll('.section[id]');
+    const navBtns = document.querySelectorAll('.qnav-btn');
+    sections.forEach(s => {
+        new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelector(`.qnav-btn[href="#${e.target.id}"]`)?.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' }).observe(s);
+    });
+</script>
 
 </body>
 </html>
