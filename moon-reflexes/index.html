@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImobVerdict | Moon Reflexes – Audit Independent Iași</title>
+    <meta name="description" content="Audit independent Moon Reflexes Moara de Vânt Iași: infrastructură precară, granița Iași/Aroneanu, rețele subdimensionate, dependență totală de mașină. Tot ce trebuie să știi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.10); --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #080e18; --text-primary: #eeeaf8; --text-secondary: rgba(238,234,248,0.62);
+            --text-muted: rgba(238,234,248,0.35); --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11); --card-hover-bg: rgba(255,255,255,0.07);
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
+            --green: #6ee7b7; --yellow: #ffd93d; --red: #ff8f8f;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--purple-deep);
+            background-image:
+                radial-gradient(ellipse 70% 55% at 10% 5%, rgba(10,30,60,0.55) 0%, transparent 60%),
+                radial-gradient(ellipse 55% 45% at 88% 85%, rgba(5,20,45,0.40) 0%, transparent 55%),
+                url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=55');
+            background-size: cover; background-position: center 40%;
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh;
+        }
+        body::before { content:''; position:fixed; inset:0; background:linear-gradient(155deg,rgba(5,10,20,0.96) 0%,rgba(8,14,24,0.92) 45%,rgba(5,10,20,0.96) 100%); z-index:0; pointer-events:none; }
+        .navbar { position:sticky; top:0; z-index:200; height:52px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; background:rgba(5,10,20,0.84); backdrop-filter:blur(20px) saturate(1.5); border-bottom:1px solid var(--mint-border); }
+        .logo { font-family:'DM Serif Display',serif; font-size:1.12rem; color:var(--text-primary); text-decoration:none; }
+        .logo em { font-style:normal; color:var(--mint); }
+        .pill { display:inline-flex; align-items:center; gap:7px; background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:100px; padding:4px 13px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--text-secondary); }
+        .pill .dot { width:6px; height:6px; border-radius:50%; background:var(--mint); animation:blink 2.2s ease-in-out infinite; }
+        .pill strong { color:var(--mint); font-weight:500; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+        .wrap { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:0 24px 100px; }
+        .breadcrumb { font-size:0.75rem; color:var(--text-muted); margin:28px 0 32px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+        .breadcrumb a:hover { color:var(--mint); }
+        .breadcrumb span { color:var(--text-secondary); }
+        .breadcrumb-sep { opacity:0.4; }
+        .complex-hero { padding:0 0 40px; border-bottom:1px solid var(--mint-border); margin-bottom:40px; }
+        .status-badge { display:inline-flex; align-items:center; gap:6px; font-size:0.67rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border-radius:5px; margin-bottom:18px; background:rgba(81,207,102,0.13); color:#7ed48a; border:1px solid rgba(81,207,102,0.22); }
+        .status-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:#7ed48a; }
+        .complex-name { font-family:'DM Serif Display',serif; font-size:clamp(2rem,5vw,3rem); line-height:1.08; letter-spacing:-0.03em; margin-bottom:14px; }
+        .complex-name em { font-style:italic; color:var(--mint); }
+        .complex-meta { display:flex; flex-wrap:wrap; gap:18px; font-size:0.78rem; color:var(--text-muted); margin-bottom:20px; }
+        .complex-meta-item { display:flex; align-items:center; gap:5px; }
+        .complex-meta-item svg { width:13px; height:13px; fill:none; stroke:var(--mint); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+        .intro-box { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-md); padding:18px 20px; font-size:0.9rem; color:var(--text-secondary); line-height:1.75; }
+        .intro-box strong { color:var(--mint); }
+        .info-box { background:rgba(255,217,61,0.06); border:1px solid rgba(255,217,61,0.18); border-radius:var(--r-md); padding:14px 18px; font-size:0.85rem; color:var(--yellow); line-height:1.7; margin-top:14px; }
+        .info-box strong { color:#ffe57a; }
+        .quick-nav { display:flex; flex-wrap:wrap; gap:8px; margin:32px 0; }
+        .qnav-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:100px; background:var(--card-bg); border:1px solid var(--card-border); font-size:0.78rem; color:var(--text-secondary); text-decoration:none; transition:background 0.18s,border-color 0.18s,color 0.18s; cursor:pointer; }
+        .qnav-btn:hover,.qnav-btn.active { background:var(--mint-dim); border-color:var(--mint-border); color:var(--mint); }
+        .qnav-btn svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .section { margin-bottom:48px; scroll-margin-top:70px; }
+        .section-title { font-family:'DM Serif Display',serif; font-size:1.35rem; letter-spacing:-0.02em; display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+        .section-title .icon { font-size:1.1rem; }
+        .section-subtitle { font-size:0.8rem; color:var(--text-muted); font-style:italic; margin-bottom:20px; }
+        .section-divider { border:none; border-top:1px solid var(--card-border); margin:48px 0; }
+        .data-table { display:flex; flex-direction:column; gap:1px; border-radius:var(--r-md); overflow:hidden; border:1px solid var(--card-border); }
+        .data-row { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px 18px; background:var(--card-bg); flex-wrap:wrap; }
+        .data-row:hover { background:var(--card-hover-bg); }
+        .data-row:not(:last-child) { border-bottom:1px solid rgba(255,255,255,0.04); }
+        .data-label { font-size:0.83rem; color:var(--text-secondary); flex:1; min-width:140px; }
+        .data-value { font-size:0.83rem; font-weight:500; padding:3px 10px; border-radius:5px; background:rgba(126,249,212,0.08); border:1px solid rgba(126,249,212,0.15); color:var(--mint); white-space:nowrap; }
+        .data-value.neutral { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.09); color:var(--text-secondary); }
+        .data-value.warn { background:rgba(255,217,61,0.08); border-color:rgba(255,217,61,0.18); color:var(--yellow); }
+        .data-value.bad { background:rgba(255,143,143,0.08); border-color:rgba(255,143,143,0.18); color:var(--red); }
+        .verdict-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-lg); padding:24px; margin-bottom:16px; position:relative; overflow:hidden; }
+        .verdict-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+        .verdict-card.v-green::before { background:linear-gradient(90deg,transparent,var(--green),transparent); }
+        .verdict-card.v-yellow::before { background:linear-gradient(90deg,transparent,var(--yellow),transparent); }
+        .verdict-card.v-red::before { background:linear-gradient(90deg,transparent,var(--red),transparent); }
+        .verdict-label { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+        .verdict-label.green { color:var(--green); } .verdict-label.yellow { color:var(--yellow); } .verdict-label.red { color:var(--red); }
+        .verdict-title { font-family:'DM Serif Display',serif; font-size:1.1rem; margin-bottom:8px; line-height:1.3; }
+        .verdict-body { font-size:0.85rem; color:var(--text-secondary); line-height:1.72; }
+        .review-list { display:flex; flex-direction:column; gap:12px; }
+        .review-item { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-md); padding:16px 18px; font-size:0.85rem; color:var(--text-secondary); line-height:1.7; position:relative; }
+        .review-item::before { content:'"'; font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mint); opacity:0.25; position:absolute; top:6px; left:14px; line-height:1; }
+        .review-item p { padding-left:8px; }
+        .review-meta { display:flex; align-items:center; justify-content:space-between; margin-top:10px; flex-wrap:wrap; gap:6px; }
+        .review-source { font-size:0.68rem; color:var(--text-muted); font-family:'DM Mono',monospace; }
+        .review-sentiment { font-size:0.65rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:2px 8px; border-radius:4px; }
+        .review-sentiment.pos { background:rgba(110,231,183,0.1); color:var(--green); border:1px solid rgba(110,231,183,0.18); }
+        .review-sentiment.neg { background:rgba(255,143,143,0.1); color:var(--red); border:1px solid rgba(255,143,143,0.18); }
+        .review-sentiment.neu { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
+        .score-box { background:var(--card-bg); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:28px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; margin-top:12px; }
+        .score-number { font-family:'DM Serif Display',serif; font-size:3.5rem; line-height:1; color:var(--mint); flex-shrink:0; }
+        .score-number span { font-size:1.2rem; color:var(--text-muted); }
+        .score-desc { flex:1; min-width:200px; }
+        .score-desc strong { display:block; font-size:1rem; margin-bottom:6px; }
+        .score-desc p { font-size:0.83rem; color:var(--text-secondary); line-height:1.7; }
+        .cta-strip { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:48px; }
+        .cta-strip p { font-size:0.9rem; color:var(--text-secondary); }
+        .cta-strip strong { display:block; color:var(--text-primary); font-size:1rem; margin-bottom:4px; }
+        .btn { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:var(--mint); color:var(--purple-deep); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); transition:background 0.18s,transform 0.14s; border:none; cursor:pointer; white-space:nowrap; }
+        .btn:hover { background:#a8fce2; transform:translateY(-1px); }
+        .btn svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+        .btn-outline { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:transparent; color:var(--mint); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); border:1px solid var(--mint-border); transition:background 0.18s; white-space:nowrap; }
+        .btn-outline:hover { background:var(--mint-dim); }
+        .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
+        .fade:nth-child(1){animation-delay:.04s}.fade:nth-child(2){animation-delay:.1s}.fade:nth-child(3){animation-delay:.16s}.fade:nth-child(4){animation-delay:.22s}.fade:nth-child(5){animation-delay:.28s}.fade:nth-child(6){animation-delay:.34s}
+        @keyframes up { to{opacity:1;transform:translateY(0)} }
+        footer { position:relative; z-index:1; margin-top:80px; padding:40px 28px; border-top:1px solid var(--mint-border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+        .footer-copy { font-size:0.76rem; color:var(--text-muted); }
+        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:600px; text-align:center; line-height:1.5; }
+        .footer-link { color:var(--mint); text-decoration:none; font-size:0.75rem; font-family:'DM Mono',monospace; opacity:0.7; border:1px solid var(--mint-border); padding:5px 18px; border-radius:100px; transition:0.3s; }
+        .footer-link:hover { opacity:1; background:var(--mint-dim); }
+        @media(max-width:640px){ .navbar .pill{display:none;} .complex-name{font-size:1.9rem;} .score-box{flex-direction:column;text-align:center;} .cta-strip{flex-direction:column;text-align:center;} }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/" class="logo">IMOB<em>VERDICT</em></a>
+    <div class="pill">
+        <span class="dot"></span>
+        <span>EUR</span>
+        <strong id="euro-nav">—</strong>
+        <span>RON</span>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Acasă</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/">Proiecte</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Moon Reflexes</span>
+    </nav>
+
+    <section class="complex-hero fade">
+        <div class="status-badge">Audit publicat</div>
+        <h1 class="complex-name"><em>Moon</em> Reflexes</h1>
+        <div class="complex-meta">
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Intrarea în Șorogari / Moara de Vânt, Iași
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                Dezvoltator: Medo Company (Nybo, Moon Reflexes)
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Date limitate — proiect boutique nou
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Audit publicat Iunie 2026
+            </span>
+        </div>
+        <div class="intro-box">
+            Moon Reflexes este un proiect <strong>boutique premium</strong> al dezvoltatorului Medo Company — aceeași firmă care a creat Nybo, cu estetică nordic-scandinavă, linii minimaliste și ferestre mari. Complexul este amplasat la <strong>intrarea în Șorogari</strong>, la granița administrativă Iași–Aroneanu, cu vedere spre lacurile din zonă — de unde și denumirea poetică. Este cel mai „fotografiabil" proiect rezidențial din nordul Iașului. Dar prețul pentru design și liniște include un compromis serios: <strong>infrastructură de tip rural-în-dezvoltare</strong> în tot ce înconjoară complexul.
+        </div>
+        <div class="info-box">
+            <strong>ℹ Notă despre date:</strong> Moon Reflexes este un proiect boutique cu număr redus de unități și recenzii publice practic inexistente. Auditul se bazează pe analiza zonei, contextul infrastructural al Șorogarilor și reputația Medo Company prin proiectul Nybo. Va fi actualizat pe măsură ce apar recenzii de la locatari.
+        </div>
+    </section>
+
+    <nav class="quick-nav fade" aria-label="Navigare rapidă">
+        <a class="qnav-btn" href="#utilitati">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            Rețele și utilități
+        </a>
+        <a class="qnav-btn" href="#acces">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Acces și drumuri
+        </a>
+        <a class="qnav-btn" href="#administrativ">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Risc administrativ
+        </a>
+        <a class="qnav-btn" href="#contract">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Ce verific înainte să semnez?
+        </a>
+        <a class="qnav-btn" href="#dotari">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Design și dotări
+        </a>
+        <a class="qnav-btn" href="#recenzii">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Context zonă
+        </a>
+    </nav>
+
+    <!-- UTILITĂȚI -->
+    <section class="section fade" id="utilitati">
+        <h2 class="section-title"><span class="icon">⚡</span> Rețele și utilități</h2>
+        <p class="section-subtitle">— Zona Moara de Vânt–Șorogari are rețele istorice subdimensionate</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Rețea electrică</span>
+                <span class="data-value bad">⚠ Subdimensionată istoric — fluctuații de tensiune documentate în zonă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Stabilizator tensiune</span>
+                <span class="data-value bad">Obligatoriu — fără el echipamentele smart/pompe de căldură riscă să ardă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Presiune apă</span>
+                <span class="data-value warn">Necesită verificare hidrofor special — relieful ridicat reduce presiunea ApaVital</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Sistem încălzire</span>
+                <span class="data-value neutral">Pompă de căldură / centrală proprie — specific proiectelor Medo (Nybo)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Internet & TV</span>
+                <span class="data-value warn">Acoperire mai slabă față de intravilanul orașului — verificați furnizorul disponibil</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Furnizori utilități</span>
+                <span class="data-value warn">Zona poate fi pe raza Comunei Aroneanu — verificați cine furnizează și cu ce contract</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ACCES -->
+    <section class="section fade" id="acces">
+        <h2 class="section-title"><span class="icon">🛣️</span> Acces și drumuri</h2>
+        <p class="section-subtitle">— Cel mai semnificativ compromis față de prețul premium</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Drum de acces principal</span>
+                <span class="data-value bad">Îngust, parțial neasfaltat — afectat de utilajele grele de pe șantiere</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Condiții în anotimpuri umede</span>
+                <span class="data-value bad">Noroi — drumurile secundare devin dificil practicabile iarna și primăvara</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Condiții vara</span>
+                <span class="data-value warn">Praf dens — drumul de acces generează praf semnificativ în perioadele secetoase</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Trotuar pietonal</span>
+                <span class="data-value bad">Inexistent — pietonii împart marginea drumului cu mașinile</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Compatibilitate mașini joase</span>
+                <span class="data-value bad">Problematică — drumul accidentat poate deteriora mașini sport sau cu gardă redusă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Transport public</span>
+                <span class="data-value bad">Inexistent sau minimal — dependență totală de mașina personală</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Timp până în centrul Iașului</span>
+                <span class="data-value warn">~20–30 min cu mașina în condiții normale, mai mult la orele de vârf</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- RISC ADMINISTRATIV -->
+    <section class="section fade" id="administrativ">
+        <h2 class="section-title"><span class="icon">🏛️</span> Risc administrativ — granița Iași / Aroneanu</h2>
+        <p class="section-subtitle">— Unic față de toate celelalte complexe din seria ImobVerdict Iași</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Jurisdicție</span>
+                <span class="data-value bad">⚠ Zonă de frontieră Municipiul Iași / Comuna Aroneanu — verificați exact unde se află parcela</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Responsabilitate infrastructură</span>
+                <span class="data-value bad">Neclară — Primăria Iași refuză drumuri care ies din intravilanul orașului</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Buget Comună Aroneanu</span>
+                <span class="data-value bad">Insuficient — nu poate ține pasul cu standardele imobiliare premium din zonă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Iluminat public</span>
+                <span class="data-value warn">Parțial sau absent — verificați cine este obligat legal să îl asigure</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Taxe și impozite</span>
+                <span class="data-value warn">Verificați dacă impozitele se plătesc la Primăria Iași sau la Primăria Aroneanu</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Risc întârzieri acte / branșamente</span>
+                <span class="data-value bad">Ridicat — disputele inter-administrative pot bloca branșamentele definitive la utilități</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTRACT -->
+    <section class="section fade" id="contract">
+        <h2 class="section-title"><span class="icon">📋</span> Ce verifici înainte să semnezi</h2>
+        <p class="section-subtitle">— Checklist specific pentru proiecte la granița administrativă a Iașului</p>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc critic — specific acestei zone</div>
+            <h3 class="verdict-title">Verificați jurisdicția exactă a parcelei — Iași sau Aroneanu</h3>
+            <p class="verdict-body">Acesta este riscul cel mai specific și mai puțin intuitiv al zonei Moara de Vânt–Intrarea în Șorogari. Granița administrativă taie zona în două, iar o diferență de câteva sute de metri poate însemna că terenul este pe raza Comunei Aroneanu, nu a Municipiului Iași. Consecințele sunt practice: impozitele se plătesc la o altă primărie, responsabilitatea drumului din față aparține altei autorități, iar accesul la rețelele municipale de apă și canalizare poate fi mai complicat. Solicitați extrasul de carte funciară și verificați unitatea administrativ-teritorială din el înainte de a semna.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Rețea electrică subdimensionată — costul ascuns al „smart home"</h3>
+            <p class="verdict-body">Proiectele premium cu încălzire în pardoseală, pompe de căldură, sisteme de climatizare și automatizări smart home sunt mari consumatoare de energie și necesită o rețea electrică stabilă. Zona extinsă Moara de Vânt–Șorogari are o reputație bine documentată pentru fluctuații de tensiune, cauzate de rețelele istorice subdimensionate față de explozia imobiliară din ultimii ani. Instalarea unui stabilizator de tensiune de mare capacitate devine obligatorie — un cost suplimentar de câteva mii de euro care nu apare în prospect. Verificați la Delgaz capacitatea de racordare disponibilă pentru parcela respectivă.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Dependență absolută de mașina personală — fără alternativă</h3>
+            <p class="verdict-body">Nu există supermarket, farmacie, grădiniță sau școală la distanță de mers pe jos. Orice nevoie cotidiană — inclusiv cumpărăturile de urgență sau ducerea copilului la grădiniță — implică pornirea mașinii și coborârea dealului. Dacă cineva din familie nu conduce sau mașina este în service, situația devine serioasă. Testați traseul real spre locul de muncă, spre școală și spre cel mai aproape supermarket la orele de vârf înainte de a decide.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Drumul de acces — starea reală vs. randările din prospect</h3>
+            <p class="verdict-body">Randările și fotografiile de marketing ale proiectelor Medo Company sunt spectaculoase. Drumul de acces real, în perioadele umede, este îngust, noroios și fără trotuar. Vara, praful produs de trafic se depune pe fațadele frumoase și pe terasele generoase ale complexului. Vizitați zona în mod real, la o zi cu ploaie sau după o perioadă de lucrări pe drumul de acces, înainte de a vă lăsa impresionați de fotografii.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte major</div>
+            <h3 class="verdict-title">Design scandinav autentic — cel mai distinct proiect rezidențial din nordul Iașului</h3>
+            <p class="verdict-body">Medo Company este singurul dezvoltator din Iași care livrează consecvent arhitectură cu identitate clară: linii minimaliste, suprafețe vitrate mari, materiale exterioare de calitate și o coerență vizuală care lipsește total din blocurile standard ale orașului. Dacă designul și estetica locuinței sunt o prioritate reală pentru tine — nu doar o preferință abstractă — Moon Reflexes este greu de egalat în oferta iașeană.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte major</div>
+            <h3 class="verdict-title">Liniște, aer curat și priveliște spre lacuri — imposibil de replicat în oraș</h3>
+            <p class="verdict-body">Zona Șorogari oferă un nivel de liniște nocturnă și calitate a aerului imposibil de obținut în oricare din complexele analizate în seria ImobVerdict Iași — Conest, Evergreen, Silk, Lazar sau Royal Town. Vederea spre lacuri la apus este reală, nu marketing. Pentru un cumpărător care lucrează de acasă, nu depinde de transport public și valorizează calitatea mediului înconjurător peste accesibilitatea urbană, aceasta este o locație cu adevărat unică.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte</div>
+            <h3 class="verdict-title">Potențial de cartier exclusivist pe termen lung</h3>
+            <p class="verdict-body">Zona Moara de Vânt–Șorogari atrage tot mai multe proiecte premium din același segment (Nybo, Moon Reflexes și altele). Pe măsură ce masa critică de rezidenți cu putere de cumpărare ridicată va crește, presiunea pe autorități pentru modernizarea drumurilor și extinderea rețelelor va deveni imposibil de ignorat. Cumpărătorii care intră acum cumpără o zonă în tranziție — cu riscurile și potențialul aferent. Valoarea imobiliară în astfel de zone tinde să crească semnificativ odată ce infrastructura se îmbunătățește.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- DOTĂRI -->
+    <section class="section fade" id="dotari">
+        <h2 class="section-title"><span class="icon">🏠</span> Design și dotări</h2>
+        <p class="section-subtitle">— Cel mai înalt nivel de estetică arhitecturală din seria ImobVerdict Iași</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Stil arhitectural</span>
+                <span class="data-value">Nordic / scandinav minimalist — unic în peisajul iașean</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Ferestre</span>
+                <span class="data-value">Suprafețe vitrate mari — lumină naturală abundentă, vedere panoramică</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Materiale exterioare</span>
+                <span class="data-value">Calitate superioară — coerente cu designul, confirmate la Nybo (proiect anterior similar)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Finisaje interioare</span>
+                <span class="data-value neutral">Neconfirmate independent pentru Moon Reflexes — bazat pe reputația Medo via Nybo</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Priveliște</span>
+                <span class="data-value">Spre lacurile din zonă Șorogari — spectaculoasă, mai ales la apus</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Liniște nocturnă</span>
+                <span class="data-value">Excepțională — zona este practic fără trafic nocturn</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Spații verzi</span>
+                <span class="data-value">Natură autentică în proximitate — lacuri, pădure, aer curat</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Facilități comerciale în proximitate</span>
+                <span class="data-value bad">Inexistente la distanță pietonală — izolare comercială completă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Școli / grădinițe în zonă</span>
+                <span class="data-value bad">Inexistente — transport zilnic obligatoriu în oraș pentru familiile cu copii</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTEXT ZONĂ -->
+    <section class="section fade" id="recenzii">
+        <h2 class="section-title"><span class="icon">🗺️</span> Context de zonă — cine se potrivește cu Moon Reflexes</h2>
+        <p class="section-subtitle">— Profilul potrivit și cel nepotrivit pentru această locație</p>
+        <div class="review-list">
+
+            <div class="review-item">
+                <p>Proiectele Medo Company (Nybo, Moon Reflexes) ies clar din tiparul blocurilor gri. Designul scandinav, ferestrele uriașe și calitatea finisajelor exterioare oferă un aspect cu adevărat exclusivist — dar contrastul cu exteriorul imediat este izbitor.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Analiză teren ImobVerdict · 2026</span>
+                    <span class="review-sentiment neu">Context</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Drumul care urcă din Moara de Vânt spre Șorogari este îngust, parțial neasfaltat și profund afectat de utilajele grele. Să conduci o mașină joasă sau să ieși la plimbare pe jos devine o provocare din cauza prafului dens vara și a noroiului iarna.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Analiză teren ImobVerdict · 2026</span>
+                    <span class="review-sentiment neg">Avertisment</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Zona Moara de Vânt–Șorogari suferă istoric din cauza rețelelor electrice subdimensionate. Fluctuațiile de tensiune sunt o realitate, instalarea de stabilizatoare de înaltă capacitate devenind obligatorie pentru a nu arde echipamentele smart home.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Analiză infrastructură zonă · 2026</span>
+                    <span class="review-sentiment neg">Avertisment</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Primăria Iași refuză adesea să asfalteze sau să modernizeze drumuri care trec parțial de limita orașului, în timp ce Primăria Aroneanu nu dispune de bugetele necesare pentru a ține pasul cu standardele imobiliare de lux.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Analiză administrativă zonă · 2026</span>
+                    <span class="review-sentiment neg">Avertisment</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Zona este spectaculoasă vizual: aer curat, vedere superbă asupra lacurilor, liniște imposibil de găsit în interiorul orașului. Pentru cei care muncesc de acasă și nu depind de transport public, este o locație cu adevărat unică în oferta iașeană.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Analiză teren ImobVerdict · 2026</span>
+                    <span class="review-sentiment pos">Avantaj</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Cumpărătorul ideal pentru Moon Reflexes: lucrează de acasă sau are program flexibil, conduce mașina zilnic, nu are copii de vârstă școlară sau are soluție de transport asigurată, valorizează designul și liniștea peste accesibilitate urbană.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Profilare ImobVerdict · 2026</span>
+                    <span class="review-sentiment neu">Context</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Cumpărătorul nepotrivit: depinde de transport public, are copii mici care merg zilnic la grădiniță/școală în oraș, nu conduce sau are o singură mașină în familie, sau prioritizează accesul pietonal la facilități urbane.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Profilare ImobVerdict · 2026</span>
+                    <span class="review-sentiment neg">Avertisment</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- VERDICT FINAL -->
+    <section class="section fade" id="verdict">
+        <h2 class="section-title"><span class="icon">⚖️</span> Verdictul ImobVerdict</h2>
+        <div class="score-box">
+            <div class="score-number">6.4<span>/10</span></div>
+            <div class="score-desc">
+                <strong>Excepțional ca design — recomandat doar profilului potrivit</strong>
+                <p>Moon Reflexes este cel mai distinctiv proiect arhitectural din nordul Iașului și singurul din seria ImobVerdict cu o identitate vizuală autentică nordic-scandinavă. Liniștea, aerul curat și vederea spre lacuri sunt reale și de neegalat în oferta iașeană. Scorul este limitat de infrastructura precară a zonei (drum neasfaltat, fluctuații tensiune, fără trotuar), riscul administrativ al graniței Iași–Aroneanu și izolarea comercială completă. Recomandat celor care muncesc de acasă, au mașina proprie și prioritizează calitatea locuinței și mediului față de accesibilitatea urbană. Date insuficiente din recenzii reale — auditul va fi actualizat.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-strip fade">
+        <div>
+            <strong>Locuiești sau ai cumpărat la Moon Reflexes?</strong>
+            <p>Suntem la început cu datele pentru acest complex. Experiența ta directă este esențială.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="mailto:contact@imobverdict.com" class="btn">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Trimite feedback
+            </a>
+            <a href="/" class="btn-outline">← Toate proiectele</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
+    <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
+    <div style="display:flex;gap:15px;margin-top:10px;">
+        <a href="/confidentialitate/" class="footer-link">CONFIDENȚIALITATE</a>
+        <a href="/termeni/" class="footer-link">TERMENI ȘI CONDIȚII</a>
+    </div>
+</footer>
+
+<script>
+    async function fetchCurrency() {
+        const navEl = document.getElementById('euro-nav');
+        try {
+            const res = await fetch('https://open.er-api.com/v6/latest/EUR');
+            if (!res.ok) throw new Error();
+            const data = await res.json();
+            const ron = data.rates?.RON;
+            if (!ron) throw new Error();
+            navEl.textContent = ron.toFixed(4);
+        } catch { navEl.textContent = 'N/A'; }
+    }
+    fetchCurrency();
+    const sections = document.querySelectorAll('.section[id]');
+    const navBtns = document.querySelectorAll('.qnav-btn');
+    sections.forEach(s => {
+        new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelector(`.qnav-btn[href="#${e.target.id}"]`)?.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' }).observe(s);
+    });
+</script>
+
+</body>
+</html>
