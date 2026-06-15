@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImobVerdict | Baroque Residence – Audit Independent Iași</title>
+    <meta name="description" content="Audit independent Baroque Residence Bucium Iași: trafic Șoseaua Bucium, lipsă loc de joacă, presiune apă, izolare iarna, lipsa spațiilor verzi. Tot ce trebuie să știi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.10); --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #100c16; --text-primary: #eeeaf8; --text-secondary: rgba(238,234,248,0.62);
+            --text-muted: rgba(238,234,248,0.35); --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11); --card-hover-bg: rgba(255,255,255,0.07);
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
+            --green: #6ee7b7; --yellow: #ffd93d; --red: #ff8f8f;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--purple-deep);
+            background-image:
+                radial-gradient(ellipse 70% 50% at 18% 8%, rgba(90,60,40,0.32) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 82% 82%, rgba(60,40,30,0.25) 0%, transparent 55%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55');
+            background-size: cover; background-position: center;
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh;
+        }
+        body::before { content:''; position:fixed; inset:0; background:linear-gradient(155deg,rgba(12,9,16,0.95) 0%,rgba(16,12,18,0.91) 45%,rgba(12,9,16,0.95) 100%); z-index:0; pointer-events:none; }
+        .navbar { position:sticky; top:0; z-index:200; height:52px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; background:rgba(12,9,16,0.82); backdrop-filter:blur(20px) saturate(1.5); border-bottom:1px solid var(--mint-border); }
+        .logo { font-family:'DM Serif Display',serif; font-size:1.12rem; color:var(--text-primary); text-decoration:none; }
+        .logo em { font-style:normal; color:var(--mint); }
+        .pill { display:inline-flex; align-items:center; gap:7px; background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:100px; padding:4px 13px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--text-secondary); }
+        .pill .dot { width:6px; height:6px; border-radius:50%; background:var(--mint); animation:blink 2.2s ease-in-out infinite; }
+        .pill strong { color:var(--mint); font-weight:500; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+        .wrap { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:0 24px 100px; }
+        .breadcrumb { font-size:0.75rem; color:var(--text-muted); margin:28px 0 32px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+        .breadcrumb a:hover { color:var(--mint); }
+        .breadcrumb span { color:var(--text-secondary); }
+        .breadcrumb-sep { opacity:0.4; }
+        .complex-hero { padding:0 0 40px; border-bottom:1px solid var(--mint-border); margin-bottom:40px; }
+        .status-badge { display:inline-flex; align-items:center; gap:6px; font-size:0.67rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border-radius:5px; margin-bottom:18px; background:rgba(81,207,102,0.13); color:#7ed48a; border:1px solid rgba(81,207,102,0.22); }
+        .status-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:#7ed48a; }
+        .complex-name { font-family:'DM Serif Display',serif; font-size:clamp(2rem,5vw,3rem); line-height:1.08; letter-spacing:-0.03em; margin-bottom:14px; }
+        .complex-name em { font-style:italic; color:var(--mint); }
+        .complex-meta { display:flex; flex-wrap:wrap; gap:18px; font-size:0.78rem; color:var(--text-muted); margin-bottom:20px; }
+        .complex-meta-item { display:flex; align-items:center; gap:5px; }
+        .complex-meta-item svg { width:13px; height:13px; fill:none; stroke:var(--mint); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+        .intro-box { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-md); padding:18px 20px; font-size:0.9rem; color:var(--text-secondary); line-height:1.75; }
+        .intro-box strong { color:var(--mint); }
+        .info-box { background:rgba(255,217,61,0.06); border:1px solid rgba(255,217,61,0.18); border-radius:var(--r-md); padding:14px 18px; font-size:0.85rem; color:var(--yellow); line-height:1.7; margin-top:14px; }
+        .info-box strong { color:#ffe57a; }
+        .quick-nav { display:flex; flex-wrap:wrap; gap:8px; margin:32px 0; }
+        .qnav-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:100px; background:var(--card-bg); border:1px solid var(--card-border); font-size:0.78rem; color:var(--text-secondary); text-decoration:none; transition:background 0.18s,border-color 0.18s,color 0.18s; cursor:pointer; }
+        .qnav-btn:hover,.qnav-btn.active { background:var(--mint-dim); border-color:var(--mint-border); color:var(--mint); }
+        .qnav-btn svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .section { margin-bottom:48px; scroll-margin-top:70px; }
+        .section-title { font-family:'DM Serif Display',serif; font-size:1.35rem; letter-spacing:-0.02em; display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+        .section-title .icon { font-size:1.1rem; }
+        .section-subtitle { font-size:0.8rem; color:var(--text-muted); font-style:italic; margin-bottom:20px; }
+        .section-divider { border:none; border-top:1px solid var(--card-border); margin:48px 0; }
+        .data-table { display:flex; flex-direction:column; gap:1px; border-radius:var(--r-md); overflow:hidden; border:1px solid var(--card-border); }
+        .data-row { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px 18px; background:var(--card-bg); flex-wrap:wrap; }
+        .data-row:hover { background:var(--card-hover-bg); }
+        .data-row:not(:last-child) { border-bottom:1px solid rgba(255,255,255,0.04); }
+        .data-label { font-size:0.83rem; color:var(--text-secondary); flex:1; min-width:140px; }
+        .data-value { font-size:0.83rem; font-weight:500; padding:3px 10px; border-radius:5px; background:rgba(126,249,212,0.08); border:1px solid rgba(126,249,212,0.15); color:var(--mint); white-space:nowrap; }
+        .data-value.neutral { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.09); color:var(--text-secondary); }
+        .data-value.warn { background:rgba(255,217,61,0.08); border-color:rgba(255,217,61,0.18); color:var(--yellow); }
+        .data-value.bad { background:rgba(255,143,143,0.08); border-color:rgba(255,143,143,0.18); color:var(--red); }
+        .verdict-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-lg); padding:24px; margin-bottom:16px; position:relative; overflow:hidden; }
+        .verdict-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+        .verdict-card.v-green::before { background:linear-gradient(90deg,transparent,var(--green),transparent); }
+        .verdict-card.v-yellow::before { background:linear-gradient(90deg,transparent,var(--yellow),transparent); }
+        .verdict-card.v-red::before { background:linear-gradient(90deg,transparent,var(--red),transparent); }
+        .verdict-label { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+        .verdict-label.green { color:var(--green); } .verdict-label.yellow { color:var(--yellow); } .verdict-label.red { color:var(--red); }
+        .verdict-title { font-family:'DM Serif Display',serif; font-size:1.1rem; margin-bottom:8px; line-height:1.3; }
+        .verdict-body { font-size:0.85rem; color:var(--text-secondary); line-height:1.72; }
+        .review-list { display:flex; flex-direction:column; gap:12px; }
+        .review-item { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-md); padding:16px 18px; font-size:0.85rem; color:var(--text-secondary); line-height:1.7; position:relative; }
+        .review-item::before { content:'"'; font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mint); opacity:0.25; position:absolute; top:6px; left:14px; line-height:1; }
+        .review-item p { padding-left:8px; }
+        .review-meta { display:flex; align-items:center; justify-content:space-between; margin-top:10px; flex-wrap:wrap; gap:6px; }
+        .review-source { font-size:0.68rem; color:var(--text-muted); font-family:'DM Mono',monospace; }
+        .review-sentiment { font-size:0.65rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:2px 8px; border-radius:4px; }
+        .review-sentiment.pos { background:rgba(110,231,183,0.1); color:var(--green); border:1px solid rgba(110,231,183,0.18); }
+        .review-sentiment.neg { background:rgba(255,143,143,0.1); color:var(--red); border:1px solid rgba(255,143,143,0.18); }
+        .review-sentiment.neu { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
+        .score-box { background:var(--card-bg); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:28px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; margin-top:12px; }
+        .score-number { font-family:'DM Serif Display',serif; font-size:3.5rem; line-height:1; color:var(--mint); flex-shrink:0; }
+        .score-number span { font-size:1.2rem; color:var(--text-muted); }
+        .score-desc { flex:1; min-width:200px; }
+        .score-desc strong { display:block; font-size:1rem; margin-bottom:6px; }
+        .score-desc p { font-size:0.83rem; color:var(--text-secondary); line-height:1.7; }
+        .cta-strip { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:48px; }
+        .cta-strip p { font-size:0.9rem; color:var(--text-secondary); }
+        .cta-strip strong { display:block; color:var(--text-primary); font-size:1rem; margin-bottom:4px; }
+        .btn { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:var(--mint); color:var(--purple-deep); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); transition:background 0.18s,transform 0.14s; border:none; cursor:pointer; white-space:nowrap; }
+        .btn:hover { background:#a8fce2; transform:translateY(-1px); }
+        .btn svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+        .btn-outline { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:transparent; color:var(--mint); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); border:1px solid var(--mint-border); transition:background 0.18s; white-space:nowrap; }
+        .btn-outline:hover { background:var(--mint-dim); }
+        .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
+        .fade:nth-child(1){animation-delay:.04s}.fade:nth-child(2){animation-delay:.1s}.fade:nth-child(3){animation-delay:.16s}.fade:nth-child(4){animation-delay:.22s}.fade:nth-child(5){animation-delay:.28s}.fade:nth-child(6){animation-delay:.34s}
+        @keyframes up { to{opacity:1;transform:translateY(0)} }
+        footer { position:relative; z-index:1; margin-top:80px; padding:40px 28px; border-top:1px solid var(--mint-border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+        .footer-copy { font-size:0.76rem; color:var(--text-muted); }
+        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:600px; text-align:center; line-height:1.5; }
+        .footer-link { color:var(--mint); text-decoration:none; font-size:0.75rem; font-family:'DM Mono',monospace; opacity:0.7; border:1px solid var(--mint-border); padding:5px 18px; border-radius:100px; transition:0.3s; }
+        .footer-link:hover { opacity:1; background:var(--mint-dim); }
+        @media(max-width:640px){ .navbar .pill{display:none;} .complex-name{font-size:1.9rem;} .score-box{flex-direction:column;text-align:center;} .cta-strip{flex-direction:column;text-align:center;} }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/" class="logo">IMOB<em>VERDICT</em></a>
+    <div class="pill">
+        <span class="dot"></span>
+        <span>EUR</span>
+        <strong id="euro-nav">—</strong>
+        <span>RON</span>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Acasă</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/">Proiecte</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Baroque Residence</span>
+    </nav>
+
+    <section class="complex-hero fade">
+        <div class="status-badge">Audit publicat</div>
+        <h1 class="complex-name"><em>Baroque</em> Residence</h1>
+        <div class="complex-meta">
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Dealul Bucium, Iași
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Regim redus: P+2E+M / P+3E — tip vilă
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Acces controlat — complex cu barieră
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Audit publicat Iunie 2026
+            </span>
+        </div>
+        <div class="intro-box">
+            Baroque Residence este amplasat pe <strong>Dealul Bucium</strong> — istoric „plămânul verde" al Iașului, asaltat în ultimii ani de proiecte rezidențiale noi. Complexul aduce o estetică clasică, decorativă („Baroque"), cu blocuri joase de tip vilă (P+2E+M), acces controlat cu barieră și o atmosferă mai intimă decât turnurile din centru. Recenziile confirmă: <strong>zonă liniștită și sigură</strong>, dar cu <strong>infrastructura cronică a Buciumului</strong> — trafic sufocant pe singura arteră de acces și o lipsă de finalizare a unor amenajări de bază (loc de joacă, parcări).
+        </div>
+        <div class="info-box">
+            <strong>ℹ Notă despre date:</strong> Recenziile Google Maps disponibile pentru Baroque Residence sunt puține (sub 10 cu text). Auditul combină aceste recenzii cu analiza detaliată a infrastructurii zonei Bucium — relevantă pentru orice proiect din această parte a orașului.
+        </div>
+    </section>
+
+    <nav class="quick-nav fade" aria-label="Navigare rapidă">
+        <a class="qnav-btn" href="#utilitati">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            Utilități și presiune apă
+        </a>
+        <a class="qnav-btn" href="#acces">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Acces și trafic
+        </a>
+        <a class="qnav-btn" href="#costuri">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Costuri și mentenanță
+        </a>
+        <a class="qnav-btn" href="#contract">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Ce verific înainte să semnez?
+        </a>
+        <a class="qnav-btn" href="#dotari">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Ce primesc în complex?
+        </a>
+        <a class="qnav-btn" href="#recenzii">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Ce zic locatarii?
+        </a>
+    </nav>
+
+    <!-- UTILITĂȚI -->
+    <section class="section fade" id="utilitati">
+        <h2 class="section-title"><span class="icon">🔔</span> Utilități și presiune apă</h2>
+        <p class="section-subtitle">— Problema cronică a oricărui proiect pe deal: presiunea apei la etaje superioare</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Sistem încălzire</span>
+                <span class="data-value neutral">Centrală proprie per apartament — standard pentru complexe noi tip vilă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Presiune apă (Apavital)</span>
+                <span class="data-value bad">⚠ Risc ridicat — zonă înaltă, presiune istoric scăzută la etajele superioare</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Bazine de rezervă / pompe proprii</span>
+                <span class="data-value warn">Verificați obligatoriu dacă complexul are sistem propriu — esențial pe deal</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Canalizare</span>
+                <span class="data-value warn">Verificați dacă rețeaua municipală e completă sau există soluții provizorii (fose septice)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Furnizor curent (Delgaz)</span>
+                <span class="data-value neutral">Standard — fără probleme specifice raportate pentru acest complex</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Internet & TV</span>
+                <span class="data-value warn">Verificați acoperirea — zonele de deal pot avea acces limitat la fibră</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ACCES -->
+    <section class="section fade" id="acces">
+        <h2 class="section-title"><span class="icon">🛣️</span> Acces și trafic</h2>
+        <p class="section-subtitle">— Cel mai mare minus al oricărei proprietăți din Bucium</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Arteră principală</span>
+                <span class="data-value bad">⚠ Șoseaua Bucium — „gât de pâlnie", singura cale spre Pasaj Socola / Bd. Poitiers</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Trafic ore de vârf</span>
+                <span class="data-value bad">Sever 7:30–8:30 și 17:00–18:30 — confirmat și de recenzii Google Maps</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Drumuri secundare de acces</span>
+                <span class="data-value bad">Înguste — insuficiente pentru două mașini mari simultan, una trebuie să urce pe acostament</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Deszăpezire iarna</span>
+                <span class="data-value bad">⚠ Risc de izolare — utilajele primăriei ajung cu întârziere pe străzile secundare din Bucium</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Trotuare</span>
+                <span class="data-value bad">Deficitare pe străzile secundare — dependență de mașină pentru orice deplasare</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Acces controlat complex</span>
+                <span class="data-value">Da — zonă cu barieră, confirmat de recenzii ca punct pozitiv pentru siguranță</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Lucrări infrastructură zonă</span>
+                <span class="data-value warn">În curs — modernizare Șoseaua Bucium prelungită, afectează naveta pe termen mediu</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- COSTURI -->
+    <section class="section fade" id="costuri">
+        <h2 class="section-title"><span class="icon">💰</span> Costuri și mentenanță</h2>
+        <p class="section-subtitle">— Fațada decorativă „Baroque" are un cost de întreținere pe termen lung</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Întreținere lunară</span>
+                <span class="data-value neutral">Nespecificată în recenzii — complex mic, costuri probabil moderate</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Mentenanță fațadă decorativă</span>
+                <span class="data-value warn">⚠ Cost pe termen lung mai ridicat — profile ornamentale și culori clare se murdăresc rapid</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Pază</span>
+                <span class="data-value">Asigurată — confirmat în recenzii ca punct forte</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcare</span>
+                <span class="data-value bad">⚠ „Parcări neamenajate" — raportat direct de un locatar</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Loc de joacă</span>
+                <span class="data-value bad">⚠ Inexistent la data recenziei — „fără loc de joacă", dezvoltatori descriși ca „neserioși"</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTRACT -->
+    <section class="section fade" id="contract">
+        <h2 class="section-title"><span class="icon">📋</span> Ce verifici înainte să semnezi</h2>
+        <p class="section-subtitle">— Riscuri specifice zonei Bucium și amenajări neterminate</p>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Amenajări neterminate — loc de joacă și parcări absente la predare</h3>
+            <p class="verdict-body">O recenzie directă și fără echivoc: „Dezvoltatori neserioși: fără loc de joacă, parcări neamenajate și multe alte lucruri pe care doar cei care locuiesc acolo le știu." Aceasta este o problemă de execuție a promisiunilor contractuale, nu de infrastructură de zonă. Solicitați dezvoltatorului un plan scris cu termene clare pentru finalizarea amenajărilor comune (loc de joacă, parcări, spații verzi) și verificați dacă aceste obligații sunt incluse explicit în antecontract, cu penalități pentru nerespectare.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat — specific zonei</div>
+            <h3 class="verdict-title">Trafic sufocant pe Șoseaua Bucium — naveta zilnică afectată permanent</h3>
+            <p class="verdict-body">O recenzie rezumă sentimentul general al zonei: „Drumul, mai exact ambuteiajul, e groaznic. Cei care au cumpărat apartamente în zonă probabil își blestemă zilele." Aceasta nu este o problemă specifică complexului, ci a întregului Bucium — dar afectează direct calitatea vieții zilnice. Dacă lucrați în centru sau în zona Socola/Poitiers, testați traseul real la 7:45 dimineața și la 17:30 după-amiaza înainte de a decide, nu doar în weekend.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Presiunea apei la etajele superioare — verificare obligatorie</h3>
+            <p class="verdict-body">Zona Bucium are un istoric documentat de presiune scăzută a apei la altitudini mai mari, mai ales în perioadele de consum maxim (vară, când vecinii cu case își udă grădinile). Dacă apartamentul care vă interesează este la un etaj superior, întrebați explicit dacă complexul are bazin de rezervă și pompe proprii de presurizare — fără acestea, riscați presiune slabă la duș/robinet în orele de vârf de consum.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Risc de izolare iarna — deszăpezire deficitară pe străzile secundare</h3>
+            <p class="verdict-body">Panta complexului combinată cu gestionarea deficitară a deszăpezirii pe arterele secundare din Bucium poate duce la situații în care mașina rămâne blocată la baza dealului în zile cu ninsoare abundentă sau polei. Dacă aveți nevoie de acces zilnic garantat (job cu prezență fizică obligatorie, copii la școală), luați în calcul acest risc pentru lunile de iarnă.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte</div>
+            <h3 class="verdict-title">Acces controlat cu barieră — siguranță confirmată de locatari</h3>
+            <p class="verdict-body">Recenziile confirmă: „Este o zonă rezidențială cu acces controlat, cu barieră. Casele sunt de gust, câteva blocuri cu două etaje. Arată bine." Pentru familii cu copii mici, accesul controlat și densitatea redusă (mai puțini vecini pe scară) oferă o siguranță și o liniște greu de găsit la complexele mari din centru sau Tătărași.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte major</div>
+            <h3 class="verdict-title">Aer curat, liniște nocturnă și priveliște spre livezi — calitate a vieții reală</h3>
+            <p class="verdict-body">Spre diferență de zonele joase ale Iașului (Podu Roș, CUG, Gara), Bucium oferă un nivel de poluare atmosferică mult mai scăzut și liniște nocturnă reală, fără zgomotul marilor bulevarde. Recenziile confirmă: „Frumos, intim și retras." Multe apartamente beneficiază de panoramă spre livezile din Bucium sau spre oraș — un avantaj similar cu Moon Reflexes, dar mult mai accesibil ca preț și cu acces auto mai bun.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- DOTĂRI -->
+    <section class="section fade" id="dotari">
+        <h2 class="section-title"><span class="icon">🏠</span> Ce primești în complex</h2>
+        <p class="section-subtitle">— Estetică decorativă, densitate redusă, amenajări comune incomplete</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Regim de înălțime</span>
+                <span class="data-value">P+2E+M / P+3E — densitate redusă, mai puțini vecini pe scară</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Stil arhitectural</span>
+                <span class="data-value">Clasic decorativ — fațade cu elemente ornamentale, balustrade lucrate</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Acces / barieră</span>
+                <span class="data-value">Complex cu acces controlat — confirmat</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Spații verzi proprii</span>
+                <span class="data-value bad">Lipsă — „minus: lack of green spaces and trees" (recenzie)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Loc de joacă</span>
+                <span class="data-value bad">Absent la data recenziei</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcări</span>
+                <span class="data-value bad">Neamenajate — raportat direct</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Priveliște</span>
+                <span class="data-value">Spre livezile Buciumului sau spre oraș, în funcție de orientare</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Liniște nocturnă</span>
+                <span class="data-value">Excelentă — ferit de bulevarde mari</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- RECENZII -->
+    <section class="section fade" id="recenzii">
+        <h2 class="section-title"><span class="icon">💬</span> Ce zic locatarii</h2>
+        <p class="section-subtitle">— Recenzii Google Maps — număr redus, dar tematic consistente cu analiza zonei</p>
+        <div class="review-list">
+
+            <div class="review-item">
+                <p>Cartier frumos! Traficul poate deveni destul de agitat la anumite ore din zi.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps</span>
+                    <span class="review-sentiment neu">Mixt</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Este o zonă rezidențială cu acces controlat, cu barieră. Casele sunt de gust, câteva blocuri cu două etaje. Arată bine.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Drumul, mai exact ambuteiajul, e groaznic. Cei care au cumpărat apartamente în zonă probabil își blestemă zilele.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Dezvoltatori neserioși: fără loc de joacă, parcări neamenajate și multe alte lucruri pe care doar cei care locuiesc acolo le știu!!</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · locatar</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Este un complex rezidențial de succes, securitatea este asigurată. Un minus este lipsa spațiilor verzi și a copacilor.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps</span>
+                    <span class="review-sentiment neu">Mixt</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Cartier rezidențial cu apartamente P+2 și case cu un etaj.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps</span>
+                    <span class="review-sentiment neu">Neutru</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Foarte frumos. Intim și retras.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- VERDICT FINAL -->
+    <section class="section fade" id="verdict">
+        <h2 class="section-title"><span class="icon">⚖️</span> Verdictul ImobVerdict</h2>
+        <div class="score-box">
+            <div class="score-number">6.0<span>/10</span></div>
+            <div class="score-desc">
+                <strong>Bun pentru liniște și siguranță — verificați traficul și amenajările neterminate</strong>
+                <p>Baroque Residence oferă ceva rar în Iași: densitate redusă, acces controlat, aer curat și liniște nocturnă reală, la un preț probabil mai accesibil decât complexele echivalente din Copou. Minusurile principale nu sunt despre complex în sine, ci despre zonă (traficul cronic pe Șoseaua Bucium, riscul de izolare iarna) și despre execuție (loc de joacă și parcări neamenajate la data recenziilor). Recomandat pentru cumpărători care lucrează de acasă sau au program flexibil și care prioritizează liniștea peste accesibilitate rapidă spre centru. Testați traseul auto la ore de vârf înainte de a decide.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-strip fade">
+        <div>
+            <strong>Ai locuit sau locuiești în acest complex?</strong>
+            <p>Ajută-ne să completăm imaginea. Experiența ta contează pentru viitorii locatari.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="mailto:contact@imobverdict.com" class="btn">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Trimite feedback
+            </a>
+            <a href="/" class="btn-outline">← Toate proiectele</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
+    <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
+    <div style="display:flex;gap:15px;margin-top:10px;">
+        <a href="/confidentialitate/" class="footer-link">CONFIDENȚIALITATE</a>
+        <a href="/termeni/" class="footer-link">TERMENI ȘI CONDIȚII</a>
+    </div>
+</footer>
+
+<script>
+    async function fetchCurrency() {
+        const navEl = document.getElementById('euro-nav');
+        try {
+            const res = await fetch('https://open.er-api.com/v6/latest/EUR');
+            if (!res.ok) throw new Error();
+            const data = await res.json();
+            const ron = data.rates?.RON;
+            if (!ron) throw new Error();
+            navEl.textContent = ron.toFixed(4);
+        } catch { navEl.textContent = 'N/A'; }
+    }
+    fetchCurrency();
+    const sections = document.querySelectorAll('.section[id]');
+    const navBtns = document.querySelectorAll('.qnav-btn');
+    sections.forEach(s => {
+        new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelector(`.qnav-btn[href="#${e.target.id}"]`)?.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' }).observe(s);
+    });
+</script>
+
+</body>
+</html>
