@@ -173,6 +173,91 @@
         .tab-panel.active { display:block; animation: tabIn 0.3s ease; }
         @keyframes tabIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
 
+        /* FILTER WRAPPER (SEARCH & ZONES) */
+        .filter-wrapper {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--r-lg);
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .search-box {
+            position: relative;
+            width: 100%;
+        }
+        .search-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: var(--r-md);
+            padding: 14px 16px 14px 44px;
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.92rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .search-input:focus {
+            border-color: var(--card-hover-border);
+            box-shadow: 0 0 12px rgba(126,249,212,0.08);
+        }
+        .search-icon {
+            position: absolute;
+            left: 16px; top: 50%;
+            transform: translateY(-50%);
+            width: 16px; height: 16px;
+            fill: none; stroke: var(--text-muted);
+            stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+            pointer-events: none;
+        }
+        .search-input:focus + .search-icon {
+            stroke: var(--mint);
+        }
+        .zone-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+        }
+        .zone-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-right: 6px;
+        }
+        .zone-btn {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 100px;
+            padding: 5px 14px;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .zone-btn:hover {
+            background: rgba(255,255,255,0.08);
+            color: var(--text-primary);
+        }
+        .zone-btn.active {
+            background: var(--mint-dim);
+            border-color: var(--mint-border);
+            color: var(--mint);
+        }
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-style: italic;
+            border: 1px dashed rgba(255,255,255,0.05);
+            border-radius: var(--r-lg);
+        }
+
         /* SECTION META */
         .section-meta { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
         .section-meta h2 { font-family:'DM Serif Display',serif; font-size:1.3rem; letter-spacing:-0.02em; }
@@ -240,8 +325,6 @@
         .review-count { font-size:0.72rem; color:var(--text-muted); display:flex; align-items:center; gap:5px; }
         .review-count svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 
-        .coming-strip { background:rgba(255,255,255,0.03); border:1px dashed rgba(255,255,255,0.1); border-radius:var(--r-md); padding:20px; text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:8px; }
-
         /* FOOTER */
         footer {
             position:relative; z-index:1;
@@ -280,8 +363,9 @@
             .stats-col { flex-direction:row; }
             .stat-box { flex:1; }
             .navbar .pill { display:none; }
-            .tabs-header { width:100%; }
+            .tabs-header { width:100%; overflow-x: auto; }
             .tab-btn { flex:1; justify-content:center; padding:10px 12px; font-size:0.8rem; }
+            .filter-wrapper { padding: 14px; }
         }
     </style>
 </head>
@@ -305,12 +389,6 @@
         <span>RON</span>
     </div>
 </nav>
-    </div>
-    <main class="wrapper">
-        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 30px;">
-            Acasă / Proiecte / <span style="color: var(--text-secondary);">Evergreen Towers</span>
-        </div>
-        ... 
     
 <div class="wrap">
 
@@ -318,7 +396,7 @@
         <div>
             <div class="hero-eyebrow fade">Platforma independentă · Iași</div>
             <h1 class="fade">Adevărul despre<br><em>piața imobiliară</em></h1>
-            <p class="hero-sub fade">Auditam proiectele rezidențiale și agențiile imobiliare din Iași — contracte, utilități și experiența reală a cumpărătorilor.</p>
+            <p class="hero-sub fade">Audităm proiectele rezidențiale și agențiile imobiliare din Iași — contracte, utilități și experiența reală a cumpărătorilor.</p>
         </div>
         <div class="stats-col fade">
             <div class="stat-box">
@@ -351,6 +429,7 @@
         </div>
     </div>
 
+    <!-- TABS HEADER (Corectat erorile de duplicare ID și tag-ul rezidual) -->
     <div class="tabs-header fade" role="tablist" aria-label="Categorii">
         <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-complexe" id="btn-complexe" onclick="switchTab('complexe')">
             <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -369,7 +448,7 @@
             Agenții imobiliare
             <span class="tab-count">1</span>
         </button>
-            <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-complexe" id="btn-complexe" onclick="switchTab('complexe')">
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-apartamente" id="btn-apartamente" onclick="switchTab('apartamente')">
             <svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="2" y="7" width="20" height="14" rx="2"/>
                 <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
@@ -379,134 +458,164 @@
         </button>
     </div>
 
+    <!-- TAB PANEL: COMPLEXE (Cu sistem de căutare și zone adăugate) -->
     <div class="tab-panel active" id="tab-complexe" role="tabpanel" aria-labelledby="btn-complexe">
+        
+        <!-- WRAPPER COMPONENTĂ DE FILTRARE NOUĂ -->
+        <div class="filter-wrapper fade">
+            <div class="search-box">
+                <input type="text" id="search-complex" class="search-input" placeholder="Caută un complex rezidențial (ex: Silk District, Newton...)" oninput="filterProjects()">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+            <div class="zone-filters">
+                <span class="zone-label">Zone Iași:</span>
+                <button class="zone-btn active" data-zone="all" onclick="setZoneFilter(this)">Toate</button>
+                <button class="zone-btn" data-zone="copou" onclick="setZoneFilter(this)">Copou / Breazu</button>
+                <button class="zone-btn" data-zone="centru" onclick="setZoneFilter(this)">Centru / Sf. Lazăr</button>
+                <button class="zone-btn" data-zone="tudor" onclick="setZoneFilter(this)">Tudor / Tătărași</button>
+                <button class="zone-btn" data-zone="moara" onclick="setZoneFilter(this)">Moara de Vânt</button>
+                <button class="zone-btn" data-zone="pacurari" onclick="setZoneFilter(this)">Păcurari</button>
+                <button class="zone-btn" data-zone="bucium" onclick="setZoneFilter(this)">Bucium</button>
+            </div>
+        </div>
+
         <div class="section-meta">
             <h2>Proiecte analizate</h2>
-            <span class="section-count">52 proiecte · Iași</span>
+            <span class="section-count" id="visible-count">52 proiecte · Iași</span>
         </div>
+
+        <!-- Element pentru starea în care nu se găsesc rezultate -->
+        <div id="no-results" class="no-results">Nu am găsit niciun complex care să corespundă criteriilor tale de căutare.</div>
+
+        <!-- GRID-UL DE PROIECTE (Am adăugat atributul data-zone pe fiecare card) -->
         <div class="grid">
-            <div class="project-card fade">
+            <div class="project-card fade" data-zone="tudor">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Silk District</h3>
                 <p class="card-desc">Analiză privind managementul costurilor de administrare PK, dimensiunile neconforme ale parcărilor și riscurile de infiltrații la subsol.</p>
                 <a href="/silk-district/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi Verdictul</a>
             </div>
-            <div class="project-card fade">
+            <div class="project-card fade" data-zone="tudor">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Evergreen Towers</h3>
                 <p class="card-desc">Analiză privind litigiile de branșament la utilități, calitatea finisajelor exterioare și riscurile de infrastructură rutieră subdimensionată</p>
                 <a href="/evergreen/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi Verdictul</a>
             </div>
-            <div class="project-card fade">
+            <div class="project-card fade" data-zone="tudor">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Conest Grand Residence</h3>
                 <p class="card-desc">Analiză privind performanța termică a structurilor din BCA, managementul aglomerației urbane și evaluarea mentenanței post-locuire</p>
                 <a href="/conest-grand/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-            <div class="project-card fade">
+            <div class="project-card fade" data-zone="copou">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Newton Park Copou</h3>
                 <p class="card-desc">Analiză privind conformitatea dotărilor Smart Home, managementul exclusivității și integrarea densității locative în zona de patrimoniu a Copoului</p>
                 <a href="/newton-park/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-            <div class="project-card fade">
-        <span class="badge pub">Audit publicat</span>
+            <div class="project-card fade" data-zone="copou">
+                <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Copou Garden Residence</h3>
                 <p class="card-desc">Analiză privind blocajele sistematice de intabulare, instabilitatea rețelei electrice și riscurile achiziției fără documentație cadastrală</p>
-             <a href="/copou-garden/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
+                <a href="/copou-garden/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-            <div class="project-card fade">
+            <div class="project-card fade" data-zone="centru">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Lazăr Residence</h3>
                 <p class="card-desc">Analiză privind impactul regimului hotelier asupra siguranței locative, managementul viciilor de canalizare și presiunea costurilor de parcare</p>
                 <a href="/lazar-residence/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-                  <div class="project-card fade">
+            <div class="project-card fade" data-zone="copou">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Royal Town Copou</h3>
                 <p class="card-desc">Analiză privind blocajele critice de intabulare, viciile de izolare fonică și impactul financiar al balcoanelor ce nu se pot inchide</p>
                 <a href="/royal-town/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-                  <div class="project-card fade">
+            <div class="project-card fade" data-zone="moara">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Moon Reflexes Moara de Vant</h3>
                 <p class="card-desc">Analiză privind disputele graniței administrative, fluctuațiile rețelei electrice și precaritatea drumului de acces rural.</p>
                 <a href="/royal-town/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-                  <div class="project-card fade">
+            <div class="project-card fade" data-zone="tudor">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Q Residence</h3>
                 <p class="card-desc">Analiză privind impactul regimului hotelier masiv, defecțiunile cronice ale lifturilor și riscurile de fisuri structurale în parcare.</p>
                 <a href="/q-residence/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-                  <div class="project-card disabled fade">
+            <div class="project-card disabled fade" data-zone="centru">
                 <span class="badge plan">Planificat</span>
                 <h3 class="card-title">Rasarit de soare</h3>
                 <p class="card-desc">Analiza in desfasurare</p>
                 <span class="btn-ghost">În curând</span>
             </div>
-                  <div class="project-card disabled fade">
+            <div class="project-card disabled fade" data-zone="bucium">
                 <span class="badge plan">Planificat</span>
                 <h3 class="card-title">Rosseti Residence</h3>
                 <p class="card-desc">Analiza in desfasurare</p>
                 <span class="btn-ghost">În curând</span>
             </div>
-                  <div class="project-card fade">
+            <div class="project-card fade" data-zone="bucium">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Baroque Residence</h3>
                 <p class="card-desc">Analiză privind ambuteiajele cronice din Bucium, stadiul amenajărilor comune neterminate (parcări, loc de joacă) și riscul presiunii scăzute a apei pe deal.</p>
                 <a href="/baroque-residence/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-                  <div class="project-card fade">
+            <div class="project-card fade" data-zone="bucium">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Boheme Residence</h3>
                 <p class="card-desc">Analiză privind defectele sistemice ale instalației de climatizare, izolarea fonică extrem de slabă și impactul traficului greu zonal.</p>
                 <a href="/boheme-residence/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-                  <div class="project-card fade">
+            <div class="project-card fade" data-zone="pacurari">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Brown Luxury</h3>
                 <p class="card-desc">Analiză privind avariile severe ale rețelei electrice, absența spațiilor verzi reale și blocajele rutiere zilnice de pe Șoseaua Păcurari.</p>
                 <a href="/brown-luxury/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-                  <div class="project-card fade">
+            <div class="project-card fade" data-zone="bucium">
                 <span class="badge pub">Audit publicat</span>
                 <h3 class="card-title">Bucium Confort</h3>
                 <p class="card-desc">Analiză privind stabilitatea juridică a unui complex verificat în timp, deficitul cronic al locurilor de parcare și impactul ambuteiajelor de pe Șoseaua Bucium.</p>
                 <a href="/bucium-confort/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi verdictul</a>
             </div>
-                   <div class="project-card disabled fade">
+            <div class="project-card disabled fade" data-zone="bucium">
                 <span class="badge plan">Planificat</span>
                 <h3 class="card-title">Cartierul Visoianu</h3>
                 <p class="card-desc">Analiza in desfasurare</p>
                 <span class="btn-ghost">În curând</span>
             </div>
-                   <div class="project-card disabled fade">
+            <div class="project-card disabled fade" data-zone="pacurari">
                 <span class="badge plan">Planificat</span>
                 <h3 class="card-title">Comat Towers</h3>
                 <p class="card-desc">Analiza in desfasurare</p>
                 <span class="btn-ghost">În curând</span>
             </div>
-                   <div class="project-card disabled fade">
+            <div class="project-card disabled fade" data-zone="tudor">
                 <span class="badge plan">Planificat</span>
                 <h3 class="card-title">Complex Oscar Rainbow</h3>
                 <p class="card-desc">Analiza in desfasurare</p>
                 <span class="btn-ghost">În curând</span>
             </div>
-                   <div class="project-card disabled fade">
+            <div class="project-card disabled fade" data-zone="pacurari">
                 <span class="badge plan">Planificat</span>
                 <h3 class="card-title">Complex Rezidential Gold City</h3>
                 <p class="card-desc">Analiza in desfasurare</p>
                 <span class="btn-ghost">În curând</span>
             </div>
-                   <div class="project-card disabled fade">
+            <div class="project-card disabled fade" data-zone="tudor">
                 <span class="badge plan">Planificat</span>
                 <h3 class="card-title">Concept Park</h3>
                 <p class="card-desc">Analiza in desfasurare</p>
                 <span class="btn-ghost">În curând</span>
             </div>
+        </div>
     </div>
 
+    <!-- TAB PANEL: AGENȚII -->
     <div class="tab-panel" id="tab-agentii" role="tabpanel" aria-labelledby="btn-agentii">
         <div class="section-meta">
             <h2>Agenții evaluate</h2>
@@ -542,10 +651,21 @@
                     <a href="/agentii/imobiliare-ro/" class="btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>Vezi raport</a>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
-</div> <footer>
+    <!-- TAB PANEL: APARTAMENTE (Adăugat ca placeholder funcțional) -->
+    <div class="tab-panel" id="tab-apartamente" role="tabpanel" aria-labelledby="btn-apartamente">
+        <div class="section-meta">
+            <h2>Apartamente specifice evaluate</h2>
+            <span class="section-count">11 analize · Iași</span>
+        </div>
+        <div class="coming-strip">Secțiune în curs de actualizare cu datele din teren.</div>
+    </div>
+
+</div> 
+
+<footer>
     <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
     <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
     <div style="display: flex; gap: 15px; margin-top: 10px;">
@@ -553,6 +673,7 @@
         <a href="/termeni/" class="footer-link">TERMENI ȘI CONDIȚII</a>
     </div>
 </footer>
+
 <script>
     function switchTab(name) {
         document.querySelectorAll('.tab-btn').forEach(b => {
@@ -560,9 +681,60 @@
             b.setAttribute('aria-selected', 'false');
         });
         document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        document.getElementById('btn-' + name).classList.add('active');
-        document.getElementById('btn-' + name).setAttribute('aria-selected', 'true');
-        document.getElementById('tab-' + name).classList.add('active');
+        
+        const targetBtn = document.getElementById('btn-' + name);
+        if(targetBtn) {
+            targetBtn.classList.add('active');
+            targetBtn.setAttribute('aria-selected', 'true');
+        }
+        
+        const targetPanel = document.getElementById('tab-' + name);
+        if(targetPanel) {
+            targetPanel.classList.add('active');
+        }
+    }
+
+    // SCRIPT DE FILTRARE IMPLEMENTAT DIRECT PE CLIENT (FAST SELECTION)
+    let selectedZone = 'all';
+
+    function setZoneFilter(button) {
+        document.querySelectorAll('.zone-btn').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        selectedZone = button.dataset.zone;
+        filterProjects(); // Rulează filtrarea cumulativă (zonă + text)
+    }
+
+    function filterProjects() {
+        const searchInput = document.getElementById('search-complex').value.toLowerCase().trim();
+        const cards = document.querySelectorAll('#tab-complexe .project-card');
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const title = card.querySelector('.card-title').textContent.toLowerCase();
+            const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+            const cardZone = card.dataset.zone;
+
+            const matchesSearch = title.includes(searchInput) || desc.includes(searchInput);
+            const matchesZone = (selectedZone === 'all' || cardZone === selectedZone);
+
+            if (matchesSearch && matchesZone) {
+                card.style.display = 'flex';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Actualizează contorul în timp real
+        document.getElementById('visible-count').textContent = `${visibleCount} proiecte afișate · Iași`;
+
+        // Afișează mesajul de no-results dacă este cazul
+        const noResultsEl = document.getElementById('no-results');
+        if (visibleCount === 0) {
+            noResultsEl.style.display = 'block';
+        } else {
+            noResultsEl.style.display = 'none';
+        }
     }
 
     async function fetchCurrency() {
