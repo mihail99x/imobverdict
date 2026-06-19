@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImobVerdict | Cartierul Vișoianu – Audit Independent Iași</title>
+    <meta name="description" content="Audit independent Cartierul Vișoianu Iași: locuri de parcare promise gratuit, vândute ulterior la 5.000 EUR, interdicție AC pe fațadă, inundații subsol, trafic CUG. Tot ce trebuie să știi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.10); --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #0d0e18; --text-primary: #eeeaf8; --text-secondary: rgba(238,234,248,0.62);
+            --text-muted: rgba(238,234,248,0.35); --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11); --card-hover-bg: rgba(255,255,255,0.07);
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
+            --green: #6ee7b7; --yellow: #ffd93d; --red: #ff8f8f;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--purple-deep);
+            background-image:
+                radial-gradient(ellipse 70% 50% at 18% 8%, rgba(30,50,100,0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 82% 82%, rgba(20,35,70,0.28) 0%, transparent 55%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55');
+            background-size: cover; background-position: center;
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh;
+        }
+        body::before { content:''; position:fixed; inset:0; background:linear-gradient(155deg,rgba(9,10,18,0.95) 0%,rgba(13,14,22,0.91) 45%,rgba(9,10,18,0.95) 100%); z-index:0; pointer-events:none; }
+        .navbar { position:sticky; top:0; z-index:200; height:52px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; background:rgba(9,10,18,0.82); backdrop-filter:blur(20px) saturate(1.5); border-bottom:1px solid var(--mint-border); }
+        .logo { font-family:'DM Serif Display',serif; font-size:1.12rem; color:var(--text-primary); text-decoration:none; }
+        .logo em { font-style:normal; color:var(--mint); }
+        .pill { display:inline-flex; align-items:center; gap:7px; background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:100px; padding:4px 13px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--text-secondary); }
+        .pill .dot { width:6px; height:6px; border-radius:50%; background:var(--mint); animation:blink 2.2s ease-in-out infinite; }
+        .pill strong { color:var(--mint); font-weight:500; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+        .wrap { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:0 24px 100px; }
+        .breadcrumb { font-size:0.75rem; color:var(--text-muted); margin:28px 0 32px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+        .breadcrumb a:hover { color:var(--mint); }
+        .breadcrumb span { color:var(--text-secondary); }
+        .breadcrumb-sep { opacity:0.4; }
+        .complex-hero { padding:0 0 40px; border-bottom:1px solid var(--mint-border); margin-bottom:40px; }
+        .status-badge { display:inline-flex; align-items:center; gap:6px; font-size:0.67rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border-radius:5px; margin-bottom:18px; background:rgba(81,207,102,0.13); color:#7ed48a; border:1px solid rgba(81,207,102,0.22); }
+        .status-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:#7ed48a; }
+        .complex-name { font-family:'DM Serif Display',serif; font-size:clamp(2rem,5vw,3rem); line-height:1.08; letter-spacing:-0.03em; margin-bottom:14px; }
+        .complex-name em { font-style:italic; color:var(--mint); }
+        .complex-meta { display:flex; flex-wrap:wrap; gap:18px; font-size:0.78rem; color:var(--text-muted); margin-bottom:20px; }
+        .complex-meta-item { display:flex; align-items:center; gap:5px; }
+        .complex-meta-item svg { width:13px; height:13px; fill:none; stroke:var(--mint); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+        .intro-box { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-md); padding:18px 20px; font-size:0.9rem; color:var(--text-secondary); line-height:1.75; }
+        .intro-box strong { color:var(--mint); }
+        .alert-box { background:rgba(255,143,143,0.07); border:1px solid rgba(255,143,143,0.22); border-radius:var(--r-md); padding:14px 18px; font-size:0.85rem; color:var(--red); line-height:1.7; margin-top:14px; }
+        .alert-box strong { color:#ffaaaa; }
+        .quick-nav { display:flex; flex-wrap:wrap; gap:8px; margin:32px 0; }
+        .qnav-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:100px; background:var(--card-bg); border:1px solid var(--card-border); font-size:0.78rem; color:var(--text-secondary); text-decoration:none; transition:background 0.18s,border-color 0.18s,color 0.18s; cursor:pointer; }
+        .qnav-btn:hover,.qnav-btn.active { background:var(--mint-dim); border-color:var(--mint-border); color:var(--mint); }
+        .qnav-btn svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .section { margin-bottom:48px; scroll-margin-top:70px; }
+        .section-title { font-family:'DM Serif Display',serif; font-size:1.35rem; letter-spacing:-0.02em; display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+        .section-title .icon { font-size:1.1rem; }
+        .section-subtitle { font-size:0.8rem; color:var(--text-muted); font-style:italic; margin-bottom:20px; }
+        .section-divider { border:none; border-top:1px solid var(--card-border); margin:48px 0; }
+        .data-table { display:flex; flex-direction:column; gap:1px; border-radius:var(--r-md); overflow:hidden; border:1px solid var(--card-border); }
+        .data-row { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px 18px; background:var(--card-bg); flex-wrap:wrap; }
+        .data-row:hover { background:var(--card-hover-bg); }
+        .data-row:not(:last-child) { border-bottom:1px solid rgba(255,255,255,0.04); }
+        .data-label { font-size:0.83rem; color:var(--text-secondary); flex:1; min-width:140px; }
+        .data-value { font-size:0.83rem; font-weight:500; padding:3px 10px; border-radius:5px; background:rgba(126,249,212,0.08); border:1px solid rgba(126,249,212,0.15); color:var(--mint); white-space:nowrap; }
+        .data-value.neutral { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.09); color:var(--text-secondary); }
+        .data-value.warn { background:rgba(255,217,61,0.08); border-color:rgba(255,217,61,0.18); color:var(--yellow); }
+        .data-value.bad { background:rgba(255,143,143,0.08); border-color:rgba(255,143,143,0.18); color:var(--red); }
+        .verdict-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-lg); padding:24px; margin-bottom:16px; position:relative; overflow:hidden; }
+        .verdict-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+        .verdict-card.v-green::before { background:linear-gradient(90deg,transparent,var(--green),transparent); }
+        .verdict-card.v-yellow::before { background:linear-gradient(90deg,transparent,var(--yellow),transparent); }
+        .verdict-card.v-red::before { background:linear-gradient(90deg,transparent,var(--red),transparent); }
+        .verdict-label { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+        .verdict-label.green { color:var(--green); } .verdict-label.yellow { color:var(--yellow); } .verdict-label.red { color:var(--red); }
+        .verdict-title { font-family:'DM Serif Display',serif; font-size:1.1rem; margin-bottom:8px; line-height:1.3; }
+        .verdict-body { font-size:0.85rem; color:var(--text-secondary); line-height:1.72; }
+        .review-list { display:flex; flex-direction:column; gap:12px; }
+        .review-item { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-md); padding:16px 18px; font-size:0.85rem; color:var(--text-secondary); line-height:1.7; position:relative; }
+        .review-item::before { content:'"'; font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mint); opacity:0.25; position:absolute; top:6px; left:14px; line-height:1; }
+        .review-item p { padding-left:8px; }
+        .review-meta { display:flex; align-items:center; justify-content:space-between; margin-top:10px; flex-wrap:wrap; gap:6px; }
+        .review-source { font-size:0.68rem; color:var(--text-muted); font-family:'DM Mono',monospace; }
+        .review-sentiment { font-size:0.65rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:2px 8px; border-radius:4px; }
+        .review-sentiment.pos { background:rgba(110,231,183,0.1); color:var(--green); border:1px solid rgba(110,231,183,0.18); }
+        .review-sentiment.neg { background:rgba(255,143,143,0.1); color:var(--red); border:1px solid rgba(255,143,143,0.18); }
+        .review-sentiment.neu { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
+        .dual-score { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
+        .score-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-md); padding:18px 20px; text-align:center; }
+        .score-card .sc-num { font-family:'DM Serif Display',serif; font-size:2.4rem; line-height:1; color:var(--mint); }
+        .score-card .sc-num span { font-size:1rem; color:var(--text-muted); }
+        .score-card .sc-label { font-size:0.75rem; color:var(--text-secondary); margin-top:6px; }
+        .score-card .sc-sublabel { font-size:0.68rem; color:var(--text-muted); margin-top:3px; }
+        .score-box { background:var(--card-bg); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:28px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; margin-top:16px; }
+        .score-number { font-family:'DM Serif Display',serif; font-size:3.5rem; line-height:1; color:var(--mint); flex-shrink:0; }
+        .score-number span { font-size:1.2rem; color:var(--text-muted); }
+        .score-desc { flex:1; min-width:200px; }
+        .score-desc strong { display:block; font-size:1rem; margin-bottom:6px; }
+        .score-desc p { font-size:0.83rem; color:var(--text-secondary); line-height:1.7; }
+        .cta-strip { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:48px; }
+        .cta-strip p { font-size:0.9rem; color:var(--text-secondary); }
+        .cta-strip strong { display:block; color:var(--text-primary); font-size:1rem; margin-bottom:4px; }
+        .btn { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:var(--mint); color:var(--purple-deep); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); transition:background 0.18s,transform 0.14s; border:none; cursor:pointer; white-space:nowrap; }
+        .btn:hover { background:#a8fce2; transform:translateY(-1px); }
+        .btn svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+        .btn-outline { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:transparent; color:var(--mint); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); border:1px solid var(--mint-border); transition:background 0.18s; white-space:nowrap; }
+        .btn-outline:hover { background:var(--mint-dim); }
+        .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
+        .fade:nth-child(1){animation-delay:.04s}.fade:nth-child(2){animation-delay:.1s}.fade:nth-child(3){animation-delay:.16s}.fade:nth-child(4){animation-delay:.22s}.fade:nth-child(5){animation-delay:.28s}.fade:nth-child(6){animation-delay:.34s}
+        @keyframes up { to{opacity:1;transform:translateY(0)} }
+        footer { position:relative; z-index:1; margin-top:80px; padding:40px 28px; border-top:1px solid var(--mint-border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+        .footer-copy { font-size:0.76rem; color:var(--text-muted); }
+        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:600px; text-align:center; line-height:1.5; }
+        .footer-link { color:var(--mint); text-decoration:none; font-size:0.75rem; font-family:'DM Mono',monospace; opacity:0.7; border:1px solid var(--mint-border); padding:5px 18px; border-radius:100px; transition:0.3s; }
+        .footer-link:hover { opacity:1; background:var(--mint-dim); }
+        @media(max-width:640px){ .navbar .pill{display:none;} .complex-name{font-size:1.9rem;} .dual-score{grid-template-columns:1fr;} .score-box{flex-direction:column;text-align:center;} .cta-strip{flex-direction:column;text-align:center;} }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/" class="logo">IMOB<em>VERDICT</em></a>
+    <div class="pill">
+        <span class="dot"></span>
+        <span>EUR</span>
+        <strong id="euro-nav">—</strong>
+        <span>RON</span>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Acasă</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/">Proiecte</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Cartierul Vișoianu</span>
+    </nav>
+
+    <section class="complex-hero fade">
+        <div class="status-badge">Audit publicat</div>
+        <h1 class="complex-name">Cartierul <em>Vișoianu</em></h1>
+        <div class="complex-meta">
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Lunca Cetățuii, Comuna Ciurea (capăt CUG), Iași
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                16 blocuri turn P+11E — 1.000+ apartamente
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                ~55 recenzii cu text analizate
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Audit publicat Iunie 2026
+            </span>
+        </div>
+        <div class="intro-box">
+            Cartierul Vișoianu este cel mai mare proiect rezidențial din zona metropolitană Iași — un <strong>mini-oraș vertical</strong> de 16 blocuri P+11E, construit de Cat Construct (Cătălin Tudosă „Tolea") în Lunca Cetățuii, dincolo de granița administrativă a Iașului. Conceptul este bine gândit: <strong>Lidl, Penny, farmacie, Jade Gym și parc de joacă de 4.000 mp</strong> integrate în complex. Prețul accesibil a atras masiv familii tinere. Dar un pattern documentat de zeci de cumpărători independenți ridică un semnal serios: <strong>locurile de parcare promise gratuit la semnare au fost vândute ulterior la 4.000–5.000 EUR</strong>, cu blocatori instalați forțat.
+        </div>
+        <div class="alert-box">
+            <strong>⚠ Avertisment contractual — confirmat de 8+ recenzii independente:</strong> Cumpărătorii din 2018–2022 care aveau inclus în ofertă un loc de parcare gratuit au găsit locul de parcare vândut la licitație sau blocat cu dispozitive după 2–5 ani. Pattern confirmat și de anunțuri scrise. Solicitați în scris și în contract clausă clară despre parcare înainte de semnare.
+        </div>
+    </section>
+
+    <nav class="quick-nav fade" aria-label="Navigare rapidă">
+        <a class="qnav-btn" href="#utilitati">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            Utilități
+        </a>
+        <a class="qnav-btn" href="#costuri">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Costuri lunare
+        </a>
+        <a class="qnav-btn" href="#parcare">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Parcare și trafic
+        </a>
+        <a class="qnav-btn" href="#contract">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Ce verific înainte să semnez?
+        </a>
+        <a class="qnav-btn" href="#dotari">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Facilități și dotări
+        </a>
+        <a class="qnav-btn" href="#recenzii">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Ce zic locatarii?
+        </a>
+    </nav>
+
+    <!-- UTILITĂȚI -->
+    <section class="section fade" id="utilitati">
+        <h2 class="section-title"><span class="icon">🔔</span> Utilități</h2>
+        <p class="section-subtitle">— Probleme specifice: apă calcaroasă, infiltrații subsol, AC interzis pe fațadă</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Sistem încălzire</span>
+                <span class="data-value neutral">Centrală proprie per apartament — fără probleme majore raportate</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Aer condiționat</span>
+                <span class="data-value bad">⚠ INTERZIS pe fațadă — clauze contractuale stricte. „29.5 grade în casă, nu pot pune AC" (recenzie)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Calitate apă</span>
+                <span class="data-value bad">Extrem de calcaroasă — menționat constant în recenzii și analiză</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Subsoluri / boxe</span>
+                <span class="data-value bad">⚠ Infiltrații la fiecare ploaie — „every time it rains there are leaks in the basement"</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Izolație fonică</span>
+                <span class="data-value bad">Slabă — „poți auzi țeava de apă din perete în dormitor" (recenzie detaliată)</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Tencuială / izolație termică</span>
+                <span class="data-value bad">„Izolația pusă pe buline, tencuiala direct pe cărămidă" — recenzie inginer</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Internet & TV</span>
+                <span class="data-value neutral">La alegere — stație de autobuz în proximitate</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- COSTURI -->
+    <section class="section fade" id="costuri">
+        <h2 class="section-title"><span class="icon">💰</span> Costuri lunare</h2>
+        <p class="section-subtitle">— Preț de achiziție accesibil, dar costuri fixe lunare ridicate</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Preț achiziție</span>
+                <span class="data-value">Foarte accesibil — cel mai bun preț/mp din seria ImobVerdict Iași</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Administrare / întreținere</span>
+                <span class="data-value bad">Ridicată — pază 24/7, 2 lifturi per turn, curățenie curți mari — costuri fixe mari</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Administrare rigidă</span>
+                <span class="data-value bad">Amenzi dacă ai obiecte pe balcon vizibile peste balustradă — clauze stricte</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Interdicție Airbnb</span>
+                <span class="data-value warn">Clauze contractuale interzic regimul hotelier — afectează randamentul investițional</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcare — cost surpriză</span>
+                <span class="data-value bad">⚠ Promisă gratuit, vândută ulterior la 4.000–5.000 EUR — confirmat de 8+ recenzii</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Chei / acces la predare</span>
+                <span class="data-value bad">Întârzieri de ~1 an pentru apartament, 2+ ani pentru boxă — raportat de un proprietar</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- PARCARE -->
+    <section class="section fade" id="parcare">
+        <h2 class="section-title"><span class="icon">🅿️</span> Parcare și trafic</h2>
+        <p class="section-subtitle">— Cel mai documentat punct negativ al complexului — confirmat sistematic</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Parcare promisă la semnare</span>
+                <span class="data-value bad">⚠ GRATUITĂ conform ofertei — ulterior vândută la 4.000–5.000 EUR + TVA</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Mecanism de constrângere</span>
+                <span class="data-value bad">Blocatori instalați pe locurile „nevândute" — dacă nu cumperi, nu poți parca</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parcări pentru vizitatori</span>
+                <span class="data-value bad">Inexistente practic — „nicăieri să lași mașina când vizitezi pe cineva"</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Trafic CUG / Lunca Cetățuii</span>
+                <span class="data-value bad">⚠ „VERY VERY crowded at peak hours" — mii de mașini ies simultan din Ciurea și Horpaz</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Drumuri interioare complex</span>
+                <span class="data-value warn">Largi față de alte complexe, dar fără trotuare pe unele tronsoane</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Infrastructură rutieră din afară</span>
+                <span class="data-value bad">„Multe blocuri, stradă îngustă — la vârf de trafic nu face față volumului de mașini"</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTRACT -->
+    <section class="section fade" id="contract">
+        <h2 class="section-title"><span class="icon">📋</span> Ce verifici înainte să semnezi</h2>
+        <p class="section-subtitle">— Riscuri și avantaje documentate de zeci de proprietari</p>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc critic — publicitate înșelătoare documentată</div>
+            <h3 class="verdict-title">Locul de parcare — promis gratuit, vândut ulterior la 5.000 EUR</h3>
+            <p class="verdict-body">Acesta este cel mai consistent și mai documentat semnal negativ din toate recenziile analizate în seria ImobVerdict — 8 recenzii independente, cu date diferite (2018, 2021, 2022), confirmă același pattern: la semnarea contractului, oferta includea un loc de parcare gratuit. La 2–5 ani după mutare, dezvoltatorul a instalat blocatori pe locurile de parcare și a scos la vânzare locurile la 4.000–5.000 EUR + TVA. Proprietarii care nu cumpărau nu aveau unde parca în complex. Această practică, dacă nu a fost inclusă explicit în contractele individuale cu drepturi clare, constituie publicitate înșelătoare. Dacă semnați acum: solicitați o clauză contractuală explicită cu penalitate și includeți locul de parcare în contractul de vânzare, nu doar în oferta verbală sau de marketing.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">AC interzis pe fațadă — 29,5°C în casă vara</h3>
+            <p class="verdict-body">Clauze contractuale stricte interzic montarea unităților de aer condiționat pe fațada blocului, pentru a menține estetica uniformă a ansamblului. Consecința practică, documentată într-o recenzie recentă: „Sper să mă mut curând, e o zonă frumoasă. Un minus mare — nu putem pune AC... Ieri erau 29,5°C în casă." Fără AC și fără circulație adecvată a aerului (bucătăriile blocurilor alăturate sunt conectate, afectând ventilarea naturală), vara devine un test de rezistență. Verificați dacă există soluții acceptate de administrator (AC cu instalare interioară, climatizare prin pardoseală etc.) înainte de a cumpăra.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Izolație termică și fonică deficitară — „izolația pusă pe buline"</h3>
+            <p class="verdict-body">O recenzie cu limbaj tehnic credibil descrie: „Izolația este pusă pe buline (punctual, nu pe toată suprafața), tencuiala direct pe cărămidă — lasă urme, ca să nu mai vorbim că țeava de apă din perete nu e izolată și o auzi în dormitor." Aceasta sugerează economii la material în faza de execuție. Combinat cu interdicția de AC, blocurile pot deveni foarte greu de locuit în verile calde fără investiții suplimentare în soluții alternative de climatizare.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Traficul pe axa CUG – Lunca Cetățuii — test zilnic de răbdare</h3>
+            <p class="verdict-body">Complexul se află dincolo de granița orașului, la capătul CUG. Mii de mașini din Ciurea, Horpaz și toate blocurile noi din zonă converg pe o singură bandă spre Iași. O recenzie în engleză: „VERY VERY crowded at peak hours — plan ahead." Alta: „The only problem is the congestion on the Lunca Cetății – Iași route" și „Spacious apartments, but you waste a lot of time in traffic." Testați traseul real la 7:30 dimineața înainte de a semna.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Administrare rigidă — amenzi pentru balcoane, interdicție Airbnb</h3>
+            <p class="verdict-body">Politica de administrare este cea mai restrictivă din complexele analizate în serie: amenzi dacă ai obiecte pe balcon care depășesc înălțimea balustradei, interdicție completă de a închiria în regim hotelier/Airbnb și control strict al esteticii. Dacă intenționați să cumpărați ca investiție cu randament din chirii de scurtă durată, acest complex nu vi se potrivește. Dacă locuiți permanent, administrarea strictă poate fi de fapt un avantaj — zona nu va deveni un Airbnb haotic ca Lazar sau Q Residence.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte major</div>
+            <h3 class="verdict-title">Infrastructura internă — Lidl, Penny, Jade Gym, farmacie, parc 4.000 mp</h3>
+            <p class="verdict-body">Acesta este motivul real pentru care mii de familii au ales Vișoianu. Infrastructura internă este cea mai completă din toate complexele analizate în serie — chiar și față de Boheme Residence (care are facilități medicale). Ai Lidl și Penny pentru cumpărături zilnice, Jade Gym (sală de calitate), farmacie, frizerie, restaurante, toate în complex sau la câteva zeci de metri. Parc de joacă de 4.000 mp pentru copii. Drumuri interioare largi. Stație de autobuz în față. Un ecosistem autonom real, nu promis.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct forte</div>
+            <h3 class="verdict-title">Cel mai accesibil preț/mp din seria ImobVerdict — acces la proprietate pentru familii tinere</h3>
+            <p class="verdict-body">Prețul de achiziție la Vișoianu a permis multor familii tinere cu bugete medii să devină proprietari cu rate lunare rezonabile, o alternativă reală la chiria eternă. Față de Silk District, Royal Town sau Lazar Residence, diferența de preț este substanțială. Intabularea este completă pe fazele finalizate, băncile acordă credite fără probleme. Ca prim apartament al unei familii tinere care îl va locui efectiv, raportul preț/utilități interne este greu de bătut în Iași.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- DOTĂRI -->
+    <section class="section fade" id="dotari">
+        <h2 class="section-title"><span class="icon">🏠</span> Facilități și dotări</h2>
+        <p class="section-subtitle">— Cel mai bine dotat complex ca facilități integrate din seria ImobVerdict Iași</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Supermarketuri</span>
+                <span class="data-value">Lidl + Penny — ambele în complex</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Sală de fitness</span>
+                <span class="data-value">Jade Gym — sală de calitate, menționată pozitiv</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Farmacie</span>
+                <span class="data-value">Da — în complex</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Frizerie, restaurante, alte servicii</span>
+                <span class="data-value">Da — spații comerciale multiple</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Parc de joacă copii</span>
+                <span class="data-value">~4.000 mp — cel mai mare din serie, lăudat de familii</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Drumuri interioare</span>
+                <span class="data-value">Largi față de alte complexe — suficiente pentru traficul intern</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Aer condiționat</span>
+                <span class="data-value bad">Interzis pe fațadă — risc termic vara</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Izolație fonică</span>
+                <span class="data-value bad">Slabă — țevi audibile, zgomote de impact de la vecini</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Subsoluri / boxe</span>
+                <span class="data-value bad">Infiltrații la ploi — nerezolvate</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Spații verzi</span>
+                <span class="data-value warn">Puțini copaci — „beton, doar beton" (recenzie). Parc există, copaci maturi — nu</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Regim Airbnb</span>
+                <span class="data-value bad">Interzis contractual — nu e potrivit pentru investiție cu chirii scurte</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- RECENZII -->
+    <section class="section fade" id="recenzii">
+        <h2 class="section-title"><span class="icon">💬</span> Ce zic locatarii</h2>
+        <p class="section-subtitle">— Cele mai multe recenzii cu text din seria ImobVerdict — polarizare clară pe subiectul parcării</p>
+        <div class="review-list">
+
+            <div class="review-item">
+                <p>Am cumpărat apartament în 2018, oferta includea loc de parcare inclus în preț. La 5 ani după, constructorul vinde locurile de parcare la 4.000+ EUR și instalează blocatori. Publicitate falsă și vânzător necinstit.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · proprietar din 2018</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Am cumpărat apartament în 2021 cu loc de parcare inclus. 2 ani mai târziu vinde locurile la 5.000 EUR, pune blocatori acolo unde nu s-au cumpărat, și efectiv blochează accesul printr-un zid construit...</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · proprietar din 2021</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>La semnarea contractului spuneau că parcarea e gratuită, acum sunt scoase la licitație la 4.000 EUR + TVA. Aerul condiționat nu poate fi instalat pe fațadă pentru că „distrugem aspectul"...</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · proprietar</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Nu recomand cumpărarea. Am cumpărat în 2021, loc de parcare inclus în ofertă. Un an mai târziu forțat să-l cumpăr — altfel n-am unde parca, că au blocat locurile.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · proprietar</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Izolația e pusă pe buline, tencuiala direct pe cărămidă — lasă urme. Nici țeava de apă din perete nu e izolată și o auzi în dormitor...</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · proprietar</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Sper să mă mut curând, e o zonă frumoasă. Un minus mare — nu putem pune AC. Ieri erau 29,5 grade în casă.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · locatar</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>OK ca zonă, avantaje de transport public... probleme la subsol — de fiecare dată când plouă sunt infiltrații.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · locatar</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Apartamente spațioase, parcare subterană, trafic intens în zonă la orele de vârf — cam asta e singura problemă.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · locatar</span>
+                    <span class="review-sentiment neu">Mixt</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Singurul cartier, în adevăratul sens al cuvântului — adică o aglomerare de blocuri și case care beneficiază și de locuri de joacă, locuri de socializare, magazine și străzi pavate în interior.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · locatar mulțumit</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Unul dintre cele mai bune complexe rezidențiale nou construite din Iași. Ai acces la un Lidl și un Penny în apropiere. Drumul spre complex e VERY VERY aglomerat la orele de vârf — planifică!</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · recomandare cu rezerve</span>
+                    <span class="review-sentiment neu">Mixt</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Am locuit 4 ani în acest cartier, recomand — perfect pentru familii.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · familie locatară</span>
+                    <span class="review-sentiment pos">Pozitiv</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Prețuri decente, dar un cartier urât, construit doar pentru bani, fără sustenabilitate și respect pentru oameni.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- VERDICT FINAL -->
+    <section class="section fade" id="verdict">
+        <h2 class="section-title"><span class="icon">⚖️</span> Verdictul ImobVerdict</h2>
+        <p class="section-subtitle" style="margin-bottom:16px;">— Scor dublu: locuire familii vs. investiție</p>
+
+        <div class="dual-score">
+            <div class="score-card">
+                <div class="sc-num">6.5<span>/10</span></div>
+                <div class="sc-label">🏠 Locuire proprie — familii</div>
+                <div class="sc-sublabel">Facilități excelente, preț accesibil — AC interzis și trafic apăsătoare zilnic</div>
+            </div>
+            <div class="score-card">
+                <div class="sc-num">4.5<span>/10</span></div>
+                <div class="sc-label">📈 Ca investiție</div>
+                <div class="sc-sublabel">Airbnb interzis contractual — randamentul e limitat la chirii clasice pe termen lung</div>
+            </div>
+        </div>
+
+        <div class="score-box">
+            <div class="score-number">5.8<span>/10</span></div>
+            <div class="score-desc">
+                <strong>Recomandat pentru primul apartament al unei familii tinere — cu condiția verificării parcării în contract</strong>
+                <p>Cartierul Vișoianu are cel mai bun ecosistem de facilități integrate din serie și cel mai accesibil preț/mp — două avantaje reale și consistente. Dar problema parcării promise și retrase ulterior de la sute de proprietari este documentată și serioasă, problema AC-ului interzis pe fațadă afectează confortul termic vara, iar traficul de pe axa CUG–Ciurea este un cost zilnic real de timp. Dacă semnați acum: includeți locul de parcare explicit în contractul de vânzare cu clauze clare. Nu acceptați promisiuni verbale sau din flyer.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-strip fade">
+        <div>
+            <strong>Ai locuit sau locuiești în Cartierul Vișoianu?</strong>
+            <p>Ajută-ne să completăm imaginea. Experiența ta directă contează enorm.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="mailto:contact@imobverdict.com" class="btn">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Trimite feedback
+            </a>
+            <a href="/" class="btn-outline">← Toate proiectele</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
+    <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
+    <div style="display:flex;gap:15px;margin-top:10px;">
+        <a href="/confidentialitate/" class="footer-link">CONFIDENȚIALITATE</a>
+        <a href="/termeni/" class="footer-link">TERMENI ȘI CONDIȚII</a>
+    </div>
+</footer>
+
+<script>
+    async function fetchCurrency() {
+        const navEl = document.getElementById('euro-nav');
+        try {
+            const res = await fetch('https://open.er-api.com/v6/latest/EUR');
+            if (!res.ok) throw new Error();
+            const data = await res.json();
+            const ron = data.rates?.RON;
+            if (!ron) throw new Error();
+            navEl.textContent = ron.toFixed(4);
+        } catch { navEl.textContent = 'N/A'; }
+    }
+    fetchCurrency();
+    const sections = document.querySelectorAll('.section[id]');
+    const navBtns = document.querySelectorAll('.qnav-btn');
+    sections.forEach(s => {
+        new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelector(`.qnav-btn[href="#${e.target.id}"]`)?.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' }).observe(s);
+    });
+</script>
+
+</body>
+</html>
