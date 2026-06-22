@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImobVerdict | Complex Oscar Rainbow – Audit Independent Iași</title>
+    <meta name="description" content="Audit independent Complex Oscar Rainbow Iași Păcurari: alunecări de teren, intervenție ISC, piloni de urgență, faliment risc, bloc înclinate. Cel mai riscant proiect analizat.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --mint: #7ef9d4; --mint-dim: rgba(126,249,212,0.10); --mint-border: rgba(126,249,212,0.18);
+            --purple-deep: #100a0a; --text-primary: #eeeaf8; --text-secondary: rgba(238,234,248,0.62);
+            --text-muted: rgba(238,234,248,0.35); --card-bg: rgba(255,255,255,0.035);
+            --card-border: rgba(126,249,212,0.11); --card-hover-bg: rgba(255,255,255,0.07);
+            --r-sm: 8px; --r-md: 14px; --r-lg: 20px;
+            --green: #6ee7b7; --yellow: #ffd93d; --red: #ff8f8f;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--purple-deep);
+            background-image:
+                radial-gradient(ellipse 70% 50% at 18% 8%, rgba(80,20,20,0.40) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 40% at 82% 82%, rgba(60,15,15,0.30) 0%, transparent 55%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=55');
+            background-size: cover; background-position: center;
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh;
+        }
+        body::before { content:''; position:fixed; inset:0; background:linear-gradient(155deg,rgba(16,10,10,0.96) 0%,rgba(20,12,12,0.92) 45%,rgba(16,10,10,0.96) 100%); z-index:0; pointer-events:none; }
+        .navbar { position:sticky; top:0; z-index:200; height:52px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; background:rgba(16,10,10,0.84); backdrop-filter:blur(20px) saturate(1.5); border-bottom:1px solid var(--mint-border); }
+        .logo { font-family:'DM Serif Display',serif; font-size:1.12rem; color:var(--text-primary); text-decoration:none; }
+        .logo em { font-style:normal; color:var(--mint); }
+        .pill { display:inline-flex; align-items:center; gap:7px; background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:100px; padding:4px 13px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--text-secondary); }
+        .pill .dot { width:6px; height:6px; border-radius:50%; background:var(--mint); animation:blink 2.2s ease-in-out infinite; }
+        .pill strong { color:var(--mint); font-weight:500; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+        .wrap { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:0 24px 100px; }
+        .breadcrumb { font-size:0.75rem; color:var(--text-muted); margin:28px 0 32px; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+        .breadcrumb a:hover { color:var(--mint); }
+        .breadcrumb span { color:var(--text-secondary); }
+        .breadcrumb-sep { opacity:0.4; }
+        .complex-hero { padding:0 0 40px; border-bottom:1px solid var(--mint-border); margin-bottom:40px; }
+        .status-badge { display:inline-flex; align-items:center; gap:6px; font-size:0.67rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; padding:4px 11px; border-radius:5px; margin-bottom:18px; background:rgba(255,100,100,0.13); color:#ff8f8f; border:1px solid rgba(255,100,100,0.25); }
+        .status-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:#ff8f8f; }
+        .complex-name { font-family:'DM Serif Display',serif; font-size:clamp(2rem,5vw,3rem); line-height:1.08; letter-spacing:-0.03em; margin-bottom:14px; }
+        .complex-name em { font-style:italic; color:var(--mint); }
+        .complex-meta { display:flex; flex-wrap:wrap; gap:18px; font-size:0.78rem; color:var(--text-muted); margin-bottom:20px; }
+        .complex-meta-item { display:flex; align-items:center; gap:5px; }
+        .complex-meta-item svg { width:13px; height:13px; fill:none; stroke:var(--mint); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+        .intro-box { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-md); padding:18px 20px; font-size:0.9rem; color:var(--text-secondary); line-height:1.75; }
+        .intro-box strong { color:var(--mint); }
+        .alert-box { background:rgba(255,143,143,0.09); border:1px solid rgba(255,143,143,0.30); border-radius:var(--r-md); padding:16px 20px; font-size:0.88rem; color:var(--red); line-height:1.75; margin-top:14px; }
+        .alert-box strong { color:#ffaaaa; display:block; margin-bottom:6px; font-size:0.95rem; }
+        .quick-nav { display:flex; flex-wrap:wrap; gap:8px; margin:32px 0; }
+        .qnav-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:100px; background:var(--card-bg); border:1px solid var(--card-border); font-size:0.78rem; color:var(--text-secondary); text-decoration:none; transition:background 0.18s,border-color 0.18s,color 0.18s; cursor:pointer; }
+        .qnav-btn:hover,.qnav-btn.active { background:var(--mint-dim); border-color:var(--mint-border); color:var(--mint); }
+        .qnav-btn svg { width:13px; height:13px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .section { margin-bottom:48px; scroll-margin-top:70px; }
+        .section-title { font-family:'DM Serif Display',serif; font-size:1.35rem; letter-spacing:-0.02em; display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+        .section-title .icon { font-size:1.1rem; }
+        .section-subtitle { font-size:0.8rem; color:var(--text-muted); font-style:italic; margin-bottom:20px; }
+        .section-divider { border:none; border-top:1px solid var(--card-border); margin:48px 0; }
+        .data-table { display:flex; flex-direction:column; gap:1px; border-radius:var(--r-md); overflow:hidden; border:1px solid var(--card-border); }
+        .data-row { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:13px 18px; background:var(--card-bg); flex-wrap:wrap; }
+        .data-row:hover { background:var(--card-hover-bg); }
+        .data-row:not(:last-child) { border-bottom:1px solid rgba(255,255,255,0.04); }
+        .data-label { font-size:0.83rem; color:var(--text-secondary); flex:1; min-width:140px; }
+        .data-value { font-size:0.83rem; font-weight:500; padding:3px 10px; border-radius:5px; background:rgba(126,249,212,0.08); border:1px solid rgba(126,249,212,0.15); color:var(--mint); white-space:nowrap; }
+        .data-value.neutral { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.09); color:var(--text-secondary); }
+        .data-value.warn { background:rgba(255,217,61,0.08); border-color:rgba(255,217,61,0.18); color:var(--yellow); }
+        .data-value.bad { background:rgba(255,143,143,0.08); border-color:rgba(255,143,143,0.18); color:var(--red); }
+        .verdict-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-lg); padding:24px; margin-bottom:16px; position:relative; overflow:hidden; }
+        .verdict-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; }
+        .verdict-card.v-green::before { background:linear-gradient(90deg,transparent,var(--green),transparent); }
+        .verdict-card.v-yellow::before { background:linear-gradient(90deg,transparent,var(--yellow),transparent); }
+        .verdict-card.v-red::before { background:linear-gradient(90deg,transparent,var(--red),transparent); }
+        .verdict-label { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+        .verdict-label.green { color:var(--green); } .verdict-label.yellow { color:var(--yellow); } .verdict-label.red { color:var(--red); }
+        .verdict-title { font-family:'DM Serif Display',serif; font-size:1.1rem; margin-bottom:8px; line-height:1.3; }
+        .verdict-body { font-size:0.85rem; color:var(--text-secondary); line-height:1.72; }
+        .review-list { display:flex; flex-direction:column; gap:12px; }
+        .review-item { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--r-md); padding:16px 18px; font-size:0.85rem; color:var(--text-secondary); line-height:1.7; position:relative; }
+        .review-item::before { content:'"'; font-family:'DM Serif Display',serif; font-size:2.5rem; color:var(--mint); opacity:0.25; position:absolute; top:6px; left:14px; line-height:1; }
+        .review-item p { padding-left:8px; }
+        .review-meta { display:flex; align-items:center; justify-content:space-between; margin-top:10px; flex-wrap:wrap; gap:6px; }
+        .review-source { font-size:0.68rem; color:var(--text-muted); font-family:'DM Mono',monospace; }
+        .review-sentiment { font-size:0.65rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:2px 8px; border-radius:4px; }
+        .review-sentiment.pos { background:rgba(110,231,183,0.1); color:var(--green); border:1px solid rgba(110,231,183,0.18); }
+        .review-sentiment.neg { background:rgba(255,143,143,0.1); color:var(--red); border:1px solid rgba(255,143,143,0.18); }
+        .review-sentiment.neu { background:rgba(255,255,255,0.05); color:var(--text-muted); border:1px solid rgba(255,255,255,0.09); }
+        .score-box { background:var(--card-bg); border:1px solid rgba(255,143,143,0.30); border-radius:var(--r-lg); padding:28px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; margin-top:12px; }
+        .score-number { font-family:'DM Serif Display',serif; font-size:3.5rem; line-height:1; color:var(--red); flex-shrink:0; }
+        .score-number span { font-size:1.2rem; color:var(--text-muted); }
+        .score-desc { flex:1; min-width:200px; }
+        .score-desc strong { display:block; font-size:1rem; margin-bottom:6px; }
+        .score-desc p { font-size:0.83rem; color:var(--text-secondary); line-height:1.7; }
+        .cta-strip { background:var(--mint-dim); border:1px solid var(--mint-border); border-radius:var(--r-lg); padding:24px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:48px; }
+        .cta-strip p { font-size:0.9rem; color:var(--text-secondary); }
+        .cta-strip strong { display:block; color:var(--text-primary); font-size:1rem; margin-bottom:4px; }
+        .btn { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:var(--mint); color:var(--purple-deep); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); transition:background 0.18s,transform 0.14s; border:none; cursor:pointer; white-space:nowrap; }
+        .btn:hover { background:#a8fce2; transform:translateY(-1px); }
+        .btn svg { width:12px; height:12px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+        .btn-outline { display:inline-flex; align-items:center; gap:7px; padding:9px 17px; background:transparent; color:var(--mint); text-decoration:none; font-weight:600; font-size:0.77rem; letter-spacing:0.04em; text-transform:uppercase; border-radius:var(--r-sm); border:1px solid var(--mint-border); transition:background 0.18s; white-space:nowrap; }
+        .btn-outline:hover { background:var(--mint-dim); }
+        .fade { opacity:0; transform:translateY(14px); animation:up 0.5s ease forwards; }
+        .fade:nth-child(1){animation-delay:.04s}.fade:nth-child(2){animation-delay:.1s}.fade:nth-child(3){animation-delay:.16s}.fade:nth-child(4){animation-delay:.22s}.fade:nth-child(5){animation-delay:.28s}.fade:nth-child(6){animation-delay:.34s}
+        @keyframes up { to{opacity:1;transform:translateY(0)} }
+        footer { position:relative; z-index:1; margin-top:80px; padding:40px 28px; border-top:1px solid var(--mint-border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
+        .footer-copy { font-size:0.76rem; color:var(--text-muted); }
+        .footer-disc { font-size:0.7rem; color:var(--text-muted); max-width:600px; text-align:center; line-height:1.5; }
+        .footer-link { color:var(--mint); text-decoration:none; font-size:0.75rem; font-family:'DM Mono',monospace; opacity:0.7; border:1px solid var(--mint-border); padding:5px 18px; border-radius:100px; transition:0.3s; }
+        .footer-link:hover { opacity:1; background:var(--mint-dim); }
+        @media(max-width:640px){ .navbar .pill{display:none;} .complex-name{font-size:1.9rem;} .score-box{flex-direction:column;text-align:center;} .cta-strip{flex-direction:column;text-align:center;} }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/" class="logo">IMOB<em>VERDICT</em></a>
+    <div class="pill">
+        <span class="dot"></span>
+        <span>EUR</span>
+        <strong id="euro-nav">—</strong>
+        <span>RON</span>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Acasă</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/">Proiecte</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Complex Oscar Rainbow</span>
+    </nav>
+
+    <section class="complex-hero fade">
+        <div class="status-badge">⚠ Risc major documentat</div>
+        <h1 class="complex-name">Complex <em>Oscar Rainbow</em></h1>
+        <div class="complex-meta">
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Str. Nicolae Oblu, Aleea Cimitirului Evreiesc, Păcurari, Iași
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                8 blocuri tip vilă D+P+3E+M — versant instabil
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Surse: analiză teren, ISC, recenzii Google Maps
+            </span>
+            <span class="complex-meta-item">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Audit publicat Iunie 2026
+            </span>
+        </div>
+        <div class="intro-box">
+            Complex Oscar Rainbow este <strong>cel mai riscant proiect analizat în seria ImobVerdict Iași</strong> — singurul cu probleme geotehnice documentate și intervenție a Inspectoratului de Stat în Construcții (ISC). Blocul B8 a suferit tasări inegale și riscuri de înclinare din cauza instabilității versantului, obligând dezvoltatorul la lucrări masive de consolidare cu piloni forați. Proiectul a fost ulterior fragmentat și parțial vândut altor investitori. Recenziile disponibile sunt puține dar extrem de critice — una avertizează explicit de risc de faliment al dezvoltatorului.
+        </div>
+        <div class="alert-box">
+            <strong>⚠ Cel mai serios avertisment din toată seria ImobVerdict Iași:</strong>
+            O recenzie în engleză avertizează: „Când vor preda apartamentele dacă dau faliment? Nu credeți niciun cuvânt din ce spun Barsan și Istoc. Acestea sunt blocuri construite cu scopul de a înșela." O a doua recenzie descrie proiectul ca o „colecție de blocuri prost construite" și speră că vor „dispărea de pe terenul contaminat". Înainte de orice pas — consultați un avocat și un inginer structurist independent.
+        </div>
+    </section>
+
+    <nav class="quick-nav fade" aria-label="Navigare rapidă">
+        <a class="qnav-btn" href="#geotehnic">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            Risc geotehnic
+        </a>
+        <a class="qnav-btn" href="#isc">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Intervenție ISC
+        </a>
+        <a class="qnav-btn" href="#acces">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Acces și zonă
+        </a>
+        <a class="qnav-btn" href="#contract">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Ce verific înainte să semnez?
+        </a>
+        <a class="qnav-btn" href="#recenzii">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Ce zic cumpărătorii?
+        </a>
+    </nav>
+
+    <!-- RISC GEOTEHNIC -->
+    <section class="section fade" id="geotehnic">
+        <h2 class="section-title"><span class="icon">⛰️</span> Risc geotehnic — versant instabil</h2>
+        <p class="section-subtitle">— Singurul complex din seria ImobVerdict Iași cu probleme structurale cauzate de sol</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Tip sol</span>
+                <span class="data-value bad">Argilos, versant activ — istoricul zonei Păcurari include alunecări documentate</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Incident structural B8</span>
+                <span class="data-value bad">⚠ Tasări inegale și risc de înclinare a blocului B8 în timpul construcției</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Lucrări de consolidare</span>
+                <span class="data-value warn">Piloni forați adânci executați de urgență — costisitoare, dar realizate</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Eficiența pe termen lung</span>
+                <span class="data-value bad">Incertă — comportamentul solului argilos în timp rămâne un semn de întrebare deschis</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Ziduri de sprijin</span>
+                <span class="data-value warn">Executate — eficacitatea lor pe termen lung în sol argilos depinde de condițiile hidrologice</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Risc comparativ în Iași</span>
+                <span class="data-value bad">Cel mai ridicat din toate complexele analizate în seria ImobVerdict</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- INTERVENȚIE ISC -->
+    <section class="section fade" id="isc">
+        <h2 class="section-title"><span class="icon">🏛️</span> Intervenție ISC și fragmentarea proiectului</h2>
+        <p class="section-subtitle">— Singurul proiect din serie cu oprire forțată a lucrărilor de autorități</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Intervenție ISC</span>
+                <span class="data-value bad">⚠ Confirmat — Inspectoratul de Stat în Construcții a oprit temporar lucrările</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Motiv oprire</span>
+                <span class="data-value bad">Riscuri geologice care afectau structurile — instabilitate versant</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Fragmentarea proiectului</span>
+                <span class="data-value bad">Fostul bloc B6 vândut unui alt investitor — comercializat acum sub numele „Serenis Residence"</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Coeziune administrativă</span>
+                <span class="data-value bad">Lipsă — mai mulți proprietari/investitori pe același perimetru</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Risc faliment dezvoltator</span>
+                <span class="data-value bad">⚠ Menționat explicit în recenzii — verificați solvabilitatea firmei înainte de semnare</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Intabulare</span>
+                <span class="data-value bad">Verificați per bloc — fragmentarea proiectului complică statutul juridic individual</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ACCES -->
+    <section class="section fade" id="acces">
+        <h2 class="section-title"><span class="icon">🛣️</span> Acces și caracteristici zonă</h2>
+        <p class="section-subtitle">— Avantaje de locație reale, compromise de contextul structurii</p>
+        <div class="data-table">
+            <div class="data-row">
+                <span class="data-label">Acces pietonal</span>
+                <span class="data-value warn">O stație transport de Moara de Foc / Alpha Bank Păcurari — rezonabil</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Facilități pietonale</span>
+                <span class="data-value warn">Kaufland, Profi, farmacii, școli (Elena Cuza, Ion Creangă) la mers pe jos</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Str. Nicolae Oblu</span>
+                <span class="data-value bad">„Drumul este foarte prost, îți vei distruge mașina" — recenzie directă</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Pantă acces</span>
+                <span class="data-value bad">Stradă îngustă, în pantă — riscantă iarna și incomodă pentru mașini</span>
+            </div>
+            <div class="data-label" style="display:none"></div>
+            <div class="data-row">
+                <span class="data-label">Vecinătate cimitir</span>
+                <span class="data-value bad">Lipit de Cimitirul Evreiesc — impact psihologic și lichiditate scăzută la revânzare</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Lichiditate revânzare</span>
+                <span class="data-value bad">Scăzută — istoricul geotehnic și vecinătatea cimitirului reduc interesul cumpărătorilor</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- CONTRACT -->
+    <section class="section fade" id="contract">
+        <h2 class="section-title"><span class="icon">📋</span> Ce verifici înainte să semnezi</h2>
+        <p class="section-subtitle">— Cel mai complex checklist de due-diligence din seria ImobVerdict Iași</p>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc critic nr. 1 — structural</div>
+            <h3 class="verdict-title">Alunecări de teren documentate — comportamentul solului pe termen lung este incert</h3>
+            <p class="verdict-body">Aceasta este problema care face Oscar Rainbow unic în toată seria ImobVerdict Iași și în piața imobiliară din Iași în general. Versantul pe care a fost construit are un sol argilos cu comportament instabil confirmat — nu prin speculații, ci prin tasarea efectivă a blocului B8 în timpul construcției și intervenția forțată a ISC. Deși lucrările de consolidare cu piloni forați și ziduri de sprijin au fost executate, comportamentul solului argilos pe termen lung (10–20–30 de ani) în condiții de precipitații abundente sau variații hidrologice rămâne un semn de întrebare pe care niciun raport actual nu îl poate elimina complet. Solicitați raportul geotehnic original și expertiza structurală actualizată înainte de orice decizie.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc critic nr. 2 — financiar</div>
+            <h3 class="verdict-title">Risc de faliment al dezvoltatorului — menționat explicit în recenzii</h3>
+            <p class="verdict-body">O recenzie în engleză întreabă direct: „Când vor preda apartamentele dacă dau faliment?" și continuă: „Nu credeți niciun cuvânt din ce spun Barsan și Istoc. Acestea sunt blocuri construite cu scopul de a înșela." Indiferent de tonul emoțional al recenziei, întrebarea despre solvabilitatea financiară a dezvoltatorului este legitimă — mai ales că proiectul a trebuit să vândă blocul B6 unui alt investitor ca urmare a presiunilor financiare generate de lucrările de consolidare. Verificați bonitatea financiară a firmei dezvoltatoare (bilanțuri la ONRC) și dacă există un garant bancar pentru plățile anticipate.</p>
+        </div>
+
+        <div class="verdict-card v-red fade">
+            <div class="verdict-label red">⚠ Risc identificat</div>
+            <h3 class="verdict-title">Lichiditate scăzută — vei întâmpina dificultăți la revânzare</h3>
+            <p class="verdict-body">Piața imobiliară iașeană cunoaște istoricul geotehnic al acestui versant. Cumpărătorii informați evită zona, ceea ce limitează cererea la revânzare și blochează prețurile sub potențialul natural al unui apartament echivalent în altă parte din Păcurari. Dacă achiziționați, acceptați că ieșirea din investiție va fi mai dificilă și la un preț mai mic decât v-ați aștepta față de calitatea interioară a apartamentului.</p>
+        </div>
+
+        <div class="verdict-card v-yellow fade">
+            <div class="verdict-label yellow">⚡ Atenție</div>
+            <h3 class="verdict-title">Fragmentarea administrativă — mai mulți proprietari/investitori pe același perimetru</h3>
+            <p class="verdict-body">Vânzarea blocului B6 către un alt investitor (comercializat ca „Serenis Residence") înseamnă că în același complex vor coexista asociații de proprietari diferite, cu interese și stiluri de administrare potențial divergente. Curțile și accesurile comune pot deveni surse de conflict. Clarificați în contract care sunt spațiile comune ale blocului vostru specific și cum se gestionează față de celelalte blocuri din perimetru.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct pozitiv — relativ</div>
+            <h3 class="verdict-title">Regim mic de înălțime și poziție semi-centrală — dacă riscul structural s-ar elimina</h3>
+            <p class="verdict-body">Recunoscând că există avantaje reale: blocurile joase (P+3E+M) oferă o densitate respirabilă față de turnurile din Păcurari, proximitatea față de Moara de Foc permite acces pietonal la transport și facilități, iar pozitia semi-centrala e buna. Dacă un inginer structurist independent ar confirma că blocul specific este stabil și sigur pe termen lung, și dacă intabularea e clară, aceste avantaje ar fi reale. Dar sunt condiționate de o verificare tehnică riguroasă pe care nimeni nu ar trebui să o ocolească la acest complex.</p>
+        </div>
+
+        <div class="verdict-card v-green fade">
+            <div class="verdict-label green">✓ Punct pozitiv — structural paradoxal</div>
+            <h3 class="verdict-title">ISC a verificat — blocurile problematice au primit piloni mai serioși decât norma</h3>
+            <p class="verdict-body">Există un paradox real: tocmai pentru că ISC a intervenit dur și a forțat lucrări masive de consolidare, blocurile problematice din Oscar Rainbow au ajuns cu o fundație de piloni forați mai serioasă decât multe alte proiecte din Iași care nu au trecut niciodată printr-o astfel de verificare forțată. Aceasta nu elimină incertitudinea geotehică pe termen lung, dar poate fi privit ca un argument parțial în favoarea blocurilor post-consolidare față de proiecte unde fundațiile nu au fost niciodată provocate.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- RECENZII -->
+    <section class="section fade" id="recenzii">
+        <h2 class="section-title"><span class="icon">💬</span> Ce zic cumpărătorii și vizitatorii</h2>
+        <p class="section-subtitle">— Recenzii Google Maps — puține dar extrem de directe; nicio recenzie pozitivă cu text substanțial</p>
+        <div class="review-list">
+
+            <div class="review-item">
+                <p>Când vor preda apartamentele dacă dau faliment? Nu credeți niciun cuvânt din ce spun Barsan și Istoc. Acestea sunt blocuri construite cu scopul de a înșela.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · cumpărător / persoană afectată</span>
+                    <span class="review-sentiment neg">Negativ — critic</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>O colecție de blocuri prost construite, frivolitate, multe reclamații și speranța că vor dispărea în curând de pe terenul „contaminat" de minunatul proiect Oscar...</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · vizitator / vecin</span>
+                    <span class="review-sentiment neg">Negativ — critic</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <p>Drumul este foarte prost, îți vei distruge mașina.</p>
+                <div class="review-meta">
+                    <span class="review-source">Sursă: Google Maps · vizitator</span>
+                    <span class="review-sentiment neg">Negativ</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- VERDICT FINAL -->
+    <section class="section fade" id="verdict">
+        <h2 class="section-title"><span class="icon">⚖️</span> Verdictul ImobVerdict</h2>
+        <div class="score-box">
+            <div class="score-number">2.5<span>/10</span></div>
+            <div class="score-desc">
+                <strong>Nu recomandăm — cel mai riscant proiect din seria ImobVerdict Iași</strong>
+                <p>Complex Oscar Rainbow este singurul proiect din cele 15 analizate cu risc geotehnic documentat, intervenție ISC confirmată, tasare structurală a unui bloc și fragili financiar documentat prin recenzii. Avantajele de locație (semi-central, bloc jos, pietonal decent) sunt reale, dar sunt eclipsate complet de incertitudinea structurală pe termen lung și de semnalele financiare îngrijorătoare privind dezvoltatorul. Dacă totuși vă interesează, orice decizie trebuie precedată obligatoriu de: (1) raport geotehnic independent actualizat, (2) expertiză structuristă independentă per bloc, (3) verificare bonitate financiară ONRC a dezvoltatorului, (4) consultație avocat pentru statutul juridic exact al blocului specific.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-strip fade">
+        <div>
+            <strong>Ai cumpărat sau ești în legătură cu acest complex?</strong>
+            <p>Dacă ai informații actualizate despre stadiul geotehnic sau juridic, ajută-ne să completăm imaginea.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="mailto:contact@imobverdict.com" class="btn">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Trimite informații
+            </a>
+            <a href="/" class="btn-outline">← Toate proiectele</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p class="footer-copy">© 2026 ImobVerdict Iași. Toate drepturile rezervate.</p>
+    <p class="footer-disc">Datele sunt agregate din surse publice și raportări ale cetățenilor. Nu constituie consultanță juridică sau financiară.</p>
+    <div style="display:flex;gap:15px;margin-top:10px;">
+        <a href="/confidentialitate/" class="footer-link">CONFIDENȚIALITATE</a>
+        <a href="/termeni/" class="footer-link">TERMENI ȘI CONDIȚII</a>
+    </div>
+</footer>
+
+<script>
+    async function fetchCurrency() {
+        const navEl = document.getElementById('euro-nav');
+        try {
+            const res = await fetch('https://open.er-api.com/v6/latest/EUR');
+            if (!res.ok) throw new Error();
+            const data = await res.json();
+            const ron = data.rates?.RON;
+            if (!ron) throw new Error();
+            navEl.textContent = ron.toFixed(4);
+        } catch { navEl.textContent = 'N/A'; }
+    }
+    fetchCurrency();
+    const sections = document.querySelectorAll('.section[id]');
+    const navBtns = document.querySelectorAll('.qnav-btn');
+    sections.forEach(s => {
+        new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    navBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelector(`.qnav-btn[href="#${e.target.id}"]`)?.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' }).observe(s);
+    });
+</script>
+
+</body>
+</html>
